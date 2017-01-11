@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import soselab.mpg.mpd.MdpReader;
 import soselab.mpg.mpd.model.Mdp;
-import soselab.mpg.repository.MdpRepository;
+import soselab.mpg.repository.mongo.MdpRepository;
 import soselab.mpg.service.exception.MdpDeserializeException;
 
 /**

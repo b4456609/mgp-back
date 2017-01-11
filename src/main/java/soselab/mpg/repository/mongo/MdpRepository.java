@@ -1,4 +1,4 @@
-package soselab.mpg.repository;
+package soselab.mpg.repository.mongo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import soselab.mpg.mpd.model.Mdp;
@@ -6,5 +6,5 @@ import soselab.mpg.mpd.model.Mdp;
 /**
  * Created by bernie on 1/11/17.
  */
-public interface MdpRepository extends MongoRepository<Mdp,String>{
+public interface MdpRepository extends MongoRepository<Mdp, String> {
 }
