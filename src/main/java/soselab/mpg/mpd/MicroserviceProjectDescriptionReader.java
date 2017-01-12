@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import soselab.mpg.mpd.model.MicroserviceProjectDescription;
+import soselab.mpg.model.mpd.MicroserviceProjectDescription;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;

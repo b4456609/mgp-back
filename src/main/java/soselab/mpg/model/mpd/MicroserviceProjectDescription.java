@@ -1,4 +1,4 @@
-package soselab.mpg.mpd.model;
+package soselab.mpg.model.mpd;
 
 
 import org.springframework.data.annotation.Id;

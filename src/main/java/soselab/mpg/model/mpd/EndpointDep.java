@@ -1,4 +1,4 @@
-package soselab.mpg.mpd.model;
+package soselab.mpg.model.mpd;
 
 /**
  * Created by bernie on 1/9/17.

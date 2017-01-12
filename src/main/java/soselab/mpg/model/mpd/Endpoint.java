@@ -1,25 +1,22 @@
-package soselab.mpg.mpd.model;
+package soselab.mpg.model.mpd;
 
 /**
  * Created by bernie on 1/9/17.
  */
-public class ServiceCall {
+public class Endpoint {
     private String id;
 
     private String path;
 
     private String method;
 
-    private String provider;
-
-    public ServiceCall() {
+    public Endpoint() {
     }
 
-    public ServiceCall(String id, String path, String method, String provider) {
+    public Endpoint(String id, String path, String method) {
         this.id = id;
         this.path = path;
         this.method = method;
-        this.provider = provider;
     }
 
     public String getId ()
@@ -52,19 +49,9 @@ public class ServiceCall {
         this.method = method;
     }
 
-    public String getProvider ()
-    {
-        return provider;
-    }
-
-    public void setProvider (String provider)
-    {
-        this.provider = provider;
-    }
-
     @Override
     public String toString()
     {
-        return "ClassPojo [id = "+id+", path = "+path+", method = "+method+", provider = "+provider+"]";
+        return "ClassPojo [id = "+id+", path = "+path+", method = "+method+"]";
     }
 }
