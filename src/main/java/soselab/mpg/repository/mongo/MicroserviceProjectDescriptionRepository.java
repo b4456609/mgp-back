@@ -7,4 +7,5 @@ import soselab.mpg.model.mpd.MicroserviceProjectDescription;
  * Created by bernie on 1/11/17.
  */
 public interface MicroserviceProjectDescriptionRepository extends MongoRepository<MicroserviceProjectDescription, String> {
+    MicroserviceProjectDescription findFirstByNameOrderByTimestampAsc(String lastname);
 }

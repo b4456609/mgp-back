@@ -7,7 +7,7 @@ package soselab.mpg.dto.graph;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 
-public class ServiceCallItem {
+public class ServiceCallEndpointsPairItem {
     @JsonProperty("source")
     private String source;
     @JsonProperty("class")
@@ -15,7 +15,7 @@ public class ServiceCallItem {
     @JsonProperty("target")
     private String target;
 
-    public ServiceCallItem(String source, String className, String target) {
+    public ServiceCallEndpointsPairItem(String source, String className, String target) {
         this.source = source;
         this.className = className;
         this.target = target;
@@ -47,7 +47,7 @@ public class ServiceCallItem {
 
     @Override
     public String toString() {
-        return "ServiceCallItem{" +
+        return "ServiceCallEndpointsPairItem{" +
                 "source='" + source + '\'' +
                 ", className='" + className + '\'' +
                 ", target='" + target + '\'' +
