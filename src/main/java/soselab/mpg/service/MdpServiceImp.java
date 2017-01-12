@@ -2,14 +2,11 @@ package soselab.mpg.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import soselab.mpg.mpd.MdpReader;
-import soselab.mpg.mpd.model.Mdp;
+import soselab.mpg.mpd.MicroserviceProjectDescriptionReader;
+import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.repository.mongo.MdpRepository;
-import soselab.mpg.service.exception.MdpDeserializeException;
+import soselab.mpg.service.exception.MicroserviceProjectDescriptionDeserializeException;
 
-/**
- * Created by bernie on 1/11/17.
- */
 @Service
 public class MdpServiceImp implements MdpService {
 
@@ -17,13 +14,13 @@ public class MdpServiceImp implements MdpService {
     private MdpRepository mdpRepository;
 
     @Autowired
-    private MdpReader mdpReader;
+    private MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader;
 
     @Override
     public void uploadFile(String json) {
-        Mdp mdp = mdpReader
+        MicroserviceProjectDescription mdp = microserviceProjectDescriptionReader
                 .readMDP(json)
-                .orElseThrow(MdpDeserializeException::new);
+                .orElseThrow(MicroserviceProjectDescriptionDeserializeException::new);
 
         mdpRepository.save(mdp);
     }

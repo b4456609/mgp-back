@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
-public class Mdp {
+public class MicroserviceProjectDescription {
 
     @Id
     private String id;
@@ -24,10 +24,10 @@ public class Mdp {
     @NotNull
     private List<EndpointDep> endpointDep;
 
-    public Mdp() {
+    public MicroserviceProjectDescription() {
     }
 
-    public Mdp(Long timestamp, List<ServiceCall> serviceCall, String name, String swagger, List<Endpoint> endpoint, List<EndpointDep> endpointDep) {
+    public MicroserviceProjectDescription(Long timestamp, List<ServiceCall> serviceCall, String name, String swagger, List<Endpoint> endpoint, List<EndpointDep> endpointDep) {
         this.timestamp = timestamp;
         this.serviceCall = serviceCall;
         this.name = name;
@@ -106,7 +106,7 @@ public class Mdp {
 
     @Override
     public String toString() {
-        return "Mdp{" +
+        return "MicroserviceProjectDescription{" +
                 "timestamp=" + timestamp +
                 ", serviceCall=" + serviceCall +
                 ", name='" + name + '\'' +

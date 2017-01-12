@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import soselab.mpg.mpd.model.Mdp;
+import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
@@ -16,13 +16,13 @@ import java.util.Optional;
 import java.util.Set;
 
 @Component
-public class MdpReader {
-    private static final Logger LOGGER = LoggerFactory.getLogger(MdpReader.class);
+public class MicroserviceProjectDescriptionReader {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MicroserviceProjectDescriptionReader.class);
 
     private final ObjectMapper objectMapper;
     private final Validator validator;
 
-    public MdpReader() {
+    public MicroserviceProjectDescriptionReader() {
         objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES,true)
                 .configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, true)
                 .configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, true);
@@ -31,11 +31,11 @@ public class MdpReader {
         validator = factory.getValidator();
     }
 
-    public Optional<Mdp> readMDP(String mdpJson){
+    public Optional<MicroserviceProjectDescription> readMDP(String mdpJson) {
         try {
-            Mdp mdp = objectMapper.readValue(mdpJson, Mdp.class);
+            MicroserviceProjectDescription mdp = objectMapper.readValue(mdpJson, MicroserviceProjectDescription.class);
             mdp.setId(mdp.getTimestamp()+mdp.getName());
-            Set<ConstraintViolation<Mdp>> validate = validator.validate(mdp);
+            Set<ConstraintViolation<MicroserviceProjectDescription>> validate = validator.validate(mdp);
             if(!validate.isEmpty())
                 throw new IllegalArgumentException(validate.toString());
             return Optional.of(mdp);
