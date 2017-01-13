@@ -30,4 +30,11 @@ public class ServiceName {
     public void setServiceName(String serviceName) {
         this.serviceName = serviceName;
     }
+
+    @Override
+    public String toString() {
+        return "ServiceName{" +
+                "serviceName='" + serviceName + '\'' +
+                '}';
+    }
 }

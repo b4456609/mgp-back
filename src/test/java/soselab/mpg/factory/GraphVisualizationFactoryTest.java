@@ -9,8 +9,9 @@ import soselab.mpg.dto.graph.GraphVisualization;
 import soselab.mpg.model.mpd.MicroserviceProjectDescription;
 import soselab.mpg.repository.mongo.MicroserviceProjectDescriptionRepository;
 
-import java.util.Collections;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -22,11 +23,11 @@ public class GraphVisualizationFactoryTest {
     @Test
     public void create() throws Exception {
         List<MicroserviceProjectDescription> all = microserviceProjectDescriptionRepository.findAll();
-        assert all.size() != 0;
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = Collections.singletonList(all.get(0));
-        GraphVisualization graphVisualization = GraphVisualizationFactory.create(microserviceProjectDescriptions);
+        GraphVisualization graphVisualization = GraphVisualizationFactory.create(all);
         System.out.println(graphVisualization);
-
+        System.out.println(graphVisualization.getNodes().size());
+        assertThat(graphVisualization.getNodes().size()).isEqualTo(17);
+        assertThat(graphVisualization.getServiceWithEndpointPair().size()).isEqualTo(13);
     }
 
 }
