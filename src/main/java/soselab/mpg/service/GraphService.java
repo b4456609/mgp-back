@@ -1,5 +1,7 @@
 package soselab.mpg.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import soselab.mpg.dto.graph.GraphVisualization;
@@ -15,6 +17,8 @@ import java.util.stream.Collectors;
 @Service
 public class GraphService {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(GraphService.class);
+
     @Autowired
     GraphVisualizationFactory graphVisualizationFactory;
     @Autowired
@@ -24,6 +28,8 @@ public class GraphService {
 
     public GraphVisualization getVisualizationData() {
         List<ServiceName> serviceNames = serviceNameRepository.findAll();
+        LOGGER.info("all service names {}",serviceNames.toString());
+
         List<MicroserviceProjectDescription> microserviceProjectDescriptions = serviceNames.stream().map(serviceName -> {
             return microserviceProjectDescriptionRepository
                     .findFirstByNameOrderByTimestampAsc(serviceName.getServiceName());

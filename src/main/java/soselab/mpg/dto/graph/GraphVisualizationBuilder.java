@@ -3,11 +3,11 @@ package soselab.mpg.dto.graph;
 import java.util.List;
 
 public class GraphVisualizationBuilder {
-    private List<ServiceCallEndpointsPairItem> endpoints;
+    private List<ServiceWithEndpointPairItem> endpoints;
     private List<NodesItem> nodes;
-    private List<ServiceCallItem> serviceCall;
+    private List<ProviderEndpointWithConsumerPairItem> serviceCall;
 
-    public GraphVisualizationBuilder setServiceCallEndpointsPair(List<ServiceCallEndpointsPairItem> endpoints) {
+    public GraphVisualizationBuilder setServiceCallEndpointsPair(List<ServiceWithEndpointPairItem> endpoints) {
         this.endpoints = endpoints;
         return this;
     }
@@ -17,7 +17,7 @@ public class GraphVisualizationBuilder {
         return this;
     }
 
-    public GraphVisualizationBuilder setServiceCall(List<ServiceCallItem> serviceCall) {
+    public GraphVisualizationBuilder setServiceCall(List<ProviderEndpointWithConsumerPairItem> serviceCall) {
         this.serviceCall = serviceCall;
         return this;
     }

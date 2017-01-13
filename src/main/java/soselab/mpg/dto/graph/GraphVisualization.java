@@ -4,31 +4,26 @@ package soselab.mpg.dto.graph;
  * Created by JacksonGenerator on 2017/1/12.
  */
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 
 public class GraphVisualization {
-    @JsonProperty("serviceEndpoints")
-    private List<ServiceCallEndpointsPairItem> endpoints;
-    @JsonProperty("nodes")
+    private List<ServiceWithEndpointPairItem> serviceWithEndpointPair;
     private List<NodesItem> nodes;
-    @JsonProperty("serviceCall")
-    private List<ServiceCallItem> serviceCall;
+    private List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair;
 
-    public GraphVisualization(List<ServiceCallEndpointsPairItem> endpoints, List<NodesItem> nodes, List<ServiceCallItem> serviceCall) {
-        this.endpoints = endpoints;
+    public GraphVisualization(List<ServiceWithEndpointPairItem> serviceWithEndpointPair, List<NodesItem> nodes, List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair) {
+        this.serviceWithEndpointPair = serviceWithEndpointPair;
         this.nodes = nodes;
-        this.serviceCall = serviceCall;
+        this.providerEndpointWithConsumerPair = providerEndpointWithConsumerPair;
     }
 
-    public List<ServiceCallEndpointsPairItem> getEndpoints() {
-        return endpoints;
+    public List<ServiceWithEndpointPairItem> getServiceWithEndpointPair() {
+        return serviceWithEndpointPair;
     }
 
-    public void setEndpoints(List<ServiceCallEndpointsPairItem> endpoints) {
-        this.endpoints = endpoints;
+    public void setServiceWithEndpointPair(List<ServiceWithEndpointPairItem> serviceWithEndpointPair) {
+        this.serviceWithEndpointPair = serviceWithEndpointPair;
     }
 
     public List<NodesItem> getNodes() {
@@ -39,20 +34,20 @@ public class GraphVisualization {
         this.nodes = nodes;
     }
 
-    public List<ServiceCallItem> getServiceCall() {
-        return serviceCall;
+    public List<ProviderEndpointWithConsumerPairItem> getProviderEndpointWithConsumerPair() {
+        return providerEndpointWithConsumerPair;
     }
 
-    public void setServiceCall(List<ServiceCallItem> serviceCall) {
-        this.serviceCall = serviceCall;
+    public void setProviderEndpointWithConsumerPair(List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair) {
+        this.providerEndpointWithConsumerPair = providerEndpointWithConsumerPair;
     }
 
     @Override
     public String toString() {
         return "GraphVisualization{" +
-                "endpoints=" + endpoints +
+                "serviceWithEndpointPair=" + serviceWithEndpointPair +
                 ", nodes=" + nodes +
-                ", serviceCall=" + serviceCall +
+                ", providerEndpointWithConsumerPair=" + providerEndpointWithConsumerPair +
                 '}';
     }
 }
