@@ -9,7 +9,8 @@ import java.util.Set;
 @NodeEntity(label = "Endpoint")
 public class EndpointNode {
     @GraphId
-    private Long id;
+    private Long graphId;
+    private String id;
     private String path;
     private String httpMethod;
 
@@ -19,17 +20,18 @@ public class EndpointNode {
     public EndpointNode() {
     }
 
-    public EndpointNode(String path, String httpMethod) {
+    public EndpointNode(String id, String path, String httpMethod) {
+        this.id = id;
         this.path = path;
         this.httpMethod = httpMethod;
     }
 
-    public Long getId() {
-        return id;
+    public Long getGraphId() {
+        return graphId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setGraphId(Long graphId) {
+        this.graphId = graphId;
     }
 
     public String getPath() {
@@ -54,5 +56,13 @@ public class EndpointNode {
 
     public void setServiceNodes(Set<ServiceNode> serviceNodes) {
         this.serviceNodes = serviceNodes;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }
