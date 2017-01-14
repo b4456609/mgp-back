@@ -11,9 +11,32 @@ public class ServiceNode {
     @GraphId
     private Long id;
 
+    private String name;
+
     @Relationship(type = "OWN", direction = Relationship.UNDIRECTED)
     private Set<EndpointNode> endpointNodes;
 
-    @Relationship(type = "CALL", direction = Relationship.OUTGOING)
-    private Set<ServiceNode> serviceNodes;
+    public ServiceNode() {
+    }
+
+    public ServiceNode(String name, Set<EndpointNode> endpointNodes) {
+        this.name = name;
+        this.endpointNodes = endpointNodes;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Set<EndpointNode> getEndpointNodes() {
+        return endpointNodes;
+    }
+
+    public void setEndpointNodes(Set<EndpointNode> endpointNodes) {
+        this.endpointNodes = endpointNodes;
+    }
 }

@@ -3,15 +3,15 @@ package soselab.mpg.model.mpd;
 /**
  * Created by bernie on 1/9/17.
  */
-public class EndpointDep {
+public class Endpoint2ServiceCallDependency {
     private String to;
 
     private String from;
 
-    public EndpointDep() {
+    public Endpoint2ServiceCallDependency() {
     }
 
-    public EndpointDep(String from, String to) {
+    public Endpoint2ServiceCallDependency(String from, String to) {
         this.to = to;
         this.from = from;
     }

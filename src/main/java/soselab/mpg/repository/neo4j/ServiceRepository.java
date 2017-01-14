@@ -1,7 +1,8 @@
 package soselab.mpg.repository.neo4j;
 
-/**
- * Created by bernie on 2017/1/11.
- */
-public interface ServiceRepository {
+import org.springframework.data.neo4j.repository.GraphRepository;
+import soselab.mpg.model.graph.ServiceNode;
+
+
+public interface ServiceRepository extends GraphRepository<ServiceNode> {
 }

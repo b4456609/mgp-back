@@ -8,4 +8,6 @@ public class OwnRelationship {
     @GraphId
     private Long id;
 
+    public OwnRelationship() {
+    }
 }
