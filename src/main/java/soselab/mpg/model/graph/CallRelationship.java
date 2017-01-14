@@ -7,4 +7,7 @@ import org.neo4j.ogm.annotation.RelationshipEntity;
 public class CallRelationship {
     @GraphId
     private Long id;
+
+    public CallRelationship() {
+    }
 }

@@ -22,18 +22,18 @@ public class MicroserviceProjectDescription {
     @NotNull
     private List<Endpoint> endpoint;
     @NotNull
-    private List<EndpointDep> endpointDep;
+    private List<Endpoint2ServiceCallDependency> endpointDep;
 
     public MicroserviceProjectDescription() {
     }
 
-    public MicroserviceProjectDescription(Long timestamp, List<ServiceCall> serviceCall, String name, String swagger, List<Endpoint> endpoint, List<EndpointDep> endpointDep) {
+    public MicroserviceProjectDescription(Long timestamp, List<ServiceCall> serviceCall, String name, String swagger, List<Endpoint> endpoint, List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency) {
         this.timestamp = timestamp;
         this.serviceCall = serviceCall;
         this.name = name;
         this.swagger = swagger;
         this.endpoint = endpoint;
-        this.endpointDep = endpointDep;
+        this.endpointDep = endpoint2ServiceCallDependency;
     }
 
     public String getId() {
@@ -94,14 +94,14 @@ public class MicroserviceProjectDescription {
         this.endpoint = endpoint;
     }
 
-    public List<EndpointDep> getEndpointDep ()
+    public List<Endpoint2ServiceCallDependency> getEndpointDep()
     {
         return endpointDep;
     }
 
-    public void setEndpointDep (List<EndpointDep> endpointDep)
+    public void setEndpointDep(List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency)
     {
-        this.endpointDep = endpointDep;
+        this.endpointDep = endpoint2ServiceCallDependency;
     }
 
     @Override
