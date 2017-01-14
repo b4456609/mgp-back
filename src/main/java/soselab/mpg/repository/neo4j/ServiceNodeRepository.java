@@ -4,5 +4,5 @@ import org.springframework.data.neo4j.repository.GraphRepository;
 import soselab.mpg.model.graph.ServiceNode;
 
 
-public interface ServiceRepository extends GraphRepository<ServiceNode> {
+public interface ServiceNodeRepository extends GraphRepository<ServiceNode> {
 }
