@@ -5,8 +5,9 @@ package soselab.mpg.dto.graph;
  */
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.data.neo4j.annotation.QueryResult;
 
-
+@QueryResult
 public class ServiceWithEndpointPairItem {
     @JsonProperty("source")
     private String source;
@@ -14,6 +15,9 @@ public class ServiceWithEndpointPairItem {
     private String className;
     @JsonProperty("target")
     private String target;
+
+    public ServiceWithEndpointPairItem() {
+    }
 
     public ServiceWithEndpointPairItem(String source, String className, String target) {
         this.source = source;

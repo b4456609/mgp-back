@@ -1,6 +1,5 @@
 package soselab.mpg.factory;
 
-import org.springframework.stereotype.Component;
 import soselab.mpg.dto.graph.*;
 import soselab.mpg.model.mpd.Endpoint;
 import soselab.mpg.model.mpd.MicroserviceProjectDescription;
@@ -13,9 +12,10 @@ import java.util.stream.Collectors;
 import static soselab.mpg.factory.ServiceLableFactory.createEndpointLabel;
 import static soselab.mpg.factory.ServiceLableFactory.createServiceLabel;
 
-@Component
-public class GraphVisualizationFactory {
-    public static GraphVisualization create(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
+
+public class GraphVisualizationFromMicroserviceProjectDescriptionFactory {
+
+    public GraphVisualization create(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
         //node item
         List<NodesItem> nodesItems = getNodesItems(microserviceProjectDescriptions);
         //provider Endpoint With Consumer link
@@ -25,12 +25,12 @@ public class GraphVisualizationFactory {
 
         return new GraphVisualizationBuilder()
                 .setNodes(nodesItems)
-                .setServiceCall(providerEndpointWithConsumerPairItems)
+                .setProvicerEndpointWithConsumberPair(providerEndpointWithConsumerPairItems)
                 .setServiceCallEndpointsPair(serviceWithEndpointPairItems)
                 .createGraphVisualization();
     }
 
-    private static List<ServiceWithEndpointPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
+    private List<ServiceWithEndpointPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
         return microserviceProjectDescriptions.stream().flatMap(microserviceProjectDescription -> {
             return microserviceProjectDescription.getEndpoint().stream().map(endpoint -> {
                 return new ServiceWithEndpointPairItem(endpoint.getId(), "", microserviceProjectDescription.getName());
@@ -38,12 +38,14 @@ public class GraphVisualizationFactory {
         }).collect(Collectors.toList());
     }
 
-    private static List<ProviderEndpointWithConsumerPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions, List<NodesItem> nodesItems) {
+    private List<ProviderEndpointWithConsumerPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions,
+                                                                  List<NodesItem> nodesItems) {
         return microserviceProjectDescriptions.stream()
                 .flatMap(microserviceProjectDescription -> {
                     return microserviceProjectDescription.getServiceCall().stream()
                             .map(serviceCall -> {
-                                return new ProviderEndpointWithConsumerPairItem(microserviceProjectDescription.getName(), "", ServiceEndpointIdFactory.getId(serviceCall.getProvider(), serviceCall.getPath(), serviceCall.getMethod()));
+                                return new ProviderEndpointWithConsumerPairItem(microserviceProjectDescription.getName(),
+                                        "", ServiceEndpointIdFactory.getId(serviceCall.getProvider(), serviceCall.getPath(), serviceCall.getMethod()));
                             });
                 })
                 // remove the service call which has not corresponding endpoint
@@ -56,7 +58,7 @@ public class GraphVisualizationFactory {
                 }).collect(Collectors.toList());
     }
 
-    private static List<NodesItem> getNodesItems(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
+    private List<NodesItem> getNodesItems(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
         return microserviceProjectDescriptions.stream()
                 .flatMap(microserviceProjectDescription -> {
 

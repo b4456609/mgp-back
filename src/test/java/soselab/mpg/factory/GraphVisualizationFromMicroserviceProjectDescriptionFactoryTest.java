@@ -15,15 +15,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GraphVisualizationFactoryTest {
+public class GraphVisualizationFromMicroserviceProjectDescriptionFactoryTest {
 
     @Autowired
     MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
 
+    @Autowired
+    GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
+
     @Test
     public void create() throws Exception {
         List<MicroserviceProjectDescription> all = microserviceProjectDescriptionRepository.findAll();
-        GraphVisualization graphVisualization = GraphVisualizationFactory.create(all);
+        GraphVisualization graphVisualization = graphVisualizationFromGraphFactory.create();
         System.out.println(graphVisualization);
         System.out.println(graphVisualization.getNodes().size());
         assertThat(graphVisualization.getNodes().size()).isEqualTo(17);
