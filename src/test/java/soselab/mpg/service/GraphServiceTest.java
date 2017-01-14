@@ -39,7 +39,7 @@ public class GraphServiceTest {
         serviceNodeRepository.deleteAll();
         endpointNodeRepository.deleteAll();
 
-        graphService.constructGrapht();
+        graphService.buildGraphFromLatestMicroserviceProjectDescription();
     }
 
 }

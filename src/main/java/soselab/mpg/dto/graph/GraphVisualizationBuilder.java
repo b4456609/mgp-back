@@ -17,7 +17,7 @@ public class GraphVisualizationBuilder {
         return this;
     }
 
-    public GraphVisualizationBuilder setServiceCall(List<ProviderEndpointWithConsumerPairItem> serviceCall) {
+    public GraphVisualizationBuilder setProvicerEndpointWithConsumberPair(List<ProviderEndpointWithConsumerPairItem> serviceCall) {
         this.serviceCall = serviceCall;
         return this;
     }

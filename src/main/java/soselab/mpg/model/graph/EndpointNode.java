@@ -4,24 +4,26 @@ import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @NodeEntity(label = "Endpoint")
 public class EndpointNode {
     @GraphId
     private Long graphId;
-    private String id;
+
+    private String endpointId;
     private String path;
     private String httpMethod;
 
     @Relationship(type = "CALL", direction = Relationship.OUTGOING)
-    private Set<ServiceNode> serviceNodes;
+    private Set<EndpointNode> endpointNodes;
 
     public EndpointNode() {
     }
 
-    public EndpointNode(String id, String path, String httpMethod) {
-        this.id = id;
+    public EndpointNode(String endpointId, String path, String httpMethod) {
+        this.endpointId = endpointId;
         this.path = path;
         this.httpMethod = httpMethod;
     }
@@ -50,19 +52,57 @@ public class EndpointNode {
         this.httpMethod = httpMethod;
     }
 
-    public Set<ServiceNode> getServiceNodes() {
-        return serviceNodes;
+    public Set<EndpointNode> getEndpointNodes() {
+        return endpointNodes;
     }
 
-    public void setServiceNodes(Set<ServiceNode> serviceNodes) {
-        this.serviceNodes = serviceNodes;
+    public void setEndpointNodes(Set<EndpointNode> endpointNodes) {
+        this.endpointNodes = endpointNodes;
     }
 
-    public String getId() {
-        return id;
+    public String getEndpointId() {
+        return endpointId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEndpointId(String endpointId) {
+        this.endpointId = endpointId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        EndpointNode that = (EndpointNode) o;
+
+        if (!endpointId.equals(that.endpointId)) return false;
+        if (!path.equals(that.path)) return false;
+        return httpMethod.equals(that.httpMethod);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = endpointId.hashCode();
+        result = 31 * result + path.hashCode();
+        result = 31 * result + httpMethod.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "EndpointNode{" +
+                "graphId=" + graphId +
+                ", endpointId='" + endpointId + '\'' +
+                ", path='" + path + '\'' +
+                ", httpMethod='" + httpMethod + '\'' +
+                ", endpointNodes=" + endpointNodes +
+                '}';
+    }
+
+    public void addServiceCallEndpoint(EndpointNode providerServiceEndpoint) {
+        if (endpointNodes == null) {
+            endpointNodes = new HashSet<>();
+        }
+        endpointNodes.add(providerServiceEndpoint);
     }
 }
