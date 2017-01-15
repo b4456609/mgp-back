@@ -32,7 +32,7 @@ public class GraphVisualizationFromGraphFactory {
                             .setLabel(ServiceLableFactory.createEndpointLabel(endpointNode.getPath(),
                                     endpointNode.getHttpMethod()))
                             .setClassName(className)
-                            .setGroup(2)
+                            .setGroup(1)
                             .createNodesItem();
                 }).collect(Collectors.toList());
 
@@ -43,7 +43,7 @@ public class GraphVisualizationFromGraphFactory {
                     return new NodesItemBuilder().setId(serviceNode.getName())
                             .setLabel(ServiceLableFactory.createServiceLabel(serviceNode.getName()))
                             .setClassName(className)
-                            .setGroup(1)
+                            .setGroup(2)
                             .createNodesItem();
                 }).collect(Collectors.toList());
 

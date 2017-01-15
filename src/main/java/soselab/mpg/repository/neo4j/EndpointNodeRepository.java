@@ -15,8 +15,8 @@ public interface EndpointNodeRepository extends GraphRepository<EndpointNode> {
             "RETURN e")
     EndpointNode findServiceEndpointByPathAndHttpMethod(String serviceName, String httpMethod, String path);
 
-    @Query("MATCH p=(s:Endpoint)-[r:CALL]->(e:Endpoint), (e)<-[own:OWN]-(service:Service) " +
-            "RETURN s.endpointId as source, service.name as target")
+    @Query("MATCH p=(s:Endpoint)-[r:CALL]->(e:Endpoint), (s)<-[own:OWN]-(service:Service) " +
+            "RETURN service.name as source, e.endpointId as target")
     List<ProviderEndpointWithConsumerPairItem> getProviderEndpointWithConsumerPairPair();
 
     @Query("MATCH p=(s:Endpoint)-[r:CALL*]->(e:Endpoint) " +
