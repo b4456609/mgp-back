@@ -50,6 +50,7 @@ public class GraphVisualizationFromGraphFactory {
         allNodes.addAll(endpointNodeItems);
         allNodes.addAll(serviceNodeItems);
 
+        //set class name
         List<ServiceWithEndpointPairItem> allServiceWithEndpoint = serviceNodeRepository
                 .getAllServiceWithEndpoint();
 
@@ -57,6 +58,7 @@ public class GraphVisualizationFromGraphFactory {
             item.setClassName("");
         }
 
+        //set class name
         List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair = endpointNodeRepository
                 .getProviderEndpointWithConsumerPairPair();
 

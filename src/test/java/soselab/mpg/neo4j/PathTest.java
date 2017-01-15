@@ -10,6 +10,7 @@ import soselab.mpg.model.graph.EndpointNode;
 import soselab.mpg.model.graph.ServiceNode;
 import soselab.mpg.repository.neo4j.EndpointNodeRepository;
 import soselab.mpg.repository.neo4j.ServiceNodeRepository;
+import soselab.mpg.service.GraphService;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -23,8 +24,20 @@ public class PathTest {
     EndpointNodeRepository endpointNodeRepository;
     private int count = 1;
 
+    @Autowired
+    private GraphService graphService;
+
     @Before
     public void setUp() throws Exception {
+        //setTestData();
+//        MicroserviceProjectDescriptionControllerTest microserviceProjectDescriptionControllerTest = new MicroserviceProjectDescriptionControllerTest();
+//        microserviceProjectDescriptionControllerTest.uploadMdpFiles();
+        serviceNodeRepository.deleteAll();
+        endpointNodeRepository.deleteAll();
+        graphService.buildGraphFromLatestMicroserviceProjectDescription();
+    }
+
+    private void setTestData() {
         serviceNodeRepository.deleteAll();
         endpointNodeRepository.deleteAll();
 
@@ -69,6 +82,17 @@ public class PathTest {
     }
 
     @Test
+    public void testPath() {
+
+        long start = System.currentTimeMillis();
+
+        List<List<String>> pathNodeIdGroups = graphService.getPathNodeIdGroups();
+        pathNodeIdGroups.forEach(System.out::println);
+
+        System.out.println(System.currentTimeMillis() - start);
+    }
+
+    @Test
     public void findServiceEndpointByPathAndHttpMethod() throws Exception {
         List<List<LinkedHashMap>> pathEndpoints = endpointNodeRepository.getPathEndpoints();
 
@@ -80,7 +104,6 @@ public class PathTest {
                 })
                 .collect(Collectors.toList());
 
-        System.out.println(endpointIds);
 
         List<List<String>> removeSet = new ArrayList<>();
         for (int i = 0; i < endpointIds.size(); i++) {
@@ -99,10 +122,12 @@ public class PathTest {
                 }
             }
         }
+        endpointIds.forEach(System.out::println);
+        System.out.println();
+        removeSet.forEach(System.out::println);
 
-
-        System.out.println(pathEndpoints);
-        System.out.println(removeSet);
+//        System.out.println(pathEndpoints);
+//        System.out.println(removeSet);
     }
 
     private boolean isGarbage(List<EndpointNode> endpointNode1, List<EndpointNode> endpointNode2) {

@@ -1,7 +1,6 @@
 package soselab.mpg.controller;
 
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +43,7 @@ public class MicroserviceProjectDescriptionControllerTest {
     public void uploadMdpFiles() {
         File file = new File(this.getClass().getResource("/mdp").getPath());
         File[] files = file.listFiles();
+        System.out.println(files);
         for (File file1 : files) {
             uploadMdpFile(file1.getPath());
         }
