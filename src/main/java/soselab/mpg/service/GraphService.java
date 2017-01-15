@@ -5,6 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import soselab.mpg.dto.graph.GraphVisualization;
+import soselab.mpg.dto.graph.ProviderEndpointWithConsumerPairItem;
+import soselab.mpg.dto.graph.ServiceWithEndpointPairItem;
 import soselab.mpg.factory.GraphVisualizationFromGraphFactory;
 import soselab.mpg.factory.ServiceEndpointIdFactory;
 import soselab.mpg.model.ServiceName;
@@ -44,10 +46,23 @@ public class GraphService {
     private EndpointNodeRepository endpointNodeRepository;
 
     public GraphVisualization getVisualizationData() {
-//        List<MicroserviceProjectDescription> microserviceProjectDescriptions = getMicroserviceProjectDescriptions();
-//
-//        return graphVisualizationFactory.create(microserviceProjectDescriptions);
-        return graphVisualizationFromGraphFactory.create();
+        //endpoint node
+        Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
+
+        //service node
+        Iterable<ServiceNode> serviceNodes = serviceNodeRepository.findAll();
+
+        //Service and Endpoint relationship
+        List<ServiceWithEndpointPairItem> allServiceWithEndpoint = serviceNodeRepository
+                .getAllServiceWithEndpoint();
+
+        //ProviderEndpoint Consumer relationship
+        List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair = endpointNodeRepository
+                .getProviderEndpointWithConsumerPairPair();
+
+        List<List<String>> pathNodeIdGroups = getPathNodeIdGroups();
+
+        return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint, providerEndpointWithConsumerPairPair, pathNodeIdGroups);
     }
 
     public void buildGraphFromLatestMicroserviceProjectDescription() {
@@ -89,8 +104,19 @@ public class GraphService {
 
         //group set from different set
         List<List<String>> getGroupSet = getPathGroup(endpointIds);
+        List<List<String>> serviceAndEndpointGroupSet = getServiceWithEndpointsGroup(getGroupSet);
 
-        return getGroupSet;
+        return serviceAndEndpointGroupSet;
+    }
+
+    private List<List<String>> getServiceWithEndpointsGroup(List<List<String>> groups) {
+        return groups.stream().map(group -> {
+            Set<String> collect = group.stream().map(item -> {
+                return serviceNodeRepository.getServiceNameByEndpoint(item);
+            }).collect(Collectors.toSet());
+            group.addAll(collect);
+            return group;
+        }).collect(Collectors.toList());
     }
 
     private List<List<String>> getPathGroup(List<List<String>> endpointIds) {

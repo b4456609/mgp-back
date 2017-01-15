@@ -66,8 +66,8 @@ public class ServiceNodeRepositoryTest {
 
     private ServiceNode buildANode(String serviceName) {
         Set<EndpointNode> endpointNodeSet = new HashSet<>();
-        endpointNodeSet.add(new EndpointNode("id", "path" + count, "httpmethod" + count));
-        endpointNodeSet.add(new EndpointNode("id1", "path1" + count, "httpmethod1" + count));
+        endpointNodeSet.add(new EndpointNode("id" + count, "path" + count, "httpmethod" + count));
+        endpointNodeSet.add(new EndpointNode("id1" + count, "path1" + count, "httpmethod1" + count));
         count++;
         return new ServiceNode(serviceName, endpointNodeSet);
     }
@@ -81,6 +81,12 @@ public class ServiceNodeRepositoryTest {
         assertThat(endpoint.getEndpointId()).isEqualTo("id");
         assertThat(endpoint.getPath()).isEqualToIgnoringCase("path1");
         assertThat(endpoint.getHttpMethod()).isEqualToIgnoringCase("httpmethod1");
+    }
+
+    @Test
+    public void testServiceNodeRepository() {
+        String serviceName = serviceNodeRepository.getServiceNameByEndpoint("id1");
+        assertThat(serviceName).isEqualToIgnoringCase("a");
     }
 
 }
