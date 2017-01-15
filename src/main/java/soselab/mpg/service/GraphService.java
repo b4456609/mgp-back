@@ -46,6 +46,8 @@ public class GraphService {
     private EndpointNodeRepository endpointNodeRepository;
 
     public GraphVisualization getVisualizationData() {
+        buildGraphFromLatestMicroserviceProjectDescription();
+
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 
@@ -66,6 +68,9 @@ public class GraphService {
     }
 
     public void buildGraphFromLatestMicroserviceProjectDescription() {
+        serviceNodeRepository.deleteAll();
+        endpointNodeRepository.deleteAll();
+
         //get all latest service project description
         List<MicroserviceProjectDescription> microserviceProjectDescriptions = getMicroserviceProjectDescriptions();
 
