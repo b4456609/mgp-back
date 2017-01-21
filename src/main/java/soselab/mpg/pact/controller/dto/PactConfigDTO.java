@@ -6,6 +6,10 @@ package soselab.mpg.pact.controller.dto;
 public class PactConfigDTO {
     private String url;
 
+    public PactConfigDTO(String url) {
+        this.url = url;
+    }
+
     public PactConfigDTO() {
     }
 
@@ -15,5 +19,12 @@ public class PactConfigDTO {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "PactConfigDTO{" +
+                "url='" + url + '\'' +
+                '}';
     }
 }
