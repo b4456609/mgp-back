@@ -13,8 +13,12 @@ import soselab.mpg.graph.service.GraphService;
 @CrossOrigin
 public class GraphController {
 
+    private final GraphService graphService;
+
     @Autowired
-    private GraphService graphService;
+    public GraphController(GraphService graphService) {
+        this.graphService = graphService;
+    }
 
     @GetMapping
     public GraphVisualization getGraphData() {

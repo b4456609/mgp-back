@@ -44,63 +44,51 @@ public class MicroserviceProjectDescription {
         this.id = id;
     }
 
-    public long getTimestamp ()
-    {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp (long timestamp)
-    {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 
-    public List<ServiceCall> getServiceCall ()
-    {
+    public List<ServiceCall> getServiceCall() {
         return serviceCall;
     }
 
-    public void setServiceCall (List<ServiceCall> serviceCall)
-    {
+    public void setServiceCall(List<ServiceCall> serviceCall) {
         this.serviceCall = serviceCall;
     }
 
-    public String getName ()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName (String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getSwagger ()
-    {
+    public String getSwagger() {
         return swagger;
     }
 
-    public void setSwagger (String swagger)
-    {
+    public void setSwagger(String swagger) {
         this.swagger = swagger;
     }
 
-    public List<Endpoint> getEndpoint ()
-    {
+    public List<Endpoint> getEndpoint() {
         return endpoint;
     }
 
-    public void setEndpoint (List<Endpoint> endpoint)
-    {
+    public void setEndpoint(List<Endpoint> endpoint) {
         this.endpoint = endpoint;
     }
 
-    public List<Endpoint2ServiceCallDependency> getEndpointDep()
-    {
+    public List<Endpoint2ServiceCallDependency> getEndpointDep() {
         return endpointDep;
     }
 
-    public void setEndpointDep(List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency)
-    {
+    public void setEndpointDep(List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency) {
         this.endpointDep = endpoint2ServiceCallDependency;
     }
 

@@ -24,9 +24,7 @@ public class PactClientImpl implements PactClient {
 
         List<String> pactLinks = links.stream()
                 //get latest version pact links
-                .filter(link -> {
-                    return link.contains("version") && link.contains("consumer");
-                })
+                .filter(link -> link.contains("version") && link.contains("consumer"))
                 //unescape string
                 .map(link -> {
                     StringEscapeUtils.unescapeJava(link);

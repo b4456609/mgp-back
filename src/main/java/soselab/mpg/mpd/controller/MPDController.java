@@ -12,11 +12,15 @@ import java.io.IOException;
 @CrossOrigin
 public class MPDController {
 
-    @Autowired
-    private MPDService MPDService;
+    private final MPDService MPDService;
 
-    @RequestMapping(path ="/mpd", method = RequestMethod.POST)
-    public void uploadMdpFile(@RequestParam("file") MultipartFile file){
+    @Autowired
+    public MPDController(soselab.mpg.mpd.service.MPDService MPDService) {
+        this.MPDService = MPDService;
+    }
+
+    @RequestMapping(path = "/mpd", method = RequestMethod.POST)
+    public void uploadMdpFile(@RequestParam("file") MultipartFile file) {
         try {
             String json = new String(file.getBytes());
             MPDService.uploadFile(json);

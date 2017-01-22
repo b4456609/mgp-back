@@ -22,49 +22,40 @@ public class ServiceCall {
         this.provider = provider;
     }
 
-    public String getId ()
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId (String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getPath ()
-    {
+    public String getPath() {
         return path;
     }
 
-    public void setPath (String path)
-    {
+    public void setPath(String path) {
         this.path = path;
     }
 
-    public String getMethod ()
-    {
+    public String getMethod() {
         return method;
     }
 
-    public void setMethod (String method)
-    {
+    public void setMethod(String method) {
         this.method = method;
     }
 
-    public String getProvider ()
-    {
+    public String getProvider() {
         return provider;
     }
 
-    public void setProvider (String provider)
-    {
+    public void setProvider(String provider) {
         this.provider = provider;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+id+", path = "+path+", method = "+method+", provider = "+provider+"]";
+    public String toString() {
+        return "ClassPojo [id = " + id + ", path = " + path + ", method = " + method + ", provider = " + provider + "]";
     }
 }

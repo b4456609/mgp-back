@@ -1,9 +1,5 @@
 package soselab.mpg.graph.controller.dto;
 
-/**
- * Created by JacksonGenerator on 2017/1/12.
- */
-
 import org.springframework.data.neo4j.annotation.QueryResult;
 
 @QueryResult

@@ -12,8 +12,13 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/serviceInfo")
 public class ServiceInfoController {
+
+    private final GraphService graphService;
+
     @Autowired
-    GraphService graphService;
+    public ServiceInfoController(GraphService graphService) {
+        this.graphService = graphService;
+    }
 
     @GetMapping
     public List<ServiceInfoDTO> getServiceInfo() {

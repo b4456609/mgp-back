@@ -16,29 +16,27 @@ public class Endpoint2ServiceCallDependency {
         this.from = from;
     }
 
-    public String getTo ()
-    {
+    public String getTo() {
         return to;
     }
 
-    public void setTo (String to)
-    {
+    public void setTo(String to) {
         this.to = to;
     }
 
-    public String getFrom ()
-    {
+    public String getFrom() {
         return from;
     }
 
-    public void setFrom (String from)
-    {
+    public void setFrom(String from) {
         this.from = from;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [to = "+to+", from = "+from+"]";
+    public String toString() {
+        return "Endpoint2ServiceCallDependency{" +
+                "to='" + to + '\'' +
+                ", from='" + from + '\'' +
+                '}';
     }
 }

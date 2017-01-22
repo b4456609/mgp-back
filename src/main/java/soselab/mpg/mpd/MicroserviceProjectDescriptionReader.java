@@ -23,7 +23,7 @@ public class MicroserviceProjectDescriptionReader {
     private final Validator validator;
 
     public MicroserviceProjectDescriptionReader() {
-        objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES,true)
+        objectMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES, true)
                 .configure(DeserializationFeature.FAIL_ON_IGNORED_PROPERTIES, true)
                 .configure(DeserializationFeature.FAIL_ON_MISSING_CREATOR_PROPERTIES, true);
 
@@ -34,9 +34,9 @@ public class MicroserviceProjectDescriptionReader {
     public Optional<MicroserviceProjectDescription> readMDP(String mdpJson) {
         try {
             MicroserviceProjectDescription mdp = objectMapper.readValue(mdpJson, MicroserviceProjectDescription.class);
-            mdp.setId(mdp.getTimestamp()+mdp.getName());
+            mdp.setId(mdp.getTimestamp() + mdp.getName());
             Set<ConstraintViolation<MicroserviceProjectDescription>> validate = validator.validate(mdp);
-            if(!validate.isEmpty())
+            if (!validate.isEmpty())
                 throw new IllegalArgumentException(validate.toString());
             return Optional.of(mdp);
         } catch (IOException e) {

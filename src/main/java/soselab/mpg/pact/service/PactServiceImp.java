@@ -17,14 +17,16 @@ import java.util.stream.Collectors;
 public class PactServiceImp implements PactService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PactServiceImp.class);
 
-    @Autowired
-    private PactConfigRepository pactConfigRepository;
+    private final PactConfigRepository pactConfigRepository;
+    private final PactRepository pactRepository;
+    private final PactClient pactClient;
 
     @Autowired
-    private PactRepository pactRepository;
-
-    @Autowired
-    private PactClient pactClient;
+    public PactServiceImp(PactConfigRepository pactConfigRepository, PactRepository pactRepository, PactClient pactClient) {
+        this.pactConfigRepository = pactConfigRepository;
+        this.pactRepository = pactRepository;
+        this.pactClient = pactClient;
+    }
 
     @Override
     public void setPactService(PactConfig pactConfig) {

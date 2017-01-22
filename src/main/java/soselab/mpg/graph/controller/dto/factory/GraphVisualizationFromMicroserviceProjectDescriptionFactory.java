@@ -31,29 +31,24 @@ public class GraphVisualizationFromMicroserviceProjectDescriptionFactory {
     }
 
     private List<ServiceWithEndpointPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
-        return microserviceProjectDescriptions.stream().flatMap(microserviceProjectDescription -> {
-            return microserviceProjectDescription.getEndpoint().stream().map(endpoint -> {
-                return new ServiceWithEndpointPairItem(endpoint.getId(), "", microserviceProjectDescription.getName());
-            });
-        }).collect(Collectors.toList());
+        return microserviceProjectDescriptions.stream().flatMap(microserviceProjectDescription -> microserviceProjectDescription.getEndpoint().stream().map(endpoint -> {
+            return new ServiceWithEndpointPairItem(endpoint.getId(), "", microserviceProjectDescription.getName());
+        })).collect(Collectors.toList());
     }
 
     private List<ProviderEndpointWithConsumerPairItem> getCollect(List<MicroserviceProjectDescription> microserviceProjectDescriptions,
                                                                   List<NodesItem> nodesItems) {
         return microserviceProjectDescriptions.stream()
-                .flatMap(microserviceProjectDescription -> {
-                    return microserviceProjectDescription.getServiceCall().stream()
-                            .map(serviceCall -> {
-                                return new ProviderEndpointWithConsumerPairItem(microserviceProjectDescription.getName(),
-                                        "", ServiceEndpointIdFactory.getId(serviceCall.getProvider(), serviceCall.getPath(), serviceCall.getMethod()));
-                            });
-                })
+                .flatMap(microserviceProjectDescription -> microserviceProjectDescription.getServiceCall().stream()
+                        .map(serviceCall -> {
+                            return new ProviderEndpointWithConsumerPairItem(microserviceProjectDescription.getName(),
+                                    "", ServiceEndpointIdFactory.getId(serviceCall.getProvider(), serviceCall.getPath(), serviceCall.getMethod()));
+                        }))
                 // remove the service call which has not corresponding endpoint
                 // to do report
                 .filter(providerEndpointWithConsumerPairItem -> {
-                    Optional<NodesItem> any = nodesItems.stream().filter(nodesItem -> {
-                        return providerEndpointWithConsumerPairItem.getTarget().equals(nodesItem.getId());
-                    }).findAny();
+                    Optional<NodesItem> any = nodesItems.stream().filter(nodesItem ->
+                            providerEndpointWithConsumerPairItem.getTarget().equals(nodesItem.getId())).findAny();
                     return any.isPresent();
                 }).collect(Collectors.toList());
     }
@@ -81,14 +76,14 @@ public class GraphVisualizationFromMicroserviceProjectDescriptionFactory {
                             .createNodesItem());
 
                     //add endpoint nodes
-                    endpoints.stream().forEach(endpoint -> {
-                        nodesItemList.add(new NodesItemBuilder()
-                                .setId(endpoint.getId())
-                                .setClassName("")
-                                .setGroup(2)
-                                .setLabel(createEndpointLabel(endpoint.getPath(), endpoint.getMethod()))
-                                .createNodesItem());
-                    });
+                    endpoints.forEach(endpoint ->
+                            nodesItemList.add(new NodesItemBuilder()
+                                    .setId(endpoint.getId())
+                                    .setClassName("")
+                                    .setGroup(2)
+                                    .setLabel(createEndpointLabel(endpoint.getPath(), endpoint.getMethod()))
+                                    .createNodesItem())
+                    );
                     return nodesItemList.stream();
                 }).collect(Collectors.toList());
     }

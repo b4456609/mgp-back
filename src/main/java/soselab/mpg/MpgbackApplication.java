@@ -15,9 +15,9 @@ import soselab.mpg.pact.repository.PactConfigRepository;
 @SpringBootApplication
 public class MpgbackApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MpgbackApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MpgbackApplication.class, args);
+    }
 
     @Bean
     public ModelMapper modelMapper() {

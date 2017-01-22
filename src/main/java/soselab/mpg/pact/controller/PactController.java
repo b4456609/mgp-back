@@ -19,13 +19,16 @@ import java.util.List;
 @RequestMapping(path = "/api/pact")
 public class PactController {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(PactController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PactController.class);
+
+    private final PactService pactService;
+    private final ModelMapper modelMapper;
 
     @Autowired
-    private PactService pactService;
-
-    @Autowired
-    private ModelMapper modelMapper;
+    public PactController(PactService pactService, ModelMapper modelMapper) {
+        this.pactService = pactService;
+        this.modelMapper = modelMapper;
+    }
 
     @PostMapping(path = "/config")
     public void setPact(@RequestBody PactConfigDTO pactConfigDTO) {
@@ -37,8 +40,7 @@ public class PactController {
     @GetMapping(path = "/config")
     public PactConfigDTO getPactSetting() {
         PactConfig pactConfig = pactService.getPactConfig();
-        PactConfigDTO dto = modelMapper.map(pactConfig, PactConfigDTO.class);
-        return dto;
+        return modelMapper.map(pactConfig, PactConfigDTO.class);
     }
 
     @GetMapping
@@ -48,7 +50,6 @@ public class PactController {
         LOGGER.info("all pact {}", pacts.toString());
         Type targetListType = new TypeToken<List<PactDTO>>() {
         }.getType();
-        List<PactDTO> dtos = modelMapper.map(pacts, targetListType);
-        return dtos;
+        return modelMapper.map(pacts, targetListType);
     }
 }

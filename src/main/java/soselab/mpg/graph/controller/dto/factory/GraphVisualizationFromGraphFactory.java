@@ -15,7 +15,7 @@ import java.util.stream.StreamSupport;
 @Component
 public class GraphVisualizationFromGraphFactory {
 
-    private static Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
 
 
     public GraphVisualization create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,

@@ -1,8 +1,5 @@
 package soselab.mpg.mpd.model;
 
-/**
- * Created by bernie on 1/9/17.
- */
 public class Endpoint {
     private String id;
 
@@ -19,39 +16,32 @@ public class Endpoint {
         this.method = method;
     }
 
-    public String getId ()
-    {
+    public String getId() {
         return id;
     }
 
-    public void setId (String id)
-    {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public String getPath ()
-    {
+    public String getPath() {
         return path;
     }
 
-    public void setPath (String path)
-    {
+    public void setPath(String path) {
         this.path = path;
     }
 
-    public String getMethod ()
-    {
+    public String getMethod() {
         return method;
     }
 
-    public void setMethod (String method)
-    {
+    public void setMethod(String method) {
         this.method = method;
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+id+", path = "+path+", method = "+method+"]";
+    public String toString() {
+        return "Endpoint [id = " + id + ", path = " + path + ", method = " + method + "]";
     }
 }

@@ -16,9 +16,7 @@ import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.model.Endpoint2ServiceCallDependency;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
-import soselab.mpg.mpd.model.ServiceName;
-import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
-import soselab.mpg.mpd.repository.ServiceNameRepository;
+import soselab.mpg.mpd.service.MPDService;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -28,23 +26,20 @@ public class GraphServiceImpl implements GraphService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphServiceImpl.class);
 
-//    @Autowired
-//    GraphVisualizationFactory graphVisualizationFactory;
+    private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
+    private final MPDService mpdService;
+    private final ServiceNodeRepository serviceNodeRepository;
+    private final EndpointNodeRepository endpointNodeRepository;
 
     @Autowired
-    GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
-
-    @Autowired
-    private MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
-
-    @Autowired
-    private ServiceNameRepository serviceNameRepository;
-
-    @Autowired
-    private ServiceNodeRepository serviceNodeRepository;
-
-    @Autowired
-    private EndpointNodeRepository endpointNodeRepository;
+    public GraphServiceImpl(GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory,
+                            MPDService mpdService, ServiceNodeRepository serviceNodeRepository,
+                            EndpointNodeRepository endpointNodeRepository) {
+        this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
+        this.mpdService = mpdService;
+        this.serviceNodeRepository = serviceNodeRepository;
+        this.endpointNodeRepository = endpointNodeRepository;
+    }
 
     @Override
     public GraphVisualization getVisualizationData() {
@@ -75,21 +70,21 @@ public class GraphServiceImpl implements GraphService {
         endpointNodeRepository.deleteAll();
 
         //get all latest service project description
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = getMicroserviceProjectDescriptions();
+        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService
+                .getMicroserviceProjectDescriptions();
 
         //all endpoint node
         Set<EndpointNode> allEndpointNodes = new HashSet<>();
 
         //get all serviceNode
         Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.stream()
-                .map(microserviceProjectDescription -> {
-                    return createServiceNode(allEndpointNodes, microserviceProjectDescription);
-                }).collect(Collectors.toSet());
+                .map(microserviceProjectDescription -> createServiceNode(allEndpointNodes, microserviceProjectDescription))
+                .collect(Collectors.toSet());
 
         //save to database
         serviceNodeRepository.save(serviceNodes);
 
-        // create endpoint srevice call relationship
+        // create endpoint service call relationship
         microserviceProjectDescriptions
                 .forEach(this::createEndpointRelation);
     }
@@ -100,22 +95,19 @@ public class GraphServiceImpl implements GraphService {
 
         //translation to endpoint id string list
         List<List<String>> endpointIds = pathEndpoints.stream()
-                .map(linkedHashMaps -> {
-                    return linkedHashMaps.stream().map(linkedHashMap -> {
-                        return (String) linkedHashMap.get("endpointId");
-                    }).collect(Collectors.toList());
-                })
+                .map(linkedHashMaps -> linkedHashMaps.stream().map(linkedHashMap -> {
+                    return (String) linkedHashMap.get("endpointId");
+                }).collect(Collectors.toList()))
                 .collect(Collectors.toList());
 
 
-        List<List<String>> removeSet = getremoveDuplicateShorterPath(endpointIds);
+        List<List<String>> removeSet = getRemoveDuplicateShorterPath(endpointIds);
         endpointIds.removeAll(removeSet);
 
         //group set from different set
         List<List<String>> getGroupSet = getPathGroup(endpointIds);
-        List<List<String>> serviceAndEndpointGroupSet = getServiceWithEndpointsGroup(getGroupSet);
 
-        return serviceAndEndpointGroupSet;
+        return getServiceWithEndpointsGroup(getGroupSet);
     }
 
     @Override
@@ -127,9 +119,9 @@ public class GraphServiceImpl implements GraphService {
 
     private List<List<String>> getServiceWithEndpointsGroup(List<List<String>> groups) {
         return groups.stream().map(group -> {
-            Set<String> collect = group.stream().map(item -> {
-                return serviceNodeRepository.getServiceNameByEndpoint(item);
-            }).collect(Collectors.toSet());
+            Set<String> collect = group.stream()
+                    .map(serviceNodeRepository::getServiceNameByEndpoint)
+                    .collect(Collectors.toSet());
             group.addAll(collect);
             return group;
         }).collect(Collectors.toList());
@@ -155,10 +147,10 @@ public class GraphServiceImpl implements GraphService {
                     } else if (iGroup == null && jGroup != null) {
                         jGroup.add(j);
                         indexList2Group.put(i, jGroup);
-                    } else if (iGroup != null && jGroup != null) {
+                    } else if (iGroup != null) {
                         jGroup.addAll(iGroup);
                         indexList2Group.put(i, jGroup);
-                    } else if (iGroup == null && jGroup == null) {
+                    } else {
                         Set<Integer> newGroup = new HashSet<>();
                         newGroup.add(i);
                         newGroup.add(j);
@@ -225,7 +217,7 @@ public class GraphServiceImpl implements GraphService {
         return newListGroup;
     }
 
-    private List<List<String>> getremoveDuplicateShorterPath(List<List<String>> endpointIds) {
+    private List<List<String>> getRemoveDuplicateShorterPath(List<List<String>> endpointIds) {
         List<List<String>> removeSet = new ArrayList<>();
         for (int i = 0; i < endpointIds.size(); i++) {
             List<String> endpointId = endpointIds.get(i);
@@ -244,17 +236,6 @@ public class GraphServiceImpl implements GraphService {
             }
         }
         return removeSet;
-    }
-
-
-    private List<MicroserviceProjectDescription> getMicroserviceProjectDescriptions() {
-        List<ServiceName> serviceNames = serviceNameRepository.findAll();
-        LOGGER.info("all service names {}", serviceNames.toString());
-
-        return serviceNames.stream().map(serviceName -> {
-            return microserviceProjectDescriptionRepository
-                    .findFirstByNameOrderByTimestampAsc(serviceName.getServiceName());
-        }).collect(Collectors.toList());
     }
 
     private ServiceNode createServiceNode(Set<EndpointNode> allEndpointNodes
