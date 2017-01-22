@@ -1,5 +1,9 @@
 package soselab.mpg.pact.client;
 
+import java.util.List;
+
 public interface PactClient {
-    String getPactFileByProviderAndConsumer(String pactUrl, String provider, String consumer);
+    List<String> getPactFileLinks(String pactUrl);
+
+    String getPactJson(String pactLink);
 }

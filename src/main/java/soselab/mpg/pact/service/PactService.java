@@ -6,4 +6,6 @@ public interface PactService {
     void setPactService(PactConfig pactConfig);
 
     PactConfig getPactConfig();
+
+    void getLatestPactFile();
 }
