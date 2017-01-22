@@ -112,9 +112,22 @@ public class GraphServiceImpl implements GraphService {
 
     @Override
     public List<ServiceInfoDTO> getServiceInfo() {
+
+        //get service node service call count and service endpoint count
         List<ServiceInfoDTO> serviceInfoDTOS = serviceNodeRepository.getServiceInfo();
-        //TODO
-        return null;
+
+        //get latest microservice description
+        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
+
+        //get service name and swagger pair
+        Map<String, String> collect = microserviceProjectDescriptions.stream()
+                .collect(Collectors.toMap(MicroserviceProjectDescription::getName, MicroserviceProjectDescription::getSwagger));
+        LOGGER.debug("service name and swagger pair {}", collect.toString());
+        // insert swagger in to dto
+        serviceInfoDTOS.forEach(serviceInfoDTO -> {
+            serviceInfoDTO.setSwagger(collect.get(serviceInfoDTO.getId()));
+        });
+        return serviceInfoDTOS;
     }
 
     private List<List<String>> getServiceWithEndpointsGroup(List<List<String>> groups) {
