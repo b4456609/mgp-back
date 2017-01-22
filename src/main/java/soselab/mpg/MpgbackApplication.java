@@ -6,9 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
+import soselab.mpg.graph.repository.ServiceNodeRepository;
+import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
 import soselab.mpg.pact.repository.PactConfigRepository;
-import soselab.mpg.repository.mongo.MicroserviceProjectDescriptionRepository;
-import soselab.mpg.repository.neo4j.ServiceNodeRepository;
 
 @EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class})
 @EnableNeo4jRepositories(basePackageClasses = ServiceNodeRepository.class)

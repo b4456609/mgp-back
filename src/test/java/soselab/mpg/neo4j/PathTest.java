@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import soselab.mpg.model.graph.EndpointNode;
-import soselab.mpg.model.graph.ServiceNode;
-import soselab.mpg.repository.neo4j.EndpointNodeRepository;
-import soselab.mpg.repository.neo4j.ServiceNodeRepository;
-import soselab.mpg.service.GraphService;
+import soselab.mpg.graph.model.EndpointNode;
+import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.graph.repository.EndpointNodeRepository;
+import soselab.mpg.graph.repository.ServiceNodeRepository;
+import soselab.mpg.graph.service.GraphService;
 
 import java.util.*;
 import java.util.stream.Collectors;
