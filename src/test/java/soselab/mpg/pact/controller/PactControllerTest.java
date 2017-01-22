@@ -29,11 +29,18 @@ public class PactControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<String> entity = new HttpEntity<String>(requestJson, headers);
-        restTemplate.postForLocation("/api/pact", entity);
+        restTemplate.postForLocation("/api/pact/config", entity);
 
         String forObject = restTemplate.getForObject("/api/pact", String.class);
         assertThat(forObject).contains("http://140.121.102.1");
     }
 
+    @Test
+    public void getPacts() throws Exception {
+
+        String response = restTemplate.getForObject("/api/pact", String.class);
+        System.out.println(response);
+        assertThat(response).contains("easylearn_pack");
+    }
 
 }

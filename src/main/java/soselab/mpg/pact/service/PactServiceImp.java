@@ -54,4 +54,9 @@ public class PactServiceImp implements PactService {
         pactRepository.deleteAll();
         pactRepository.save(pacts);
     }
+
+    @Override
+    public List<Pact> getPacts() {
+        return pactRepository.findAll();
+    }
 }
