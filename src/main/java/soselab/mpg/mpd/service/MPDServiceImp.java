@@ -10,7 +10,7 @@ import soselab.mpg.mpd.repository.ServiceNameRepository;
 import soselab.mpg.mpd.service.exception.MicroserviceProjectDescriptionDeserializeException;
 
 @Service
-public class MdpServiceImp implements MdpService {
+public class MPDServiceImp implements MPDService {
 
     @Autowired
     private MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
