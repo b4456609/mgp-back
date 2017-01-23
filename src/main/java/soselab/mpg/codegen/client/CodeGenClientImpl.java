@@ -16,23 +16,19 @@ public class CodeGenClientImpl implements CodeGenClient {
     @Value("${mpg.codegen.url}")
     private String url;
 
-    private final RestTemplate restTemplate;
+    private final RestTemplate restTemplate = new RestTemplate();
 
-    @Autowired
-    public CodeGenClientImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
 
     @Override
     public CodeSnippet getCodeSnippet(String httpMethod, String path) {
-        LOGGER.debug("codegen url {}", url);
-        String uri = UriComponentsBuilder.fromUriString(url)
-                .queryParam("httpMethod", httpMethod)
-                .queryParam("path", path)
+        LOGGER.info("codegen url {}", url);
+        String uri = UriComponentsBuilder.fromHttpUrl(url)
+                .queryParam("method", httpMethod)
+                .queryParam("url", path)
                 .toUriString();
-        LOGGER.debug("request uri {}", uri);
+        LOGGER.info("request uri {}", uri);
         CodeSnippet codeSnippet = restTemplate.getForObject(uri, CodeSnippet.class);
-        LOGGER.debug(codeSnippet.toString());
+        LOGGER.info(codeSnippet.toString());
         return codeSnippet;
     }
 }
