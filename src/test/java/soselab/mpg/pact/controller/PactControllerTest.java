@@ -35,12 +35,5 @@ public class PactControllerTest {
         assertThat(forObject).contains("http://140.121.102.1");
     }
 
-    @Test
-    public void getPacts() throws Exception {
-
-        String response = restTemplate.getForObject("/api/pact", String.class);
-        System.out.println(response);
-        assertThat(response).contains("easylearn_pack");
-    }
 
 }

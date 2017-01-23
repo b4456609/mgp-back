@@ -34,4 +34,13 @@ public class PactDTO {
     public void setPact(String pact) {
         this.pact = pact;
     }
+
+    @Override
+    public String toString() {
+        return "PactDTO{" +
+                "consumer='" + consumer + '\'' +
+                ", provider='" + provider + '\'' +
+                ", pact='" + pact + '\'' +
+                '}';
+    }
 }
