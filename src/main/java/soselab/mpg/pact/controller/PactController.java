@@ -42,14 +42,4 @@ public class PactController {
         PactConfig pactConfig = pactService.getPactConfig();
         return modelMapper.map(pactConfig, PactConfigDTO.class);
     }
-
-    @GetMapping
-    public List<PactDTO> getPacts() {
-        pactService.getLatestPactFile();
-        List<Pact> pacts = pactService.getPacts();
-        LOGGER.info("all pact {}", pacts.toString());
-        Type targetListType = new TypeToken<List<PactDTO>>() {
-        }.getType();
-        return modelMapper.map(pacts, targetListType);
-    }
 }
