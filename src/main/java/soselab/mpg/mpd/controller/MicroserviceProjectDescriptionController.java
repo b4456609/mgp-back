@@ -10,16 +10,16 @@ import java.io.IOException;
 @RestController
 @RequestMapping(path = "/api")
 @CrossOrigin
-public class MPDController {
+public class MicroserviceProjectDescriptionController {
 
     private final MPDService MPDService;
 
     @Autowired
-    public MPDController(soselab.mpg.mpd.service.MPDService MPDService) {
+    public MicroserviceProjectDescriptionController(soselab.mpg.mpd.service.MPDService MPDService) {
         this.MPDService = MPDService;
     }
 
-    @RequestMapping(path = "/mpd", method = RequestMethod.POST)
+    @RequestMapping(path = "/upload", method = RequestMethod.POST)
     public void uploadMdpFile(@RequestParam("file") MultipartFile file) {
         try {
             String json = new String(file.getBytes());

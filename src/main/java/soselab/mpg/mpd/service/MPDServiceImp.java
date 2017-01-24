@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import soselab.mpg.mpd.MicroserviceProjectDescriptionReader;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.model.ServiceName;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;

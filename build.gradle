@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.2.RELEASE'
+		springBootVersion = '1.4.3.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -12,7 +12,7 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot'
+apply plugin: 'org.springframework.boot'
 
 jar {
 	baseName = 'mpgback'
@@ -30,14 +30,9 @@ dependencies {
 	compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.2.0'
 
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '0.7.7'
+
 	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 	compile('org.springframework.boot:spring-boot-starter-data-neo4j')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-dependencyManagement {
-	imports {
-		mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.SR2"
-	}
 }

@@ -15,7 +15,7 @@ import soselab.mpg.mpd.repository.ServiceNameRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class ServiceInfoControllerTest {
+public class ServiceInformationDTOControllerTest {
     @Autowired
     TestRestTemplate restTemplate;
 

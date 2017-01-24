@@ -1,14 +1,14 @@
-package soselab.mpg.pact.controller.dto;
+package soselab.mpg.graph.controller.dto;
 
 /**
  * Created by bernie on 2017/1/22.
  */
-public class PactDTO {
+public class ServiceCallInformationDTO {
     private String consumer;
     private String provider;
     private String pact;
 
-    public PactDTO() {
+    public ServiceCallInformationDTO() {
     }
 
     public String getConsumer() {
@@ -37,7 +37,7 @@ public class PactDTO {
 
     @Override
     public String toString() {
-        return "PactDTO{" +
+        return "ServiceCallInformationDTO{" +
                 "consumer='" + consumer + '\'' +
                 ", provider='" + provider + '\'' +
                 ", pact='" + pact + '\'' +

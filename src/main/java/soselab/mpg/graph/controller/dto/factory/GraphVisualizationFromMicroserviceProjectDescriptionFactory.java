@@ -15,7 +15,7 @@ import static soselab.mpg.graph.controller.dto.factory.ServiceLableFactory.creat
 
 public class GraphVisualizationFromMicroserviceProjectDescriptionFactory {
 
-    public GraphVisualization create(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
+    public GraphDataDTO create(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
         //node item
         List<NodesItem> nodesItems = getNodesItems(microserviceProjectDescriptions);
         //provider Endpoint With Consumer link

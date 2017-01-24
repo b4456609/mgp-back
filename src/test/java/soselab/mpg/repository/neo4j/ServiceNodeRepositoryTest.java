@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import soselab.mpg.graph.controller.dto.ServiceInfoDTO;
+import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
@@ -94,8 +94,8 @@ public class ServiceNodeRepositoryTest {
 
     @Test
     public void testGetServiceInfo() {
-        List<ServiceInfoDTO> serviceInfo = serviceNodeRepository.getServiceInfo();
-        System.out.println(serviceInfo);
+        List<ServiceInformationDTO> serviceInformationDTO = serviceNodeRepository.getServiceInfo();
+        System.out.println(serviceInformationDTO);
     }
 
 }

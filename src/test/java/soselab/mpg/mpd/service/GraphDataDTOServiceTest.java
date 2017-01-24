@@ -14,7 +14,7 @@ import soselab.mpg.graph.service.GraphService;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GraphServiceTest {
+public class GraphDataDTOServiceTest {
 
     @Autowired
     private EndpointNodeRepository endpointNodeRepository;

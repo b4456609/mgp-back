@@ -3,13 +3,13 @@ package soselab.mpg.graph.controller.dto;
 import org.springframework.data.neo4j.annotation.QueryResult;
 
 @QueryResult
-public class ServiceInfoDTO {
+public class ServiceInformationDTO {
     private String id;
     private int endpointCount;
     private int serviceCallCount;
     private String swagger;
 
-    public ServiceInfoDTO() {
+    public ServiceInformationDTO() {
     }
 
     public String getId() {
@@ -46,7 +46,7 @@ public class ServiceInfoDTO {
 
     @Override
     public String toString() {
-        return "ServiceInfoDTO{" +
+        return "ServiceInformationDTO{" +
                 "id='" + id + '\'' +
                 ", endpointCount='" + endpointCount + '\'' +
                 ", serviceCallCount='" + serviceCallCount + '\'' +

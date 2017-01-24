@@ -41,7 +41,10 @@ public class PactServiceImp implements PactService {
 
     @Override
     public void getLatestPactFile() {
-        String pactUrl = pactConfigRepository.findAll().get(0).getUrl() + "pacts/latest";
+        List<PactConfig> all = pactConfigRepository.findAll();
+        if (all.isEmpty())
+            return;
+        String pactUrl = all.get(0).getUrl() + "pacts/latest";
         LOGGER.info("pact url: {}", pactUrl);
         List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
         List<Pact> pacts = pactFileLinks.stream().map(link -> {

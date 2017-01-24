@@ -1,8 +1,8 @@
 package soselab.mpg;
 
 import org.junit.Test;
-import soselab.mpg.mpd.MicroserviceProjectDescriptionReader;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
+import soselab.mpg.mpd.service.MicroserviceProjectDescriptionReader;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;

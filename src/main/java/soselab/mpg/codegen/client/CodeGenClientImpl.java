@@ -20,7 +20,7 @@ public class CodeGenClientImpl implements CodeGenClient {
         LOGGER.info("codegen url {}", url);
         String uri = UriComponentsBuilder.fromHttpUrl(url)
                 .queryParam("method", httpMethod)
-                .queryParam("url", path)
+                .queryParam("url", "http://host" + path)
                 .toUriString();
         LOGGER.info("request uri {}", uri);
         CodeSnippet codeSnippet = restTemplate.getForObject(uri, CodeSnippet.class);

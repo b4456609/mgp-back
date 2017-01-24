@@ -1,13 +1,13 @@
 package soselab.mpg.graph.service;
 
+import org.apache.commons.collections4.IteratorUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import soselab.mpg.graph.controller.dto.GraphVisualization;
-import soselab.mpg.graph.controller.dto.ProviderEndpointWithConsumerPairItem;
-import soselab.mpg.graph.controller.dto.ServiceInfoDTO;
-import soselab.mpg.graph.controller.dto.ServiceWithEndpointPairItem;
+import soselab.mpg.codegen.client.CodeGenClient;
+import soselab.mpg.codegen.model.CodeSnippet;
+import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.controller.dto.factory.GraphVisualizationFromGraphFactory;
 import soselab.mpg.graph.controller.dto.factory.ServiceEndpointIdFactory;
 import soselab.mpg.graph.model.EndpointNode;
@@ -30,19 +30,21 @@ public class GraphServiceImpl implements GraphService {
     private final MPDService mpdService;
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
+    private final CodeGenClient codeGenClient;
 
     @Autowired
     public GraphServiceImpl(GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory,
                             MPDService mpdService, ServiceNodeRepository serviceNodeRepository,
-                            EndpointNodeRepository endpointNodeRepository) {
+                            EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient) {
         this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
         this.mpdService = mpdService;
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
+        this.codeGenClient = codeGenClient;
     }
 
     @Override
-    public GraphVisualization getVisualizationData() {
+    public GraphDataDTO getVisualizationData() {
         buildGraphFromLatestMicroserviceProjectDescription();
 
         //endpoint node
@@ -111,10 +113,10 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public List<ServiceInfoDTO> getServiceInfo() {
+    public List<ServiceInformationDTO> getServiceInfo() {
 
         //get service node service call count and service endpoint count
-        List<ServiceInfoDTO> serviceInfoDTOS = serviceNodeRepository.getServiceInfo();
+        List<ServiceInformationDTO> serviceInformationDTOS = serviceNodeRepository.getServiceInfo();
 
         //get latest microservice description
         List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
@@ -124,10 +126,25 @@ public class GraphServiceImpl implements GraphService {
                 .collect(Collectors.toMap(MicroserviceProjectDescription::getName, MicroserviceProjectDescription::getSwagger));
         LOGGER.debug("service name and swagger pair {}", collect.toString());
         // insert swagger in to dto
-        serviceInfoDTOS.forEach(serviceInfoDTO -> {
+        serviceInformationDTOS.forEach(serviceInfoDTO -> {
             serviceInfoDTO.setSwagger(collect.get(serviceInfoDTO.getId()));
         });
-        return serviceInfoDTOS;
+        return serviceInformationDTOS;
+    }
+
+    @Override
+    public List<EndpointInformationDTO> getEndpointInformations() {
+        Iterable<EndpointNode> all = endpointNodeRepository.findAll();
+        List<EndpointNode> endpointNodes = IteratorUtils.toList(all.iterator());
+        List<EndpointInformationDTO> endpointInformationDTOS = endpointNodes.stream()
+                .map(endpointNode -> {
+                    String path = endpointNode.getPath();
+                    String httpMethod = endpointNode.getHttpMethod();
+                    CodeSnippet codeSnippet = codeGenClient.getCodeSnippet(httpMethod, path);
+                    return new EndpointInformationDTO(endpointNode.getEndpointId(), httpMethod, path, codeSnippet);
+                })
+                .collect(Collectors.toList());
+        return endpointInformationDTOS;
     }
 
     private List<List<String>> getServiceWithEndpointsGroup(List<List<String>> groups) {

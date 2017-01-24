@@ -1,19 +1,13 @@
 package soselab.mpg.pact.controller;
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import soselab.mpg.pact.controller.dto.PactConfigDTO;
-import soselab.mpg.pact.controller.dto.PactDTO;
-import soselab.mpg.pact.model.Pact;
 import soselab.mpg.pact.model.PactConfig;
 import soselab.mpg.pact.service.PactService;
-
-import java.lang.reflect.Type;
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/pact")

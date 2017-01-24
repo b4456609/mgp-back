@@ -22,7 +22,7 @@ public class GraphVisualizationBuilder {
         return this;
     }
 
-    public GraphVisualization createGraphVisualization() {
-        return new GraphVisualization(endpoints, nodes, serviceCall);
+    public GraphDataDTO createGraphVisualization() {
+        return new GraphDataDTO(endpoints, nodes, serviceCall);
     }
 }

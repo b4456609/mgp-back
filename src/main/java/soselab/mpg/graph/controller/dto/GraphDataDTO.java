@@ -3,12 +3,12 @@ package soselab.mpg.graph.controller.dto;
 import java.util.List;
 
 
-public class GraphVisualization {
+public class GraphDataDTO {
     private List<ServiceWithEndpointPairItem> serviceWithEndpointPair;
     private List<NodesItem> nodes;
     private List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair;
 
-    public GraphVisualization(List<ServiceWithEndpointPairItem> serviceWithEndpointPair, List<NodesItem> nodes, List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair) {
+    public GraphDataDTO(List<ServiceWithEndpointPairItem> serviceWithEndpointPair, List<NodesItem> nodes, List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair) {
         this.serviceWithEndpointPair = serviceWithEndpointPair;
         this.nodes = nodes;
         this.providerEndpointWithConsumerPair = providerEndpointWithConsumerPair;
@@ -40,7 +40,7 @@ public class GraphVisualization {
 
     @Override
     public String toString() {
-        return "GraphVisualization{" +
+        return "GraphDataDTO{" +
                 "serviceWithEndpointPair=" + serviceWithEndpointPair +
                 ", nodes=" + nodes +
                 ", providerEndpointWithConsumerPair=" + providerEndpointWithConsumerPair +

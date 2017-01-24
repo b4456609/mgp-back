@@ -1,4 +1,4 @@
-package soselab.mpg.mpd;
+package soselab.mpg.mpd.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;

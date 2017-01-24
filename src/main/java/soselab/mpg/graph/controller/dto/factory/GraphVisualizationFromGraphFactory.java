@@ -18,10 +18,10 @@ public class GraphVisualizationFromGraphFactory {
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
 
 
-    public GraphVisualization create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
-                                     List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
-                                     List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
-                                     List<List<String>> pathNodeIdGroups) {
+    public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
+                               List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
+                               List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
+                               List<List<String>> pathNodeIdGroups) {
         LOGGER.info(pathNodeIdGroups.toString());
 
         //endpoint node

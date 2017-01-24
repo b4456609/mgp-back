@@ -8,7 +8,7 @@ import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class GraphVisualizationFromMicroserviceProjectDescriptionFactoryTest {
+public class GraphDataDTOFromMicroserviceProjectDescriptionFactoryTest {
 
     @Autowired
     MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
@@ -19,7 +19,7 @@ public class GraphVisualizationFromMicroserviceProjectDescriptionFactoryTest {
 //    @Test
 //    public void create() throws Exception {
 //        List<MicroserviceProjectDescription> all = microserviceProjectDescriptionRepository.findAll();
-////        GraphVisualization graphVisualization = graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint, providerEndpointWithConsumerPairPair, pathNodeIdGroups);
+////        GraphDataDTO graphVisualization = graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint, providerEndpointWithConsumerPairPair, pathNodeIdGroups);
 //        System.out.println(graphVisualization);
 //        System.out.println(graphVisualization.getNodes().size());
 //        assertThat(graphVisualization.getNodes().size()).isEqualTo(17);
