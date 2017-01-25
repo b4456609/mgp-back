@@ -1,6 +1,5 @@
 package soselab.mpg.graph.controller;
 
-import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +24,16 @@ public class GraphController {
 
     private final GraphService graphService;
     private final PactService pactService;
-    private final ModelMapper modelMapper;
 
     @Autowired
-    public GraphController(GraphService graphService, PactService pactService, ModelMapper modelMapper) {
+    public GraphController(GraphService graphService, PactService pactService) {
         this.graphService = graphService;
         this.pactService = pactService;
-        this.modelMapper = modelMapper;
+    }
+
+    @GetMapping("/cyclic")
+    public List<List<String>> getCyclicGroup() {
+        return graphService.getCyclicGroups();
     }
 
     @GetMapping("/visual")

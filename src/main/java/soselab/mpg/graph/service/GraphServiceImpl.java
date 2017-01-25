@@ -15,7 +15,9 @@ import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.service.MPDService;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -65,6 +67,26 @@ public class GraphServiceImpl implements GraphService {
     public List<List<String>> getPathNodeIdGroups() {
         PathAnalyzer pathAnalyzer = new PathAnalyzer(serviceNodeRepository, endpointNodeRepository);
         return pathAnalyzer.getPathNodeIdGroups();
+    }
+
+    @Override
+    public List<List<String>> getCyclicGroups() {
+        List<List<String>> pathNodeIdGroups = this.getPathNodeIdGroups();
+        LOGGER.info("pathNodeIdGroups {}", pathNodeIdGroups.toString());
+        List<List<String>> cyclicGroup = pathNodeIdGroups.stream().filter(pathNodeIdGroup -> {
+            Set<String> allItems = new HashSet<>();
+            Set<String> collect = pathNodeIdGroup.stream()
+                    //filter service node, rest endpoint node
+                    .filter(node -> node.contains(" "))
+                    //find each endpoint service name
+                    .map(serviceNodeRepository::getServiceNameByEndpoint)
+                    //Find duplicate service name if it can not add to set
+                    .filter(n -> !allItems.add(n))
+                    .collect(Collectors.toSet());
+            // if set is not empty, it means at least one of endpoint own by the same service
+            return !collect.isEmpty();
+        }).collect(Collectors.toList());
+        return cyclicGroup;
     }
 
 
