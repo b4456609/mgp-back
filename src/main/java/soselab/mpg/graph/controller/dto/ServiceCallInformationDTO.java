@@ -1,8 +1,8 @@
 package soselab.mpg.graph.controller.dto;
 
-/**
- * Created by bernie on 2017/1/22.
- */
+import org.springframework.data.neo4j.annotation.QueryResult;
+
+@QueryResult
 public class ServiceCallInformationDTO {
     private String consumer;
     private String provider;

@@ -1,7 +1,6 @@
 package soselab.mpg.graph.controller;
 
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,11 +12,11 @@ import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
 import soselab.mpg.graph.service.GraphService;
-import soselab.mpg.pact.model.Pact;
+import soselab.mpg.pact.model.ServiceCallRelationInformation;
 import soselab.mpg.pact.service.PactService;
 
-import java.lang.reflect.Type;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/graph")
@@ -52,11 +51,26 @@ public class GraphController {
         //get latest pact file from pact broker
         pactService.getLatestPactFile();
 
-        //service call information
-        List<Pact> pacts = pactService.getPacts();
-        Type targetListType = new TypeToken<List<ServiceCallInformationDTO>>() {
-        }.getType();
-        return modelMapper.map(pacts, targetListType);
+        List<ServiceCallInformationDTO> serviceCallInformationDTOS = graphService.getProviderConsumerPair();
+
+        List<ServiceCallRelationInformation> serviceCallRelationInformations = pactService.getPacts();
+
+        //if no pact file return directly
+        if (serviceCallRelationInformations.isEmpty())
+            return serviceCallInformationDTOS;
+
+        //match graph data and pact data
+        serviceCallInformationDTOS.forEach(serviceCallInformationDTO -> {
+            Optional<ServiceCallRelationInformation> serviceCallRelationInformation1 = serviceCallRelationInformations.stream().filter(serviceCallRelationInformation -> {
+                return serviceCallInformationDTO.getConsumer().equals(serviceCallRelationInformation.getConsumer()) &&
+                        serviceCallInformationDTO.getProvider().equals(serviceCallRelationInformation.getProvider());
+            }).findAny();
+            if (serviceCallRelationInformation1.isPresent()) {
+                serviceCallInformationDTO.setPact(serviceCallRelationInformation1.get().getPact());
+            }
+        });
+
+        return serviceCallInformationDTOS;
     }
 
     @GetMapping("/endpoint")

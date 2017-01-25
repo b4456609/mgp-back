@@ -1,26 +1,15 @@
 package soselab.mpg.mpd.model;
 
-import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-/**
- * Created by bernie on 2017/1/12.
- */
+@Document
 public class ServiceName {
-    @Id
-    String id;
+    @Indexed(unique = true)
     String serviceName;
 
-    public ServiceName(String id, String serviceName) {
-        this.id = id;
+    public ServiceName(String serviceName) {
         this.serviceName = serviceName;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getServiceName() {

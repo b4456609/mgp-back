@@ -93,5 +93,10 @@ public class GraphServiceImpl implements GraphService {
         return endpointInformationDTOS;
     }
 
+    @Override
+    public List<ServiceCallInformationDTO> getProviderConsumerPair() {
+        return serviceNodeRepository.getConsumerProvider();
+    }
+
 
 }

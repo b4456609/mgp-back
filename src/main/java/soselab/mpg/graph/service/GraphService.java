@@ -2,6 +2,7 @@ package soselab.mpg.graph.service;
 
 import soselab.mpg.graph.controller.dto.EndpointInformationDTO;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
+import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface GraphService {
     List<ServiceInformationDTO> getServiceInfo();
 
     List<EndpointInformationDTO> getEndpointInformations();
+
+    List<ServiceCallInformationDTO> getProviderConsumerPair();
 }

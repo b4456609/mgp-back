@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Created by bernie on 2017/1/21.
  */
-public class PactConfigDTOTest {
+public class ServiceCallRelationInformationConfigDTOTest {
 
     private ModelMapper modelMapper = new ModelMapper();
 

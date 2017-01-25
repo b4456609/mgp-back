@@ -9,7 +9,7 @@ import soselab.mpg.pact.model.PactConfig;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PactServiceImpTest {
+public class ServiceCallRelationInformationServiceImpTest {
     @Autowired
     private PactService pactService;
 

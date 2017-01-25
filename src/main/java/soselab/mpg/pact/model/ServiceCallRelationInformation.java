@@ -3,7 +3,7 @@ package soselab.mpg.pact.model;
 
 import org.springframework.data.annotation.Id;
 
-public class Pact {
+public class ServiceCallRelationInformation {
     @Id
     private String id;
     private String provider;
@@ -11,10 +11,10 @@ public class Pact {
     private String pact;
     private String version;
 
-    public Pact() {
+    public ServiceCallRelationInformation() {
     }
 
-    public Pact(String provider, String consumer, String pact, String version) {
+    public ServiceCallRelationInformation(String provider, String consumer, String pact, String version) {
         this.provider = provider;
         this.consumer = consumer;
         this.pact = pact;
@@ -63,7 +63,7 @@ public class Pact {
 
     @Override
     public String toString() {
-        return "Pact{" +
+        return "ServiceCallRelationInformation{" +
                 "provider='" + provider + '\'' +
                 ", consumer='" + consumer + '\'' +
                 ", pact='" + pact + '\'' +

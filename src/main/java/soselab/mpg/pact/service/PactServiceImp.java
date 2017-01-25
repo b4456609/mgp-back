@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import soselab.mpg.pact.client.PactClient;
-import soselab.mpg.pact.model.Pact;
 import soselab.mpg.pact.model.PactConfig;
+import soselab.mpg.pact.model.ServiceCallRelationInformation;
 import soselab.mpg.pact.repository.PactConfigRepository;
 import soselab.mpg.pact.repository.PactRepository;
 
@@ -54,7 +54,7 @@ public class PactServiceImp implements PactService {
         String pactUrl = all.get(0).getUrl() + "pacts/latest";
         LOGGER.info("pact url: {}", pactUrl);
         List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
-        List<Pact> pacts = pactFileLinks.stream().map(link -> {
+        List<ServiceCallRelationInformation> serviceCallRelationInformations = pactFileLinks.stream().map(link -> {
             String pactJson = pactClient.getPactJson(link);
             String indented = null;
             try {
@@ -69,15 +69,15 @@ public class PactServiceImp implements PactService {
             String provider = split[5];
             String consumber = split[7];
             String version = split[9];
-            return new Pact(provider, consumber, indented, version);
+            return new ServiceCallRelationInformation(provider, consumber, indented, version);
         }).collect(Collectors.toList());
-        LOGGER.info("pact objects {}", pacts.toString());
+        LOGGER.info("pact objects {}", serviceCallRelationInformations.toString());
         pactRepository.deleteAll();
-        pactRepository.save(pacts);
+        pactRepository.save(serviceCallRelationInformations);
     }
 
     @Override
-    public List<Pact> getPacts() {
+    public List<ServiceCallRelationInformation> getPacts() {
         return pactRepository.findAll();
     }
 }

@@ -3,6 +3,7 @@ package soselab.mpg.mpd.service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
@@ -41,8 +42,11 @@ public class MPDServiceImp implements MPDService {
                 .orElseThrow(MicroserviceProjectDescriptionDeserializeException::new);
 
         microserviceProjectDescriptionRepository.save(mdp);
-        serviceNameRepository.save(new ServiceName(mdp.getName(), mdp.getName()));
-
+        try {
+            serviceNameRepository.save(new ServiceName(mdp.getName()));
+        } catch (DuplicateKeyException e) {
+            LOGGER.info("duplicate service key");
+        }
         //TODO build as back groud job
         microserviceGraphBuilderService.build(getMicroserviceProjectDescriptions());
     }
