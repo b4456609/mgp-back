@@ -44,7 +44,6 @@ public class GraphServiceImpl implements GraphService {
 
     @Override
     public GraphDataDTO getVisualizationData() {
-        this.buildGraphFromLatestMicroserviceProjectDescription();
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 
@@ -62,18 +61,6 @@ public class GraphServiceImpl implements GraphService {
         List<List<String>> pathNodeIdGroups = getPathNodeIdGroups();
 
         return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint, providerEndpointWithConsumerPairPair, pathNodeIdGroups);
-    }
-
-    @Override
-    public void buildGraphFromLatestMicroserviceProjectDescription() {
-        //get all latest service project description
-        serviceNodeRepository.deleteAll();
-        endpointNodeRepository.deleteAll();
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
-
-        // create endpoint service call relationship
-        MicroserviceGraphBuilder microserviceGraphBuilder = new MicroserviceGraphBuilder(microserviceProjectDescriptions, serviceNodeRepository, endpointNodeRepository);
-        microserviceGraphBuilder.build();
     }
 
     @Override

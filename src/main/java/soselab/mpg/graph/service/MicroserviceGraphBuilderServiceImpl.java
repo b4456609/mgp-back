@@ -1,5 +1,9 @@
 package soselab.mpg.graph.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import soselab.mpg.graph.controller.dto.factory.ServiceEndpointIdFactory;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
@@ -13,21 +17,26 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class MicroserviceGraphBuilder {
+@Service
+public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBuilderService {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MicroserviceGraphBuilderServiceImpl.class);
 
-    private final List<MicroserviceProjectDescription> microserviceProjectDescriptions;
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
 
-    public MicroserviceGraphBuilder(List<MicroserviceProjectDescription> microserviceProjectDescriptions
-            , ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository) {
-
-        this.microserviceProjectDescriptions = microserviceProjectDescriptions;
+    @Autowired
+    public MicroserviceGraphBuilderServiceImpl(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
     }
 
-    public void build() {
+    @Override
+    public synchronized void build(List<MicroserviceProjectDescription> microserviceProjectDescriptions) {
+
+        LOGGER.info("build Graph");
+        //get all latest service project description
+        serviceNodeRepository.deleteAll();
+        endpointNodeRepository.deleteAll();
 
         //all endpoint node
         Set<EndpointNode> allEndpointNodes = new HashSet<EndpointNode>();

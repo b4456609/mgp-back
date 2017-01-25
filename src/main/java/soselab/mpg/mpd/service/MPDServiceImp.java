@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.model.ServiceName;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
@@ -21,12 +22,16 @@ public class MPDServiceImp implements MPDService {
     private final MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
     private final MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader;
     private final ServiceNameRepository serviceNameRepository;
+    private final MicroserviceGraphBuilderService microserviceGraphBuilderService;
 
     @Autowired
-    public MPDServiceImp(MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository, MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader, ServiceNameRepository serviceNameRepository) {
+    public MPDServiceImp(MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository,
+                         MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader,
+                         ServiceNameRepository serviceNameRepository, MicroserviceGraphBuilderService microserviceGraphBuilderService) {
         this.microserviceProjectDescriptionRepository = microserviceProjectDescriptionRepository;
         this.microserviceProjectDescriptionReader = microserviceProjectDescriptionReader;
         this.serviceNameRepository = serviceNameRepository;
+        this.microserviceGraphBuilderService = microserviceGraphBuilderService;
     }
 
     @Override
@@ -37,6 +42,9 @@ public class MPDServiceImp implements MPDService {
 
         microserviceProjectDescriptionRepository.save(mdp);
         serviceNameRepository.save(new ServiceName(mdp.getName(), mdp.getName()));
+
+        //TODO build as back groud job
+        microserviceGraphBuilderService.build(getMicroserviceProjectDescriptions());
     }
 
     @Override

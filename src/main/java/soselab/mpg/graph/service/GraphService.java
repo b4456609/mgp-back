@@ -12,8 +12,6 @@ import java.util.List;
 public interface GraphService {
     GraphDataDTO getVisualizationData();
 
-    void buildGraphFromLatestMicroserviceProjectDescription();
-
     List<List<String>> getPathNodeIdGroups();
 
     List<ServiceInformationDTO> getServiceInfo();
