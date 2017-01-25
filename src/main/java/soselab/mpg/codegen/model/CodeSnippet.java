@@ -1,16 +1,15 @@
 package soselab.mpg.codegen.model;
 
 public class CodeSnippet {
-    private Java java;
+    private String java;
     private String curl;
-    private Boolean js;
-    private Node node;
+    private String node;
 
-    public Java getJava() {
+    public String getJava() {
         return java;
     }
 
-    public void setJava(Java java) {
+    public void setJava(String java) {
         this.java = java;
     }
 
@@ -22,19 +21,11 @@ public class CodeSnippet {
         this.curl = curl;
     }
 
-    public Boolean getJs() {
-        return js;
-    }
-
-    public void setJs(Boolean js) {
-        this.js = js;
-    }
-
-    public Node getNode() {
+    public String getNode() {
         return node;
     }
 
-    public void setNode(Node node) {
+    public void setNode(String node) {
         this.node = node;
     }
 
@@ -43,7 +34,6 @@ public class CodeSnippet {
         return "CodeSnippet{" +
                 "java=" + java +
                 ", curl='" + curl + '\'' +
-                ", js=" + js +
                 ", node=" + node +
                 '}';
     }

@@ -81,6 +81,7 @@ public class GraphServiceImpl implements GraphService {
     public List<EndpointInformationDTO> getEndpointInformations() {
         Iterable<EndpointNode> all = endpointNodeRepository.findAll();
         List<EndpointNode> endpointNodes = IteratorUtils.toList(all.iterator());
+        LOGGER.info("Endpoint information enpoint {}", endpointNodes.toString());
         List<EndpointInformationDTO> endpointInformationDTOS = endpointNodes.stream()
                 .map(endpointNode -> {
                     String path = endpointNode.getPath();

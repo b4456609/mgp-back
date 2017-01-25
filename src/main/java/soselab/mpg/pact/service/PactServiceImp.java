@@ -1,5 +1,7 @@
 package soselab.mpg.pact.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import soselab.mpg.pact.model.PactConfig;
 import soselab.mpg.pact.repository.PactConfigRepository;
 import soselab.mpg.pact.repository.PactRepository;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,12 +23,14 @@ public class PactServiceImp implements PactService {
     private final PactConfigRepository pactConfigRepository;
     private final PactRepository pactRepository;
     private final PactClient pactClient;
+    private final ObjectMapper objectMapper;
 
     @Autowired
-    public PactServiceImp(PactConfigRepository pactConfigRepository, PactRepository pactRepository, PactClient pactClient) {
+    public PactServiceImp(PactConfigRepository pactConfigRepository, PactRepository pactRepository, PactClient pactClient, ObjectMapper objectMapper) {
         this.pactConfigRepository = pactConfigRepository;
         this.pactRepository = pactRepository;
         this.pactClient = pactClient;
+        this.objectMapper = objectMapper;
     }
 
     @Override
@@ -36,7 +41,9 @@ public class PactServiceImp implements PactService {
 
     @Override
     public PactConfig getPactConfig() {
-        return pactConfigRepository.findAll().get(0);
+        List<PactConfig> all = pactConfigRepository.findAll();
+        if (all.isEmpty()) throw new NoPactConfigException();
+        return all.get(0);
     }
 
     @Override
@@ -49,11 +56,20 @@ public class PactServiceImp implements PactService {
         List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
         List<Pact> pacts = pactFileLinks.stream().map(link -> {
             String pactJson = pactClient.getPactJson(link);
+            String indented = null;
+            try {
+                Object json = objectMapper.readValue(pactJson, Object.class);
+                indented = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(json);
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             String[] split = link.split("/");
             String provider = split[5];
             String consumber = split[7];
             String version = split[9];
-            return new Pact(provider, consumber, pactJson, version);
+            return new Pact(provider, consumber, indented, version);
         }).collect(Collectors.toList());
         LOGGER.info("pact objects {}", pacts.toString());
         pactRepository.deleteAll();
