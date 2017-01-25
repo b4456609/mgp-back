@@ -57,4 +57,9 @@ public class MPDServiceImp implements MPDService {
                 .findFirstByNameOrderByTimestampAsc(serviceName.getServiceName()))
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public String getServiceSwagger(String serviceName) {
+        return microserviceProjectDescriptionRepository.findFirstByNameOrderByTimestampAsc(serviceName).getSwagger();
+    }
 }

@@ -13,11 +13,9 @@ import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
-import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.service.MPDService;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -76,17 +74,6 @@ public class GraphServiceImpl implements GraphService {
         //get service node service call count and service endpoint count
         List<ServiceInformationDTO> serviceInformationDTOS = serviceNodeRepository.getServiceInfo();
 
-        //get latest microservice description
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
-
-        //get service name and swagger pair
-        Map<String, String> collect = microserviceProjectDescriptions.stream()
-                .collect(Collectors.toMap(MicroserviceProjectDescription::getName, MicroserviceProjectDescription::getSwagger));
-        LOGGER.debug("service name and swagger pair {}", collect.toString());
-        // insert swagger in to dto
-        serviceInformationDTOS.forEach(serviceInfoDTO -> {
-            serviceInfoDTO.setSwagger(collect.get(serviceInfoDTO.getId()));
-        });
         return serviceInformationDTOS;
     }
 

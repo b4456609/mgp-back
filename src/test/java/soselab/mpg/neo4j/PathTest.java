@@ -34,7 +34,7 @@ public class PathTest {
 //        microserviceProjectDescriptionControllerTest.uploadMdpFiles();
         serviceNodeRepository.deleteAll();
         endpointNodeRepository.deleteAll();
-        graphService.buildGraphFromLatestMicroserviceProjectDescription();
+//        graphService.buildGraphFromLatestMicroserviceProjectDescription();
     }
 
     private void setTestData() {

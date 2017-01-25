@@ -11,4 +11,6 @@ public interface MPDService {
     void uploadFile(String json);
 
     List<MicroserviceProjectDescription> getMicroserviceProjectDescriptions();
+
+    String getServiceSwagger(String serviceName);
 }

@@ -7,7 +7,6 @@ public class ServiceInformationDTO {
     private String id;
     private int endpointCount;
     private int serviceCallCount;
-    private String swagger;
 
     public ServiceInformationDTO() {
     }
@@ -36,13 +35,6 @@ public class ServiceInformationDTO {
         this.serviceCallCount = serviceCallCount;
     }
 
-    public String getSwagger() {
-        return swagger;
-    }
-
-    public void setSwagger(String swagger) {
-        this.swagger = swagger;
-    }
 
     @Override
     public String toString() {
@@ -50,7 +42,6 @@ public class ServiceInformationDTO {
                 "id='" + id + '\'' +
                 ", endpointCount='" + endpointCount + '\'' +
                 ", serviceCallCount='" + serviceCallCount + '\'' +
-                ", swagger='" + swagger + '\'' +
                 '}';
     }
 }
