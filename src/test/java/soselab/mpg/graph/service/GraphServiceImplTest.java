@@ -59,7 +59,7 @@ public class GraphServiceImplTest {
 
     @Test
     public void getCyclicGroups() throws Exception {
-        List<List<String>> cyclicGroups = graphService.getCyclicGroups();
+        List<List<String>> cyclicGroups = graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
         System.out.println(cyclicGroups);
     }
 

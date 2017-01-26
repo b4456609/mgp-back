@@ -59,8 +59,10 @@ public class GraphServiceImpl implements GraphService {
                 .getProviderEndpointWithConsumerPairPair();
 
         List<List<String>> pathNodeIdGroups = getPathNodeIdGroups();
+        List<List<String>> cyclicGroups = getCyclicGroups(pathNodeIdGroups);
 
-        return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint, providerEndpointWithConsumerPairPair, pathNodeIdGroups);
+        return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups, cyclicGroups);
     }
 
     @Override
@@ -70,8 +72,7 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public List<List<String>> getCyclicGroups() {
-        List<List<String>> pathNodeIdGroups = this.getPathNodeIdGroups();
+    public List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups) {
         LOGGER.info("pathNodeIdGroups {}", pathNodeIdGroups.toString());
         List<List<String>> cyclicGroup = pathNodeIdGroups.stream().filter(pathNodeIdGroup -> {
             Set<String> allItems = new HashSet<>();

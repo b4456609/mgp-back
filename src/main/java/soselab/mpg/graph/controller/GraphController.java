@@ -33,7 +33,7 @@ public class GraphController {
 
     @GetMapping("/cyclic")
     public List<List<String>> getCyclicGroup() {
-        return graphService.getCyclicGroups();
+        return graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
     }
 
     @GetMapping("/visual")

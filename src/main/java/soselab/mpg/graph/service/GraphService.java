@@ -15,7 +15,7 @@ public interface GraphService {
 
     List<List<String>> getPathNodeIdGroups();
 
-    List<List<String>> getCyclicGroups();
+    List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups);
 
     List<ServiceInformationDTO> getServiceInfo();
 
