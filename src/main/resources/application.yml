@@ -9,6 +9,10 @@ spring:
       uri: ${NEO4J_DB:http://localhost:7474}
       username: neo4j
 
+logging:
+  level:
+    soselab: DEBUG
+
 mpg:
   codegen:
     url: ${CODEGEN_HOST:http://localhost:3001/}
