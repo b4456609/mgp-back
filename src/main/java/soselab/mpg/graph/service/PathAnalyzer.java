@@ -1,5 +1,7 @@
 package soselab.mpg.graph.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 
@@ -7,6 +9,8 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public class PathAnalyzer {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PathAnalyzer.class);
 
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
@@ -18,6 +22,7 @@ public class PathAnalyzer {
 
     public List<List<String>> getPathNodeIdGroups() {
         List<List<LinkedHashMap>> pathEndpoints = endpointNodeRepository.getPathEndpoints();
+        LOGGER.debug("all path endpoint {}", pathEndpoints);
 
         //translation to endpoint id string list
         List<List<String>> endpointIds = pathEndpoints.stream()
@@ -25,13 +30,17 @@ public class PathAnalyzer {
                     return (String) linkedHashMap.get("endpointId");
                 }).collect(Collectors.toList()))
                 .collect(Collectors.toList());
+        LOGGER.debug("endpoint id {}", endpointIds);
 
-
+        //remove the same start node but shorter path
         List<List<String>> removeSet = getRemoveDuplicateShorterPath(endpointIds);
         endpointIds.removeAll(removeSet);
+        LOGGER.debug("removeset {}", removeSet);
+        LOGGER.debug("endpoint id {}", endpointIds);
 
-        //group set from different set
+        //group paths start with same node, it is same endpoint
         List<List<String>> getGroupSet = getPathGroup(endpointIds);
+        LOGGER.debug("get GroupSet id {}", getGroupSet);
 
         return getServiceWithEndpointsGroup(getGroupSet);
     }

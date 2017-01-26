@@ -13,7 +13,6 @@ import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
-import soselab.mpg.mpd.service.MPDService;
 
 import java.util.HashSet;
 import java.util.List;
@@ -26,17 +25,15 @@ public class GraphServiceImpl implements GraphService {
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphServiceImpl.class);
 
     private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
-    private final MPDService mpdService;
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
     private final CodeGenClient codeGenClient;
 
     @Autowired
     public GraphServiceImpl(GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory,
-                            MPDService mpdService, ServiceNodeRepository serviceNodeRepository,
+                            ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient) {
         this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
-        this.mpdService = mpdService;
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
