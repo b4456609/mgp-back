@@ -16,7 +16,7 @@ public interface GraphService {
 
     List<PathGroup> getPathNodeIdGroups();
 
-    List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups);
+    void setCyclicGroups(List<PathGroup> pathNodeIdGroups);
 
     List<ServiceInformationDTO> getServiceInfo();
 

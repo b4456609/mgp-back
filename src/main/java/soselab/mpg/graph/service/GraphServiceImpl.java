@@ -56,6 +56,8 @@ public class GraphServiceImpl implements GraphService {
 
         List<PathGroup> pathNodeIdGroups = getPathNodeIdGroups();
 
+        setCyclicGroups(pathNodeIdGroups);
+
         return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
                 providerEndpointWithConsumerPairPair, pathNodeIdGroups);
     }
@@ -67,23 +69,9 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups) {
-//        LOGGER.info("pathNodeIdGroups {}", pathNodeIdGroups.toString());
-//        List<List<String>> cyclicGroup = pathNodeIdGroups.stream().filter(pathNodeIdGroup -> {
-//            Set<String> allItems = new HashSet<>();
-//            Set<String> collect = pathNodeIdGroup.stream()
-//                    //filter service node, rest endpoint node
-//                    .filter(node -> node.contains(" "))
-//                    //find each endpoint service name
-//                    .map(serviceNodeRepository::getServiceNameByEndpoint)
-//                    //Find duplicate service name if it can not add to set
-//                    .filter(n -> !allItems.add(n))
-//                    .collect(Collectors.toSet());
-//            // if set is not empty, it means at least one of endpoint own by the same service
-//            return !collect.isEmpty();
-//        }).collect(Collectors.toList());
-//        return cyclicGroup;
-        return null;
+    public void setCyclicGroups(List<PathGroup> pathNodeIdGroups) {
+        CyclicAnalyzer cyclicAnalyzer = new CyclicAnalyzer(serviceNodeRepository);
+        cyclicAnalyzer.analyze(pathNodeIdGroups);
     }
 
 
