@@ -70,9 +70,9 @@ public class GraphServiceImplTest {
     @Test
     public void checkCyclicGroupsClassName() throws Exception {
 
-        EndpointNode endpointNode = new EndpointNode("Aid / POST", "/", "POST");
-        EndpointNode endpointNode1 = new EndpointNode("Aid1 / GET", "/", "GET");
-        EndpointNode endpointNode2 = new EndpointNode("Bid / POST", "/", "POST");
+        EndpointNode endpointNode = new EndpointNode("A / POST", "/", "POST");
+        EndpointNode endpointNode1 = new EndpointNode("A / GET", "/", "GET");
+        EndpointNode endpointNode2 = new EndpointNode("B / POST", "/", "POST");
 
         endpointNode.addServiceCallEndpoint(endpointNode2);
         endpointNode2.addServiceCallEndpoint(endpointNode1);

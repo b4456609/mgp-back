@@ -47,6 +47,10 @@ public class PathGroup {
         return isCyclic;
     }
 
+    public void setCyclic(boolean cyclic) {
+        isCyclic = cyclic;
+    }
+
     public boolean isServiceAndEndpoint(String id1, String id2) {
         if (services.contains(id1)) {
             return paths.stream().anyMatch(path -> path.contains(id2));

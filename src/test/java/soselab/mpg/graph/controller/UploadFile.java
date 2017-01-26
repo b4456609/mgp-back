@@ -19,7 +19,7 @@ public class UploadFile {
 
         HttpEntity<LinkedMultiValueMap<String, Object>> requestEntity = new HttpEntity<LinkedMultiValueMap<String, Object>>(
                 map, headers);
-        ResponseEntity<String> result = restTemplate.exchange("/api/mpd", HttpMethod.POST, requestEntity, String.class);
+        ResponseEntity<String> result = restTemplate.exchange("/api/upload", HttpMethod.POST, requestEntity, String.class);
         System.out.println(result);
     }
 

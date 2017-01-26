@@ -46,7 +46,7 @@ public class PathAnalyzer {
         LOGGER.debug("get GroupSet id {}", pathGroups);
 
         // set service name
-        List<PathGroup> serviceWithEndpointsGroup = getServiceWithEndpointsGroup(pathGroups);
+        List<PathGroup> serviceWithEndpointsGroup = setServiceAndCheckCyclic(pathGroups);
         LOGGER.debug("get GroupSet id {}", serviceWithEndpointsGroup);
 
         return serviceWithEndpointsGroup;
@@ -76,15 +76,26 @@ public class PathAnalyzer {
         return removeSet;
     }
 
-    private List<PathGroup> getServiceWithEndpointsGroup(List<PathGroup> groups) {
+    private List<PathGroup> setServiceAndCheckCyclic(List<PathGroup> groups) {
         return groups.stream().parallel()
                 .map(group -> {
+                    Set<String> allItems = new HashSet<>();
+                    //collect duplicate items
                     Set<String> collect = group.getPaths().stream()
                             .flatMap(path -> path.stream())
                             .map(serviceNodeRepository::getServiceNameByEndpoint)
+                            ////Find duplicate service name if it can not add to set
+                            .filter(n -> !allItems.add(n))
                             .collect(Collectors.toSet());
-                    LOGGER.debug("collect service {}", collect);
-                    group.addServices(collect);
+
+                    // if set is not empty, it means at least one of endpoint own by the same service
+                    if (!collect.isEmpty())
+                        group.setCyclic(true);
+
+                    LOGGER.debug("duplicate item {}", collect);
+                    LOGGER.debug("collect service {}", allItems);
+
+                    group.addServices(allItems);
                     LOGGER.debug("group {}", group);
                     return group;
                 }).collect(Collectors.toList());
