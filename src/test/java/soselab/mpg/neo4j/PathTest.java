@@ -86,8 +86,8 @@ public class PathTest {
 
         long start = System.currentTimeMillis();
 
-        List<List<String>> pathNodeIdGroups = graphService.getPathNodeIdGroups();
-        pathNodeIdGroups.forEach(System.out::println);
+//        List<List<String>> pathNodeIdGroups = graphService.getPathNodeIdGroups();
+//        pathNodeIdGroups.forEach(System.out::println);
 
         System.out.println(System.currentTimeMillis() - start);
     }

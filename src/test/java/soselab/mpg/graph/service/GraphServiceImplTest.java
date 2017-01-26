@@ -14,7 +14,6 @@ import soselab.mpg.graph.repository.ServiceNodeRepository;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -63,8 +62,8 @@ public class GraphServiceImplTest {
 
         serviceNodeRepository.save(Arrays.asList(a, b));
 
-        List<List<String>> cyclicGroups = graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
-        System.out.println(cyclicGroups);
+//        List<List<String>> cyclicGroups = graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
+//        System.out.println(cyclicGroups);
     }
 
 

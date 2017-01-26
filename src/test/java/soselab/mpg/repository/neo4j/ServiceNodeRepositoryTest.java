@@ -81,7 +81,7 @@ public class ServiceNodeRepositoryTest {
                 .findServiceEndpointByPathAndHttpMethod("A", "httpmethod1", "path1");
         Iterable<EndpointNode> all = endpointNodeRepository.findAll();
         System.out.println(endpoint);
-        assertThat(endpoint.getEndpointId()).isEqualTo("id");
+        assertThat(endpoint.getEndpointId()).isEqualTo("id1");
         assertThat(endpoint.getPath()).isEqualToIgnoringCase("path1");
         assertThat(endpoint.getHttpMethod()).isEqualToIgnoringCase("httpmethod1");
     }

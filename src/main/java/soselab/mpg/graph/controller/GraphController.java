@@ -31,11 +31,6 @@ public class GraphController {
         this.pactService = pactService;
     }
 
-    @GetMapping("/cyclic")
-    public List<List<String>> getCyclicGroup() {
-        return graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
-    }
-
     @GetMapping("/visual")
     public GraphDataDTO getGraphData() {
         // get visual data for d3

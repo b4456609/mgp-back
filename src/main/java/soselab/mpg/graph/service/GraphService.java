@@ -4,6 +4,7 @@ import soselab.mpg.graph.controller.dto.EndpointInformationDTO;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
+import soselab.mpg.graph.model.PathGroup;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
 public interface GraphService {
     GraphDataDTO getVisualizationData();
 
-    List<List<String>> getPathNodeIdGroups();
+    List<PathGroup> getPathNodeIdGroups();
 
     List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups);
 

@@ -10,13 +10,12 @@ import soselab.mpg.codegen.model.CodeSnippet;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.controller.dto.factory.GraphVisualizationFromGraphFactory;
 import soselab.mpg.graph.model.EndpointNode;
+import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -55,36 +54,36 @@ public class GraphServiceImpl implements GraphService {
         List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair = endpointNodeRepository
                 .getProviderEndpointWithConsumerPairPair();
 
-        List<List<String>> pathNodeIdGroups = getPathNodeIdGroups();
-        List<List<String>> cyclicGroups = getCyclicGroups(pathNodeIdGroups);
+        List<PathGroup> pathNodeIdGroups = getPathNodeIdGroups();
 
         return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
-                providerEndpointWithConsumerPairPair, pathNodeIdGroups, cyclicGroups);
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups);
     }
 
     @Override
-    public List<List<String>> getPathNodeIdGroups() {
+    public List<PathGroup> getPathNodeIdGroups() {
         PathAnalyzer pathAnalyzer = new PathAnalyzer(serviceNodeRepository, endpointNodeRepository);
         return pathAnalyzer.getPathNodeIdGroups();
     }
 
     @Override
     public List<List<String>> getCyclicGroups(List<List<String>> pathNodeIdGroups) {
-        LOGGER.info("pathNodeIdGroups {}", pathNodeIdGroups.toString());
-        List<List<String>> cyclicGroup = pathNodeIdGroups.stream().filter(pathNodeIdGroup -> {
-            Set<String> allItems = new HashSet<>();
-            Set<String> collect = pathNodeIdGroup.stream()
-                    //filter service node, rest endpoint node
-                    .filter(node -> node.contains(" "))
-                    //find each endpoint service name
-                    .map(serviceNodeRepository::getServiceNameByEndpoint)
-                    //Find duplicate service name if it can not add to set
-                    .filter(n -> !allItems.add(n))
-                    .collect(Collectors.toSet());
-            // if set is not empty, it means at least one of endpoint own by the same service
-            return !collect.isEmpty();
-        }).collect(Collectors.toList());
-        return cyclicGroup;
+//        LOGGER.info("pathNodeIdGroups {}", pathNodeIdGroups.toString());
+//        List<List<String>> cyclicGroup = pathNodeIdGroups.stream().filter(pathNodeIdGroup -> {
+//            Set<String> allItems = new HashSet<>();
+//            Set<String> collect = pathNodeIdGroup.stream()
+//                    //filter service node, rest endpoint node
+//                    .filter(node -> node.contains(" "))
+//                    //find each endpoint service name
+//                    .map(serviceNodeRepository::getServiceNameByEndpoint)
+//                    //Find duplicate service name if it can not add to set
+//                    .filter(n -> !allItems.add(n))
+//                    .collect(Collectors.toSet());
+//            // if set is not empty, it means at least one of endpoint own by the same service
+//            return !collect.isEmpty();
+//        }).collect(Collectors.toList());
+//        return cyclicGroup;
+        return null;
     }
 
 

@@ -2,6 +2,7 @@ package soselab.mpg.graph.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 
@@ -20,7 +21,7 @@ public class PathAnalyzer {
         this.endpointNodeRepository = endpointNodeRepository;
     }
 
-    public List<List<String>> getPathNodeIdGroups() {
+    public List<PathGroup> getPathNodeIdGroups() {
         List<List<LinkedHashMap>> pathEndpoints = endpointNodeRepository.getPathEndpoints();
         LOGGER.debug("all path endpoint {}", pathEndpoints);
 
@@ -29,6 +30,8 @@ public class PathAnalyzer {
                 .map(linkedHashMaps -> linkedHashMaps.stream().map(linkedHashMap -> {
                     return (String) linkedHashMap.get("endpointId");
                 }).collect(Collectors.toList()))
+                //sort by first endpoint id
+                .sorted(Comparator.comparing(a -> a.get(0)))
                 .collect(Collectors.toList());
         LOGGER.debug("endpoint id {}", endpointIds);
 
@@ -39,10 +42,14 @@ public class PathAnalyzer {
         LOGGER.debug("endpoint id {}", endpointIds);
 
         //group paths start with same node, it is same endpoint
-        List<List<String>> getGroupSet = getPathGroup(endpointIds);
-        LOGGER.debug("get GroupSet id {}", getGroupSet);
+        List<PathGroup> pathGroups = getPathGroups(endpointIds);
+        LOGGER.debug("get GroupSet id {}", pathGroups);
 
-        return getServiceWithEndpointsGroup(getGroupSet);
+        // set service name
+        List<PathGroup> serviceWithEndpointsGroup = getServiceWithEndpointsGroup(pathGroups);
+        LOGGER.debug("get GroupSet id {}", serviceWithEndpointsGroup);
+
+        return serviceWithEndpointsGroup;
     }
 
     private List<List<String>> getRemoveDuplicateShorterPath(List<List<String>> endpointIds) {
@@ -60,109 +67,52 @@ public class PathAnalyzer {
                 } else if (endpointNode1.equals(endpointNode) &&
                         endpointIds1.containsAll(endpointId)) {
                     removeSet.add(endpointId);
+                } else if (!endpointNode1.equals(endpointNode)) {
+                    i = j;
+                    break;
                 }
             }
         }
         return removeSet;
     }
 
-    private List<List<String>> getServiceWithEndpointsGroup(List<List<String>> groups) {
-        return groups.stream().map(group -> {
-            Set<String> collect = group.stream()
-                    .map(serviceNodeRepository::getServiceNameByEndpoint)
-                    .collect(Collectors.toSet());
-            group.addAll(collect);
-            return group;
-        }).collect(Collectors.toList());
+    private List<PathGroup> getServiceWithEndpointsGroup(List<PathGroup> groups) {
+        return groups.stream().parallel()
+                .map(group -> {
+                    Set<String> collect = group.getPaths().stream()
+                            .flatMap(path -> path.stream())
+                            .map(serviceNodeRepository::getServiceNameByEndpoint)
+                            .collect(Collectors.toSet());
+                    LOGGER.debug("collect service {}", collect);
+                    group.addServices(collect);
+                    LOGGER.debug("group {}", group);
+                    return group;
+                }).collect(Collectors.toList());
     }
 
-    private List<List<String>> getPathGroup(List<List<String>> endpointIds) {
-        int endpointIdsSize = endpointIds.size();
-
-        Map<Integer, Set<Integer>> indexList2Group = new HashMap<>();
-        for (int i = 0; i < endpointIdsSize; i++) {
-            indexList2Group.put(i, null);
-        }
-
-        for (int i = 0; i < endpointIdsSize; i++) {
-            for (int j = i + 1; j < endpointIdsSize; j++) {
-                //compare first id list if the same, they are same group
-                if (endpointIds.get(i).get(0).equals(endpointIds.get(j).get(0))) {
-                    Set<Integer> iGroup = indexList2Group.get(i);
-                    Set<Integer> jGroup = indexList2Group.get(j);
-                    if (iGroup != null && jGroup == null) {
-                        iGroup.add(j);
-                        indexList2Group.put(j, iGroup);
-                    } else if (iGroup == null && jGroup != null) {
-                        jGroup.add(j);
-                        indexList2Group.put(i, jGroup);
-                    } else if (iGroup != null) {
-                        jGroup.addAll(iGroup);
-                        indexList2Group.put(i, jGroup);
-                    } else {
-                        Set<Integer> newGroup = new HashSet<>();
-                        newGroup.add(i);
-                        newGroup.add(j);
-
-                        indexList2Group.put(i, newGroup);
-                        indexList2Group.put(j, newGroup);
-                    }
+    private List<PathGroup> getPathGroups(List<List<String>> endpointIds) {
+        List<PathGroup> pathGroups = new ArrayList<>();
+        int size = endpointIds.size();
+        LOGGER.debug("size {}", size);
+        for (int i = 0; i < size; i++) {
+            LOGGER.debug("i {}", i);
+            PathGroup pathGroup = new PathGroup();
+            List<String> endpointId = endpointIds.get(i);
+            pathGroup.addPath(endpointId);
+            for (int j = i + 1; j < size; j++) {
+                LOGGER.debug("i {} j {}", i, j);
+                List<String> endpointIds1 = endpointIds.get(j);
+                String endpointNode = endpointId.get(0);
+                String endpointNode1 = endpointIds1.get(0);
+                if (endpointNode.equals(endpointNode1)) {
+                    pathGroup.addPath(endpointIds1);
+                } else {
+                    i = j - 1;
+                    break;
                 }
             }
+            pathGroups.add(pathGroup);
         }
-
-        Map<Integer, Boolean> isGroupCheckList = new HashMap<>();
-        for (int i = 0; i < endpointIdsSize; i++) {
-            isGroupCheckList.put(i, false);
-        }
-
-        List<List<String>> newListGroup = new ArrayList<>();
-        for (Integer index : indexList2Group.keySet()) {
-            //index of group
-            Set<Integer> indexGroup = indexList2Group.get(index);
-
-            //if the the index not a group or it has already in other group
-            if (indexGroup == null || isGroupCheckList.get(index)) {
-                continue;
-            }
-
-
-            //use character of the set to remove duplicate node in the list
-            Set<String> tempGroup = new HashSet<>();
-
-            boolean isFirstTime = true;
-            String startNode = null;
-            for (Integer groupIndex : indexGroup) {
-                //get the start need to first place in the list
-                if (isFirstTime) {
-                    startNode = endpointIds.get(groupIndex).get(0);
-                    isFirstTime = false;
-                }
-
-                //mark checklist
-                isGroupCheckList.put(groupIndex, true);
-                //group the set
-                tempGroup.addAll(endpointIds.get(groupIndex));
-            }
-            //remove first node
-            tempGroup.remove(startNode);
-
-            // new group
-            List<String> newGroup = new ArrayList<>();
-            newGroup.add(startNode);
-            newGroup.addAll(tempGroup);
-
-            //add to new list
-            newListGroup.add(newGroup);
-        }
-
-        //add no need to group in to newListGroup
-        for (Integer integer : isGroupCheckList.keySet()) {
-            if (!isGroupCheckList.get(integer)) {
-                newListGroup.add(endpointIds.get(integer));
-            }
-        }
-
-        return newListGroup;
+        return pathGroups;
     }
 }
