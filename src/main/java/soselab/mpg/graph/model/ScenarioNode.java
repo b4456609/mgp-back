@@ -20,6 +20,12 @@ public class ScenarioNode {
     public ScenarioNode() {
     }
 
+    public ScenarioNode(String name, String mongoId, Set<EndpointNode> endpointNodes) {
+        this.name = name;
+        this.mongoId = mongoId;
+        this.endpointNodes = endpointNodes;
+    }
+
     public String getName() {
         return name;
     }

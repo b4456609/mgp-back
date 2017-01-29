@@ -14,6 +14,7 @@ import soselab.mpg.bdd.repository.ScenarioRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -75,6 +76,23 @@ public class BDDServiceImpl implements BDDService {
         LatestCommitStatusDTO latestCommitStatusDTO = bddClient.gitClone(url);
         bddGitSettingRepository.save(new BDDGitSetting(url, latestCommitStatusDTO.getId(),
                 latestCommitStatusDTO.getMsg()));
+    }
+
+    @Override
+    public List<ScenarioWithTagDTO> getScenarioWithTag() {
+        List<Scenario> all = scenarioRepository.findAll();
+        List<ScenarioWithTagDTO> collect = all.stream()
+                .map(scenario -> {
+                    Set<String> tags = scenario.getTags().stream()
+                            //remove @ in tag string
+                            .map(tag -> {
+                                return tag.substring(1);
+                            })
+                            .collect(Collectors.toSet());
+                    return new ScenarioWithTagDTO(scenario.getId().toHexString(), scenario.getName(), tags);
+                })
+                .collect(Collectors.toList());
+        return collect;
     }
 
 }
