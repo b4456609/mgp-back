@@ -48,7 +48,7 @@ public class MPDServiceImp implements MPDService {
             LOGGER.info("duplicate service key");
         }
         //TODO build as back groud job
-        microserviceGraphBuilderService.build(getMicroserviceProjectDescriptions());
+        microserviceGraphBuilderService.build();
     }
 
     @Override
