@@ -10,11 +10,12 @@ import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
+import soselab.mpg.bdd.repository.ScenarioRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
 import soselab.mpg.pact.repository.PactConfigRepository;
 
-@EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class})
+@EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class, ScenarioRepository.class})
 @EnableNeo4jRepositories(basePackageClasses = ServiceNodeRepository.class)
 @SpringBootApplication
 public class MpgbackApplication {
