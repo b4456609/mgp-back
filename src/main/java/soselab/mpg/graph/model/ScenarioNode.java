@@ -49,4 +49,14 @@ public class ScenarioNode {
     public void setEndpointNodes(Set<EndpointNode> endpointNodes) {
         this.endpointNodes = endpointNodes;
     }
+
+    @Override
+    public String toString() {
+        return "ScenarioNode{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", mongoId='" + mongoId + '\'' +
+                ", endpointNodes=" + endpointNodes +
+                '}';
+    }
 }

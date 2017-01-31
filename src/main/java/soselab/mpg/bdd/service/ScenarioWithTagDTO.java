@@ -7,6 +7,11 @@ public class ScenarioWithTagDTO {
     private String name;
     private Set<String> tags;
 
+    /**
+     * @param id   The scenario id. The value is the MongoDB's Object Id.
+     * @param name
+     * @param tags
+     */
     public ScenarioWithTagDTO(String id, String name, Set<String> tags) {
         this.id = id;
         this.name = name;
