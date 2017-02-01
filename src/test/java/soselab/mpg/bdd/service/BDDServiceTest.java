@@ -31,7 +31,7 @@ public class BDDServiceTest {
     private ObjectMapper objectMapper = new ObjectMapper();
 
     @Test
-    public void parseProject() throws Exception {
+    public void parseProject() throws Exception, NoBDDProjectGitSettingException {
         String file = this.getClass().getResource("/parse.json").getPath();
         String s = new String(Files.readAllBytes(Paths.get(file)));
         FeatureDTO[] featureDTOS = objectMapper.readValue(s, FeatureDTO[].class);
@@ -39,7 +39,7 @@ public class BDDServiceTest {
 
         given(bddClient.getParseData()).willReturn(featureDTOS1);
 
-//        bddService.parseProject();
+        bddService.parseProject();
 
     }
 

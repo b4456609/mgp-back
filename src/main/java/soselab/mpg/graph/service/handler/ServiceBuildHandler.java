@@ -1,5 +1,7 @@
 package soselab.mpg.graph.service.handler;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import soselab.mpg.graph.controller.dto.factory.ServiceEndpointIdFactory;
@@ -16,10 +18,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
-
 @Component
 public class ServiceBuildHandler implements GraphBuildHandler {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ServiceBuildHandler.class);
 
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;

@@ -39,35 +39,6 @@ public class GraphServiceImplTest {
     }
 
     @Test
-    public void getCyclicGroups() throws Exception {
-
-        EndpointNode endpointNode = new EndpointNode("Aid / POST", "/", "POST");
-        EndpointNode endpointNode1 = new EndpointNode("Aid1 / GET", "/", "GET");
-        EndpointNode endpointNode2 = new EndpointNode("Bid / POST", "/", "POST");
-
-        endpointNode.addServiceCallEndpoint(endpointNode2);
-        endpointNode2.addServiceCallEndpoint(endpointNode1);
-
-        endpointNodeRepository.save(Arrays.asList(endpointNode, endpointNode1, endpointNode2));
-
-        Set<EndpointNode> endpointNodes = new HashSet<>();
-        endpointNodes.add(endpointNode);
-        endpointNodes.add(endpointNode1);
-
-        Set<EndpointNode> endpointNodes1 = new HashSet<>();
-        endpointNodes1.add(endpointNode2);
-
-        ServiceNode a = new ServiceNode("A", endpointNodes);
-        ServiceNode b = new ServiceNode("B", endpointNodes1);
-
-        serviceNodeRepository.save(Arrays.asList(a, b));
-
-//        List<List<String>> cyclicGroups = graphService.getCyclicGroups(graphService.getPathNodeIdGroups());
-//        System.out.println(cyclicGroups);
-    }
-
-
-    @Test
     public void checkCyclicGroupsClassName() throws Exception {
 
         EndpointNode endpointNode = new EndpointNode("A / POST", "/", "POST");
