@@ -11,8 +11,10 @@ import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.controller.dto.factory.GraphVisualizationFromGraphFactory;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.PathGroup;
+import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
+import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 
 import java.util.List;
@@ -27,15 +29,18 @@ public class GraphServiceImpl implements GraphService {
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
     private final CodeGenClient codeGenClient;
+    private final ScenarioNodeRepository scenarioNodeRepository;
 
     @Autowired
     public GraphServiceImpl(GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory,
                             ServiceNodeRepository serviceNodeRepository,
-                            EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient) {
+                            EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
+                            ScenarioNodeRepository scenarioNodeRepository) {
         this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
+        this.scenarioNodeRepository = scenarioNodeRepository;
     }
 
     @Override
@@ -58,8 +63,11 @@ public class GraphServiceImpl implements GraphService {
 
         setCyclicGroups(pathNodeIdGroups);
 
+        //get Scenario node
+        Iterable<ScenarioNode> scenarioNodes = scenarioNodeRepository.findAll();
+
         return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
-                providerEndpointWithConsumerPairPair, pathNodeIdGroups);
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes);
     }
 
     @Override

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.PathGroup;
+import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.model.ServiceNode;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class GraphVisualizationFromGraphFactory {
     public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
                                List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
-                               List<PathGroup> pathNodeIdGroups) {
+                               List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes) {
         LOGGER.info(pathNodeIdGroups.toString());
 
         //endpoint node
@@ -48,13 +49,34 @@ public class GraphVisualizationFromGraphFactory {
                             .createNodesItem();
                 }).collect(Collectors.toList());
 
+        //scenario node
+        List<NodesItem> scenarioNodeItems = StreamSupport.stream(scenarioNodes.spliterator(), false)
+                .map(scenarioNode -> {
+                    String className = "";
+                    return new NodesItemBuilder().setClassName(className)
+                            .setGroup(3)
+                            .setId(scenarioNode.getMongoId())
+                            .setLabel(scenarioNode.getName())
+                            .createNodesItem();
+                }).collect(Collectors.toList());
+
         // all node dto items
         List<NodesItem> allNodes = new ArrayList<>();
         allNodes.addAll(endpointNodeItems);
         allNodes.addAll(serviceNodeItems);
+        allNodes.addAll(scenarioNodeItems);
 
-
-        //get path group
+        // scenario and endpoint pair
+        List<ScenarioEndpointPairItem> scenarioEndpointPairItems = StreamSupport.stream(scenarioNodes.spliterator(),
+                false)
+                .flatMap(scenarioNode -> {
+                    return scenarioNode.getEndpointNodes().stream()
+                            .map(endpointNode -> {
+                                String className = "";
+                                return new ScenarioEndpointPairItem(scenarioNode.getMongoId(),
+                                        endpointNode.getEndpointId(), className);
+                            });
+                }).collect(Collectors.toList());
 
 
         //set class name
@@ -67,11 +89,12 @@ public class GraphVisualizationFromGraphFactory {
             item.setClassName(getProviderEndpointWithConsumerClass(pathNodeIdGroups, item.getSource(), item.getTarget()));
         }
 
-        return new GraphVisualizationBuilder()
+        return new GraphDataDTOBuilder()
                 .setNodes(allNodes)
-                .setServiceCallEndpointsPair(allServiceWithEndpoint)
-                .setProvicerEndpointWithConsumberPair(providerEndpointWithConsumerPairPair)
-                .createGraphVisualization();
+                .setScenarioEndpointPair(scenarioEndpointPairItems)
+                .setServiceWithEndpointPair(allServiceWithEndpoint)
+                .setProviderEndpointWithConsumerPair(providerEndpointWithConsumerPairPair)
+                .createGraphDataDTO();
     }
 
     private String getProviderEndpointWithConsumerClass(List<PathGroup> pathNodeIdGroups, String service, String endpoint) {
