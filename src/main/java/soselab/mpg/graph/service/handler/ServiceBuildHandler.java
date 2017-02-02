@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import soselab.mpg.graph.controller.dto.factory.ServiceEndpointIdFactory;
+import soselab.mpg.graph.controller.dto.factory.EndpointIdFactory;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
@@ -66,7 +66,7 @@ public class ServiceBuildHandler implements GraphBuildHandler {
                     String path = endpoint.getPath();
                     String method = endpoint.getMethod();
                     String name = microserviceProjectDescription.getName();
-                    String id = ServiceEndpointIdFactory.getId(name, path, method);
+                    String id = EndpointIdFactory.getId(name, path, method);
                     EndpointNode endpointNode = new EndpointNode(id, path, method);
 
                     //add to all endpoint for call realtionship

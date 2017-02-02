@@ -23,10 +23,12 @@ public class BDDClientImpl implements BDDClient {
 
     @Override
     public LatestCommitStatusDTO gitClone(String url) {
+        LOGGER.info("Clone url : {}", url);
         UrlDTO urlDTO = new UrlDTO();
         urlDTO.setUrl(url);
         LatestCommitStatusDTO latestCommitStatusDTO = restTemplate
-                .postForObject(this.url + "/gitClone", urlDTO, LatestCommitStatusDTO.class);
+                .postForObject(this.url + "/clone", urlDTO, LatestCommitStatusDTO.class);
+        LOGGER.info("latest commit status : {}", latestCommitStatusDTO);
         return latestCommitStatusDTO;
     }
 
@@ -34,6 +36,7 @@ public class BDDClientImpl implements BDDClient {
     public LatestCommitStatusDTO pull() {
         LatestCommitStatusDTO latestCommitStatusDTO = restTemplate
                 .postForObject(this.url + "/pull", null, LatestCommitStatusDTO.class);
+        LOGGER.info("latest commit status : {}", latestCommitStatusDTO);
         return latestCommitStatusDTO;
     }
 
@@ -41,6 +44,7 @@ public class BDDClientImpl implements BDDClient {
     public LatestCommitStatusDTO getLastestCommitStatus() {
         LatestCommitStatusDTO latestCommitStatusDTO = restTemplate
                 .getForObject(this.url + "/latestCommit", LatestCommitStatusDTO.class);
+        LOGGER.info("latest commit status : {}", latestCommitStatusDTO);
         return latestCommitStatusDTO;
     }
 
@@ -49,6 +53,7 @@ public class BDDClientImpl implements BDDClient {
     public List<FeatureDTO> getParseData() {
         FeatureDTO[] forObject = restTemplate
                 .getForObject(this.url + "/parse", FeatureDTO[].class);
+        LOGGER.info("getParseData : {}", Arrays.toString(forObject));
         return Arrays.asList(forObject);
     }
 

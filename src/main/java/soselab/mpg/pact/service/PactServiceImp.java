@@ -34,16 +34,22 @@ public class PactServiceImp implements PactService {
     }
 
     @Override
-    public void setPactService(PactConfig pactConfig) {
+    public void updatePactUrl(String url) {
+        LOGGER.info("update pact url {}", url);
+        if (url == null)
+            return;
         pactConfigRepository.deleteAll();
+        if (url.equals("")) return;
+        PactConfig pactConfig = new PactConfig();
+        pactConfig.setUrl(url);
         pactConfigRepository.save(pactConfig);
     }
 
     @Override
-    public PactConfig getPactConfig() {
+    public String getPactGitUrl() {
         List<PactConfig> all = pactConfigRepository.findAll();
-        if (all.isEmpty()) throw new NoPactConfigException();
-        return all.get(0);
+        if (all.isEmpty()) return "";
+        return all.get(0).getUrl();
     }
 
     @Override

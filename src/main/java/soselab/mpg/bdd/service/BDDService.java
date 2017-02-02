@@ -10,5 +10,7 @@ public interface BDDService {
 
     void updateGitUrl(String url);
 
+    String getGitUrl();
+
     List<ScenarioWithTagDTO> getScenarioWithTag();
 }

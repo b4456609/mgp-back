@@ -31,7 +31,7 @@ public class GraphVisualizationFromGraphFactory {
                 .map(endpointNode -> {
                     String className = getClassString(pathNodeIdGroups, endpointNode.getEndpointId());
                     return new NodesItemBuilder().setId(endpointNode.getEndpointId())
-                            .setLabel(ServiceLableFactory.createEndpointLabel(endpointNode.getPath(),
+                            .setLabel(LableFactory.createEndpointLabel(endpointNode.getPath(),
                                     endpointNode.getHttpMethod()))
                             .setClassName(className)
                             .setGroup(1)
@@ -43,7 +43,7 @@ public class GraphVisualizationFromGraphFactory {
                 .map(serviceNode -> {
                     String className = getClassString(pathNodeIdGroups, serviceNode.getName());
                     return new NodesItemBuilder().setId(serviceNode.getName())
-                            .setLabel(ServiceLableFactory.createServiceLabel(serviceNode.getName()))
+                            .setLabel(LableFactory.createServiceLabel(serviceNode.getName()))
                             .setClassName(className)
                             .setGroup(2)
                             .createNodesItem();

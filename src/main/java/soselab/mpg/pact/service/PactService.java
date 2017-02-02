@@ -1,14 +1,13 @@
 package soselab.mpg.pact.service;
 
-import soselab.mpg.pact.model.PactConfig;
 import soselab.mpg.pact.model.ServiceCallRelationInformation;
 
 import java.util.List;
 
 public interface PactService {
-    void setPactService(PactConfig pactConfig);
+    void updatePactUrl(String url);
 
-    PactConfig getPactConfig();
+    String getPactGitUrl();
 
     void getLatestPactFile();
 

@@ -72,10 +72,23 @@ public class BDDServiceImpl implements BDDService {
 
     @Override
     public void updateGitUrl(String url) {
+        if (url == null)
+            return;
         bddGitSettingRepository.deleteAll();
+
+        if (url.equals("")) return;
+
         LatestCommitStatusDTO latestCommitStatusDTO = bddClient.gitClone(url);
         bddGitSettingRepository.save(new BDDGitSetting(url, latestCommitStatusDTO.getId(),
                 latestCommitStatusDTO.getMsg()));
+    }
+
+    @Override
+    public String getGitUrl() {
+        List<BDDGitSetting> settings = bddGitSettingRepository.findAll();
+        if (settings.isEmpty())
+            return "";
+        return settings.get(0).getUrl();
     }
 
     @Override
