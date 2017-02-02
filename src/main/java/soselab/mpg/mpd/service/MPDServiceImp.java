@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
-import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.model.ServiceName;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
@@ -23,16 +22,14 @@ public class MPDServiceImp implements MPDService {
     private final MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository;
     private final MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader;
     private final ServiceNameRepository serviceNameRepository;
-    private final MicroserviceGraphBuilderService microserviceGraphBuilderService;
 
     @Autowired
     public MPDServiceImp(MicroserviceProjectDescriptionRepository microserviceProjectDescriptionRepository,
                          MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader,
-                         ServiceNameRepository serviceNameRepository, MicroserviceGraphBuilderService microserviceGraphBuilderService) {
+                         ServiceNameRepository serviceNameRepository) {
         this.microserviceProjectDescriptionRepository = microserviceProjectDescriptionRepository;
         this.microserviceProjectDescriptionReader = microserviceProjectDescriptionReader;
         this.serviceNameRepository = serviceNameRepository;
-        this.microserviceGraphBuilderService = microserviceGraphBuilderService;
     }
 
     @Override
@@ -47,8 +44,6 @@ public class MPDServiceImp implements MPDService {
         } catch (DuplicateKeyException e) {
             LOGGER.info("duplicate service key");
         }
-        //TODO build as back groud job
-        microserviceGraphBuilderService.build(this.getMicroserviceProjectDescriptions());
     }
 
     @Override

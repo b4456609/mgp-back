@@ -9,9 +9,9 @@ import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
-import soselab.mpg.graph.service.MicroserviceGraphBuilderServiceImpl;
 import soselab.mpg.mpd.model.Endpoint2ServiceCallDependency;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
+import soselab.mpg.mpd.service.MPDService;
 
 import java.util.HashSet;
 import java.util.List;
@@ -25,15 +25,17 @@ public class ServiceBuildHandler implements GraphBuildHandler {
 
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
+    private final MPDService mpdService;
 
     @Autowired
-    public ServiceBuildHandler(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository) {
+    public ServiceBuildHandler(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository, MPDService mpdService) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
+        this.mpdService = mpdService;
     }
 
     @Override
-    public void build(MicroserviceGraphBuilderServiceImpl microserviceGraphBuilderService) {
+    public void build() {
 
         LOGGER.info("build Graph");
         //get all latest service project description
@@ -43,7 +45,7 @@ public class ServiceBuildHandler implements GraphBuildHandler {
         //all endpoint node
         Set<EndpointNode> allEndpointNodes = new HashSet<EndpointNode>();
 
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = microserviceGraphBuilderService.getMicroserviceProjectDescriptions();
+        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
 
         //get all serviceNode
         Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.stream()

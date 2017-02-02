@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import soselab.mpg.bdd.service.BDDService;
+import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
 import soselab.mpg.graph.controller.dto.EndpointInformationDTO;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
@@ -24,15 +26,24 @@ public class GraphController {
 
     private final GraphService graphService;
     private final PactService pactService;
+    private final BDDService bddService;
 
     @Autowired
-    public GraphController(GraphService graphService, PactService pactService) {
+    public GraphController(GraphService graphService, PactService pactService, BDDService bddService) {
         this.graphService = graphService;
         this.pactService = pactService;
+        this.bddService = bddService;
     }
 
     @GetMapping("/visual")
     public GraphDataDTO getGraphData() {
+        LOGGER.info("Get graph data");
+        // check bdd
+        try {
+            bddService.parseProject();
+        } catch (NoBDDProjectGitSettingException e) {
+            LOGGER.info("{}", e);
+        }
         // get visual data for d3
         return graphService.getVisualizationData();
     }

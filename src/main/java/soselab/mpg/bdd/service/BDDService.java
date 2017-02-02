@@ -8,7 +8,7 @@ import java.util.List;
 public interface BDDService {
     void parseProject() throws NoBDDProjectGitSettingException;
 
-    void updateGitUrl(String url);
+    boolean updateGitUrl(String url);
 
     String getGitUrl();
 

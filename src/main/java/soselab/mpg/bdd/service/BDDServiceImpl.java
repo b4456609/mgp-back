@@ -1,5 +1,7 @@
 package soselab.mpg.bdd.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import soselab.mpg.bdd.client.BDDClient;
@@ -19,7 +21,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class BDDServiceImpl implements BDDService {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(BDDServiceImpl.class);
     private final BDDClient bddClient;
 
     private final ScenarioRepository scenarioRepository;
@@ -37,12 +39,15 @@ public class BDDServiceImpl implements BDDService {
 
     @Override
     public void parseProject() throws NoBDDProjectGitSettingException {
+        LOGGER.info("parseProject");
         List<BDDGitSetting> bddGitSettings = bddGitSettingRepository.findAll();
         if (bddGitSettings.isEmpty()) {
+            LOGGER.info("NoBDDProjectGitSettingException");
             throw new NoBDDProjectGitSettingException();
         }
 
         LatestCommitStatusDTO pull = bddClient.pull();
+        LOGGER.debug(pull.toString());
         if (bddGitSettings.get(0).getCommitId().equals(pull.getId())) {
             //check commit id is the same no need to update
             return;
@@ -52,6 +57,8 @@ public class BDDServiceImpl implements BDDService {
         featureRepository.deleteAll();
 
         List<FeatureDTO> parseData = bddClient.getParseData();
+        LOGGER.debug("parse data {}", parseData);
+
         List<Feature> features = new ArrayList<>();
         List<Scenario> scenarioList = parseData.stream().flatMap(featureDTO -> {
 
@@ -65,22 +72,24 @@ public class BDDServiceImpl implements BDDService {
 
             return scenarios.stream();
         }).collect(Collectors.toList());
+        LOGGER.debug("features {}", features);
+        LOGGER.debug("scenarioList {}", scenarioList);
 
         featureRepository.save(features);
         scenarioRepository.save(scenarioList);
     }
 
+    /**
+     * @param url git url
+     * @return true means update success. false means no need to update
+     */
     @Override
-    public void updateGitUrl(String url) {
-        if (url == null)
-            return;
+    public boolean updateGitUrl(String url) {
+        if (url == null || url.equals("") || getGitUrl().equals(url)) return false;
         bddGitSettingRepository.deleteAll();
-
-        if (url.equals("")) return;
-
         LatestCommitStatusDTO latestCommitStatusDTO = bddClient.gitClone(url);
-        bddGitSettingRepository.save(new BDDGitSetting(url, latestCommitStatusDTO.getId(),
-                latestCommitStatusDTO.getMsg()));
+        bddGitSettingRepository.save(new BDDGitSetting(url, "", ""));
+        return true;
     }
 
     @Override

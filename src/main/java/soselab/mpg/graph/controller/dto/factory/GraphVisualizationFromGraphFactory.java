@@ -12,6 +12,7 @@ import soselab.mpg.graph.model.ServiceNode;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 @Component
@@ -24,7 +25,12 @@ public class GraphVisualizationFromGraphFactory {
                                List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes) {
-        LOGGER.info(pathNodeIdGroups.toString());
+        LOGGER.info("endpoint node {}", endpointNodes);
+        LOGGER.info("service node {}", serviceNodes);
+        LOGGER.info("all service with endpoint {}", allServiceWithEndpoint);
+        LOGGER.info("endpoint node {}", providerEndpointWithConsumerPairPair);
+        LOGGER.info("path node group {}", pathNodeIdGroups);
+        LOGGER.info("scenario node {}", scenarioNodes);
 
         //endpoint node
         List<NodesItem> endpointNodeItems = StreamSupport.stream(endpointNodes.spliterator(), false)
@@ -70,6 +76,8 @@ public class GraphVisualizationFromGraphFactory {
         List<ScenarioEndpointPairItem> scenarioEndpointPairItems = StreamSupport.stream(scenarioNodes.spliterator(),
                 false)
                 .flatMap(scenarioNode -> {
+                    if (scenarioNode.getEndpointNodes() == null)
+                        return Stream.empty();
                     return scenarioNode.getEndpointNodes().stream()
                             .map(endpointNode -> {
                                 String className = "";
