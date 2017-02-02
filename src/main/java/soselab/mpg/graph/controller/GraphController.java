@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import soselab.mpg.bdd.service.BDDService;
 import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
-import soselab.mpg.graph.controller.dto.EndpointInformationDTO;
-import soselab.mpg.graph.controller.dto.GraphDataDTO;
-import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
-import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
+import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.pact.model.ServiceCallRelationInformation;
 import soselab.mpg.pact.service.PactService;
@@ -84,5 +81,10 @@ public class GraphController {
     @GetMapping("/endpoint")
     public List<EndpointInformationDTO> getEndpointInformation() {
         return graphService.getEndpointInformations();
+    }
+
+    @GetMapping("/scenario")
+    public ScenarioInformationDTO getScenarioInforamtionDTO() {
+        return bddService.getScenarioInfomation();
     }
 }

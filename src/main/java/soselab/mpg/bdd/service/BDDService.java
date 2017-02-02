@@ -1,5 +1,7 @@
 package soselab.mpg.bdd.service;
 
+import soselab.mpg.graph.controller.dto.ScenarioInformationDTO;
+
 import java.util.List;
 
 /**
@@ -13,4 +15,6 @@ public interface BDDService {
     String getGitUrl();
 
     List<ScenarioWithTagDTO> getScenarioWithTag();
+
+    ScenarioInformationDTO getScenarioInfomation();
 }

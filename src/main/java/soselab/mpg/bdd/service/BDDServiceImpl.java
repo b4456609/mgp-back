@@ -13,6 +13,9 @@ import soselab.mpg.bdd.model.Scenario;
 import soselab.mpg.bdd.repository.BDDGitSettingRepository;
 import soselab.mpg.bdd.repository.FeatureRepository;
 import soselab.mpg.bdd.repository.ScenarioRepository;
+import soselab.mpg.graph.controller.dto.FeatureItem;
+import soselab.mpg.graph.controller.dto.ScenarioInformationDTO;
+import soselab.mpg.graph.controller.dto.ScenarioItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +118,28 @@ public class BDDServiceImpl implements BDDService {
                 })
                 .collect(Collectors.toList());
         return collect;
+    }
+
+    @Override
+    public ScenarioInformationDTO getScenarioInfomation() {
+        List<Scenario> scenarios = scenarioRepository.findAll();
+        List<Feature> features = featureRepository.findAll();
+
+        LOGGER.debug("all scenarios {}, features {}", scenarios, features);
+        List<ScenarioItem> scenarioItems = scenarios.stream()
+                .map(scenario -> {
+                    return new ScenarioItem(scenario.getId().toHexString(), scenario.getName(), scenario.getContent(),
+                            scenario.getFeature().getId().toHexString());
+                })
+                .collect(Collectors.toList());
+
+        List<FeatureItem> featureItems = features.stream()
+                .map(feature -> new FeatureItem(feature.getId().toHexString(), feature.getName(), feature.getContent()))
+                .collect(Collectors.toList());
+
+        LOGGER.info("scenarioItems {}, featuresItems {}", scenarioItems, featureItems);
+
+        return new ScenarioInformationDTO(scenarioItems, featureItems);
     }
 
 }
