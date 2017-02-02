@@ -50,4 +50,14 @@ public class BDDGitSetting {
     public void setCommitMessage(String commitMessage) {
         this.commitMessage = commitMessage;
     }
+
+    @Override
+    public String toString() {
+        return "BDDGitSetting{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", commitId='" + commitId + '\'' +
+                ", commitMessage='" + commitMessage + '\'' +
+                '}';
+    }
 }

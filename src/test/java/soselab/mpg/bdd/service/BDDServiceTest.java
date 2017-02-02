@@ -39,7 +39,7 @@ public class BDDServiceTest {
 
         given(bddClient.getParseData()).willReturn(featureDTOS1);
 
-        bddService.parseProject();
+        bddService.updateProject();
 
     }
 

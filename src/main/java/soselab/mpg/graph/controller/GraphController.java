@@ -10,6 +10,7 @@ import soselab.mpg.bdd.service.BDDService;
 import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.service.GraphService;
+import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.pact.model.ServiceCallRelationInformation;
 import soselab.mpg.pact.service.PactService;
 
@@ -24,12 +25,15 @@ public class GraphController {
     private final GraphService graphService;
     private final PactService pactService;
     private final BDDService bddService;
+    private final MicroserviceGraphBuilderService microserviceGraphBuilderService;
 
     @Autowired
-    public GraphController(GraphService graphService, PactService pactService, BDDService bddService) {
+    public GraphController(GraphService graphService, PactService pactService, BDDService bddService,
+                           MicroserviceGraphBuilderService microserviceGraphBuilderService) {
         this.graphService = graphService;
         this.pactService = pactService;
         this.bddService = bddService;
+        this.microserviceGraphBuilderService = microserviceGraphBuilderService;
     }
 
     @GetMapping("/visual")
@@ -37,7 +41,10 @@ public class GraphController {
         LOGGER.info("Get graph data");
         // check bdd
         try {
-            bddService.parseProject();
+            boolean isUpdate = bddService.updateProject();
+            if (isUpdate) {
+                microserviceGraphBuilderService.build();
+            }
         } catch (NoBDDProjectGitSettingException e) {
             LOGGER.info("{}", e);
         }

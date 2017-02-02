@@ -28,14 +28,14 @@ public class SettingController {
     @PostMapping
     public void updateSetting(@RequestBody SettingDTO settingDTO) {
         LOGGER.debug("update setting {}", settingDTO);
-        boolean success = bddService.updateGitUrl(settingDTO.getBddGitUrl());
         pactService.updatePactUrl(settingDTO.getPactHostUrl());
+        boolean success = bddService.updateGitUrl(settingDTO.getBddGitUrl());
 
         LOGGER.debug("updateGitUrl {}", success);
         //success need to update graph
         if (success) {
             try {
-                bddService.parseProject();
+                bddService.updateProject();
                 microserviceGraphBuilderService.build();
             } catch (NoBDDProjectGitSettingException e) {
                 LOGGER.error("NoBDDProjectGitSettingException {}", e);

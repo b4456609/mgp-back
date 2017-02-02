@@ -41,8 +41,8 @@ public class BDDServiceImpl implements BDDService {
     }
 
     @Override
-    public void parseProject() throws NoBDDProjectGitSettingException {
-        LOGGER.info("parseProject");
+    public boolean updateProject() throws NoBDDProjectGitSettingException {
+        LOGGER.info("updateProject");
         List<BDDGitSetting> bddGitSettings = bddGitSettingRepository.findAll();
         if (bddGitSettings.isEmpty()) {
             LOGGER.info("NoBDDProjectGitSettingException");
@@ -50,10 +50,12 @@ public class BDDServiceImpl implements BDDService {
         }
 
         LatestCommitStatusDTO pull = bddClient.pull();
-        LOGGER.debug(pull.toString());
-        if (bddGitSettings.get(0).getCommitId().equals(pull.getId())) {
+        LOGGER.debug("setting{} pull{}", bddGitSettings, pull);
+        BDDGitSetting bddGitSetting = bddGitSettings.get(0);
+        if (bddGitSetting.getCommitId().equals(pull.getId())) {
+            LOGGER.info("no need to update bdd");
             //check commit id is the same no need to update
-            return;
+            return false;
         }
 
         scenarioRepository.deleteAll();
@@ -80,6 +82,12 @@ public class BDDServiceImpl implements BDDService {
 
         featureRepository.save(features);
         scenarioRepository.save(scenarioList);
+
+        // update commit information
+        bddGitSetting.setCommitId(pull.getId());
+        bddGitSetting.setCommitMessage(pull.getMsg());
+        bddGitSettingRepository.save(bddGitSetting);
+        return true;
     }
 
     /**
