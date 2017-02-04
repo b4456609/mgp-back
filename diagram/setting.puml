@@ -1,0 +1,15 @@
+@startuml
+start
+:Upload App Setting;
+fork
+    :Update Pact Broker url;
+fork again
+    :Update BDD git url;
+    if (New git url?) then (yes)
+        :Parse BDD project;
+        :Build Neo4j Graph;
+    else (no)
+    endif
+end fork
+stop
+@enduml

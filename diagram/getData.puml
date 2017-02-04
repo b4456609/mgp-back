@@ -1,0 +1,46 @@
+@startuml
+start
+:Web Get Data;
+fork
+    :HTTP Get D3 Data;
+    partition Server {
+        :Update BDD;
+        if (Has update?) then (yes)
+            :Build Neo4j Graph;
+        else (no)
+        endif
+        :Get Visual Data;
+        :Return Data;
+    }
+fork again
+    :HTTP Get Service Information;
+    partition Server {
+        :Get Data;
+        :Return Data;
+    }
+fork again
+    :Get Service Call Inforamtion;
+    partition Server {
+        :Get Latest Pact Files;
+        :Get Pair of \nConsumer and Provider;
+        if (No Pact Files?) then (yes)
+            :Match Pact file to Pair of\nConsumer and Provider;
+        else (no)
+        endif
+        :Return Data;
+    }
+fork again
+    :Get Endpoint Inforamtion;
+    partition Server {
+        :Get Latest Pact Files;
+        :Return Data;
+    }
+fork again
+    :Get Scenario Inforamtion;
+    partition Server {
+        :Get BDD Data;
+        :Return Data;
+    }
+end fork
+stop
+@enduml
