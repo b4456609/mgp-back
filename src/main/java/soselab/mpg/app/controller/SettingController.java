@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import soselab.mpg.app.dto.SettingDTO;
 import soselab.mpg.bdd.service.BDDService;
-import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
 import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.pact.service.PactService;
 
@@ -29,18 +28,7 @@ public class SettingController {
     public void updateSetting(@RequestBody SettingDTO settingDTO) {
         LOGGER.debug("update setting {}", settingDTO);
         pactService.updatePactUrl(settingDTO.getPactHostUrl());
-        boolean success = bddService.updateGitUrl(settingDTO.getBddGitUrl());
-
-        LOGGER.debug("updateGitUrl {}", success);
-        //success need to update graph
-        if (success) {
-            try {
-                bddService.updateProject();
-                microserviceGraphBuilderService.build();
-            } catch (NoBDDProjectGitSettingException e) {
-                LOGGER.error("NoBDDProjectGitSettingException {}", e);
-            }
-        }
+        bddService.updateGitUrl(settingDTO.getBddGitUrl());
     }
 
     @GetMapping

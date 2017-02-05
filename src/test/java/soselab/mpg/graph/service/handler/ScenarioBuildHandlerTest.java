@@ -68,7 +68,7 @@ public class ScenarioBuildHandlerTest {
 
     @Test
     public void build() throws Exception {
-        scenarioBuildHandler.build(null);
+        scenarioBuildHandler.build();
         Iterable<ScenarioNode> all = scenarioNodeRepository.findAll();
         verify(scenarioNodeRepository, times(1))
                 .save(captor.capture());

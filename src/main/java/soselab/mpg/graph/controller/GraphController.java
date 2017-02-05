@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import soselab.mpg.bdd.service.BDDService;
-import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
@@ -38,16 +37,6 @@ public class GraphController {
 
     @GetMapping("/visual")
     public GraphDataDTO getGraphData() {
-        LOGGER.info("Get graph data");
-        // check bdd
-        try {
-            boolean isUpdate = bddService.updateProject();
-            if (isUpdate) {
-                microserviceGraphBuilderService.build();
-            }
-        } catch (NoBDDProjectGitSettingException e) {
-            LOGGER.info("{}", e);
-        }
         // get visual data for d3
         return graphService.getVisualizationData();
     }
@@ -59,9 +48,6 @@ public class GraphController {
 
     @GetMapping("/serviceCall")
     public List<ServiceCallInformationDTO> getServiceCallInformation() {
-        //TODO find a suitable to call the pact broker
-        //get latest pact file from pact broker
-        pactService.getLatestPactFile();
 
         List<ServiceCallInformationDTO> serviceCallInformationDTOS = graphService.getProviderConsumerPair();
 
