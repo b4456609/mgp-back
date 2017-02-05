@@ -1,6 +1,5 @@
 @startuml
 start
-:Web Get Data;
 :HTTP POST Check update;
 partition Server {
     :Get Data From Pact Broker;
@@ -17,13 +16,13 @@ fork
         :Return Data;
     }
 fork again
-    :HTTP Get Service Information;
+    :HTTP Get \nService Information;
     partition Server {
         :Get Data;
         :Return Data;
     }
 fork again
-    :Get Service Call Inforamtion;
+    :HTTP Get \nService Call Information;
     partition Server {
         :Get Pair of \nConsumer and Provider;
         if (No Pact Files?) then (yes)
@@ -33,15 +32,22 @@ fork again
         :Return Data;
     }
 fork again
-    :Get Endpoint Inforamtion;
+    :HTTP Get \nEndpoint Information;
     partition Server {
         :Get Pact Data;
         :Return Data;
     }
 fork again
-    :Get Scenario Inforamtion;
+    :HTTP Get \nScenario Information;
     partition Server {
         :Get BDD Data;
+        :Return Data;
+    }
+fork again
+    :HTTP Get \nSetting;
+    partition Server {
+        :Get Pact Broker Setting;
+        :Get BDD Setting;
         :Return Data;
     }
 end fork
