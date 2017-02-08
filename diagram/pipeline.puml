@@ -1,18 +1,24 @@
 @startuml
+|Developement|
 start
 :Developer Update Project;
 :Jenkins Pipeline Start;
+|Unit Test|
 :Execute Unit test;
-if (Pass?) then (yes)
-    :Upload MPD file to MGP;
+if () then (fail)
+    :Upload MPD\nfile to MGP;
+else (pass)
+    :Upload MPD\nfile to MGP;
+    |Service Test|
     :Execute Service Test;
-       :Upload Service Test Result to MGP;
-    if (Service Test Pass?) then (yes)
+    if () then (fail)
+        :Upload \nService Test \nResult to MGP;
+    else(pass)
+        :Upload \nService Test \nResult to MGP;
+        |UAT|
         :Execute UAT;
         :Upload UAT Result to MGP;
-    else(no)
     endif
-else (no)
 endif
-stop
+stop 
 @enduml
