@@ -1,0 +1,14 @@
+@startuml
+start
+:Get All Invocation Chains;
+:Find the paths contain\nthe updated service;
+:Filter out the Service is after\nthe target service two level;
+fork
+    :Pair the consumer and\n provider Services;
+    :Pick the pact file;
+fork again
+    :Generate the Cucumber\n test annoation;
+end fork
+:Return Data;
+stop
+@enduml
