@@ -11,8 +11,10 @@ import soselab.mpg.pact.model.PactConfig;
 import soselab.mpg.pact.model.ServiceCallRelationInformation;
 import soselab.mpg.pact.repository.PactConfigRepository;
 import soselab.mpg.pact.repository.PactRepository;
+import soselab.mpg.regression.model.ConsumerProviderPair;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,9 +75,9 @@ public class PactServiceImp implements PactService {
             }
             String[] split = link.split("/");
             String provider = split[5];
-            String consumber = split[7];
+            String consumer = split[7];
             String version = split[9];
-            return new ServiceCallRelationInformation(provider, consumber, indented, version);
+            return new ServiceCallRelationInformation(provider, consumer, indented, version);
         }).collect(Collectors.toList());
         LOGGER.info("pact objects {}", serviceCallRelationInformations.toString());
         pactRepository.deleteAll();
@@ -85,5 +87,25 @@ public class PactServiceImp implements PactService {
     @Override
     public List<ServiceCallRelationInformation> getPacts() {
         return pactRepository.findAll();
+    }
+
+    @Override
+    public List<String> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair) {
+        List<PactConfig> all = pactConfigRepository.findAll();
+        if (all.isEmpty())
+            return Collections.emptyList();
+        String pactUrl = all.get(0).getUrl() + "pacts/latest";
+        LOGGER.info("pact url: {}", pactUrl);
+        List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
+        return pactFileLinks.stream()
+                .filter(link -> {
+                    String[] split = link.split("/");
+                    String provider = split[5];
+                    String consumer = split[7];
+                    return serviceTestPair.stream()
+                            .anyMatch(pair -> {
+                                return pair.getProvider().equals(provider) && pair.getConsumer().equals(consumer);
+                            });
+                }).collect(Collectors.toList());
     }
 }
