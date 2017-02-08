@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import soselab.mpg.bdd.service.BDDService;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.pact.service.PactService;
@@ -23,12 +24,15 @@ public class RegressionController {
     private final RegressionPicker regressionPicker;
     private final GraphService graphService;
     private final PactService pactService;
+    private final BDDService bddService;
+
 
     @Autowired
-    public RegressionController(RegressionPicker regressionPicker, GraphService graphService, PactService pactService) {
+    public RegressionController(RegressionPicker regressionPicker, GraphService graphService, PactService pactService, BDDService bddService) {
         this.regressionPicker = regressionPicker;
         this.graphService = graphService;
         this.pactService = pactService;
+        this.bddService = bddService;
     }
 
     @GetMapping("/serviceTest/{serviceName}")
@@ -43,5 +47,10 @@ public class RegressionController {
         LOGGER.info("consumber provider pair {}", serviceTestPair);
         List<String> urls = pactService.getPactUrlByConsumerAndProvider(serviceTestPair);
         return urls;
+    }
+
+    @GetMapping("/uat/{serviceName}")
+    public List<String> getScenarioAnnotations(@PathVariable("serviceName") String serviceName) {
+        return bddService.getAllTagsRelateToService(serviceName);
     }
 }

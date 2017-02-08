@@ -17,4 +17,6 @@ public interface BDDService {
     List<ScenarioWithTagDTO> getScenarioWithTag();
 
     ScenarioInformationDTO getScenarioInfomation();
+
+    List<String> getAllTagsRelateToService(String serviceName);
 }

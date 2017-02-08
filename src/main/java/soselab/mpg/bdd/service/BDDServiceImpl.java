@@ -150,4 +150,14 @@ public class BDDServiceImpl implements BDDService {
         return new ScenarioInformationDTO(scenarioItems, featureItems);
     }
 
+    @Override
+    public List<String> getAllTagsRelateToService(String serviceName) {
+        List<Scenario> all = scenarioRepository.findAll();
+        return all.stream()
+                .flatMap(scenario -> scenario.getTags().stream())
+                .filter(tag -> tag.contains(serviceName))
+                .distinct()
+                .collect(Collectors.toList());
+    }
+
 }
