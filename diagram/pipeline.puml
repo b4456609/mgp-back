@@ -7,18 +7,20 @@ start
 :Execute Unit test;
 if () then (fail)
     :Upload MPD\nfile to MGP;
+    stop
 else (pass)
     :Upload MPD\nfile to MGP;
     |Service Test|
     :Execute Service Test;
     if () then (fail)
         :Upload \nService Test \nResult to MGP;
+    stop
     else(pass)
         :Upload \nService Test \nResult to MGP;
         |UAT|
         :Execute UAT;
         :Upload UAT Result to MGP;
     endif
+    stop
 endif
-stop 
 @enduml
