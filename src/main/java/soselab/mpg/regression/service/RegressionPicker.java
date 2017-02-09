@@ -1,4 +1,4 @@
-package soselab.mpg.regression;
+package soselab.mpg.regression.service;
 
 import org.springframework.stereotype.Service;
 import soselab.mpg.regression.model.ConsumerProviderPair;

@@ -16,6 +16,7 @@ import soselab.mpg.regression.model.ConsumerProviderPair;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -90,14 +91,14 @@ public class PactServiceImp implements PactService {
     }
 
     @Override
-    public List<String> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair) {
+    public Map<String, List<String>> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair) {
         List<PactConfig> all = pactConfigRepository.findAll();
         if (all.isEmpty())
-            return Collections.emptyList();
+            return Collections.emptyMap();
         String pactUrl = all.get(0).getUrl() + "pacts/latest";
         LOGGER.info("pact url: {}", pactUrl);
         List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
-        return pactFileLinks.stream()
+        Map<String, List<String>> collect = pactFileLinks.stream()
                 .filter(link -> {
                     String[] split = link.split("/");
                     String provider = split[5];
@@ -106,6 +107,13 @@ public class PactServiceImp implements PactService {
                             .anyMatch(pair -> {
                                 return pair.getProvider().equals(provider) && pair.getConsumer().equals(consumer);
                             });
-                }).collect(Collectors.toList());
+                })
+                .collect(Collectors.groupingBy(link -> {
+                    String[] split = link.split("/");
+                    String provider = split[5];
+                    return provider;
+                }));
+        return collect;
+
     }
 }
