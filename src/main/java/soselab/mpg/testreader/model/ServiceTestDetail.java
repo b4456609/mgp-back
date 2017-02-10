@@ -1,4 +1,4 @@
-package soselab.mpg.testreader.controller;
+package soselab.mpg.testreader.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -9,7 +9,7 @@ import java.util.List;
  * Created by bernie on 2017/2/10.
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ServiceTestDTO {
+public class ServiceTestDetail {
 
     private MetaDataBean metaData;
     private ProviderBean provider;
@@ -39,6 +39,15 @@ public class ServiceTestDTO {
         this.execution = execution;
     }
 
+    @Override
+    public String toString() {
+        return "ServiceTestDetail{" +
+                "metaData=" + metaData +
+                ", provider=" + provider +
+                ", execution=" + execution +
+                '}';
+    }
+
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class MetaDataBean {
         private String date;
@@ -60,6 +69,13 @@ public class ServiceTestDTO {
             this.pactJvmVersion = pactJvmVersion;
         }
 
+        @Override
+        public String toString() {
+            return "MetaDataBean{" +
+                    "date='" + date + '\'' +
+                    ", pactJvmVersion='" + pactJvmVersion + '\'' +
+                    '}';
+        }
     }
 
     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -72,6 +88,13 @@ public class ServiceTestDTO {
 
         public void setName(String name) {
             this.name = name;
+        }
+
+        @Override
+        public String toString() {
+            return "ProviderBean{" +
+                    "name='" + name + '\'' +
+                    '}';
         }
     }
 
@@ -96,6 +119,14 @@ public class ServiceTestDTO {
             this.interactions = interactions;
         }
 
+        @Override
+        public String toString() {
+            return "ExecutionBean{" +
+                    "consumer=" + consumer +
+                    ", interactions=" + interactions +
+                    '}';
+        }
+
         @JsonIgnoreProperties(ignoreUnknown = true)
         public static class ConsumerBean {
             private String name;
@@ -117,6 +148,14 @@ public class ServiceTestDTO {
                 this.source = source;
             }
 
+            @Override
+            public String toString() {
+                return "ConsumerBean{" +
+                        "name='" + name + '\'' +
+                        ", source=" + source +
+                        '}';
+            }
+
             @JsonIgnoreProperties(ignoreUnknown = true)
             public static class SourceBean {
                 private String url;
@@ -127,6 +166,13 @@ public class ServiceTestDTO {
 
                 public void setUrl(String url) {
                     this.url = url;
+                }
+
+                @Override
+                public String toString() {
+                    return "SourceBean{" +
+                            "url='" + url + '\'' +
+                            '}';
                 }
             }
         }
@@ -150,6 +196,14 @@ public class ServiceTestDTO {
 
             public void setVerification(VerificationBean verification) {
                 this.verification = verification;
+            }
+
+            @Override
+            public String toString() {
+                return "InteractionsBean{" +
+                        "interaction=" + interaction +
+                        ", verification=" + verification +
+                        '}';
             }
 
             @JsonIgnoreProperties(ignoreUnknown = true)
@@ -191,10 +245,19 @@ public class ServiceTestDTO {
                     this.request = request;
                 }
 
+                @Override
+                public String toString() {
+                    return "InteractionBean{" +
+                            "providerState='" + providerState + '\'' +
+                            ", response=" + response +
+                            ", description='" + description + '\'' +
+                            ", request=" + request +
+                            '}';
+                }
+
                 @JsonIgnoreProperties(ignoreUnknown = true)
                 public static class ResponseBean {
                     private String JSONREGEXP;
-                    private MatchingRulesBean matchingRules;
                     private BodyBean body;
                     private HeadersBean headers;
                     private String XMLREGEXP;
@@ -208,14 +271,6 @@ public class ServiceTestDTO {
 
                     public void setJSONREGEXP(String JSONREGEXP) {
                         this.JSONREGEXP = JSONREGEXP;
-                    }
-
-                    public MatchingRulesBean getMatchingRules() {
-                        return matchingRules;
-                    }
-
-                    public void setMatchingRules(MatchingRulesBean matchingRules) {
-                        this.matchingRules = matchingRules;
                     }
 
                     public BodyBean getBody() {
@@ -266,16 +321,23 @@ public class ServiceTestDTO {
                         this.XMLREGEXP2 = XMLREGEXP2;
                     }
 
-                    @JsonIgnoreProperties(ignoreUnknown = true)
-                    public static class MatchingRulesBean {
+                    @Override
+                    public String toString() {
+                        return "ResponseBean{" +
+                                "JSONREGEXP='" + JSONREGEXP + '\'' +
+                                ", body=" + body +
+                                ", headers=" + headers +
+                                ", XMLREGEXP='" + XMLREGEXP + '\'' +
+                                ", status=" + status +
+                                ", HTMLREGEXP='" + HTMLREGEXP + '\'' +
+                                ", XMLREGEXP2='" + XMLREGEXP2 + '\'' +
+                                '}';
                     }
 
                     @JsonIgnoreProperties(ignoreUnknown = true)
                     public static class BodyBean {
                         private String value;
                         private boolean missing;
-                        @JsonProperty("null")
-                        private boolean _$Null326; // FIXME check this code
                         private boolean present;
                         private String state;
                         private boolean empty;
@@ -294,14 +356,6 @@ public class ServiceTestDTO {
 
                         public void setMissing(boolean missing) {
                             this.missing = missing;
-                        }
-
-                        public boolean is_$Null326() {
-                            return _$Null326;
-                        }
-
-                        public void set_$Null326(boolean _$Null326) {
-                            this._$Null326 = _$Null326;
                         }
 
                         public boolean isPresent() {
@@ -327,6 +381,17 @@ public class ServiceTestDTO {
                         public void setEmpty(boolean empty) {
                             this.empty = empty;
                         }
+
+                        @Override
+                        public String toString() {
+                            return "BodyBean{" +
+                                    "value='" + value + '\'' +
+                                    ", missing=" + missing +
+                                    ", present=" + present +
+                                    ", state='" + state + '\'' +
+                                    ", empty=" + empty +
+                                    '}';
+                        }
                     }
 
                     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -341,29 +406,23 @@ public class ServiceTestDTO {
                         public void setContentType(String ContentType) {
                             this.ContentType = ContentType;
                         }
+
+                        @Override
+                        public String toString() {
+                            return "HeadersBean{" +
+                                    "ContentType='" + ContentType + '\'' +
+                                    '}';
+                        }
                     }
                 }
 
                 @JsonIgnoreProperties(ignoreUnknown = true)
                 public static class RequestBean {
-                    private String JSONREGEXP;
                     private Object query;
-                    private MatchingRulesBeanX matchingRules;
                     private String path;
                     private BodyBeanX body;
                     private HeadersBeanX headers;
-                    private String XMLREGEXP;
-                    private String HTMLREGEXP;
-                    private String XMLREGEXP2;
                     private String method;
-
-                    public String getJSONREGEXP() {
-                        return JSONREGEXP;
-                    }
-
-                    public void setJSONREGEXP(String JSONREGEXP) {
-                        this.JSONREGEXP = JSONREGEXP;
-                    }
 
                     public Object getQuery() {
                         return query;
@@ -371,14 +430,6 @@ public class ServiceTestDTO {
 
                     public void setQuery(Object query) {
                         this.query = query;
-                    }
-
-                    public MatchingRulesBeanX getMatchingRules() {
-                        return matchingRules;
-                    }
-
-                    public void setMatchingRules(MatchingRulesBeanX matchingRules) {
-                        this.matchingRules = matchingRules;
                     }
 
                     public String getPath() {
@@ -405,30 +456,6 @@ public class ServiceTestDTO {
                         this.headers = headers;
                     }
 
-                    public String getXMLREGEXP() {
-                        return XMLREGEXP;
-                    }
-
-                    public void setXMLREGEXP(String XMLREGEXP) {
-                        this.XMLREGEXP = XMLREGEXP;
-                    }
-
-                    public String getHTMLREGEXP() {
-                        return HTMLREGEXP;
-                    }
-
-                    public void setHTMLREGEXP(String HTMLREGEXP) {
-                        this.HTMLREGEXP = HTMLREGEXP;
-                    }
-
-                    public String getXMLREGEXP2() {
-                        return XMLREGEXP2;
-                    }
-
-                    public void setXMLREGEXP2(String XMLREGEXP2) {
-                        this.XMLREGEXP2 = XMLREGEXP2;
-                    }
-
                     public String getMethod() {
                         return method;
                     }
@@ -437,16 +464,21 @@ public class ServiceTestDTO {
                         this.method = method;
                     }
 
-                    @JsonIgnoreProperties(ignoreUnknown = true)
-                    public static class MatchingRulesBeanX {
+                    @Override
+                    public String toString() {
+                        return "RequestBean{" +
+                                "query=" + query +
+                                ", path='" + path + '\'' +
+                                ", body=" + body +
+                                ", headers=" + headers +
+                                ", method='" + method + '\'' +
+                                '}';
                     }
 
                     @JsonIgnoreProperties(ignoreUnknown = true)
                     public static class BodyBeanX {
                         private Object value;
                         private boolean missing;
-                        @JsonProperty("null")
-                        private boolean _$Null322; // FIXME check this code
                         private boolean present;
                         private String state;
                         private boolean empty;
@@ -465,14 +497,6 @@ public class ServiceTestDTO {
 
                         public void setMissing(boolean missing) {
                             this.missing = missing;
-                        }
-
-                        public boolean is_$Null322() {
-                            return _$Null322;
-                        }
-
-                        public void set_$Null322(boolean _$Null322) {
-                            this._$Null322 = _$Null322;
                         }
 
                         public boolean isPresent() {
@@ -498,6 +522,17 @@ public class ServiceTestDTO {
                         public void setEmpty(boolean empty) {
                             this.empty = empty;
                         }
+
+                        @Override
+                        public String toString() {
+                            return "BodyBeanX{" +
+                                    "value=" + value +
+                                    ", missing=" + missing +
+                                    ", present=" + present +
+                                    ", state='" + state + '\'' +
+                                    ", empty=" + empty +
+                                    '}';
+                        }
                     }
 
                     @JsonIgnoreProperties(ignoreUnknown = true)
@@ -510,6 +545,13 @@ public class ServiceTestDTO {
 
                         public void setAccept(String Accept) {
                             this.Accept = Accept;
+                        }
+
+                        @Override
+                        public String toString() {
+                            return "HeadersBeanX{" +
+                                    "Accept='" + Accept + '\'' +
+                                    '}';
                         }
                     }
                 }
@@ -534,6 +576,14 @@ public class ServiceTestDTO {
 
                 public void setStatus(List<String> status) {
                     this.status = status;
+                }
+
+                @Override
+                public String toString() {
+                    return "VerificationBean{" +
+                            "result='" + result + '\'' +
+                            ", status=" + status +
+                            '}';
                 }
             }
         }

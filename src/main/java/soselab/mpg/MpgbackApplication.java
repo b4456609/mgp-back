@@ -14,8 +14,9 @@ import soselab.mpg.bdd.repository.ScenarioRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
 import soselab.mpg.pact.repository.PactConfigRepository;
+import soselab.mpg.testreader.repository.TestReportRepository;
 
-@EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class, ScenarioRepository.class})
+@EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class, ScenarioRepository.class, TestReportRepository.class})
 @EnableNeo4jRepositories(basePackageClasses = ServiceNodeRepository.class)
 @SpringBootApplication
 public class MpgbackApplication {
