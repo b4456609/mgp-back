@@ -157,6 +157,7 @@ public class BDDServiceImpl implements BDDService {
                 .flatMap(scenario -> scenario.getTags().stream())
                 .filter(tag -> tag.contains(serviceName))
                 .distinct()
+                .map(tag -> tag.replace(' ', '_'))
                 .collect(Collectors.toList());
     }
 
