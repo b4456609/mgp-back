@@ -3,10 +3,8 @@ package soselab.mpg.testreader.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import soselab.mpg.testreader.service.TestReaderService;
 
@@ -28,6 +26,10 @@ public class TestReaderController {
     @PostMapping("/serviceTest")
     public void uploadTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
         LOGGER.info("recevice files{}", uploadingFiles);
+        //validation
+        if (uploadingFiles.length == 0) {
+            throw new NoFilesException();
+        }
         Map<String, String> filenameAndContent = new HashMap<>();
         try {
             for (MultipartFile uploadingFile : uploadingFiles) {
@@ -46,5 +48,9 @@ public class TestReaderController {
         } catch (IOException e) {
             throw new ProccessFailException();
         }
+    }
+
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "No files found")
+    private class NoFilesException extends RuntimeException {
     }
 }
