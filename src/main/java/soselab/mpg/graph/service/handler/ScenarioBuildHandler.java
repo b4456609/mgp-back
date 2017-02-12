@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import soselab.mpg.bdd.model.ScenarioTagUtil;
 import soselab.mpg.bdd.service.BDDService;
 import soselab.mpg.bdd.service.ScenarioWithTagDTO;
 import soselab.mpg.graph.model.EndpointNode;
@@ -38,7 +39,9 @@ public class ScenarioBuildHandler implements GraphBuildHandler {
         List<ScenarioWithTagDTO> scenarioWithTagDTOS = bddService.getScenarioWithTag();
         for (ScenarioWithTagDTO scenarioWithTagDTO : scenarioWithTagDTOS) {
             // the scenario's tag which is endpoint id
-            Set<String> tags = scenarioWithTagDTO.getTags();
+            Set<String> tags = scenarioWithTagDTO.getTags().stream()
+                    .map(ScenarioTagUtil::translateToEndpointId)
+                    .collect(Collectors.toSet());
             LOGGER.info("tags {}", tags);
 
             // get the endpoint node with the this scenario
