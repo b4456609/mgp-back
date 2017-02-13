@@ -5,19 +5,19 @@ start
 :Jenkins Pipeline Start;
 |Unit Test|
 :Execute Unit test;
+:Upload MPD\nfile to MGP;
+-> Unit Test Result?;
 if () then (fail)
-    :Upload MPD\nfile to MGP;
     stop
 else (pass)
-    :Upload MPD\nfile to MGP;
     :Upload Pact DSL\nfile to Pact Broker;
     |Service Test|
     :Execute Service Test;
+    :Upload \nService Test \nResult to MGP;
+    -> Service Test Result?;
     if () then (fail)
-        :Upload \nService Test \nResult to MGP;
-    stop
+        stop
     else(pass)
-        :Upload \nService Test \nResult to MGP;
         |UAT|
         :Execute UAT;
         :Upload UAT Result to MGP;
