@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import soselab.mpg.testreader.controller.ReportDTO;
 import soselab.mpg.testreader.model.ProviderReport;
 import soselab.mpg.testreader.model.ServiceTestDetail;
 import soselab.mpg.testreader.model.TestReport;
@@ -13,6 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class TestReaderService {
@@ -41,5 +43,31 @@ public class TestReaderService {
 
         TestReport testReport = new TestReport(providerReports);
         testReportRepository.save(testReport);
+    }
+
+    public List<ReportDTO> getReports() {
+        List<TestReport> all = testReportRepository.findAll();
+
+        all.stream()
+                .map(testReport -> {
+                    List<ReportDTO.ReportBean> fail1 = testReport.getTestReports().stream()
+                            .map(providerReport -> {
+                                long fail = providerReport.getServiceTestDetail().getExecution().stream()
+                                        .flatMap(executionBean -> {
+                                            return executionBean.getInteractions().stream()
+                                                    .map(execution -> {
+                                                        return execution.getVerification().getResult();
+                                                    });
+                                        })
+                                        .filter(result -> result.equals("fail"))
+                                        .count();
+
+                                return new ReportDTO.ReportBean(providerReport.getServiceName(), fail, providerReport.getMarkdown());
+                            })
+                            .collect(Collectors.toList());
+                    return new ReportDTO(testReport.getCreatedDate().toString(), "service", visu);
+                })
+
+        return null;
     }
 }

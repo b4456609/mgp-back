@@ -10,6 +10,7 @@ import soselab.mpg.testreader.service.TestReaderService;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -48,6 +49,11 @@ public class TestReaderController {
         } catch (IOException e) {
             throw new ProccessFailException();
         }
+    }
+
+    @GetMapping("/serviceTest")
+    public List<ReportDTO> getReports() {
+        return testReaderService.getReports();
     }
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "No files found")
