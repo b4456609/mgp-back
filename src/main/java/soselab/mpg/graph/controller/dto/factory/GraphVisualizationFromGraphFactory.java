@@ -123,7 +123,9 @@ public class GraphVisualizationFromGraphFactory {
             }
         }
 
-        if (errorMarkConsumerAndProvider != null && errorMarkConsumerAndProvider.get(service).contains(endpoint)) {
+        if (errorMarkConsumerAndProvider != null &&
+                errorMarkConsumerAndProvider.get(service) != null &&
+                errorMarkConsumerAndProvider.get(service).contains(endpoint)) {
             className.append("error ");
         }
         return className.toString().trim();

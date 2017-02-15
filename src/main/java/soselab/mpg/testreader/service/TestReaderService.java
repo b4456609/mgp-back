@@ -45,7 +45,7 @@ public class TestReaderService {
                             String consumerName = executionBean.getConsumer().getName();
                             return executionBean.getInteractions().stream()
                                     .filter(excution -> {
-                                        if (excution.getVerification().getResult().equals("fail")) {
+                                        if (excution.getVerification().getResult().equals("failed")) {
                                             String method = excution.getInteraction().getRequest().getMethod();
                                             String path = excution.getInteraction().getRequest().getPath();
                                             String endpointId = String.format("%s %s %s %s", serviceName, "endpoint", path, method);

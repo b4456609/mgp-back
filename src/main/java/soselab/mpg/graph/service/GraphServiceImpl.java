@@ -33,8 +33,7 @@ public class GraphServiceImpl implements GraphService {
     private final ScenarioNodeRepository scenarioNodeRepository;
 
     @Autowired
-    public GraphServiceImpl(GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory,
-                            ServiceNodeRepository serviceNodeRepository,
+    public GraphServiceImpl(ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
                             ScenarioNodeRepository scenarioNodeRepository) {
         this.serviceNodeRepository = serviceNodeRepository;
