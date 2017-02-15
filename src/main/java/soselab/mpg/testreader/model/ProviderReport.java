@@ -7,11 +7,21 @@ public class ProviderReport {
     private String serviceName;
     private ServiceTestDetail serviceTestDetail;
     private String markdown;
+    private long failCount;
 
-    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown) {
+    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown, long failCount) {
         this.serviceName = serviceName;
         this.serviceTestDetail = serviceTestDetail;
         this.markdown = markdown;
+        this.failCount = failCount;
+    }
+
+    public long getFailCount() {
+        return failCount;
+    }
+
+    public void setFailCount(long failCount) {
+        this.failCount = failCount;
     }
 
     public String getServiceName() {

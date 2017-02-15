@@ -11,12 +11,22 @@ public class TestReport {
     @CreatedDate
     private Long createdDate;
     private List<ProviderReport> testReports;
+    private String visualData;
 
     public TestReport() {
     }
 
-    public TestReport(List<ProviderReport> testReports) {
+    public TestReport(List<ProviderReport> testReports, String visualData) {
         this.testReports = testReports;
+        this.visualData = visualData;
+    }
+
+    public String getVisualData() {
+        return visualData;
+    }
+
+    public void setVisualData(String visualData) {
+        this.visualData = visualData;
     }
 
     public String getId() {
@@ -49,6 +59,7 @@ public class TestReport {
                 "id='" + id + '\'' +
                 ", createdDate=" + createdDate +
                 ", testReports=" + testReports +
+                ", visualData='" + visualData + '\'' +
                 '}';
     }
 }

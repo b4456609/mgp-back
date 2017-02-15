@@ -3,6 +3,10 @@ package soselab.mpg.testreader.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -10,7 +14,6 @@ import soselab.mpg.testreader.service.TestReaderService;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -52,8 +55,9 @@ public class TestReaderController {
     }
 
     @GetMapping("/serviceTest")
-    public List<ReportDTO> getReports() {
-        return testReaderService.getReports();
+    public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"timestamp"}, direction = Sort.Direction.DESC)
+                                              Pageable pageable) {
+        return testReaderService.getReports(pageable);
     }
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "No files found")

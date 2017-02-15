@@ -18,6 +18,8 @@ import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -25,7 +27,6 @@ public class GraphServiceImpl implements GraphService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphServiceImpl.class);
 
-    private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
     private final CodeGenClient codeGenClient;
@@ -36,7 +37,6 @@ public class GraphServiceImpl implements GraphService {
                             ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
                             ScenarioNodeRepository scenarioNodeRepository) {
-        this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
@@ -44,7 +44,7 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public GraphDataDTO getVisualizationData() {
+    public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider) {
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 
@@ -66,8 +66,8 @@ public class GraphServiceImpl implements GraphService {
         //get Scenario node
         Iterable<ScenarioNode> scenarioNodes = scenarioNodeRepository.findAll();
 
-        return graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
-                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes);
+        return GraphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider);
     }
 
     @Override

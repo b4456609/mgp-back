@@ -16,7 +16,7 @@ public class ReportDTO {
      * report : [{"consumer":"a","provider":"b","error":2,"report":""}]
      */
 
-    private String timestamp;
+    private long timestamp;
     private String type;
     private String visual;
     private List<ReportBean> report;
@@ -24,18 +24,18 @@ public class ReportDTO {
     public ReportDTO() {
     }
 
-    public ReportDTO(String timestamp, String type, String visual, List<ReportBean> report) {
+    public ReportDTO(long timestamp, String type, String visual, List<ReportBean> report) {
         this.timestamp = timestamp;
         this.type = type;
         this.visual = visual;
         this.report = report;
     }
 
-    public String getTimestamp() {
+    public long getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(String timestamp) {
+    public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
 
