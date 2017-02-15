@@ -38,7 +38,7 @@ public class GraphController {
     @GetMapping("/visual")
     public GraphDataDTO getGraphData() {
         // get visual data for d3
-        return graphService.getVisualizationData();
+        return graphService.getVisualizationData(null);
     }
 
     @GetMapping("/service")
