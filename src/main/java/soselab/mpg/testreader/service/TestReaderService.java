@@ -95,7 +95,7 @@ public class TestReaderService {
                                 providerReport.getFailCount(), providerReport.getReport());
                     })
                     .collect(Collectors.toList());
-            return new ReportDTO(testReport.getCreatedDate().longValue(), "service",
+            return new ReportDTO(testReport.getCreatedDate().longValue(), testReport.getType(),
                     testReport.getVisualData(), report);
         });
         return reportDTOS;
