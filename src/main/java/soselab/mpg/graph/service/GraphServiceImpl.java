@@ -44,7 +44,7 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<DetailReport> failedScenario) {
+    public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 

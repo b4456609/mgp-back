@@ -11,6 +11,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import soselab.mpg.testreader.service.TestReaderService;
@@ -27,6 +29,7 @@ public class TestReaderController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestReaderController.class);
     private final TestReaderService testReaderService;
     private final ObjectMapper objectMapper = new ObjectMapper();
+
     @Autowired
     public TestReaderController(TestReaderService testReaderService) {
         this.testReaderService = testReaderService;
@@ -72,20 +75,17 @@ public class TestReaderController {
     }
 
     @GetMapping("/report")
-    public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"timestamp"}, direction = Sort.Direction.DESC)
+    public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"createdDate"}, direction = Sort.Direction.DESC)
                                               Pageable pageable) {
         return testReaderService.getReports(pageable);
     }
 
-    @GetMapping("/raw/serviceTest/{timestamp}")
+    @GetMapping(path = "/raw/serviceTest/{timestamp}", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getServiceTest(@PathVariable("timestamp") String timestamp) {
         long time = Long.valueOf(timestamp);
-        try {
-            return objectMapper.writeValueAsString(testReaderService.getServiceTestRawContentByTimestamp(time));
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return "";
+        String serviceTestRawContentByTimestamp = testReaderService.getServiceTestRawContentByTimestamp(time);
+        LOGGER.debug(serviceTestRawContentByTimestamp);
+        return serviceTestRawContentByTimestamp;
     }
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "No files found")

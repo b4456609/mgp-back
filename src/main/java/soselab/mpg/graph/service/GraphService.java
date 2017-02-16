@@ -15,7 +15,7 @@ import java.util.Set;
  * Created by bernie on 2017/1/22.
  */
 public interface GraphService {
-    GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<DetailReport> failedScenario);
+    GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario);
 
     List<PathGroup> getPathNodeIdGroups();
 

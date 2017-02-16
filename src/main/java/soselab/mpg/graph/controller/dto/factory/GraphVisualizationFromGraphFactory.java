@@ -26,7 +26,7 @@ public class GraphVisualizationFromGraphFactory {
                                       List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                       List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                       List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
-                                      Map<String, Set<String>> errorMarkConsumerAndProvider, Set<DetailReport> failedScenario) {
+                                      Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
         LOGGER.info("endpoint node {}", endpointNodes);
         LOGGER.info("service node {}", serviceNodes);
         LOGGER.info("all service with endpoint {}", allServiceWithEndpoint);
@@ -63,7 +63,7 @@ public class GraphVisualizationFromGraphFactory {
         List<NodesItem> scenarioNodeItems = StreamSupport.stream(scenarioNodes.spliterator(), false)
                 .map(scenarioNode -> {
                     String className = "";
-                    if (failedScenario.contains(scenarioNode.getName())) {
+                    if (failedScenario != null && failedScenario.contains(scenarioNode.getName())) {
                         className += "error ";
                     }
                     return new NodesItemBuilder().setClassName(className.trim())

@@ -107,7 +107,7 @@ public class TestReaderService {
                 .flatMap(uatdto -> {
                     return uatdto.getElements().stream()
                             .flatMap(elementsBean -> {
-                                LOGGER.info("element type:", elementsBean.getType());
+                                LOGGER.info("element type: {}", elementsBean.getType());
                                 if (elementsBean.getType().equals("scenario")) {
                                     String scenarioName = elementsBean.getName();
                                     long failedCount = elementsBean.getSteps().stream()
@@ -120,10 +120,11 @@ public class TestReaderService {
                             });
                 }).collect(Collectors.toList());
 
-        Set<DetailReport> failedScenario = scenarioReports.stream()
+        Set<String> failedScenario = scenarioReports.stream()
                 .filter(report -> report.getFailCount() > 0)
+                .map(report -> report.getName())
                 .collect(Collectors.toSet());
-
+        LOGGER.info("failed scenario {}", failedScenario);
         GraphDataDTO visualizationData = graphService.getVisualizationData(null, failedScenario);
         String json = mapper.writeValueAsString(visualizationData);
 
@@ -133,7 +134,7 @@ public class TestReaderService {
     }
 
     public String getServiceTestRawContentByTimestamp(long time) {
-        TestReport testReport = testReportRepository.findOneByTimestamp(time);
+        TestReport testReport = testReportRepository.findOneByCreatedDate(time);
         if (testReport == null)
             throw new NotFoundException();
         return testReport.getRawReports().get(0);
