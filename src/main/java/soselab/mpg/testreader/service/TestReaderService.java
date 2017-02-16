@@ -128,6 +128,6 @@ public class TestReaderService {
 
         TestReport testReport = new TestReport("uat", scenarioReports, json,
                 Collections.singletonList(new String(content)));
-
+        testReportRepository.save(testReport);
     }
 }

@@ -41,4 +41,12 @@ public class ScenarioReport implements DetailReport {
     public String getReport() {
         return "";
     }
+
+    @Override
+    public String toString() {
+        return "ScenarioReport{" +
+                "scenarioName='" + scenarioName + '\'' +
+                ", failCount=" + failCount +
+                '}';
+    }
 }
