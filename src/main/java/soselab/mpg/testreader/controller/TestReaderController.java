@@ -1,5 +1,6 @@
 package soselab.mpg.testreader.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -74,6 +75,17 @@ public class TestReaderController {
     public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"timestamp"}, direction = Sort.Direction.DESC)
                                               Pageable pageable) {
         return testReaderService.getReports(pageable);
+    }
+
+    @GetMapping("/raw/serviceTest/{timestamp}")
+    public String getServiceTest(@PathVariable("timestamp") String timestamp) {
+        long time = Long.valueOf(timestamp);
+        try {
+            return objectMapper.writeValueAsString(testReaderService.getServiceTestRawContentByTimestamp(time));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "No files found")

@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.service.GraphService;
+import soselab.mpg.testreader.controller.NotFoundException;
 import soselab.mpg.testreader.controller.ReportDTO;
 import soselab.mpg.testreader.controller.UATDTO;
 import soselab.mpg.testreader.model.*;
@@ -129,5 +130,12 @@ public class TestReaderService {
         TestReport testReport = new TestReport("uat", scenarioReports, json,
                 Collections.singletonList(new String(content)));
         testReportRepository.save(testReport);
+    }
+
+    public String getServiceTestRawContentByTimestamp(long time) {
+        TestReport testReport = testReportRepository.findOneByTimestamp(time);
+        if (testReport == null)
+            throw new NotFoundException();
+        return testReport.getRawReports().get(0);
     }
 }
