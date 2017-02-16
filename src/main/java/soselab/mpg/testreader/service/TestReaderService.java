@@ -1,5 +1,6 @@
 package soselab.mpg.testreader.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,14 +10,14 @@ import org.springframework.stereotype.Service;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.testreader.controller.ReportDTO;
-import soselab.mpg.testreader.model.ProviderReport;
-import soselab.mpg.testreader.model.ServiceTestDetail;
-import soselab.mpg.testreader.model.TestReport;
+import soselab.mpg.testreader.controller.UATDTO;
+import soselab.mpg.testreader.model.*;
 import soselab.mpg.testreader.repository.TestReportRepository;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class TestReaderService {
@@ -32,7 +33,7 @@ public class TestReaderService {
 
     public void saveServiceTest(Map<String, String> filenameAndContent) throws IOException {
         Map<String, Set<String>> consumerProviderMap = new HashMap<>();
-        List<ProviderReport> providerReports = new ArrayList<>();
+        List<DetailReport> providerReports = new ArrayList<>();
         for (String filename : filenameAndContent.keySet()) {
             if (filename.endsWith(".json")) {
                 String serviceName = filename.substring(0, filename.lastIndexOf("."));
@@ -73,11 +74,15 @@ public class TestReaderService {
         LOGGER.info("consumerProviderMap {}", consumerProviderMap);
 
         //get d3 snapshot visual data
-        GraphDataDTO visualizationData = graphService.getVisualizationData(consumerProviderMap);
+        GraphDataDTO visualizationData = graphService.getVisualizationData(consumerProviderMap, null);
         String json = mapper.writeValueAsString(visualizationData);
         LOGGER.info("Get visulaiztion data", visualizationData);
 
-        TestReport testReport = new TestReport(providerReports, json);
+        //add all raw report
+        ArrayList<String> rawReports = new ArrayList<>();
+        rawReports.addAll(filenameAndContent.values());
+
+        TestReport testReport = new TestReport("service", providerReports, json, rawReports);
         testReportRepository.save(testReport);
     }
 
@@ -86,13 +91,43 @@ public class TestReaderService {
         Page<ReportDTO> reportDTOS = all.map(testReport -> {
             List<ReportDTO.ReportBean> report = testReport.getTestReports().stream()
                     .map(providerReport -> {
-                        return new ReportDTO.ReportBean(providerReport.getServiceName(),
-                                providerReport.getFailCount(), providerReport.getMarkdown());
+                        return new ReportDTO.ReportBean(providerReport.getName(),
+                                providerReport.getFailCount(), providerReport.getReport());
                     })
                     .collect(Collectors.toList());
             return new ReportDTO(testReport.getCreatedDate().longValue(), "service",
                     testReport.getVisualData(), report);
         });
         return reportDTOS;
+    }
+
+    public void saveUATTest(byte[] content, List<UATDTO> uatdtos) throws JsonProcessingException {
+        List<DetailReport> scenarioReports = uatdtos.stream()
+                .flatMap(uatdto -> {
+                    return uatdto.getElements().stream()
+                            .flatMap(elementsBean -> {
+                                LOGGER.info("element type:", elementsBean.getType());
+                                if (elementsBean.getType().equals("scenario")) {
+                                    String scenarioName = elementsBean.getName();
+                                    long failedCount = elementsBean.getSteps().stream()
+                                            .filter(stepsBean ->
+                                                    stepsBean.getResult().getStatus().equals("failed")
+                                            ).count();
+                                    return Stream.of(new ScenarioReport(scenarioName, failedCount));
+                                }
+                                return Stream.empty();
+                            });
+                }).collect(Collectors.toList());
+
+        Set<DetailReport> failedScenario = scenarioReports.stream()
+                .filter(report -> report.getFailCount() > 0)
+                .collect(Collectors.toSet());
+
+        GraphDataDTO visualizationData = graphService.getVisualizationData(null, failedScenario);
+        String json = mapper.writeValueAsString(visualizationData);
+
+        TestReport testReport = new TestReport("uat", scenarioReports, json,
+                Collections.singletonList(new String(content)));
+
     }
 }

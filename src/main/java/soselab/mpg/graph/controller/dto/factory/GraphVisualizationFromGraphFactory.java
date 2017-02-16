@@ -7,6 +7,7 @@ import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.testreader.model.DetailReport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class GraphVisualizationFromGraphFactory {
                                       List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                       List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                       List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
-                                      Map<String, Set<String>> errorMarkConsumerAndProvider) {
+                                      Map<String, Set<String>> errorMarkConsumerAndProvider, Set<DetailReport> failedScenario) {
         LOGGER.info("endpoint node {}", endpointNodes);
         LOGGER.info("service node {}", serviceNodes);
         LOGGER.info("all service with endpoint {}", allServiceWithEndpoint);
@@ -33,6 +34,7 @@ public class GraphVisualizationFromGraphFactory {
         LOGGER.info("path node group {}", pathNodeIdGroups);
         LOGGER.info("scenario node {}", scenarioNodes);
         LOGGER.info("errorMarkConsumerAndProvider {}", errorMarkConsumerAndProvider);
+        LOGGER.info("failedScenario {}", failedScenario);
 
         //endpoint node
         List<NodesItem> endpointNodeItems = StreamSupport.stream(endpointNodes.spliterator(), false)
@@ -61,7 +63,10 @@ public class GraphVisualizationFromGraphFactory {
         List<NodesItem> scenarioNodeItems = StreamSupport.stream(scenarioNodes.spliterator(), false)
                 .map(scenarioNode -> {
                     String className = "";
-                    return new NodesItemBuilder().setClassName(className)
+                    if (failedScenario.contains(scenarioNode.getName())) {
+                        className += "error ";
+                    }
+                    return new NodesItemBuilder().setClassName(className.trim())
                             .setGroup(3)
                             .setId(scenarioNode.getMongoId())
                             .setLabel(scenarioNode.getName())

@@ -1,5 +1,7 @@
 package soselab.mpg.testreader.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,9 @@ import org.springframework.web.multipart.MultipartFile;
 import soselab.mpg.testreader.service.TestReaderService;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -21,15 +25,27 @@ import java.util.Map;
 public class TestReaderController {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestReaderController.class);
     private final TestReaderService testReaderService;
-
+    private final ObjectMapper objectMapper = new ObjectMapper();
     @Autowired
     public TestReaderController(TestReaderService testReaderService) {
         this.testReaderService = testReaderService;
     }
 
+    @PostMapping("/uat")
+    public void uploadUatTest(@RequestParam("file") MultipartFile uploadingFile) {
+        try {
+            byte[] content = uploadingFile.getBytes();
+            List<UATDTO> uatdtos = objectMapper.readValue(content, new TypeReference<List<UATDTO>>() {
+            });
+            testReaderService.saveUATTest(content, uatdtos);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @PostMapping("/serviceTest")
     public void uploadTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
-        LOGGER.info("recevice files{}", uploadingFiles);
+        LOGGER.info("recevice files{}", Arrays.toString(uploadingFiles));
         //validation
         if (uploadingFiles.length == 0) {
             throw new NoFilesException();

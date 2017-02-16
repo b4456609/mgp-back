@@ -16,6 +16,7 @@ import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
+import soselab.mpg.testreader.model.DetailReport;
 
 import java.util.List;
 import java.util.Map;
@@ -43,7 +44,7 @@ public class GraphServiceImpl implements GraphService {
     }
 
     @Override
-    public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider) {
+    public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<DetailReport> failedScenario) {
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 
@@ -66,7 +67,8 @@ public class GraphServiceImpl implements GraphService {
         Iterable<ScenarioNode> scenarioNodes = scenarioNodeRepository.findAll();
 
         return GraphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
-                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider);
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider,
+                failedScenario);
     }
 
     @Override
