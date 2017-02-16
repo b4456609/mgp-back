@@ -1,0 +1,308 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "add pack",
+        "description": "",
+        "id": "add-pack;add-pack",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 247295911,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am a  logged-in  user",
+            "match": {
+              "location": "User.i_am_a_logged_in_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1683376215,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I add pack with following content",
+            "match": {
+              "location": "AddPackTest.i_add_pack_with_following_content(AddPack\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "title",
+                  "description",
+                  "content"
+                ],
+                "line": 6
+              },
+              {
+                "cells": [
+                  "test",
+                  "test descritpion",
+                  "afwfawe"
+                ],
+                "line": 7
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 46547,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "the pack create",
+            "match": {
+              "location": "AddPackTest.the_pack_create()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 2,
+            "name": "@easylearn_pack_endpoint_/_POST"
+          }
+        ]
+      }
+    ],
+    "name": "add pack",
+    "description": "",
+    "id": "add-pack",
+    "keyword": "Feature",
+    "uri": "soselab/easylearn/addPack.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 5,
+        "name": "add version",
+        "description": "",
+        "id": "add-version;add-version",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 170855,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I am viewing a pack",
+            "match": {
+              "location": "AddVersionTest.i_am_viewing_a_pack()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 39123306,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I edit a version with following content",
+            "match": {
+              "location": "AddVersionTest.i_edit_a_version_with_following_content(String)"
+            },
+            "keyword": "When ",
+            "doc_string": {
+              "content_type": "The government has already recaptured more than 70% of the rebel-controlled areas in the east, the UK-based Syrian Observatory for Human Rights says.",
+              "line": 8,
+              "value": " More than 100,000 people are believed to be trapped in districts still in rebel hands.\n Food supplies are exhausted and there are no functioning hospitals."
+            }
+          },
+          {
+            "result": {
+              "duration": 2052080678,
+              "error_message": "feign.FeignException: status 500 reading PackClient#getPack(String); content:\n{\"timestamp\":1487217971907,\"status\":500,\"error\":\"Internal Server Error\",\"exception\":\"com.netflix.hystrix.exception.HystrixRuntimeException\",\"message\":\"getUserPacks failed and no fallback available.\",\"path\":\"/\"}\n\tat feign.FeignException.errorStatus(FeignException.java:62)\n\tat feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:91)\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:138)\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:76)\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:103)\n\tat com.sun.proxy.$Proxy14.getPack(Unknown Source)\n\tat soselab.easylearn.AddVersionTest.the_version_is_created(AddVersionTest.java:45)\n\tat ✽.Then The version is created(soselab/easylearn/addVersion.feature:13)\n",
+              "status": "failed"
+            },
+            "line": 13,
+            "name": "The version is created",
+            "match": {
+              "location": "AddVersionTest.the_version_is_created()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 3,
+            "name": "@easylearn_pack_endpoint_/{packId}/version_POST"
+          },
+          {
+            "line": 4,
+            "name": "@easylearn_pack_endpoint_/_GET"
+          }
+        ]
+      }
+    ],
+    "name": "add version",
+    "description": "",
+    "id": "add-version",
+    "keyword": "Feature",
+    "uri": "soselab/easylearn/addVersion.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 4,
+        "name": "add version",
+        "description": "",
+        "id": "add-fodler;add-version",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 82164,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I am a  logged-in  user",
+            "match": {
+              "location": "User.i_am_a_logged_in_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 66802882,
+              "error_message": "feign.FeignException: status 404 reading UserClient#addFolder(FolderDTO,String); content:\n{\"timestamp\":1487217972007,\"status\":404,\"error\":\"Not Found\",\"exception\":\"soselab.easylearn.service.exception.UserNotFoundException\",\"message\":\"No such user\",\"path\":\"/folder\"}\n\tat feign.FeignException.errorStatus(FeignException.java:62)\n\tat feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:91)\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:138)\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:76)\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:103)\n\tat com.sun.proxy.$Proxy15.addFolder(Unknown Source)\n\tat soselab.easylearn.AddFolderTest.lambda$i_add_a_folder_with_following_name$0(AddFolderTest.java:29)\n\tat java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:193)\n\tat java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1374)\n\tat java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:481)\n\tat java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:471)\n\tat java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:708)\n\tat java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)\n\tat java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:499)\n\tat soselab.easylearn.AddFolderTest.i_add_a_folder_with_following_name(AddFolderTest.java:32)\n\tat ✽.When I add a folder with following name(soselab/easylearn/folder.feature:6)\n",
+              "status": "failed"
+            },
+            "line": 6,
+            "name": "I add a folder with following name",
+            "match": {
+              "location": "AddFolderTest.i_add_a_folder_with_following_name(AddFolder\u003e)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "name"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "My favorite"
+                ],
+                "line": 8
+              },
+              {
+                "cells": [
+                  "Dog"
+                ],
+                "line": 9
+              },
+              {
+                "cells": [
+                  "ToDo"
+                ],
+                "line": 10
+              },
+              {
+                "cells": [
+                  "600"
+                ],
+                "line": 11
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 12,
+            "name": "The folder is created",
+            "match": {
+              "location": "AddFolderTest.the_folder_is_created()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 2,
+            "name": "@easylearn_user_endpoint_/folder_GET"
+          },
+          {
+            "line": 3,
+            "name": "@easylearn_user_endpoint_/folder_POST"
+          }
+        ]
+      }
+    ],
+    "name": "add fodler",
+    "description": "",
+    "id": "add-fodler",
+    "keyword": "Feature",
+    "uri": "soselab/easylearn/folder.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "get pack",
+        "description": "",
+        "id": "get-pack;get-pack",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 81948,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am a  logged-in  user",
+            "match": {
+              "location": "User.i_am_a_logged_in_user()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3466316,
+              "error_message": "cucumber.api.PendingException: TODO: implement me\n\tat soselab.easylearn.GetPack.i_get_my_packs(GetPack.java:14)\n\tat ✽.When I get my packs(soselab/easylearn/getPack.feature:5)\n",
+              "status": "pending"
+            },
+            "line": 5,
+            "name": "I get my packs",
+            "match": {
+              "location": "GetPack.i_get_my_packs()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 6,
+            "name": "the pack return",
+            "match": {
+              "location": "GetPack.the_pack_return()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "get pack",
+    "description": "",
+    "id": "get-pack",
+    "keyword": "Feature",
+    "uri": "soselab/easylearn/getPack.feature"
+  }
+]

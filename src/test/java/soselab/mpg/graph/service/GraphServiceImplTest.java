@@ -62,7 +62,7 @@ public class GraphServiceImplTest {
 
         serviceNodeRepository.save(Arrays.asList(a, b));
 
-        GraphDataDTO visualizationData = graphService.getVisualizationData();
+        GraphDataDTO visualizationData = graphService.getVisualizationData(null, null);
         System.out.println(visualizationData);
         boolean cyclic = visualizationData.getNodes().stream().anyMatch(nodesItem -> nodesItem.getClassName()
                 .contains("cyclic"));

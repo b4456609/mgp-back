@@ -5,14 +5,17 @@ import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
 import soselab.mpg.graph.model.PathGroup;
+import soselab.mpg.testreader.model.DetailReport;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by bernie on 2017/1/22.
  */
 public interface GraphService {
-    GraphDataDTO getVisualizationData();
+    GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario);
 
     List<PathGroup> getPathNodeIdGroups();
 
@@ -23,4 +26,5 @@ public interface GraphService {
     List<EndpointInformationDTO> getEndpointInformations();
 
     List<ServiceCallInformationDTO> getProviderConsumerPair();
+
 }

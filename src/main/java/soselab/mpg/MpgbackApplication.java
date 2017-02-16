@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 import org.springframework.web.cors.CorsConfiguration;
@@ -19,6 +20,7 @@ import soselab.mpg.testreader.repository.TestReportRepository;
 @EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class, ScenarioRepository.class, TestReportRepository.class})
 @EnableNeo4jRepositories(basePackageClasses = ServiceNodeRepository.class)
 @SpringBootApplication
+@EnableMongoAuditing
 public class MpgbackApplication {
 
     public static void main(String[] args) {

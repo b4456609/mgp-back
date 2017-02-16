@@ -2,35 +2,39 @@ package soselab.mpg.graph.controller.dto.factory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.model.EndpointNode;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.testreader.model.DetailReport;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
-@Component
 public class GraphVisualizationFromGraphFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
 
 
-    public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
-                               List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
-                               List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
-                               List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes) {
+    public static GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
+                                      List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
+                                      List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
+                                      List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
+                                      Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
         LOGGER.info("endpoint node {}", endpointNodes);
         LOGGER.info("service node {}", serviceNodes);
         LOGGER.info("all service with endpoint {}", allServiceWithEndpoint);
         LOGGER.info("endpoint node {}", providerEndpointWithConsumerPairPair);
         LOGGER.info("path node group {}", pathNodeIdGroups);
         LOGGER.info("scenario node {}", scenarioNodes);
+        LOGGER.info("errorMarkConsumerAndProvider {}", errorMarkConsumerAndProvider);
+        LOGGER.info("failedScenario {}", failedScenario);
 
         //endpoint node
         List<NodesItem> endpointNodeItems = StreamSupport.stream(endpointNodes.spliterator(), false)
@@ -59,7 +63,10 @@ public class GraphVisualizationFromGraphFactory {
         List<NodesItem> scenarioNodeItems = StreamSupport.stream(scenarioNodes.spliterator(), false)
                 .map(scenarioNode -> {
                     String className = "";
-                    return new NodesItemBuilder().setClassName(className)
+                    if (failedScenario != null && failedScenario.contains(scenarioNode.getName())) {
+                        className += "error ";
+                    }
+                    return new NodesItemBuilder().setClassName(className.trim())
                             .setGroup(3)
                             .setId(scenarioNode.getMongoId())
                             .setLabel(scenarioNode.getName())
@@ -94,7 +101,7 @@ public class GraphVisualizationFromGraphFactory {
 
         //set class name
         for (ProviderEndpointWithConsumerPairItem item : providerEndpointWithConsumerPairPair) {
-            item.setClassName(getProviderEndpointWithConsumerClass(pathNodeIdGroups, item.getSource(), item.getTarget()));
+            item.setClassName(getProviderEndpointWithConsumerClass(pathNodeIdGroups, item.getSource(), item.getTarget(), errorMarkConsumerAndProvider));
         }
 
         return new GraphDataDTOBuilder()
@@ -105,22 +112,31 @@ public class GraphVisualizationFromGraphFactory {
                 .createGraphDataDTO();
     }
 
-    private String getProviderEndpointWithConsumerClass(List<PathGroup> pathNodeIdGroups, String service, String endpoint) {
-        String className = "";
+    private static String getProviderEndpointWithConsumerClass(List<PathGroup> pathNodeIdGroups,
+                                                               String service,
+                                                               String endpoint,
+                                                               Map<String, Set<String>> errorMarkConsumerAndProvider) {
+        StringBuilder className = new StringBuilder();
         for (int i = 0; i < pathNodeIdGroups.size(); i++) {
             PathGroup group = pathNodeIdGroups.get(i);
             if (group.isServiceCall(service, endpoint)) {
-                className += String.format("group%d ", i);
+                className.append(String.format("group%d ", i));
                 //check is in cyclic group
                 if (group.isCyclic()) {
-                    className += String.format("cyclic%d ", i);
+                    className.append(String.format("cyclic%d ", i));
                 }
             }
         }
-        return className;
+
+        if (errorMarkConsumerAndProvider != null &&
+                errorMarkConsumerAndProvider.get(service) != null &&
+                errorMarkConsumerAndProvider.get(service).contains(endpoint)) {
+            className.append("error ");
+        }
+        return className.toString().trim();
     }
 
-    private String getClassString(List<PathGroup> pathNodeIdGroups, String id) {
+    private static String getClassString(List<PathGroup> pathNodeIdGroups, String id) {
         LOGGER.info("getclassstring id:{}", id);
         String className = "";
         for (int i = 0; i < pathNodeIdGroups.size(); i++) {
@@ -147,7 +163,7 @@ public class GraphVisualizationFromGraphFactory {
     }
 
 
-    private String getServiceWithEndpointClassString(List<PathGroup> pathNodeIdGroups
+    private static String getServiceWithEndpointClassString(List<PathGroup> pathNodeIdGroups
             , String id1, String id2) {
         String className = "";
         for (int i = 0; i < pathNodeIdGroups.size(); i++) {

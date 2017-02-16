@@ -3,15 +3,36 @@ package soselab.mpg.testreader.model;
 /**
  * Created by Fan on 2017/2/10.
  */
-public class ProviderReport {
+public class ProviderReport implements DetailReport {
     private String serviceName;
     private ServiceTestDetail serviceTestDetail;
     private String markdown;
+    private long failCount;
 
-    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown) {
+    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown, long failCount) {
         this.serviceName = serviceName;
         this.serviceTestDetail = serviceTestDetail;
         this.markdown = markdown;
+        this.failCount = failCount;
+    }
+
+    @Override
+    public String getName() {
+        return this.getServiceName();
+    }
+
+    @Override
+    public long getFailCount() {
+        return failCount;
+    }
+
+    public void setFailCount(long failCount) {
+        this.failCount = failCount;
+    }
+
+    @Override
+    public String getReport() {
+        return this.getMarkdown();
     }
 
     public String getServiceName() {

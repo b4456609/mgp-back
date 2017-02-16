@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import soselab.mpg.bdd.client.BDDClient;
 import soselab.mpg.bdd.client.dto.FeatureDTO;
 import soselab.mpg.bdd.client.dto.LatestCommitStatusDTO;
+import soselab.mpg.bdd.controller.FeatureDocumentDTO;
 import soselab.mpg.bdd.model.BDDGitSetting;
 import soselab.mpg.bdd.model.Feature;
 import soselab.mpg.bdd.model.Scenario;
@@ -18,6 +19,7 @@ import soselab.mpg.graph.controller.dto.ScenarioInformationDTO;
 import soselab.mpg.graph.controller.dto.ScenarioItem;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -157,6 +159,16 @@ public class BDDServiceImpl implements BDDService {
                 .flatMap(scenario -> scenario.getTags().stream())
                 .filter(tag -> tag.contains(serviceName))
                 .distinct()
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<FeatureDocumentDTO> getFeatures() {
+        List<Feature> all = featureRepository.findAll();
+        if (all.isEmpty())
+            return Collections.emptyList();
+        return all.stream()
+                .map(feature -> new FeatureDocumentDTO(feature.getName(), feature.getContent()))
                 .collect(Collectors.toList());
     }
 
