@@ -1,5 +1,6 @@
 package soselab.mpg.bdd.service;
 
+import soselab.mpg.bdd.controller.FeatureDocumentDTO;
 import soselab.mpg.graph.controller.dto.ScenarioInformationDTO;
 
 import java.util.List;
@@ -19,4 +20,6 @@ public interface BDDService {
     ScenarioInformationDTO getScenarioInfomation();
 
     List<String> getAllTagsRelateToService(String serviceName);
+
+    List<FeatureDocumentDTO> getFeatures();
 }
