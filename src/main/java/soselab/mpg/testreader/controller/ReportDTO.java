@@ -13,7 +13,7 @@ public class ReportDTO {
      * timestamp :
      * type : service
      * visual :
-     * report : [{"consumer":"a","provider":"b","error":2,"report":""}]
+     * report : [{"consumer":"a","name":"b","error":2,"report":""}]
      */
 
     private long timestamp;
@@ -75,25 +75,25 @@ public class ReportDTO {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ReportBean {
-        private String provider;
+        private String name;
         private long error;
         private String report;
 
         public ReportBean() {
         }
 
-        public ReportBean(String provider, long error, String report) {
-            this.provider = provider;
+        public ReportBean(String name, long error, String report) {
+            this.name = name;
             this.error = error;
             this.report = report;
         }
 
-        public String getProvider() {
-            return provider;
+        public String getName() {
+            return name;
         }
 
-        public void setProvider(String provider) {
-            this.provider = provider;
+        public void setName(String name) {
+            this.name = name;
         }
 
         public long getError() {
@@ -115,7 +115,7 @@ public class ReportDTO {
         @Override
         public String toString() {
             return "ReportBean{" +
-                    ", provider='" + provider + '\'' +
+                    ", name='" + name + '\'' +
                     ", error=" + error +
                     ", report='" + report + '\'' +
                     '}';

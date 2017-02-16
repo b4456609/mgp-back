@@ -30,7 +30,7 @@ public class ScenarioReport implements DetailReport {
 
     @Override
     public long getFailCount() {
-        return 0;
+        return failCount;
     }
 
     public void setFailCount(long failCount) {

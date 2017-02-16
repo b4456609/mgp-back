@@ -70,7 +70,7 @@ public class TestReaderController {
         }
     }
 
-    @GetMapping("/serviceTest")
+    @GetMapping("/report")
     public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"timestamp"}, direction = Sort.Direction.DESC)
                                               Pageable pageable) {
         return testReaderService.getReports(pageable);
