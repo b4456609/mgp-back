@@ -13,16 +13,18 @@ import soselab.mpg.graph.service.handler.ServiceBuildHandler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
 public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBuilderService {
     private static final Logger LOGGER = LoggerFactory.getLogger(MicroserviceGraphBuilderServiceImpl.class);
-
+    private final AtomicBoolean needBuild = new AtomicBoolean(false);
     private final EndpointNodeRepository endpointNodeRepository;
     private final ScenarioNodeRepository scenarioNodeRepository;
     private final ServiceNodeRepository serviceNodeRepository;
     private final ServiceBuildHandler serviceBuildHandler;
     private final ScenarioBuildHandler scenarioBuildHandler;
+    private Thread thread = null;
 
     @Autowired
     public MicroserviceGraphBuilderServiceImpl(EndpointNodeRepository endpointNodeRepository,
@@ -39,6 +41,19 @@ public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBui
 
     @Override
     public synchronized void build() {
+        if (thread != null && thread.isAlive()) {
+            needBuild.set(true);
+        } else {
+            this.start();
+        }
+    }
+
+    private synchronized void start() {
+        this.thread = new Thread(this::buildGraph);
+        thread.start();
+    }
+
+    private void buildGraph() {
         endpointNodeRepository.deleteAll();
         scenarioNodeRepository.deleteAll();
         serviceNodeRepository.deleteAll();
@@ -49,7 +64,13 @@ public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBui
         graphBuildHandlers.add(scenarioBuildHandler);
 
         for (GraphBuildHandler graphBuildHandler : graphBuildHandlers) {
+            if (needBuild.get()) {
+                break;
+            }
             graphBuildHandler.build();
+        }
+        if (needBuild.getAndSet(false)) {
+            this.start();
         }
     }
 }
