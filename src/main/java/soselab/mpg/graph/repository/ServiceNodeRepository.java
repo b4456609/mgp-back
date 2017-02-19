@@ -15,12 +15,6 @@ public interface ServiceNodeRepository extends GraphRepository<ServiceNode> {
             "RETURN s.name as source, e.endpointId as target")
     List<ServiceWithEndpointPairItem> getAllServiceWithEndpoint();
 
-
-    @Query("MATCH (s:Service)-[r:OWN]->(e:Endpoint) " +
-            "WHERE e.endpointId={0} " +
-            "RETURN s.name")
-    String getServiceNameByEndpoint(String endpointId);
-
     @Query("MATCH (s:Service)-[:OWN]->(e:Endpoint) " +
             "OPTIONAL MATCH (e)-[:CALL]->(t:Endpoint) " +
             "RETURN COUNT(e) as endpointCount, s.name as id, COUNT(t) as serviceCallCount")

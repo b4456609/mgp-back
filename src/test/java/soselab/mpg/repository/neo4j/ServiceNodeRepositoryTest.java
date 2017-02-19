@@ -85,11 +85,5 @@ public class ServiceNodeRepositoryTest {
         assertThat(endpoint.getHttpMethod()).isEqualToIgnoringCase("httpmethod1");
     }
 
-    @Test
-    public void testServiceNodeRepository() {
-        String serviceName = serviceNodeRepository.getServiceNameByEndpoint("id1");
-        assertThat(serviceName).isEqualToIgnoringCase("a");
-    }
-
 
 }
