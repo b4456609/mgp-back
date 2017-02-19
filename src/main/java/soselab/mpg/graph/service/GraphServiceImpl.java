@@ -31,15 +31,17 @@ public class GraphServiceImpl implements GraphService {
     private final EndpointNodeRepository endpointNodeRepository;
     private final CodeGenClient codeGenClient;
     private final ScenarioNodeRepository scenarioNodeRepository;
+    private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
 
     @Autowired
     public GraphServiceImpl(ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
-                            ScenarioNodeRepository scenarioNodeRepository) {
+                            ScenarioNodeRepository scenarioNodeRepository, GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
         this.scenarioNodeRepository = scenarioNodeRepository;
+        this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
     }
 
     @Override
@@ -70,7 +72,7 @@ public class GraphServiceImpl implements GraphService {
 
         long time = System.currentTimeMillis() - start;
 
-        GraphDataDTO graphDataDTO = GraphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
+        GraphDataDTO graphDataDTO = graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
                 providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider,
                 failedScenario);
 

@@ -33,7 +33,7 @@ public class PathGroup {
     }
 
     public boolean isContain(String id) {
-        return paths.stream()
+        return paths.parallelStream()
                 .anyMatch(path -> path.contains(id)) || services.contains(id);
     }
 
@@ -53,11 +53,11 @@ public class PathGroup {
 
     public boolean isServiceAndEndpoint(String id1, String id2) {
         if (services.contains(id1)) {
-            return paths.stream().anyMatch(path -> path.contains(id2));
+            return paths.parallelStream().anyMatch(path -> path.contains(id2));
         }
 
         if (services.contains(id2)) {
-            return paths.stream().anyMatch(path -> path.contains(id1));
+            return paths.parallelStream().anyMatch(path -> path.contains(id1));
         }
 
         return false;

@@ -14,7 +14,8 @@ public class ExecutionTime {
 
     @Around("execution(* soselab.mpg.graph.service.*Service*.*(..)) || " +
             "execution(* soselab.mpg.graph.repository.*.*(..)) || " +
-            "execution(* soselab.mpg.graph.controller.*.*(..))")
+            "execution(* soselab.mpg.graph.controller.*.*(..)) ||" +
+            "execution(* soselab.mpg.graph.controller.dto.factory.GraphVisualizationFromGraphFactory.*(..))")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         String className = pjp.getSignature().getDeclaringTypeName();
         String methodName = pjp.getSignature().getName();
