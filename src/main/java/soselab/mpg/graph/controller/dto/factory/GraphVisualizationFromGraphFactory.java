@@ -28,14 +28,14 @@ public class GraphVisualizationFromGraphFactory {
                                List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
                                Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
-        LOGGER.info("endpoint node {}", endpointNodes);
-        LOGGER.info("service node {}", serviceNodes);
-        LOGGER.info("all service with endpoint {}", allServiceWithEndpoint);
-        LOGGER.info("endpoint node {}", providerEndpointWithConsumerPairPair);
-        LOGGER.info("path node group {}", pathNodeIdGroups);
-        LOGGER.info("scenario node {}", scenarioNodes);
-        LOGGER.info("errorMarkConsumerAndProvider {}", errorMarkConsumerAndProvider);
-        LOGGER.info("failedScenario {}", failedScenario);
+        LOGGER.debug("endpoint node {}", endpointNodes);
+        LOGGER.debug("service node {}", serviceNodes);
+        LOGGER.debug("all service with endpoint {}", allServiceWithEndpoint);
+        LOGGER.debug("endpoint node {}", providerEndpointWithConsumerPairPair);
+        LOGGER.debug("path node group {}", pathNodeIdGroups);
+        LOGGER.debug("scenario node {}", scenarioNodes);
+        LOGGER.debug("errorMarkConsumerAndProvider {}", errorMarkConsumerAndProvider);
+        LOGGER.debug("failedScenario {}", failedScenario);
 
         long start = System.currentTimeMillis();
 
