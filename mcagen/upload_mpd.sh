@@ -10,7 +10,7 @@ do
     ((count++))
     ((total++))
     echo "$total"
-    if [ "$count" == "10" ]; then
+    if [ "$count" == "20" ]; then
         count=0
         wait
     fi
