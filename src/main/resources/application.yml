@@ -9,6 +9,11 @@ spring:
       uri: ${NEO4J_DB:http://localhost:7474}
       username: neo4j
 
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
 logging:
   level:
     soselab: DEBUG
