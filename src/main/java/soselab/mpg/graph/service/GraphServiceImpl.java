@@ -44,6 +44,9 @@ public class GraphServiceImpl implements GraphService {
 
     @Override
     public GraphDataDTO getVisualizationData(Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
+
+        long start = System.currentTimeMillis();
+
         //endpoint node
         Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
 
@@ -65,9 +68,17 @@ public class GraphServiceImpl implements GraphService {
         //get Scenario node
         Iterable<ScenarioNode> scenarioNodes = scenarioNodeRepository.findAll();
 
-        return GraphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
+        long time = System.currentTimeMillis() - start;
+
+        GraphDataDTO graphDataDTO = GraphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
                 providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider,
                 failedScenario);
+
+        long finish = System.currentTimeMillis() - time;
+
+        LOGGER.info("Generate garph data execution time: db query {}ms, gen data {}ms", start, finish);
+
+        return graphDataDTO;
     }
 
     @Override
