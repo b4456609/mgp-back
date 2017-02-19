@@ -9,10 +9,8 @@ import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.model.ServiceNode;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -21,7 +19,7 @@ import java.util.stream.StreamSupport;
 public class GraphVisualizationFromGraphFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
-
+    private ConcurrentHashMap<String, Set<Integer>> idPathIndexsMap;
 
     public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
                                List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
@@ -38,6 +36,27 @@ public class GraphVisualizationFromGraphFactory {
         LOGGER.debug("failedScenario {}", failedScenario);
 
         long start = System.currentTimeMillis();
+
+        idPathIndexsMap = new ConcurrentHashMap<>();
+        for (int i = 0; i < pathNodeIdGroups.size(); i++) {
+            final int index = i;
+            PathGroup pathGroup = pathNodeIdGroups.get(i);
+            Stream<String> serviceStream = pathGroup.getServices().stream();
+            Stream<String> endpointIdStream = pathGroup.getPaths().stream()
+                    .flatMap(Collection::stream)
+                    .distinct();
+            Stream.concat(serviceStream, endpointIdStream)
+                    .parallel()
+                    .forEach(id -> {
+                        if (idPathIndexsMap.containsKey(id)) {
+                            idPathIndexsMap.get(id).add(index);
+                        } else {
+                            Set<Integer> indexs = new HashSet<>();
+                            indexs.add(index);
+                            idPathIndexsMap.put(id, indexs);
+                        }
+                    });
+        }
 
         //endpoint node
         List<NodesItem> endpointNodeItems = getEndpointNodeItems(endpointNodes, pathNodeIdGroups);
@@ -147,15 +166,21 @@ public class GraphVisualizationFromGraphFactory {
                                                         String endpoint,
                                                         Map<String, Set<String>> errorMarkConsumerAndProvider) {
         StringBuilder className = new StringBuilder();
-        for (int i = 0; i < pathNodeIdGroups.size(); i++) {
-            PathGroup group = pathNodeIdGroups.get(i);
-            if (group.isServiceCall(service, endpoint)) {
-                className.append(String.format("group%d ", i));
-                //check is in cyclic group
-                if (group.isCyclic()) {
-                    className.append(String.format("cyclic%d ", i));
+        if (idPathIndexsMap.containsKey(service) && idPathIndexsMap.containsKey(endpoint)) {
+            Set<Integer> index1 = idPathIndexsMap.get(service);
+            Set<Integer> index2 = idPathIndexsMap.get(endpoint);
+            Set<Integer> intersection = new HashSet<Integer>(index1); // use the copy constructor
+            intersection.retainAll(index2);
+            intersection.forEach(index -> {
+                PathGroup pathGroup = pathNodeIdGroups.get(index);
+                if (pathGroup.isServiceCall(service, endpoint)) {
+                    className.append(String.format("group%d ", index));
+                    //check is in cyclic group
+                    if (pathGroup.isCyclic()) {
+                        className.append(String.format("cyclic%d ", index));
+                    }
                 }
-            }
+            });
         }
 
         if (errorMarkConsumerAndProvider != null &&
@@ -168,23 +193,24 @@ public class GraphVisualizationFromGraphFactory {
 
     private String getClassString(List<PathGroup> pathNodeIdGroups, String id) {
         StringBuilder className = new StringBuilder();
-        for (int i = 0; i < pathNodeIdGroups.size(); i++) {
-            PathGroup group = pathNodeIdGroups.get(i);
-            if (group.isContain(id)) {
+        if (idPathIndexsMap.containsKey(id)) {
+            Set<Integer> indexs = idPathIndexsMap.get(id);
+            indexs.forEach(index -> {
+                PathGroup group = pathNodeIdGroups.get(index);
                 if (group.isFirstEndpoint(id)) {
-                    className.append(String.format("group%d-start ", i));
+                    className.append(String.format("group%d-start ", index));
                     //check is in cyclic group
                     if (group.isCyclic()) {
-                        className.append(String.format("cyclic%d-start ", i));
+                        className.append(String.format("cyclic%d-start ", index));
                     }
                 } else {
-                    className.append(String.format("group%d ", i));
+                    className.append(String.format("group%d ", index));
                     //check is in cyclic group
                     if (group.isCyclic()) {
-                        className.append(String.format("cyclic%d ", i));
+                        className.append(String.format("cyclic%d ", index));
                     }
                 }
-            }
+            });
         }
         LOGGER.info("finalClassName: {} ", className);
         return className.toString().trim();
@@ -194,15 +220,21 @@ public class GraphVisualizationFromGraphFactory {
     private String getServiceWithEndpointClassString(List<PathGroup> pathNodeIdGroups
             , String id1, String id2) {
         StringBuilder className = new StringBuilder();
-        for (int i = 0; i < pathNodeIdGroups.size(); i++) {
-            PathGroup group = pathNodeIdGroups.get(i);
-            if (group.isServiceAndEndpoint(id1, id2)) {
-                className.append(String.format("group%d ", i));
-                //check is in cyclic group
-                if (group.isCyclic()) {
-                    className.append(String.format("cyclic%d ", i));
+        if (idPathIndexsMap.containsKey(id1) && idPathIndexsMap.containsKey(id2)) {
+            Set<Integer> index1 = idPathIndexsMap.get(id1);
+            Set<Integer> index2 = idPathIndexsMap.get(id2);
+            Set<Integer> intersection = new HashSet<Integer>(index1); // use the copy constructor
+            intersection.retainAll(index2);
+            intersection.forEach(index -> {
+                PathGroup pathGroup = pathNodeIdGroups.get(index);
+                if (pathGroup.isServiceAndEndpoint(id1, id2)) {
+                    className.append(String.format("group%d ", index));
+                    //check is in cyclic group
+                    if (pathGroup.isCyclic()) {
+                        className.append(String.format("cyclic%d ", index));
+                    }
                 }
-            }
+            });
         }
         return className.toString().trim();
     }
