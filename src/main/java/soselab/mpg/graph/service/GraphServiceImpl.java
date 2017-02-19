@@ -74,9 +74,9 @@ public class GraphServiceImpl implements GraphService {
                 providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider,
                 failedScenario);
 
-        long finish = System.currentTimeMillis() - time;
+        long finish = System.currentTimeMillis() - start;
 
-        LOGGER.info("Generate garph data execution time: db query {}ms, gen data {}ms", start, finish);
+        LOGGER.info("Generate garph data execution time: db query {}ms, db + gen data {}ms", time, finish);
 
         return graphDataDTO;
     }
