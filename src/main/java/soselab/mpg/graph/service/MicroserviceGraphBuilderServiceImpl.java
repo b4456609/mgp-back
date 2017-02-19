@@ -54,9 +54,6 @@ public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBui
     }
 
     private void buildGraph() {
-        endpointNodeRepository.deleteAll();
-        scenarioNodeRepository.deleteAll();
-        serviceNodeRepository.deleteAll();
 
         // the execute order, the scenario is depend on service build result
         List<GraphBuildHandler> graphBuildHandlers = new ArrayList<>();

@@ -10,12 +10,13 @@ import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.model.Endpoint2ServiceCallDependency;
+import soselab.mpg.mpd.model.IDExtractor;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.service.MPDService;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 @Component
@@ -26,42 +27,42 @@ public class ServiceBuildHandler implements GraphBuildHandler {
     private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
     private final MPDService mpdService;
+    private final ConcurrentHashMap<String, EndpointNode> allEndpointNodesMap;
 
     @Autowired
     public ServiceBuildHandler(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository, MPDService mpdService) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.mpdService = mpdService;
+        allEndpointNodesMap = new ConcurrentHashMap<String, EndpointNode>();
     }
 
     @Override
     public void build() {
 
-        LOGGER.info("build Graph");
-        //get all latest service project description
-        serviceNodeRepository.deleteAll();
+        LOGGER.info("build service and endpoint Graph");
         endpointNodeRepository.deleteAll();
+        serviceNodeRepository.deleteAll();
 
-        //all endpoint node
-        Set<EndpointNode> allEndpointNodes = new HashSet<EndpointNode>();
-
-        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService.getMicroserviceProjectDescriptions();
+        List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService
+                .getMicroserviceProjectDescriptions();
 
         //get all serviceNode
-        Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.stream()
-                .map(microserviceProjectDescription -> createServiceNode(allEndpointNodes, microserviceProjectDescription))
+        Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.parallelStream()
+                .map(this::createServiceNode)
                 .collect(Collectors.toSet());
-
-        //save to database
-        serviceNodeRepository.save(serviceNodes);
 
         // create endpoint service call relationship
         microserviceProjectDescriptions
+                .parallelStream()
                 .forEach(this::createEndpointRelation);
+
+
+        //save to database
+        serviceNodeRepository.save(serviceNodes);
     }
 
-    private ServiceNode createServiceNode(Set<EndpointNode> allEndpointNodes
-            , MicroserviceProjectDescription microserviceProjectDescription) {
+    private ServiceNode createServiceNode(MicroserviceProjectDescription microserviceProjectDescription) {
         // generate service's endpoint nodes
         Set<EndpointNode> endpointNodes = microserviceProjectDescription.getEndpoint().stream()
                 .map(endpoint -> {
@@ -72,7 +73,7 @@ public class ServiceBuildHandler implements GraphBuildHandler {
                     EndpointNode endpointNode = new EndpointNode(id, path, method);
 
                     //add to all endpoint for call realtionship
-                    allEndpointNodes.add(endpointNode);
+                    allEndpointNodesMap.putIfAbsent(id, endpointNode);
                     return endpointNode;
                 }).collect(Collectors.toSet());
 
@@ -82,30 +83,23 @@ public class ServiceBuildHandler implements GraphBuildHandler {
 
     private void createEndpointRelation(MicroserviceProjectDescription microserviceProjectDescription) {
         List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency = microserviceProjectDescription.getEndpointDep();
-        for (Endpoint2ServiceCallDependency dep : endpoint2ServiceCallDependency) {
-            // extract info from endpoint id
-            String[] endpointSplit = dep.getFrom().split(" ");
-            String serviceName = endpointSplit[0];
-            String endpointPath = endpointSplit[2];
-            String endpointHttpMethod = endpointSplit[3];
+        endpoint2ServiceCallDependency.forEach(dep -> {
+            String consumerId = translateToEndpointId(dep.getFrom());
+            EndpointNode consumerServiceEndpoint = allEndpointNodesMap.get(consumerId);
 
-            // extract info from service id
-            String[] serviceCallSplit = dep.getTo().split(" ");
-            String serviceCallname = serviceCallSplit[0];
-            String serviceCallpath = serviceCallSplit[2];
-            String serviceCallhttpMethod = serviceCallSplit[3];
-
-            // get from database and build relationship
-            EndpointNode consumerServiceEndpoint = endpointNodeRepository
-                    .findServiceEndpointByPathAndHttpMethod(serviceName, endpointHttpMethod, endpointPath);
-
-            EndpointNode providerServiceEndpoint = endpointNodeRepository
-                    .findServiceEndpointByPathAndHttpMethod(serviceCallname, serviceCallhttpMethod, serviceCallpath);
+            String providerId = translateToEndpointId(dep.getTo());
+            EndpointNode providerServiceEndpoint = allEndpointNodesMap.get(providerId);
 
             if (consumerServiceEndpoint != null && providerServiceEndpoint != null) {
                 consumerServiceEndpoint.addServiceCallEndpoint(providerServiceEndpoint);
             }
-            endpointNodeRepository.save(consumerServiceEndpoint);
-        }
+        });
+    }
+
+    private String translateToEndpointId(String id) {
+        String serviceName = IDExtractor.getServiceName(id);
+        String endpointPath = IDExtractor.getPath(id);
+        String endpointHttpMethod = IDExtractor.getHttpMethod(id);
+        return EndpointIdFactory.getId(serviceName, endpointPath, endpointHttpMethod);
     }
 }

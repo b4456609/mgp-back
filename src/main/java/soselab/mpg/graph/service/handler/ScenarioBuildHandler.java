@@ -13,7 +13,6 @@ import soselab.mpg.graph.model.ScenarioNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -32,33 +31,39 @@ public class ScenarioBuildHandler implements GraphBuildHandler {
 
     @Override
     public void build() {
+        //remove old scenario node
+        scenarioNodeRepository.deleteAll();
+
+        //get all endpoint node in neo4j for relationship
         Iterable<EndpointNode> all = endpointNodeRepository.findAll();
         List<EndpointNode> endpointNodes = IteratorUtils.toList(all.iterator());
 
-        List<ScenarioNode> scenarioNodes = new ArrayList<>();
         List<ScenarioWithTagDTO> scenarioWithTagDTOS = bddService.getScenarioWithTag();
-        for (ScenarioWithTagDTO scenarioWithTagDTO : scenarioWithTagDTOS) {
-            // the scenario's tag which is endpoint id
-            Set<String> tags = scenarioWithTagDTO.getTags().stream()
-                    .map(ScenarioTagUtil::translateToEndpointId)
-                    .collect(Collectors.toSet());
-            LOGGER.info("tags {}", tags);
+        List<ScenarioNode> scenarioNodes = scenarioWithTagDTOS.parallelStream()
+                .map(scenarioWithTagDTO -> {
+                    // the scenario's tag which is endpoint id
+                    Set<String> tags = scenarioWithTagDTO.getTags().stream()
+                            .map(ScenarioTagUtil::translateToEndpointId)
+                            .collect(Collectors.toSet());
+                    LOGGER.info("tags {}", tags);
 
-            // get the endpoint node with the this scenario
-            Set<EndpointNode> collect = endpointNodes.stream()
-                    .filter(endpointNode -> {
-                        LOGGER.debug("{} is in tags: {}", endpointNode.getEndpointId(), tags.contains(endpointNode.getEndpointId()));
-                        return tags.contains(endpointNode.getEndpointId());
-                    })
-                    .collect(Collectors.toSet());
-            LOGGER.info("collect EndpointNode {}", collect);
+                    // get the endpoint node with the this scenario
+                    Set<EndpointNode> collect = endpointNodes.stream()
+                            .filter(endpointNode -> {
+                                boolean contains = tags.contains(endpointNode.getEndpointId());
+                                LOGGER.debug("{} is in tags: {}", endpointNode.getEndpointId(),
+                                        contains);
+                                return contains;
+                            })
+                            .collect(Collectors.toSet());
+                    LOGGER.info("collect EndpointNode {}", collect);
 
-            // build scenario node
-            String id = scenarioWithTagDTO.getId();
-            String name = scenarioWithTagDTO.getName();
-            ScenarioNode scenarioNode = new ScenarioNode(name, id, collect);
-            scenarioNodes.add(scenarioNode);
-        }
+                    // build scenario node
+                    String id = scenarioWithTagDTO.getId();
+                    String name = scenarioWithTagDTO.getName();
+                    ScenarioNode scenarioNode = new ScenarioNode(name, id, collect);
+                    return scenarioNode;
+                }).collect(Collectors.toList());
         LOGGER.info("{}", scenarioNodes);
         scenarioNodeRepository.save(scenarioNodes);
     }
