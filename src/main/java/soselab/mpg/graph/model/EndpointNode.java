@@ -95,7 +95,6 @@ public class EndpointNode {
                 ", endpointId='" + endpointId + '\'' +
                 ", path='" + path + '\'' +
                 ", httpMethod='" + httpMethod + '\'' +
-                ", endpointNodes=" + endpointNodes +
                 '}';
     }
 
