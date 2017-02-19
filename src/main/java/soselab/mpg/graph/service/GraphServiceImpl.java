@@ -16,7 +16,6 @@ import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
-import soselab.mpg.testreader.model.DetailReport;
 
 import java.util.List;
 import java.util.Map;
@@ -73,14 +72,13 @@ public class GraphServiceImpl implements GraphService {
 
     @Override
     public List<PathGroup> getPathNodeIdGroups() {
-        PathAnalyzer pathAnalyzer = new PathAnalyzer(serviceNodeRepository, endpointNodeRepository);
+        PathAnalyzer pathAnalyzer = new PathAnalyzer(endpointNodeRepository);
         return pathAnalyzer.getPathNodeIdGroups();
     }
 
     @Override
     public void setCyclicGroups(List<PathGroup> pathNodeIdGroups) {
-        CyclicAnalyzer cyclicAnalyzer = new CyclicAnalyzer(serviceNodeRepository);
-        cyclicAnalyzer.analyze(pathNodeIdGroups);
+        CyclicAnalyzer.analyze(pathNodeIdGroups);
     }
 
 

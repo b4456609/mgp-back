@@ -1,32 +1,34 @@
 package soselab.mpg.graph.service;
 
 import soselab.mpg.graph.model.PathGroup;
-import soselab.mpg.graph.repository.ServiceNodeRepository;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static soselab.mpg.mpd.model.IDExtractor.getServiceName;
+
 
 public class CyclicAnalyzer {
-
-    private final ServiceNodeRepository serviceNodeRepository;
-
-    public CyclicAnalyzer(ServiceNodeRepository serviceNodeRepository) {
-        this.serviceNodeRepository = serviceNodeRepository;
-    }
-
-    public void analyze(List<PathGroup> groups) {
-        for (PathGroup group : groups) {
-            for (List<String> path : group.getPaths()) {
-                Set<String> allItems = new HashSet<>();
-                for (String id : path) {
-                    String serviceNameByEndpoint = serviceNodeRepository.getServiceNameByEndpoint(id);
-                    if (!allItems.add(serviceNameByEndpoint)) {
+    public static void analyze(List<PathGroup> groups) {
+        groups.parallelStream()
+                .forEach(group -> {
+                    boolean isCyclic = group.getPaths()
+                            .stream()
+                            .anyMatch(path -> {
+                                Set<String> allItems = new HashSet<>();
+                                for (String id : path) {
+                                    String serviceNameByEndpoint = getServiceName(id);
+                                    if (!allItems.add(serviceNameByEndpoint)) {
+                                        return true;
+                                    }
+                                }
+                                return false;
+                            });
+                    if (isCyclic) {
                         group.setCyclic(true);
                     }
-                }
-            }
-        }
+                });
     }
 }
+

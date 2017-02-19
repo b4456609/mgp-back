@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
-import soselab.mpg.graph.repository.ServiceNodeRepository;
+import soselab.mpg.mpd.model.IDExtractor;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,11 +13,9 @@ public class PathAnalyzer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(PathAnalyzer.class);
 
-    private final ServiceNodeRepository serviceNodeRepository;
     private final EndpointNodeRepository endpointNodeRepository;
 
-    public PathAnalyzer(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository) {
-        this.serviceNodeRepository = serviceNodeRepository;
+    public PathAnalyzer(EndpointNodeRepository endpointNodeRepository) {
         this.endpointNodeRepository = endpointNodeRepository;
     }
 
@@ -27,9 +25,9 @@ public class PathAnalyzer {
 
         //translation to endpoint id string list
         List<List<String>> endpointIds = pathEndpoints.stream()
-                .map(linkedHashMaps -> linkedHashMaps.stream().map(linkedHashMap -> {
-                    return (String) linkedHashMap.get("endpointId");
-                }).collect(Collectors.toList()))
+                .map(linkedHashMaps -> linkedHashMaps.stream()
+                        .map(linkedHashMap -> (String) linkedHashMap.get("endpointId"))
+                        .collect(Collectors.toList()))
                 //sort by first endpoint id
                 .sorted(Comparator.comparing(a -> a.get(0)))
                 .collect(Collectors.toList());
@@ -42,7 +40,7 @@ public class PathAnalyzer {
         LOGGER.debug("endpoint id {}", endpointIds);
 
         //group paths start with same node, it is same endpoint
-        List<PathGroup> pathGroups = getPathGroups(endpointIds);
+        List<PathGroup> pathGroups = groupThePathWithSameStartEndpoint(endpointIds);
         LOGGER.debug("get GroupSet id {}", pathGroups);
 
         // set service name
@@ -81,7 +79,7 @@ public class PathAnalyzer {
                 .map(group -> {
                     Set<String> collect = group.getPaths().stream()
                             .flatMap(path -> path.stream())
-                            .map(serviceNodeRepository::getServiceNameByEndpoint)
+                            .map(IDExtractor::getServiceName)
                             .collect(Collectors.toSet());
                     group.addServices(collect);
                     LOGGER.debug("group {}", group);
@@ -89,7 +87,7 @@ public class PathAnalyzer {
                 }).collect(Collectors.toList());
     }
 
-    private List<PathGroup> getPathGroups(List<List<String>> endpointIds) {
+    private List<PathGroup> groupThePathWithSameStartEndpoint(List<List<String>> endpointIds) {
         List<PathGroup> pathGroups = new ArrayList<>();
         int size = endpointIds.size();
         LOGGER.debug("size {}", size);
