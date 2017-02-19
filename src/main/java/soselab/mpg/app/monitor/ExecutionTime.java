@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 public class ExecutionTime {
     private static final Logger LOGGER = LoggerFactory.getLogger(ExecutionTime.class);
 
-    @Around("execution(* soselab.mpg.graph.service.*Service*.*(..))")
+    @Around("execution(* soselab.mpg.graph.*.*(..))")
     public Object around(ProceedingJoinPoint pjp) throws Throwable {
         String className = pjp.getSignature().getDeclaringTypeName();
         String methodName = pjp.getSignature().getName();
