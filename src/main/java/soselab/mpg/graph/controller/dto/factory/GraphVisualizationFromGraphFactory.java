@@ -4,10 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import soselab.mpg.graph.controller.dto.*;
-import soselab.mpg.graph.model.EndpointNode;
-import soselab.mpg.graph.model.PathGroup;
-import soselab.mpg.graph.model.ScenarioNode;
-import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.graph.model.*;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,11 +17,13 @@ public class GraphVisualizationFromGraphFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GraphVisualizationFromGraphFactory.class);
     private ConcurrentHashMap<String, Set<Integer>> idPathIndexsMap;
+    private HashMap<String, Set<String>> unTestServiceCallDict = new HashMap<>();
 
     public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
                                List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
+                               List<UnTestServiceCall> unTestServiceCall,
                                Map<String, Set<String>> errorMarkConsumerAndProvider, Set<String> failedScenario) {
         LOGGER.debug("endpoint node {}", endpointNodes);
         LOGGER.debug("service node {}", serviceNodes);
@@ -32,10 +31,22 @@ public class GraphVisualizationFromGraphFactory {
         LOGGER.debug("endpoint node {}", providerEndpointWithConsumerPairPair);
         LOGGER.debug("path node group {}", pathNodeIdGroups);
         LOGGER.debug("scenario node {}", scenarioNodes);
+        LOGGER.debug("unTestServiceCall {}", unTestServiceCall);
         LOGGER.debug("errorMarkConsumerAndProvider {}", errorMarkConsumerAndProvider);
         LOGGER.debug("failedScenario {}", failedScenario);
 
         long start = System.currentTimeMillis();
+
+        for (UnTestServiceCall testServiceCall : unTestServiceCall) {
+            if (unTestServiceCallDict.containsKey(testServiceCall.getFrom())) {
+                unTestServiceCallDict.get(testServiceCall.getFrom())
+                        .add(testServiceCall.getTo());
+            } else {
+                HashSet<String> enpointSet = new HashSet<>();
+                enpointSet.add(testServiceCall.getTo());
+                unTestServiceCallDict.put(testServiceCall.getFrom(), enpointSet);
+            }
+        }
 
         idPathIndexsMap = new ConcurrentHashMap<>();
         for (int i = 0; i < pathNodeIdGroups.size(); i++) {
@@ -165,6 +176,10 @@ public class GraphVisualizationFromGraphFactory {
                                                         String endpoint,
                                                         Map<String, Set<String>> errorMarkConsumerAndProvider) {
         StringBuilder className = new StringBuilder();
+        Set<String> endpointIdSets = unTestServiceCallDict.get(service);
+        if (endpointIdSets != null && endpointIdSets.contains(endpoint)) {
+            className.append("untest ");
+        }
         if (idPathIndexsMap.containsKey(service) && idPathIndexsMap.containsKey(endpoint)) {
             Set<Integer> index1 = idPathIndexsMap.get(service);
             Set<Integer> index2 = idPathIndexsMap.get(endpoint);
