@@ -39,7 +39,7 @@ public class ScenarioBuildHandler implements GraphBuildHandler {
         List<EndpointNode> endpointNodes = IteratorUtils.toList(all.iterator());
 
         List<ScenarioWithTagDTO> scenarioWithTagDTOS = bddService.getScenarioWithTag();
-        List<ScenarioNode> scenarioNodes = scenarioWithTagDTOS.parallelStream()
+        List<ScenarioNode> scenarioNodes = scenarioWithTagDTOS.stream()
                 .map(scenarioWithTagDTO -> {
                     // the scenario's tag which is endpoint id
                     Set<String> tags = scenarioWithTagDTO.getTags().stream()

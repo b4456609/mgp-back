@@ -11,24 +11,23 @@ import static soselab.mpg.mpd.model.IDExtractor.getServiceName;
 
 public class CyclicAnalyzer {
     public static void analyze(List<PathGroup> groups) {
-        groups.parallelStream()
-                .forEach(group -> {
-                    boolean isCyclic = group.getPaths()
-                            .stream()
-                            .anyMatch(path -> {
-                                Set<String> allItems = new HashSet<>();
-                                for (String id : path) {
-                                    String serviceNameByEndpoint = getServiceName(id);
-                                    if (!allItems.add(serviceNameByEndpoint)) {
-                                        return true;
-                                    }
-                                }
-                                return false;
-                            });
-                    if (isCyclic) {
-                        group.setCyclic(true);
-                    }
-                });
+        groups.forEach(group -> {
+            boolean isCyclic = group.getPaths()
+                    .stream()
+                    .anyMatch(path -> {
+                        Set<String> allItems = new HashSet<>();
+                        for (String id : path) {
+                            String serviceNameByEndpoint = getServiceName(id);
+                            if (!allItems.add(serviceNameByEndpoint)) {
+                                return true;
+                            }
+                        }
+                        return false;
+                    });
+            if (isCyclic) {
+                group.setCyclic(true);
+            }
+        });
     }
 }
 

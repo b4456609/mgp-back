@@ -46,7 +46,6 @@ public class GraphVisualizationFromGraphFactory {
                     .flatMap(Collection::stream)
                     .distinct();
             Stream.concat(serviceStream, endpointIdStream)
-                    .parallel()
                     .forEach(id -> {
                         if (idPathIndexsMap.containsKey(id)) {
                             idPathIndexsMap.get(id).add(index);
@@ -108,7 +107,7 @@ public class GraphVisualizationFromGraphFactory {
 
     private List<ScenarioEndpointPairItem> getScenarioEndpointPairItem(Iterable<ScenarioNode> scenarioNodes) {
         return StreamSupport.stream(scenarioNodes.spliterator(),
-                true)
+                false)
                 .flatMap(scenarioNode -> {
                     if (scenarioNode.getEndpointNodes() == null)
                         return Stream.empty();
@@ -122,7 +121,7 @@ public class GraphVisualizationFromGraphFactory {
     }
 
     private List<NodesItem> getScenarioNodeItems(Iterable<ScenarioNode> scenarioNodes, Set<String> failedScenario) {
-        return StreamSupport.stream(scenarioNodes.spliterator(), true)
+        return StreamSupport.stream(scenarioNodes.spliterator(), false)
                 .map(scenarioNode -> {
                     String className = "";
                     if (failedScenario != null && failedScenario.contains(scenarioNode.getName())) {
@@ -137,7 +136,7 @@ public class GraphVisualizationFromGraphFactory {
     }
 
     private List<NodesItem> getServiceNodeItems(Iterable<ServiceNode> serviceNodes, List<PathGroup> pathNodeIdGroups) {
-        return StreamSupport.stream(serviceNodes.spliterator(), true)
+        return StreamSupport.stream(serviceNodes.spliterator(), false)
                 .map(serviceNode -> {
                     String className = getClassString(pathNodeIdGroups, serviceNode.getName());
                     return new NodesItemBuilder().setId(serviceNode.getName())
@@ -149,7 +148,7 @@ public class GraphVisualizationFromGraphFactory {
     }
 
     private List<NodesItem> getEndpointNodeItems(Iterable<EndpointNode> endpointNodes, List<PathGroup> pathNodeIdGroups) {
-        return StreamSupport.stream(endpointNodes.spliterator(), true)
+        return StreamSupport.stream(endpointNodes.spliterator(), false)
                 .map(endpointNode -> {
                     String className = getClassString(pathNodeIdGroups, endpointNode.getEndpointId());
                     return new NodesItemBuilder().setId(endpointNode.getEndpointId())

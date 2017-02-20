@@ -48,13 +48,13 @@ public class ServiceBuildHandler implements GraphBuildHandler {
                 .getMicroserviceProjectDescriptions();
 
         //get all serviceNode
-        Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.parallelStream()
+        Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.stream()
                 .map(this::createServiceNode)
                 .collect(Collectors.toSet());
 
         // create endpoint service call relationship
         microserviceProjectDescriptions
-                .parallelStream()
+                .stream()
                 .forEach(this::createEndpointRelation);
 
 

@@ -75,7 +75,7 @@ public class PathAnalyzer {
     }
 
     private List<PathGroup> setServiceAndCheckCyclic(List<PathGroup> groups) {
-        return groups.stream().parallel()
+        return groups.stream()
                 .map(group -> {
                     Set<String> collect = group.getPaths().stream()
                             .flatMap(path -> path.stream())

@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 public class RegressionPicker {
     public List<ConsumerProviderPair> getRegressionServiceTestPair(List<List<String>> paths, String target) {
         List<List<String>> targetEndpoints = getTargetEndpoints(paths, target);
-        return targetEndpoints.parallelStream()
+        return targetEndpoints.stream()
                 .flatMap(path -> {
                     List<ConsumerProviderPair> consumerProviderPairs = new ArrayList<>();
                     for (int i = 1; i < path.size(); i++) {
@@ -33,14 +33,14 @@ public class RegressionPicker {
 
     public List<String> getScenarioAnnotations(List<List<String>> paths, String target) {
         List<List<String>> targetEndpoints = getTargetEndpoints(paths, target);
-        return targetEndpoints.parallelStream()
+        return targetEndpoints.stream()
                 .flatMap(path -> path.stream().map(endpoint -> endpoint.split(" ")[0])).distinct()
                 .collect(Collectors.toList());
     }
 
     private List<List<String>> getTargetEndpoints(List<List<String>> paths, String target) {
         return paths
-                .parallelStream()
+                .stream()
                 .map(path -> {
                     int lastIndex = -1;
                     for (int i = 0; i < path.size(); i++) {
