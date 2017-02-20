@@ -2,10 +2,6 @@ package soselab.mpg.graph.model;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @NodeEntity(label = "Endpoint")
 public class EndpointNode {
@@ -15,9 +11,6 @@ public class EndpointNode {
     private String endpointId;
     private String path;
     private String httpMethod;
-
-    @Relationship(type = "CALL", direction = Relationship.OUTGOING)
-    private Set<EndpointNode> endpointNodes;
 
     public EndpointNode() {
     }
@@ -50,14 +43,6 @@ public class EndpointNode {
 
     public void setHttpMethod(String httpMethod) {
         this.httpMethod = httpMethod;
-    }
-
-    public Set<EndpointNode> getEndpointNodes() {
-        return endpointNodes;
-    }
-
-    public void setEndpointNodes(Set<EndpointNode> endpointNodes) {
-        this.endpointNodes = endpointNodes;
     }
 
     public String getEndpointId() {
@@ -96,12 +81,5 @@ public class EndpointNode {
                 ", path='" + path + '\'' +
                 ", httpMethod='" + httpMethod + '\'' +
                 '}';
-    }
-
-    public void addServiceCallEndpoint(EndpointNode providerServiceEndpoint) {
-        if (endpointNodes == null) {
-            endpointNodes = new HashSet<>();
-        }
-        endpointNodes.add(providerServiceEndpoint);
     }
 }

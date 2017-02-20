@@ -16,6 +16,7 @@ import soselab.mpg.graph.model.ServiceNode;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
+import soselab.mpg.mpd.service.MPDService;
 
 import java.util.List;
 import java.util.Map;
@@ -32,16 +33,18 @@ public class GraphServiceImpl implements GraphService {
     private final CodeGenClient codeGenClient;
     private final ScenarioNodeRepository scenarioNodeRepository;
     private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
+    private final MPDService mpdService;
 
     @Autowired
     public GraphServiceImpl(ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
-                            ScenarioNodeRepository scenarioNodeRepository, GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory) {
+                            ScenarioNodeRepository scenarioNodeRepository, GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory, MPDService mpdService) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
         this.scenarioNodeRepository = scenarioNodeRepository;
         this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
+        this.mpdService = mpdService;
     }
 
     @Override
