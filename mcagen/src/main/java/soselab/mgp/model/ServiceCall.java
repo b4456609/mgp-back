@@ -12,11 +12,22 @@ public class ServiceCall {
 
     private String provider;
 
-    public ServiceCall(String id, String path, String method, String provider) {
+    private boolean unTest;
+
+    public ServiceCall(String id, String path, String method, String provider, boolean unTest) {
         this.id = id;
         this.path = path;
         this.method = method;
         this.provider = provider;
+        this.unTest = unTest;
+    }
+
+    public boolean isUnTest() {
+        return unTest;
+    }
+
+    public void setUnTest(boolean unTest) {
+        this.unTest = unTest;
     }
 
     public String getId ()
@@ -60,8 +71,13 @@ public class ServiceCall {
     }
 
     @Override
-    public String toString()
-    {
-        return "ClassPojo [id = "+id+", path = "+path+", method = "+method+", provider = "+provider+"]";
+    public String toString() {
+        return "ServiceCall{" +
+                "id='" + id + '\'' +
+                ", path='" + path + '\'' +
+                ", method='" + method + '\'' +
+                ", provider='" + provider + '\'' +
+                ", unTest=" + unTest +
+                '}';
     }
 }
