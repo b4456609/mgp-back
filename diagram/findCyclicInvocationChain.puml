@@ -1,0 +1,10 @@
+@startuml
+start
+:Get Invocation Chain Group;
+:Check All Invocation Chain Path;
+-> A path has two endpoint\nowned by the same service;
+if() then(yes)
+:Mark the group is Cyclic;
+endif
+stop
+@enduml
