@@ -102,11 +102,16 @@ public class ServiceBuildHandler implements GraphBuildHandler {
                     String providerId = translateToEndpointId(dep.getTo());
                     EndpointNode providerServiceEndpoint = allEndpointNodesMap.get(providerId);
 
+                    LOGGER.debug("consumer id: {}, provider id: {}", consumerId, providerId);
+
                     if (consumerServiceEndpoint != null && providerServiceEndpoint != null) {
+                        LOGGER.debug("both get endpoint");
                         CallRelationship callRelationship = new CallRelationship();
                         callRelationship.setConsumber(consumerServiceEndpoint);
                         callRelationship.setProvider(providerServiceEndpoint);
                         callRelationship.setUnTest(serviceCallIsTest.getOrDefault(dep.getTo(), false));
+
+                        consumerServiceEndpoint.addCallRelationships(callRelationship);
                         return Stream.of(callRelationship);
                     }
                     return Stream.empty();

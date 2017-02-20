@@ -45,8 +45,8 @@ public class GraphServiceImplTest {
         EndpointNode endpointNode1 = new EndpointNode("A / GET", "/", "GET");
         EndpointNode endpointNode2 = new EndpointNode("B / POST", "/", "POST");
 
-        endpointNode.addServiceCallEndpoint(endpointNode2);
-        endpointNode2.addServiceCallEndpoint(endpointNode1);
+//        endpointNode.addServiceCallEndpoint(endpointNode2);
+//        endpointNode2.addServiceCallEndpoint(endpointNode1);
 
         endpointNodeRepository.save(Arrays.asList(endpointNode, endpointNode1, endpointNode2));
 

@@ -53,13 +53,13 @@ public class ServiceNodeRepositoryTest {
         }
 
         for (EndpointNode item : b.getEndpointNodes()) {
-            endpointNode.addServiceCallEndpoint(item);
+//            endpointNode.addServiceCallEndpoint(item);
             endpointNode = item;
             break;
         }
 
         for (EndpointNode item : c.getEndpointNodes()) {
-            endpointNode.addServiceCallEndpoint(item);
+//            endpointNode.addServiceCallEndpoint(item);
             break;
         }
 

@@ -9,10 +9,8 @@ import soselab.mpg.codegen.client.CodeGenClient;
 import soselab.mpg.codegen.model.CodeSnippet;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.controller.dto.factory.GraphVisualizationFromGraphFactory;
-import soselab.mpg.graph.model.EndpointNode;
-import soselab.mpg.graph.model.PathGroup;
-import soselab.mpg.graph.model.ScenarioNode;
-import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.graph.model.*;
+import soselab.mpg.graph.repository.CallRelationshipRepository;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.repository.ServiceNodeRepository;
@@ -34,17 +32,19 @@ public class GraphServiceImpl implements GraphService {
     private final ScenarioNodeRepository scenarioNodeRepository;
     private final GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory;
     private final MPDService mpdService;
+    private final CallRelationshipRepository callRelationshipRepository;
 
     @Autowired
     public GraphServiceImpl(ServiceNodeRepository serviceNodeRepository,
                             EndpointNodeRepository endpointNodeRepository, CodeGenClient codeGenClient,
-                            ScenarioNodeRepository scenarioNodeRepository, GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory, MPDService mpdService) {
+                            ScenarioNodeRepository scenarioNodeRepository, GraphVisualizationFromGraphFactory graphVisualizationFromGraphFactory, MPDService mpdService, CallRelationshipRepository callRelationshipRepository) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.codeGenClient = codeGenClient;
         this.scenarioNodeRepository = scenarioNodeRepository;
         this.graphVisualizationFromGraphFactory = graphVisualizationFromGraphFactory;
         this.mpdService = mpdService;
+        this.callRelationshipRepository = callRelationshipRepository;
     }
 
     @Override
@@ -73,10 +73,12 @@ public class GraphServiceImpl implements GraphService {
         //get Scenario node
         Iterable<ScenarioNode> scenarioNodes = scenarioNodeRepository.findAll();
 
+        List<UnTestServiceCall> unTestServiceCall = callRelationshipRepository.getUnTestServiceCall();
+
         long time = System.currentTimeMillis() - start;
 
         GraphDataDTO graphDataDTO = graphVisualizationFromGraphFactory.create(endpointNodes, serviceNodes, allServiceWithEndpoint,
-                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, errorMarkConsumerAndProvider,
+                providerEndpointWithConsumerPairPair, pathNodeIdGroups, scenarioNodes, unTestServiceCall, errorMarkConsumerAndProvider,
                 failedScenario);
 
         long finish = System.currentTimeMillis() - start;
