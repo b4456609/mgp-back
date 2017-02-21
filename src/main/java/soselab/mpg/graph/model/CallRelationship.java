@@ -12,11 +12,19 @@ public class CallRelationship {
 
     private boolean unTest;
     @StartNode
-    private EndpointNode consumber;
+    private EndpointNode consumer;
     @EndNode
     private EndpointNode provider;
 
     public CallRelationship() {
+    }
+
+    public CallRelationship(boolean unTest, EndpointNode consumer, EndpointNode provider) {
+        this.unTest = unTest;
+        this.consumer = consumer;
+        this.provider = provider;
+        consumer.getCallRelationships().add(this);
+//        provider.getCallRelationships().add(this);
     }
 
     public Long getId() {
@@ -35,12 +43,12 @@ public class CallRelationship {
         this.unTest = unTest;
     }
 
-    public EndpointNode getConsumber() {
-        return consumber;
+    public EndpointNode getConsumer() {
+        return consumer;
     }
 
-    public void setConsumber(EndpointNode consumber) {
-        this.consumber = consumber;
+    public void setConsumer(EndpointNode consumer) {
+        this.consumer = consumer;
     }
 
     public EndpointNode getProvider() {
@@ -49,5 +57,15 @@ public class CallRelationship {
 
     public void setProvider(EndpointNode provider) {
         this.provider = provider;
+    }
+
+    @Override
+    public String toString() {
+        return "CallRelationship{" +
+                "id=" + id +
+                ", unTest=" + unTest +
+                ", consumer=" + consumer +
+                ", provider=" + provider +
+                '}';
     }
 }

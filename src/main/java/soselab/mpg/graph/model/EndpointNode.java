@@ -2,6 +2,7 @@ package soselab.mpg.graph.model;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
+import org.neo4j.ogm.annotation.Relationship;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -14,7 +15,9 @@ public class EndpointNode {
     private String endpointId;
     private String path;
     private String httpMethod;
-    private Set<CallRelationship> callRelationships;
+
+    @Relationship(type = "CALL", direction = Relationship.OUTGOING)
+    private Set<CallRelationship> callRelationships = new HashSet<>();
 
     public EndpointNode() {
     }
@@ -57,31 +60,12 @@ public class EndpointNode {
         this.endpointId = endpointId;
     }
 
-    public void addCallRelationships(CallRelationship callRelationship) {
-        if (callRelationship == null) {
-            callRelationships = new HashSet<>();
-            callRelationships.add(callRelationship);
-        }
+    public Set<CallRelationship> getCallRelationships() {
+        return callRelationships;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        EndpointNode that = (EndpointNode) o;
-
-        if (!endpointId.equals(that.endpointId)) return false;
-        if (!path.equals(that.path)) return false;
-        return httpMethod.equals(that.httpMethod);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = endpointId.hashCode();
-        result = 31 * result + path.hashCode();
-        result = 31 * result + httpMethod.hashCode();
-        return result;
+    public void setCallRelationships(Set<CallRelationship> callRelationships) {
+        this.callRelationships = callRelationships;
     }
 
     @Override

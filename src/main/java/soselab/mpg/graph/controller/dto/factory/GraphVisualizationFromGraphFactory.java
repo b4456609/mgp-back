@@ -28,7 +28,7 @@ public class GraphVisualizationFromGraphFactory {
         LOGGER.debug("endpoint node {}", endpointNodes);
         LOGGER.debug("service node {}", serviceNodes);
         LOGGER.debug("all service with endpoint {}", allServiceWithEndpoint);
-        LOGGER.debug("endpoint node {}", providerEndpointWithConsumerPairPair);
+        LOGGER.debug("providerEndpointWithConsumerPairPair {}", providerEndpointWithConsumerPairPair);
         LOGGER.debug("path node group {}", pathNodeIdGroups);
         LOGGER.debug("scenario node {}", scenarioNodes);
         LOGGER.debug("unTestServiceCall {}", unTestServiceCall);

@@ -17,6 +17,7 @@ import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.model.ServiceCall;
 import soselab.mpg.mpd.service.MPDService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,19 +34,24 @@ public class ServiceBuildHandler implements GraphBuildHandler {
     private final EndpointNodeRepository endpointNodeRepository;
     private final CallRelationshipRepository callRelationshipRepository;
     private final MPDService mpdService;
-    private final ConcurrentHashMap<String, EndpointNode> allEndpointNodesMap;
+    private ConcurrentHashMap<String, EndpointNode> allEndpointNodesMap;
+    private List<CallRelationship> callRelationshipList;
+    private List<EndpointNode> endpointNodes;
 
     @Autowired
-    public ServiceBuildHandler(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository, CallRelationshipRepository callRelationshipRepository, MPDService mpdService) {
+    public ServiceBuildHandler(ServiceNodeRepository serviceNodeRepository, EndpointNodeRepository endpointNodeRepository
+            , CallRelationshipRepository callRelationshipRepository, MPDService mpdService) {
         this.serviceNodeRepository = serviceNodeRepository;
         this.endpointNodeRepository = endpointNodeRepository;
         this.callRelationshipRepository = callRelationshipRepository;
         this.mpdService = mpdService;
-        allEndpointNodesMap = new ConcurrentHashMap<String, EndpointNode>();
     }
 
     @Override
     public void build() {
+        this.callRelationshipList = new ArrayList<>();
+        this.allEndpointNodesMap = new ConcurrentHashMap<String, EndpointNode>();
+        this.endpointNodes = new ArrayList<>();
 
         LOGGER.info("build service and endpoint Graph");
         endpointNodeRepository.deleteAll();
@@ -55,20 +61,25 @@ public class ServiceBuildHandler implements GraphBuildHandler {
         List<MicroserviceProjectDescription> microserviceProjectDescriptions = mpdService
                 .getMicroserviceProjectDescriptions();
 
+        LOGGER.debug("mpd size{}", microserviceProjectDescriptions.size());
+
         //get all serviceNode
         Set<ServiceNode> serviceNodes = microserviceProjectDescriptions.stream()
                 .map(this::createServiceNode)
                 .collect(Collectors.toSet());
 
         // create endpoint service call relationship
-        List<CallRelationship> callRelationshipList = microserviceProjectDescriptions.stream()
+        List<EndpointNode> endpointNodeList = microserviceProjectDescriptions.stream()
                 .flatMap(this::createEndpointRelation)
                 .collect(Collectors.toList());
-
+        LOGGER.debug("endpointNodes size: {}, content: {}", endpointNodes.size(), endpointNodes);
+        LOGGER.debug("service node size: {}, content: {}", serviceNodes.size(), serviceNodes);
+        LOGGER.debug("endpointNodes node size: {}, content: {}", endpointNodes.size(), endpointNodes);
+        LOGGER.debug("call realtionship size: {}, content: {}", callRelationshipList.size(), callRelationshipList);
 
         //save to database
         serviceNodeRepository.save(serviceNodes);
-        callRelationshipRepository.save(callRelationshipList);
+        endpointNodeRepository.save(endpointNodes);
     }
 
     private ServiceNode createServiceNode(MicroserviceProjectDescription microserviceProjectDescription) {
@@ -85,12 +96,13 @@ public class ServiceBuildHandler implements GraphBuildHandler {
                     allEndpointNodesMap.putIfAbsent(id, endpointNode);
                     return endpointNode;
                 }).collect(Collectors.toSet());
+        this.endpointNodes.addAll(endpointNodes);
 
         // return a new service node
         return new ServiceNode(microserviceProjectDescription.getName(), endpointNodes);
     }
 
-    private Stream<CallRelationship> createEndpointRelation(MicroserviceProjectDescription microserviceProjectDescription) {
+    private Stream<EndpointNode> createEndpointRelation(MicroserviceProjectDescription microserviceProjectDescription) {
         Map<String, Boolean> serviceCallIsTest = microserviceProjectDescription.getServiceCall().stream()
                 .collect(Collectors.toMap(ServiceCall::getId, ServiceCall::isUnTest));
         List<Endpoint2ServiceCallDependency> endpoint2ServiceCallDependency = microserviceProjectDescription.getEndpointDep();
@@ -106,13 +118,12 @@ public class ServiceBuildHandler implements GraphBuildHandler {
 
                     if (consumerServiceEndpoint != null && providerServiceEndpoint != null) {
                         LOGGER.debug("both get endpoint");
-                        CallRelationship callRelationship = new CallRelationship();
-                        callRelationship.setConsumber(consumerServiceEndpoint);
-                        callRelationship.setProvider(providerServiceEndpoint);
-                        callRelationship.setUnTest(serviceCallIsTest.getOrDefault(dep.getTo(), false));
+                        CallRelationship callRelationship =
+                                new CallRelationship(serviceCallIsTest.getOrDefault(dep.getTo(), false),
+                                        consumerServiceEndpoint, providerServiceEndpoint);
 
-                        consumerServiceEndpoint.addCallRelationships(callRelationship);
-                        return Stream.of(callRelationship);
+                        callRelationshipList.add(callRelationship);
+                        return Stream.of(consumerServiceEndpoint);
                     }
                     return Stream.empty();
                 });
