@@ -1,5 +1,7 @@
 package soselab.mpg.app.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,10 +11,12 @@ import soselab.mpg.bdd.service.NoBDDProjectGitSettingException;
 import soselab.mpg.graph.service.MicroserviceGraphBuilderService;
 import soselab.mpg.pact.service.PactService;
 
+import java.util.concurrent.Future;
+
 @RestController
 @RequestMapping("/api/update")
 public class UpdateController {
-
+    private static final Logger LOGGER = LoggerFactory.getLogger(UpdateController.class);
     private final BDDService bddService;
     private final MicroserviceGraphBuilderService microserviceGraphBuilderService;
     private final PactService pactService;
@@ -25,13 +29,18 @@ public class UpdateController {
     }
 
     @PostMapping
-    public void updateAllData() {
+    public void updateAllData() throws InterruptedException {
         try {
             pactService.getLatestPactFile();
             boolean hasUpdate = bddService.updateProject();
-            if (hasUpdate) microserviceGraphBuilderService.build();
+            if (hasUpdate) {
+                Future<Boolean> build = microserviceGraphBuilderService.build();
+                while (!build.isDone()) {
+                    Thread.sleep(500);
+                }
+            }
         } catch (NoBDDProjectGitSettingException e) {
-            e.printStackTrace();
+            LOGGER.info("no bdd setting");
         }
     }
 
