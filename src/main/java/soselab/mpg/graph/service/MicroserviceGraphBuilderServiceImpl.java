@@ -22,8 +22,9 @@ public class MicroserviceGraphBuilderServiceImpl implements MicroserviceGraphBui
 
     @Override
     public synchronized Future<Boolean> build() {
-        if (!building.isDone()) {
-            needBuild.set(true);
+        needBuild.set(true);
+        if (building != null && !building.isDone()) {
+            return building;
         } else {
             building = graphBuildTask.buildGraph(needBuild);
         }
