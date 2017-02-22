@@ -18,7 +18,7 @@ import soselab.mpg.pact.repository.PactRepository;
 import soselab.mpg.testreader.repository.TestReportRepository;
 
 @RestController
-@RequestMapping("/api/reset")
+@RequestMapping("/api/delete")
 public class ResetController {
 
     private final BDDGitSettingRepository bddGitSettingRepository;
