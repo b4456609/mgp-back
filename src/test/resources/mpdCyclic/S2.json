@@ -1,0 +1,64 @@
+{
+  "endpoint": [
+    {
+      "id": "S2 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S2 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    },
+    {
+      "id": "S2 endpoint /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2"
+    },
+    {
+      "id": "S2 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S2 endpoint /path1 DELETE",
+      "to": "S1 serviceCall /path3 PUT"
+    },
+    {
+      "from": "S2 endpoint /path2 DELETE",
+      "to": "S1 serviceCall /path1 DELETE"
+    },
+    {
+      "from": "S2 endpoint /path0 PUT",
+      "to": "S0 serviceCall /path1 GET"
+    }
+  ],
+  "name": "S2",
+  "serviceCall": [
+    {
+      "id": "S1 serviceCall /path3 PUT",
+      "method": "PUT",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1 serviceCall /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S0 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

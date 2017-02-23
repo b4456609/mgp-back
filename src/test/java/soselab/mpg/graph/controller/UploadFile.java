@@ -31,4 +31,13 @@ public class UploadFile {
             uploadMdpFile(restTemplate, file1.getPath());
         }
     }
+
+    public static void uploadMdpFilesFromDir(TestRestTemplate restTemplate, String dir) {
+        File file = new File(UploadFile.class.getResource("/" + dir).getPath());
+        File[] files = file.listFiles();
+        System.out.println(files);
+        for (File file1 : files) {
+            uploadMdpFile(restTemplate, file1.getPath());
+        }
+    }
 }

@@ -189,10 +189,7 @@ public class GraphVisualizationFromGraphFactory {
                 PathGroup pathGroup = pathNodeIdGroups.get(index);
                 if (pathGroup.isServiceCall(service, endpoint)) {
                     className.append(String.format("group%d ", index));
-                    //check is in cyclic group
-                    if (pathGroup.isCyclic()) {
-                        className.append(String.format("cyclic%d ", index));
-                    }
+                    className.append(getCyclicClassString(index, pathGroup, false));
                 }
             });
         }
@@ -205,6 +202,7 @@ public class GraphVisualizationFromGraphFactory {
         return className.toString().trim();
     }
 
+
     private String getClassString(List<PathGroup> pathNodeIdGroups, String id) {
         StringBuilder className = new StringBuilder();
         if (idPathIndexsMap.containsKey(id)) {
@@ -213,16 +211,10 @@ public class GraphVisualizationFromGraphFactory {
                 PathGroup group = pathNodeIdGroups.get(index);
                 if (group.isFirstEndpoint(id)) {
                     className.append(String.format("group%d-start ", index));
-                    //check is in cyclic group
-                    if (group.isCyclic()) {
-                        className.append(String.format("cyclic%d-start ", index));
-                    }
+                    className.append(getCyclicClassString(index, group, true));
                 } else {
                     className.append(String.format("group%d ", index));
-                    //check is in cyclic group
-                    if (group.isCyclic()) {
-                        className.append(String.format("cyclic%d ", index));
-                    }
+                    className.append(getCyclicClassString(index, group, false));
                 }
             });
         }
@@ -243,13 +235,25 @@ public class GraphVisualizationFromGraphFactory {
                 PathGroup pathGroup = pathNodeIdGroups.get(index);
                 if (pathGroup.isServiceAndEndpoint(id1, id2)) {
                     className.append(String.format("group%d ", index));
-                    //check is in cyclic group
-                    if (pathGroup.isCyclic()) {
-                        className.append(String.format("cyclic%d ", index));
-                    }
+                    className.append(getCyclicClassString(index, pathGroup, false));
                 }
             });
         }
         return className.toString().trim();
     }
+
+
+    private String getCyclicClassString(Integer index, PathGroup pathGroup, boolean isStartNode) {
+        String postfix = "";
+        if (isStartNode)
+            postfix = "-start";
+
+        if (pathGroup.getCyclicType() == CyclicType.NORMAL) {
+            return String.format("cyclic%d%s ", index, postfix);
+        } else if (pathGroup.getCyclicType() == CyclicType.ENHANCE) {
+            return String.format("cyclic-enhance%d%s ", index, postfix);
+        }
+        return "";
+    }
+
 }

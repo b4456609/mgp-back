@@ -1,0 +1,52 @@
+{
+  "endpoint": [
+    {
+      "id": "S4 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S4 endpoint /path0 PUT",
+      "to": "S2 serviceCall /path3 POST"
+    },
+    {
+      "from": "S4 endpoint /path0 PUT",
+      "to": "S1 serviceCall /path0 POST"
+    }
+  ],
+  "name": "S4",
+  "serviceCall": [
+    {
+      "id": "S2 serviceCall /path3 POST",
+      "method": "POST",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S2 serviceCall /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1 serviceCall /path0 POST",
+      "method": "POST",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S3 serviceCall /path0 GET",
+      "method": "GET",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

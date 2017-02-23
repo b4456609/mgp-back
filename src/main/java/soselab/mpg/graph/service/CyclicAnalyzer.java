@@ -1,5 +1,6 @@
 package soselab.mpg.graph.service;
 
+import soselab.mpg.graph.model.CyclicType;
 import soselab.mpg.graph.model.PathGroup;
 
 import java.util.HashSet;
@@ -12,6 +13,7 @@ import static soselab.mpg.mpd.model.IDExtractor.getServiceName;
 public class CyclicAnalyzer {
     public static void analyze(List<PathGroup> groups) {
         groups.forEach(group -> {
+            // check group whether cyclic or not
             boolean isCyclic = group.getPaths()
                     .stream()
                     .anyMatch(path -> {
@@ -25,7 +27,15 @@ public class CyclicAnalyzer {
                         return false;
                     });
             if (isCyclic) {
-                group.setCyclic(true);
+                // check cyclic type
+                boolean isEnhanceCyclic = group.getPaths()
+                        .stream()
+                        .anyMatch(path -> {
+                            Set<String> allItems = new HashSet<>(path);
+                            return allItems.size() < path.size();
+                        });
+
+                group.setCyclicType(isEnhanceCyclic ? CyclicType.ENHANCE : CyclicType.NORMAL);
             }
         });
     }

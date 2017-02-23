@@ -8,12 +8,12 @@ import java.util.*;
 public class PathGroup {
     private final List<List<String>> paths;
     private final Set<String> services;
-    private boolean isCyclic;
+    private CyclicType cyclicType;
 
     public PathGroup() {
         this.paths = new ArrayList<>();
         this.services = new HashSet<>();
-        this.isCyclic = false;
+        this.cyclicType = CyclicType.NONE;
     }
 
     public void addPath(List<String> path) {
@@ -38,12 +38,12 @@ public class PathGroup {
         return paths.get(0).get(0).equals(endpoint);
     }
 
-    public boolean isCyclic() {
-        return isCyclic;
+    public CyclicType getCyclicType() {
+        return cyclicType;
     }
 
-    public void setCyclic(boolean cyclic) {
-        isCyclic = cyclic;
+    public void setCyclicType(CyclicType cyclicType) {
+        this.cyclicType = cyclicType;
     }
 
     public boolean isServiceAndEndpoint(String id1, String id2) {
@@ -77,7 +77,7 @@ public class PathGroup {
         return "PathGroup{" +
                 "paths=" + paths +
                 ", services=" + services +
-                ", isCyclic=" + isCyclic +
+                ", cyclicType=" + cyclicType +
                 '}';
     }
 }
