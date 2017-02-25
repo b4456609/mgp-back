@@ -4,7 +4,13 @@ start
 :Check All Invocation Chain Path;
 -> A path has two endpoint\nowned by the same service;
 if() then(yes)
-:Mark the group is Cyclic;
+:Check the Path has the same\nEndpoint show more than 2 times;
+if() then(yes)
+:Mark the group is\nEnhanced Cyclic;
+else(no)
+:Mark the group is\nNormal Cyclic;
+endif
+else(no)
 endif
 stop
 @enduml
