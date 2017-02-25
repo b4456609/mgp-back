@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: mpgback
+  data:
+    mongodb:
+      database: mpg
+      host: 140.121.102.164
+    neo4j:
+      uri: http://140.121.102.164:7878
+      username: neo4j
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+
+logging:
+  level:
+    soselab: ${DEBUG_LEVEL:DEBUG}
+
+mpg:
+  codegen:
+    url: ${CODEGEN_HOST:http://localhost:3001/}
+  bdd:
+    url: ${BDD_HOST:http://localhost:3005}

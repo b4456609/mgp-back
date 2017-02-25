@@ -8,6 +8,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import soselab.mpg.graph.controller.GraphController;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
@@ -20,6 +21,7 @@ import static soselab.mpg.graph.controller.UploadFile.uploadMdpFilesFromDir;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @RunWith(SpringRunner.class)
+@ActiveProfiles("remote")
 public class GraphVisualizationFromGraphFactoryTest {
 
     @Autowired
