@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class MCAGenerator {
     public static final Random RANDOM = new Random();
     public static final String[] httpMethods = {"POST", "GET", "DELETE", "PUT"};
-    public static final int SERVICE_NUMBER = 5;
+    public static final int SERVICE_NUMBER = 5000;
     public static final int ENDPOINT_MAX_NUMBER = 5;
     public static final int SERVICE_CALL_MAX_NUMBER = 5;
     public static final int SERVICE_DEPENDENCY_MAX_NUMBER = 2;

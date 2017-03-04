@@ -78,8 +78,14 @@ public class ServiceBuildHandler implements GraphBuildHandler {
         LOGGER.debug("call realtionship size: {}, content: {}", callRelationshipList.size(), callRelationshipList);
 
         //save to database
-        serviceNodeRepository.save(serviceNodes);
-        endpointNodeRepository.save(endpointNodes);
+        for (int i = 0; i < 10; i++) {
+            long start = System.currentTimeMillis();
+            callRelationshipRepository.save(callRelationshipList);
+            endpointNodeRepository.save(endpointNodes);
+            serviceNodeRepository.save(serviceNodes);
+            long end = System.currentTimeMillis();
+            LOGGER.warn("{}th run {}ms", i, end - start);
+        }
     }
 
     private ServiceNode createServiceNode(MicroserviceProjectDescription microserviceProjectDescription) {
