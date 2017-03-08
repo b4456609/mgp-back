@@ -78,8 +78,9 @@ public class ServiceBuildHandler implements GraphBuildHandler {
         LOGGER.debug("call realtionship size: {}, content: {}", callRelationshipList.size(), callRelationshipList);
 
         //save to database
-        serviceNodeRepository.save(serviceNodes);
+        callRelationshipRepository.save(callRelationshipList);
         endpointNodeRepository.save(endpointNodes);
+        serviceNodeRepository.save(serviceNodes);
     }
 
     private ServiceNode createServiceNode(MicroserviceProjectDescription microserviceProjectDescription) {

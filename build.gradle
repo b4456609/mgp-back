@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.4.4.RELEASE'
+		springBootVersion = '1.5.2.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
 	compile group: 'com.jayway.jsonpath', name: 'json-path', version: '2.2.0'
-
+	compile group: 'org.neo4j', name: 'neo4j-ogm-bolt-driver', version: '2.1.1'
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '0.7.7'
 // https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 //	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
