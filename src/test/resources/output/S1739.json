@@ -1,0 +1,45 @@
+{
+	"endpoint":[
+		{
+			"id":"S1739 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1739 endpoint /path0 DELETE",
+			"to":"S4838 serviceCall /path21 GET"
+		},
+		{
+			"from":"S1739 endpoint /path0 DELETE",
+			"to":"S240 serviceCall /path9 DELETE"
+		}
+	],
+	"name":"S1739",
+	"serviceCall":[
+		{
+			"id":"S4838 serviceCall /path21 GET",
+			"method":"GET",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S105 serviceCall /path94 POST",
+			"method":"POST",
+			"path":"/path94",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S240 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

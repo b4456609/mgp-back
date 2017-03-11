@@ -1,0 +1,52 @@
+{
+	"endpoint":[
+		{
+			"id":"S61 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S61 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S61 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S61 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S61 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S61 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S61 endpoint /path1 PUT",
+			"to":"S2655 serviceCall /path95 POST"
+		}
+	],
+	"name":"S61",
+	"serviceCall":[
+		{
+			"id":"S2655 serviceCall /path95 POST",
+			"method":"POST",
+			"path":"/path95",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

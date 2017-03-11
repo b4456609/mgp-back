@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S1760 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1760 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1760 endpoint /path1 GET",
+			"to":"S3861 serviceCall /path34 DELETE"
+		}
+	],
+	"name":"S1760",
+	"serviceCall":[
+		{
+			"id":"S3861 serviceCall /path34 DELETE",
+			"method":"DELETE",
+			"path":"/path34",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

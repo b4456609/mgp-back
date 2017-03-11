@@ -1,0 +1,42 @@
+{
+	"endpoint":[
+		{
+			"id":"S2897 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2897 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S2897 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S2897 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2897 endpoint /path0 GET",
+			"to":"S3538 serviceCall /path0 POST"
+		}
+	],
+	"name":"S2897",
+	"serviceCall":[
+		{
+			"id":"S3538 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

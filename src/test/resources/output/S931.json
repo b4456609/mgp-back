@@ -1,0 +1,108 @@
+{
+	"endpoint":[
+		{
+			"id":"S931 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S931 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S931 endpoint /path0 PUT",
+			"to":"S481 serviceCall /path144 GET"
+		},
+		{
+			"from":"S931 endpoint /path1 PUT",
+			"to":"S2096 serviceCall /path0 GET"
+		},
+		{
+			"from":"S931 endpoint /path0 PUT",
+			"to":"S4282 serviceCall /path155 DELETE"
+		},
+		{
+			"from":"S931 endpoint /path0 PUT",
+			"to":"S3502 serviceCall /path91 POST"
+		},
+		{
+			"from":"S931 endpoint /path0 PUT",
+			"to":"S2189 serviceCall /path0 POST"
+		},
+		{
+			"from":"S931 endpoint /path0 PUT",
+			"to":"S2767 serviceCall /path142 GET"
+		}
+	],
+	"name":"S931",
+	"serviceCall":[
+		{
+			"id":"S481 serviceCall /path144 GET",
+			"method":"GET",
+			"path":"/path144",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S689 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3129 serviceCall /path3 POST",
+			"method":"POST",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2096 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4282 serviceCall /path155 DELETE",
+			"method":"DELETE",
+			"path":"/path155",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3502 serviceCall /path91 POST",
+			"method":"POST",
+			"path":"/path91",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2189 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2614 serviceCall /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2767 serviceCall /path142 GET",
+			"method":"GET",
+			"path":"/path142",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

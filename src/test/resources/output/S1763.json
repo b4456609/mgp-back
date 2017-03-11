@@ -1,0 +1,92 @@
+{
+	"endpoint":[
+		{
+			"id":"S1763 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1763 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S1763 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S1763 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S1763 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S1763 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S1763 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S1763 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S1763 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S1763 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S1763 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S1763 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
+		},
+		{
+			"id":"S1763 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S1763 endpoint /path13 POST",
+			"method":"POST",
+			"path":"/path13"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1763 endpoint /path0 GET",
+			"to":"S2435 serviceCall /path8 DELETE"
+		}
+	],
+	"name":"S1763",
+	"serviceCall":[
+		{
+			"id":"S2435 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

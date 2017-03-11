@@ -1,0 +1,42 @@
+{
+	"endpoint":[
+		{
+			"id":"S2191 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S2191 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2191 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S2191 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2191 endpoint /path2 POST",
+			"to":"S704 serviceCall /path1 POST"
+		}
+	],
+	"name":"S2191",
+	"serviceCall":[
+		{
+			"id":"S704 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

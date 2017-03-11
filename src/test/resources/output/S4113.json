@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S4113 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4113 endpoint /path0 POST",
+			"to":"S123 serviceCall /path5 PUT"
+		}
+	],
+	"name":"S4113",
+	"serviceCall":[
+		{
+			"id":"S4888 serviceCall /path18 GET",
+			"method":"GET",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S123 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

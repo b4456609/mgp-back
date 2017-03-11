@@ -1,0 +1,71 @@
+{
+	"endpoint":[
+		{
+			"id":"S4349 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S4349 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4349 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S4349 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4349 endpoint /path1 POST",
+			"to":"S3839 serviceCall /path73 GET"
+		},
+		{
+			"from":"S4349 endpoint /path1 POST",
+			"to":"S1731 serviceCall /path4 POST"
+		},
+		{
+			"from":"S4349 endpoint /path0 GET",
+			"to":"S4103 serviceCall /path3 GET"
+		}
+	],
+	"name":"S4349",
+	"serviceCall":[
+		{
+			"id":"S3839 serviceCall /path73 GET",
+			"method":"GET",
+			"path":"/path73",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1362 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1731 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4103 serviceCall /path3 GET",
+			"method":"GET",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

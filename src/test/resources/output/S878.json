@@ -1,0 +1,83 @@
+{
+	"endpoint":[
+		{
+			"id":"S878 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S878 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S878 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S878 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S878 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S878 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S878 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S878 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S878 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S878 endpoint /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S878 endpoint /path4 PUT",
+			"to":"S1351 serviceCall /path4 POST"
+		},
+		{
+			"from":"S878 endpoint /path2 PUT",
+			"to":"S204 serviceCall /path6 GET"
+		}
+	],
+	"name":"S878",
+	"serviceCall":[
+		{
+			"id":"S1351 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S204 serviceCall /path6 GET",
+			"method":"GET",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

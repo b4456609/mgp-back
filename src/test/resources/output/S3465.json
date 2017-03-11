@@ -1,0 +1,128 @@
+{
+	"endpoint":[
+		{
+			"id":"S3465 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S3465 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S3465 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S3465 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S3465 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S3465 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S3465 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S3465 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3465 endpoint /path1 DELETE",
+			"to":"S4282 serviceCall /path82 POST"
+		},
+		{
+			"from":"S3465 endpoint /path2 PUT",
+			"to":"S889 serviceCall /path269 DELETE"
+		},
+		{
+			"from":"S3465 endpoint /path0 PUT",
+			"to":"S1405 serviceCall /path15 DELETE"
+		},
+		{
+			"from":"S3465 endpoint /path0 PUT",
+			"to":"S2411 serviceCall /path44 PUT"
+		},
+		{
+			"from":"S3465 endpoint /path3 GET",
+			"to":"S608 serviceCall /path16 POST"
+		},
+		{
+			"from":"S3465 endpoint /path0 PUT",
+			"to":"S2498 serviceCall /path63 POST"
+		},
+		{
+			"from":"S3465 endpoint /path7 POST",
+			"to":"S2648 serviceCall /path39 PUT"
+		}
+	],
+	"name":"S3465",
+	"serviceCall":[
+		{
+			"id":"S4282 serviceCall /path82 POST",
+			"method":"POST",
+			"path":"/path82",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S889 serviceCall /path269 DELETE",
+			"method":"DELETE",
+			"path":"/path269",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1405 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2411 serviceCall /path44 PUT",
+			"method":"PUT",
+			"path":"/path44",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S608 serviceCall /path16 POST",
+			"method":"POST",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2498 serviceCall /path63 POST",
+			"method":"POST",
+			"path":"/path63",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2648 serviceCall /path39 PUT",
+			"method":"PUT",
+			"path":"/path39",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

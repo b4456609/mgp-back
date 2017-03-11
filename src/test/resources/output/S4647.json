@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S4647 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4647 endpoint /path0 DELETE",
+			"to":"S1851 serviceCall /path27 DELETE"
+		}
+	],
+	"name":"S4647",
+	"serviceCall":[
+		{
+			"id":"S2959 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1851 serviceCall /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

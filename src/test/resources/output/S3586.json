@@ -1,0 +1,42 @@
+{
+	"endpoint":[
+		{
+			"id":"S3586 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S3586 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S3586 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S3586 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3586 endpoint /path3 GET",
+			"to":"S88 serviceCall /path66 DELETE"
+		}
+	],
+	"name":"S3586",
+	"serviceCall":[
+		{
+			"id":"S88 serviceCall /path66 DELETE",
+			"method":"DELETE",
+			"path":"/path66",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

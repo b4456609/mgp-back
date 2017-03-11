@@ -1,0 +1,39 @@
+{
+	"endpoint":[
+		{
+			"id":"S480 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S480 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S480 endpoint /path0 GET",
+			"to":"S3289 serviceCall /path14 POST"
+		}
+	],
+	"name":"S480",
+	"serviceCall":[
+		{
+			"id":"S3289 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1163 serviceCall /path204 POST",
+			"method":"POST",
+			"path":"/path204",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

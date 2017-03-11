@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S3473 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3473 endpoint /path0 DELETE",
+			"to":"S1785 serviceCall /path32 POST"
+		}
+	],
+	"name":"S3473",
+	"serviceCall":[
+		{
+			"id":"S972 serviceCall /path13 POST",
+			"method":"POST",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1785 serviceCall /path32 POST",
+			"method":"POST",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

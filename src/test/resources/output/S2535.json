@@ -1,0 +1,57 @@
+{
+	"endpoint":[
+		{
+			"id":"S2535 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2535 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S2535 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S2535 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S2535 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S2535 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S2535 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2535 endpoint /path0 GET",
+			"to":"S2786 serviceCall /path170 GET"
+		}
+	],
+	"name":"S2535",
+	"serviceCall":[
+		{
+			"id":"S2786 serviceCall /path170 GET",
+			"method":"GET",
+			"path":"/path170",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,62 @@
+{
+	"endpoint":[
+		{
+			"id":"S2597 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2597 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2597 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2597 endpoint /path0 GET",
+			"to":"S3440 serviceCall /path65 POST"
+		},
+		{
+			"from":"S2597 endpoint /path2 POST",
+			"to":"S2087 serviceCall /path5 PUT"
+		}
+	],
+	"name":"S2597",
+	"serviceCall":[
+		{
+			"id":"S3440 serviceCall /path65 POST",
+			"method":"POST",
+			"path":"/path65",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3595 serviceCall /path17 GET",
+			"method":"GET",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1227 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2087 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S2022 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S2022 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2022 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2022 endpoint /path0 POST",
+			"to":"S4669 serviceCall /path35 PUT"
+		}
+	],
+	"name":"S2022",
+	"serviceCall":[
+		{
+			"id":"S4669 serviceCall /path35 PUT",
+			"method":"PUT",
+			"path":"/path35",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

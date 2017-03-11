@@ -1,0 +1,62 @@
+{
+	"endpoint":[
+		{
+			"id":"S4096 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4096 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4096 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S4096 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S4096 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S4096 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S4096 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S4096 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4096 endpoint /path2 GET",
+			"to":"S753 serviceCall /path126 GET"
+		}
+	],
+	"name":"S4096",
+	"serviceCall":[
+		{
+			"id":"S753 serviceCall /path126 GET",
+			"method":"GET",
+			"path":"/path126",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

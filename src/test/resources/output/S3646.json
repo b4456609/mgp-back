@@ -1,0 +1,88 @@
+{
+	"endpoint":[
+		{
+			"id":"S3646 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S3646 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S3646 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S3646 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S3646 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S3646 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S3646 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S3646 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S3646 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S3646 endpoint /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9"
+		},
+		{
+			"id":"S3646 endpoint /path10 PUT",
+			"method":"PUT",
+			"path":"/path10"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3646 endpoint /path0 DELETE",
+			"to":"S2993 serviceCall /path18 GET"
+		},
+		{
+			"from":"S3646 endpoint /path5 DELETE",
+			"to":"S2176 serviceCall /path1 GET"
+		}
+	],
+	"name":"S3646",
+	"serviceCall":[
+		{
+			"id":"S2993 serviceCall /path18 GET",
+			"method":"GET",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2176 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,82 @@
+{
+	"endpoint":[
+		{
+			"id":"S589 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S589 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S589 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S589 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S589 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S589 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S589 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S589 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S589 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S589 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S589 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S589 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S589 endpoint /path1 GET",
+			"to":"S4820 serviceCall /path0 PUT"
+		}
+	],
+	"name":"S589",
+	"serviceCall":[
+		{
+			"id":"S4820 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

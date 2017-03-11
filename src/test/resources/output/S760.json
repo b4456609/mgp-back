@@ -1,0 +1,138 @@
+{
+	"endpoint":[
+		{
+			"id":"S760 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S760 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S760 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S760 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S760 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S760 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S760 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S760 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S760 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S760 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S760 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		},
+		{
+			"id":"S760 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S760 endpoint /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12"
+		},
+		{
+			"id":"S760 endpoint /path13 GET",
+			"method":"GET",
+			"path":"/path13"
+		},
+		{
+			"id":"S760 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S760 endpoint /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15"
+		},
+		{
+			"id":"S760 endpoint /path16 PUT",
+			"method":"PUT",
+			"path":"/path16"
+		},
+		{
+			"id":"S760 endpoint /path17 POST",
+			"method":"POST",
+			"path":"/path17"
+		},
+		{
+			"id":"S760 endpoint /path18 PUT",
+			"method":"PUT",
+			"path":"/path18"
+		},
+		{
+			"id":"S760 endpoint /path19 PUT",
+			"method":"PUT",
+			"path":"/path19"
+		},
+		{
+			"id":"S760 endpoint /path20 PUT",
+			"method":"PUT",
+			"path":"/path20"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S760 endpoint /path1 POST",
+			"to":"S4668 serviceCall /path6 PUT"
+		},
+		{
+			"from":"S760 endpoint /path0 POST",
+			"to":"S855 serviceCall /path5 POST"
+		}
+	],
+	"name":"S760",
+	"serviceCall":[
+		{
+			"id":"S4668 serviceCall /path6 PUT",
+			"method":"PUT",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S855 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

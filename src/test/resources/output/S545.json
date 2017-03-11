@@ -1,0 +1,54 @@
+{
+	"endpoint":[
+		{
+			"id":"S545 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S545 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S545 endpoint /path1 POST",
+			"to":"S2895 serviceCall /path8 POST"
+		},
+		{
+			"from":"S545 endpoint /path0 POST",
+			"to":"S387 serviceCall /path6 DELETE"
+		},
+		{
+			"from":"S545 endpoint /path0 POST",
+			"to":"S4010 serviceCall /path6 PUT"
+		}
+	],
+	"name":"S545",
+	"serviceCall":[
+		{
+			"id":"S2895 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S387 serviceCall /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4010 serviceCall /path6 PUT",
+			"method":"PUT",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

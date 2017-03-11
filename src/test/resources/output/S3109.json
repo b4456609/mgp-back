@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S3109 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3109 endpoint /path0 GET",
+			"to":"S3045 serviceCall /path74 GET"
+		}
+	],
+	"name":"S3109",
+	"serviceCall":[
+		{
+			"id":"S1879 serviceCall /path45 PUT",
+			"method":"PUT",
+			"path":"/path45",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S849 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3045 serviceCall /path74 GET",
+			"method":"GET",
+			"path":"/path74",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

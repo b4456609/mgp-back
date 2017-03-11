@@ -1,0 +1,77 @@
+{
+	"endpoint":[
+		{
+			"id":"S914 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S914 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S914 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S914 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S914 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S914 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S914 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S914 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S914 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S914 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S914 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S914 endpoint /path1 GET",
+			"to":"S2831 serviceCall /path60 POST"
+		}
+	],
+	"name":"S914",
+	"serviceCall":[
+		{
+			"id":"S2831 serviceCall /path60 POST",
+			"method":"POST",
+			"path":"/path60",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

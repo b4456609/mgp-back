@@ -1,0 +1,57 @@
+{
+	"endpoint":[
+		{
+			"id":"S2714 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S2714 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2714 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S2714 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S2714 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S2714 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S2714 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2714 endpoint /path1 POST",
+			"to":"S3654 serviceCall /path3 POST"
+		}
+	],
+	"name":"S2714",
+	"serviceCall":[
+		{
+			"id":"S3654 serviceCall /path3 POST",
+			"method":"POST",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

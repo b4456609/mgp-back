@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S452 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S452 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S452 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S452 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S452 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S452 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S452 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S452 endpoint /path2 GET",
+			"to":"S2131 serviceCall /path5 PUT"
+		},
+		{
+			"from":"S452 endpoint /path1 DELETE",
+			"to":"S4139 serviceCall /path14 POST"
+		},
+		{
+			"from":"S452 endpoint /path1 DELETE",
+			"to":"S182 serviceCall /path1 DELETE"
+		},
+		{
+			"from":"S452 endpoint /path1 DELETE",
+			"to":"S3018 serviceCall /path92 GET"
+		},
+		{
+			"from":"S452 endpoint /path2 GET",
+			"to":"S1191 serviceCall /path8 POST"
+		},
+		{
+			"from":"S452 endpoint /path2 GET",
+			"to":"S1777 serviceCall /path243 GET"
+		}
+	],
+	"name":"S452",
+	"serviceCall":[
+		{
+			"id":"S2131 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4139 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S182 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3018 serviceCall /path92 GET",
+			"method":"GET",
+			"path":"/path92",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1191 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1777 serviceCall /path243 GET",
+			"method":"GET",
+			"path":"/path243",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

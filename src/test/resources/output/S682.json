@@ -1,0 +1,47 @@
+{
+	"endpoint":[
+		{
+			"id":"S682 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S682 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S682 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S682 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S682 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S682 endpoint /path0 POST",
+			"to":"S4492 serviceCall /path11 GET"
+		}
+	],
+	"name":"S682",
+	"serviceCall":[
+		{
+			"id":"S4492 serviceCall /path11 GET",
+			"method":"GET",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

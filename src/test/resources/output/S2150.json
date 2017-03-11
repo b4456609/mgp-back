@@ -1,0 +1,45 @@
+{
+	"endpoint":[
+		{
+			"id":"S2150 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2150 endpoint /path0 PUT",
+			"to":"S1718 serviceCall /path2 POST"
+		},
+		{
+			"from":"S2150 endpoint /path0 PUT",
+			"to":"S3527 serviceCall /path9 DELETE"
+		}
+	],
+	"name":"S2150",
+	"serviceCall":[
+		{
+			"id":"S1718 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1253 serviceCall /path21 PUT",
+			"method":"PUT",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3527 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

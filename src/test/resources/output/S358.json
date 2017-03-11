@@ -1,0 +1,93 @@
+{
+	"endpoint":[
+		{
+			"id":"S358 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S358 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S358 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S358 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S358 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S358 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S358 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S358 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S358 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S358 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S358 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		},
+		{
+			"id":"S358 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S358 endpoint /path1 PUT",
+			"to":"S2433 serviceCall /path153 GET"
+		},
+		{
+			"from":"S358 endpoint /path0 POST",
+			"to":"S3242 serviceCall /path69 PUT"
+		}
+	],
+	"name":"S358",
+	"serviceCall":[
+		{
+			"id":"S2433 serviceCall /path153 GET",
+			"method":"GET",
+			"path":"/path153",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3242 serviceCall /path69 PUT",
+			"method":"PUT",
+			"path":"/path69",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

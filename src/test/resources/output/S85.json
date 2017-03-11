@@ -1,0 +1,115 @@
+{
+	"endpoint":[
+		{
+			"id":"S85 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S85 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S85 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S85 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S85 endpoint /path0 POST",
+			"to":"S4407 serviceCall /path8 POST"
+		},
+		{
+			"from":"S85 endpoint /path1 POST",
+			"to":"S732 serviceCall /path12 PUT"
+		},
+		{
+			"from":"S85 endpoint /path1 POST",
+			"to":"S2103 serviceCall /path112 DELETE"
+		},
+		{
+			"from":"S85 endpoint /path0 POST",
+			"to":"S1176 serviceCall /path7 DELETE"
+		},
+		{
+			"from":"S85 endpoint /path0 POST",
+			"to":"S3508 serviceCall /path5 DELETE"
+		},
+		{
+			"from":"S85 endpoint /path1 POST",
+			"to":"S2385 serviceCall /path12 DELETE"
+		},
+		{
+			"from":"S85 endpoint /path0 POST",
+			"to":"S2408 serviceCall /path0 DELETE"
+		}
+	],
+	"name":"S85",
+	"serviceCall":[
+		{
+			"id":"S4407 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S732 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2103 serviceCall /path112 DELETE",
+			"method":"DELETE",
+			"path":"/path112",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1176 serviceCall /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S289 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3508 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2385 serviceCall /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2408 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

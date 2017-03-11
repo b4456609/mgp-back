@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S3842 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S3842 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S3842 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S3842 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S3842 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S3842 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S3842 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S3842 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S3842 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S3842 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3842 endpoint /path2 PUT",
+			"to":"S4401 serviceCall /path116 GET"
+		},
+		{
+			"from":"S3842 endpoint /path3 DELETE",
+			"to":"S1861 serviceCall /path20 POST"
+		},
+		{
+			"from":"S3842 endpoint /path1 PUT",
+			"to":"S2531 serviceCall /path8 DELETE"
+		},
+		{
+			"from":"S3842 endpoint /path0 POST",
+			"to":"S1408 serviceCall /path26 GET"
+		},
+		{
+			"from":"S3842 endpoint /path1 PUT",
+			"to":"S1621 serviceCall /path36 GET"
+		}
+	],
+	"name":"S3842",
+	"serviceCall":[
+		{
+			"id":"S4401 serviceCall /path116 GET",
+			"method":"GET",
+			"path":"/path116",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1861 serviceCall /path20 POST",
+			"method":"POST",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2531 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1408 serviceCall /path26 GET",
+			"method":"GET",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1621 serviceCall /path36 GET",
+			"method":"GET",
+			"path":"/path36",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

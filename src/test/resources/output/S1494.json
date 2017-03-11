@@ -1,0 +1,62 @@
+{
+	"endpoint":[
+		{
+			"id":"S1494 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1494 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S1494 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S1494 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S1494 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S1494 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S1494 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S1494 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1494 endpoint /path2 PUT",
+			"to":"S1257 serviceCall /path70 GET"
+		}
+	],
+	"name":"S1494",
+	"serviceCall":[
+		{
+			"id":"S1257 serviceCall /path70 GET",
+			"method":"GET",
+			"path":"/path70",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

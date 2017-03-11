@@ -1,0 +1,74 @@
+{
+	"endpoint":[
+		{
+			"id":"S2644 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2644 endpoint /path0 GET",
+			"to":"S4842 serviceCall /path8 PUT"
+		},
+		{
+			"from":"S2644 endpoint /path0 GET",
+			"to":"S2001 serviceCall /path28 PUT"
+		},
+		{
+			"from":"S2644 endpoint /path0 GET",
+			"to":"S3264 serviceCall /path24 POST"
+		},
+		{
+			"from":"S2644 endpoint /path0 GET",
+			"to":"S3237 serviceCall /path20 POST"
+		}
+	],
+	"name":"S2644",
+	"serviceCall":[
+		{
+			"id":"S4716 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4842 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2001 serviceCall /path28 PUT",
+			"method":"PUT",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3264 serviceCall /path24 POST",
+			"method":"POST",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3237 serviceCall /path20 POST",
+			"method":"POST",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2944 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

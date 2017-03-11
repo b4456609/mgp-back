@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S4122 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S4122 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4122 endpoint /path0 GET",
+			"to":"S2498 serviceCall /path44 PUT"
+		},
+		{
+			"from":"S4122 endpoint /path0 GET",
+			"to":"S2402 serviceCall /path130 PUT"
+		}
+	],
+	"name":"S4122",
+	"serviceCall":[
+		{
+			"id":"S2498 serviceCall /path44 PUT",
+			"method":"PUT",
+			"path":"/path44",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2402 serviceCall /path130 PUT",
+			"method":"PUT",
+			"path":"/path130",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

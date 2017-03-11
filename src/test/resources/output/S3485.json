@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S3485 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S3485 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S3485 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S3485 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S3485 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S3485 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S3485 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S3485 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S3485 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S3485 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3485 endpoint /path3 PUT",
+			"to":"S2199 serviceCall /path14 POST"
+		},
+		{
+			"from":"S3485 endpoint /path0 PUT",
+			"to":"S311 serviceCall /path17 DELETE"
+		},
+		{
+			"from":"S3485 endpoint /path1 DELETE",
+			"to":"S4780 serviceCall /path9 POST"
+		},
+		{
+			"from":"S3485 endpoint /path0 PUT",
+			"to":"S2619 serviceCall /path16 PUT"
+		},
+		{
+			"from":"S3485 endpoint /path0 PUT",
+			"to":"S594 serviceCall /path53 GET"
+		}
+	],
+	"name":"S3485",
+	"serviceCall":[
+		{
+			"id":"S2199 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S311 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4780 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2619 serviceCall /path16 PUT",
+			"method":"PUT",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S594 serviceCall /path53 GET",
+			"method":"GET",
+			"path":"/path53",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

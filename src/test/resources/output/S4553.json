@@ -1,0 +1,124 @@
+{
+	"endpoint":[
+		{
+			"id":"S4553 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S4553 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4553 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S4553 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S4553 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4553 endpoint /path0 DELETE",
+			"to":"S4997 serviceCall /path208 PUT"
+		},
+		{
+			"from":"S4553 endpoint /path1 POST",
+			"to":"S3147 serviceCall /path4 PUT"
+		},
+		{
+			"from":"S4553 endpoint /path0 DELETE",
+			"to":"S1985 serviceCall /path20 DELETE"
+		},
+		{
+			"from":"S4553 endpoint /path0 DELETE",
+			"to":"S2570 serviceCall /path35 PUT"
+		},
+		{
+			"from":"S4553 endpoint /path1 POST",
+			"to":"S74 serviceCall /path3 DELETE"
+		},
+		{
+			"from":"S4553 endpoint /path0 DELETE",
+			"to":"S3513 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S4553 endpoint /path2 PUT",
+			"to":"S4330 serviceCall /path18 PUT"
+		},
+		{
+			"from":"S4553 endpoint /path0 DELETE",
+			"to":"S4424 serviceCall /path0 POST"
+		}
+	],
+	"name":"S4553",
+	"serviceCall":[
+		{
+			"id":"S4997 serviceCall /path208 PUT",
+			"method":"PUT",
+			"path":"/path208",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3147 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1985 serviceCall /path20 DELETE",
+			"method":"DELETE",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2570 serviceCall /path35 PUT",
+			"method":"PUT",
+			"path":"/path35",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S74 serviceCall /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3513 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4330 serviceCall /path18 PUT",
+			"method":"PUT",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4424 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

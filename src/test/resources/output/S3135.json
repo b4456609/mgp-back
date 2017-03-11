@@ -1,0 +1,109 @@
+{
+	"endpoint":[
+		{
+			"id":"S3135 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S3135 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3135 endpoint /path0 PUT",
+			"to":"S303 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S3135 endpoint /path0 PUT",
+			"to":"S121 serviceCall /path13 DELETE"
+		},
+		{
+			"from":"S3135 endpoint /path1 POST",
+			"to":"S2498 serviceCall /path10 PUT"
+		},
+		{
+			"from":"S3135 endpoint /path0 PUT",
+			"to":"S4637 serviceCall /path27 PUT"
+		},
+		{
+			"from":"S3135 endpoint /path1 POST",
+			"to":"S2403 serviceCall /path70 POST"
+		},
+		{
+			"from":"S3135 endpoint /path0 PUT",
+			"to":"S4438 serviceCall /path195 POST"
+		},
+		{
+			"from":"S3135 endpoint /path1 POST",
+			"to":"S2552 serviceCall /path202 POST"
+		},
+		{
+			"from":"S3135 endpoint /path0 PUT",
+			"to":"S2224 serviceCall /path5 POST"
+		}
+	],
+	"name":"S3135",
+	"serviceCall":[
+		{
+			"id":"S303 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S121 serviceCall /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2498 serviceCall /path10 PUT",
+			"method":"PUT",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4637 serviceCall /path27 PUT",
+			"method":"PUT",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2403 serviceCall /path70 POST",
+			"method":"POST",
+			"path":"/path70",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4438 serviceCall /path195 POST",
+			"method":"POST",
+			"path":"/path195",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2552 serviceCall /path202 POST",
+			"method":"POST",
+			"path":"/path202",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2224 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

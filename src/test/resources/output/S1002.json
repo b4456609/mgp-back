@@ -1,0 +1,89 @@
+{
+	"endpoint":[
+		{
+			"id":"S1002 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1002 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S1002 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S1002 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S1002 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S1002 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S1002 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S1002 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S1002 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1002 endpoint /path0 GET",
+			"to":"S244 serviceCall /path109 GET"
+		},
+		{
+			"from":"S1002 endpoint /path1 POST",
+			"to":"S1935 serviceCall /path20 GET"
+		},
+		{
+			"from":"S1002 endpoint /path2 PUT",
+			"to":"S3839 serviceCall /path138 GET"
+		}
+	],
+	"name":"S1002",
+	"serviceCall":[
+		{
+			"id":"S244 serviceCall /path109 GET",
+			"method":"GET",
+			"path":"/path109",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1935 serviceCall /path20 GET",
+			"method":"GET",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3839 serviceCall /path138 GET",
+			"method":"GET",
+			"path":"/path138",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

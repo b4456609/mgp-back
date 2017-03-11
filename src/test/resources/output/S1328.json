@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S1328 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1328 endpoint /path0 POST",
+			"to":"S4172 serviceCall /path175 GET"
+		}
+	],
+	"name":"S1328",
+	"serviceCall":[
+		{
+			"id":"S1885 serviceCall /path7 PUT",
+			"method":"PUT",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4172 serviceCall /path175 GET",
+			"method":"GET",
+			"path":"/path175",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4817 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

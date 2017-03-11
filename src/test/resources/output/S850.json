@@ -1,0 +1,92 @@
+{
+	"endpoint":[
+		{
+			"id":"S850 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S850 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S850 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S850 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S850 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S850 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S850 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S850 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S850 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S850 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S850 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S850 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S850 endpoint /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12"
+		},
+		{
+			"id":"S850 endpoint /path13 GET",
+			"method":"GET",
+			"path":"/path13"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S850 endpoint /path0 DELETE",
+			"to":"S610 serviceCall /path1 PUT"
+		}
+	],
+	"name":"S850",
+	"serviceCall":[
+		{
+			"id":"S610 serviceCall /path1 PUT",
+			"method":"PUT",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

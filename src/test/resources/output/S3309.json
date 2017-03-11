@@ -1,0 +1,131 @@
+{
+	"endpoint":[
+		{
+			"id":"S3309 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S3309 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S3309 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S3309 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S3309 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S3309 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S3309 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S3309 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S3309 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S3309 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S3309 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S3309 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
+		},
+		{
+			"id":"S3309 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3309 endpoint /path0 POST",
+			"to":"S1511 serviceCall /path29 PUT"
+		},
+		{
+			"from":"S3309 endpoint /path0 POST",
+			"to":"S1805 serviceCall /path27 GET"
+		},
+		{
+			"from":"S3309 endpoint /path0 POST",
+			"to":"S2646 serviceCall /path32 GET"
+		},
+		{
+			"from":"S3309 endpoint /path0 POST",
+			"to":"S1282 serviceCall /path158 PUT"
+		},
+		{
+			"from":"S3309 endpoint /path0 POST",
+			"to":"S4056 serviceCall /path16 POST"
+		}
+	],
+	"name":"S3309",
+	"serviceCall":[
+		{
+			"id":"S1511 serviceCall /path29 PUT",
+			"method":"PUT",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1805 serviceCall /path27 GET",
+			"method":"GET",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2646 serviceCall /path32 GET",
+			"method":"GET",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1282 serviceCall /path158 PUT",
+			"method":"PUT",
+			"path":"/path158",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4056 serviceCall /path16 POST",
+			"method":"POST",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

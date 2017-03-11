@@ -1,0 +1,66 @@
+{
+	"endpoint":[
+		{
+			"id":"S4849 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4849 endpoint /path0 PUT",
+			"to":"S2635 serviceCall /path225 POST"
+		},
+		{
+			"from":"S4849 endpoint /path0 PUT",
+			"to":"S4651 serviceCall /path8 DELETE"
+		}
+	],
+	"name":"S4849",
+	"serviceCall":[
+		{
+			"id":"S438 serviceCall /path104 PUT",
+			"method":"PUT",
+			"path":"/path104",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2635 serviceCall /path225 POST",
+			"method":"POST",
+			"path":"/path225",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4651 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4590 serviceCall /path1 PUT",
+			"method":"PUT",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1400 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S485 serviceCall /path64 POST",
+			"method":"POST",
+			"path":"/path64",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

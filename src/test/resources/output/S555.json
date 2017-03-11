@@ -1,0 +1,63 @@
+{
+	"endpoint":[
+		{
+			"id":"S555 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S555 endpoint /path0 GET",
+			"to":"S4473 serviceCall /path39 GET"
+		},
+		{
+			"from":"S555 endpoint /path0 GET",
+			"to":"S2806 serviceCall /path38 PUT"
+		},
+		{
+			"from":"S555 endpoint /path0 GET",
+			"to":"S839 serviceCall /path5 PUT"
+		}
+	],
+	"name":"S555",
+	"serviceCall":[
+		{
+			"id":"S2565 serviceCall /path25 PUT",
+			"method":"PUT",
+			"path":"/path25",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4473 serviceCall /path39 GET",
+			"method":"GET",
+			"path":"/path39",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2806 serviceCall /path38 PUT",
+			"method":"PUT",
+			"path":"/path38",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1493 serviceCall /path50 DELETE",
+			"method":"DELETE",
+			"path":"/path50",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S839 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

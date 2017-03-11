@@ -1,0 +1,98 @@
+{
+	"endpoint":[
+		{
+			"id":"S2540 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2540 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2540 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S2540 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S2540 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S2540 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S2540 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S2540 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S2540 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S2540 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S2540 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		},
+		{
+			"id":"S2540 endpoint /path11 POST",
+			"method":"POST",
+			"path":"/path11"
+		},
+		{
+			"id":"S2540 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2540 endpoint /path0 GET",
+			"to":"S2227 serviceCall /path66 POST"
+		},
+		{
+			"from":"S2540 endpoint /path0 GET",
+			"to":"S895 serviceCall /path67 GET"
+		}
+	],
+	"name":"S2540",
+	"serviceCall":[
+		{
+			"id":"S2227 serviceCall /path66 POST",
+			"method":"POST",
+			"path":"/path66",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S895 serviceCall /path67 GET",
+			"method":"GET",
+			"path":"/path67",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

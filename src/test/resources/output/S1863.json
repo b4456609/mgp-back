@@ -1,0 +1,72 @@
+{
+	"endpoint":[
+		{
+			"id":"S1863 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S1863 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S1863 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S1863 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S1863 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S1863 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S1863 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S1863 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S1863 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S1863 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1863 endpoint /path0 PUT",
+			"to":"S4599 serviceCall /path90 POST"
+		}
+	],
+	"name":"S1863",
+	"serviceCall":[
+		{
+			"id":"S4599 serviceCall /path90 POST",
+			"method":"POST",
+			"path":"/path90",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

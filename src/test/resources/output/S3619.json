@@ -1,0 +1,38 @@
+{
+	"endpoint":[
+		{
+			"id":"S3619 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3619 endpoint /path0 POST",
+			"to":"S3794 serviceCall /path9 POST"
+		},
+		{
+			"from":"S3619 endpoint /path0 POST",
+			"to":"S3322 serviceCall /path1 POST"
+		}
+	],
+	"name":"S3619",
+	"serviceCall":[
+		{
+			"id":"S3794 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3322 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

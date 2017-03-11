@@ -1,0 +1,47 @@
+{
+	"endpoint":[
+		{
+			"id":"S4864 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S4864 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4864 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S4864 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S4864 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4864 endpoint /path0 PUT",
+			"to":"S395 serviceCall /path82 DELETE"
+		}
+	],
+	"name":"S4864",
+	"serviceCall":[
+		{
+			"id":"S395 serviceCall /path82 DELETE",
+			"method":"DELETE",
+			"path":"/path82",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

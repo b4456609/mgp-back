@@ -1,0 +1,99 @@
+{
+	"endpoint":[
+		{
+			"id":"S620 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S620 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S620 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S620 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S620 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S620 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S620 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S620 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S620 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S620 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S620 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S620 endpoint /path0 PUT",
+			"to":"S1974 serviceCall /path6 POST"
+		},
+		{
+			"from":"S620 endpoint /path0 PUT",
+			"to":"S3115 serviceCall /path34 GET"
+		},
+		{
+			"from":"S620 endpoint /path0 PUT",
+			"to":"S2038 serviceCall /path111 DELETE"
+		}
+	],
+	"name":"S620",
+	"serviceCall":[
+		{
+			"id":"S1974 serviceCall /path6 POST",
+			"method":"POST",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3115 serviceCall /path34 GET",
+			"method":"GET",
+			"path":"/path34",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2038 serviceCall /path111 DELETE",
+			"method":"DELETE",
+			"path":"/path111",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

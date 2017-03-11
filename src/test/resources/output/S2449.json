@@ -1,0 +1,107 @@
+{
+	"endpoint":[
+		{
+			"id":"S2449 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2449 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S2449 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S2449 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S2449 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S2449 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2449 endpoint /path1 DELETE",
+			"to":"S72 serviceCall /path132 DELETE"
+		},
+		{
+			"from":"S2449 endpoint /path0 GET",
+			"to":"S2879 serviceCall /path33 PUT"
+		},
+		{
+			"from":"S2449 endpoint /path0 GET",
+			"to":"S1679 serviceCall /path10 GET"
+		},
+		{
+			"from":"S2449 endpoint /path0 GET",
+			"to":"S1885 serviceCall /path5 GET"
+		},
+		{
+			"from":"S2449 endpoint /path0 GET",
+			"to":"S481 serviceCall /path6 GET"
+		},
+		{
+			"from":"S2449 endpoint /path0 GET",
+			"to":"S1621 serviceCall /path49 PUT"
+		}
+	],
+	"name":"S2449",
+	"serviceCall":[
+		{
+			"id":"S72 serviceCall /path132 DELETE",
+			"method":"DELETE",
+			"path":"/path132",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2879 serviceCall /path33 PUT",
+			"method":"PUT",
+			"path":"/path33",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1679 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1885 serviceCall /path5 GET",
+			"method":"GET",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S481 serviceCall /path6 GET",
+			"method":"GET",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1621 serviceCall /path49 PUT",
+			"method":"PUT",
+			"path":"/path49",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

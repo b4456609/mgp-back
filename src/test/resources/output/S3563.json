@@ -1,0 +1,70 @@
+{
+	"endpoint":[
+		{
+			"id":"S3563 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3563 endpoint /path0 PUT",
+			"to":"S1592 serviceCall /path73 GET"
+		},
+		{
+			"from":"S3563 endpoint /path0 PUT",
+			"to":"S2316 serviceCall /path99 PUT"
+		},
+		{
+			"from":"S3563 endpoint /path0 PUT",
+			"to":"S298 serviceCall /path0 POST"
+		}
+	],
+	"name":"S3563",
+	"serviceCall":[
+		{
+			"id":"S1592 serviceCall /path73 GET",
+			"method":"GET",
+			"path":"/path73",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2316 serviceCall /path99 PUT",
+			"method":"PUT",
+			"path":"/path99",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1174 serviceCall /path130 DELETE",
+			"method":"DELETE",
+			"path":"/path130",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S298 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1700 serviceCall /path24 POST",
+			"method":"POST",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1700 serviceCall /path202 GET",
+			"method":"GET",
+			"path":"/path202",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

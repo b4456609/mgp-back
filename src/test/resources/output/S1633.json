@@ -1,0 +1,48 @@
+{
+	"endpoint":[
+		{
+			"id":"S1633 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S1633 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S1633 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1633 endpoint /path0 POST",
+			"to":"S4997 serviceCall /path8 POST"
+		},
+		{
+			"from":"S1633 endpoint /path0 POST",
+			"to":"S2493 serviceCall /path1 GET"
+		}
+	],
+	"name":"S1633",
+	"serviceCall":[
+		{
+			"id":"S4997 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2493 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

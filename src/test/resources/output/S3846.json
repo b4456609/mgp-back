@@ -1,0 +1,88 @@
+{
+	"endpoint":[
+		{
+			"id":"S3846 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S3846 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S3846 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S3846 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S3846 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S3846 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S3846 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S3846 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S3846 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S3846 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S3846 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3846 endpoint /path1 GET",
+			"to":"S1778 serviceCall /path51 GET"
+		},
+		{
+			"from":"S3846 endpoint /path3 DELETE",
+			"to":"S343 serviceCall /path3 GET"
+		}
+	],
+	"name":"S3846",
+	"serviceCall":[
+		{
+			"id":"S1778 serviceCall /path51 GET",
+			"method":"GET",
+			"path":"/path51",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S343 serviceCall /path3 GET",
+			"method":"GET",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

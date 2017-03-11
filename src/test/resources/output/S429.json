@@ -1,0 +1,49 @@
+{
+	"endpoint":[
+		{
+			"id":"S429 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S429 endpoint /path0 DELETE",
+			"to":"S2786 serviceCall /path227 POST"
+		},
+		{
+			"from":"S429 endpoint /path0 DELETE",
+			"to":"S3200 serviceCall /path0 POST"
+		},
+		{
+			"from":"S429 endpoint /path0 DELETE",
+			"to":"S4990 serviceCall /path2 POST"
+		}
+	],
+	"name":"S429",
+	"serviceCall":[
+		{
+			"id":"S2786 serviceCall /path227 POST",
+			"method":"POST",
+			"path":"/path227",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3200 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4990 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,63 @@
+{
+	"endpoint":[
+		{
+			"id":"S4362 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4362 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4362 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S4362 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S4362 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S4362 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4362 endpoint /path3 PUT",
+			"to":"S5 serviceCall /path7 GET"
+		},
+		{
+			"from":"S4362 endpoint /path0 POST",
+			"to":"S3410 serviceCall /path44 GET"
+		}
+	],
+	"name":"S4362",
+	"serviceCall":[
+		{
+			"id":"S5 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3410 serviceCall /path44 GET",
+			"method":"GET",
+			"path":"/path44",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -72,10 +72,9 @@ public class ServiceBuildHandler implements GraphBuildHandler {
         List<EndpointNode> endpointNodeList = microserviceProjectDescriptions.stream()
                 .flatMap(this::createEndpointRelation)
                 .collect(Collectors.toList());
-        LOGGER.debug("endpointNodes size: {}, content: {}", endpointNodes.size(), endpointNodes);
-        LOGGER.debug("service node size: {}, content: {}", serviceNodes.size(), serviceNodes);
-        LOGGER.debug("endpointNodes node size: {}, content: {}", endpointNodes.size(), endpointNodes);
-        LOGGER.debug("call realtionship size: {}, content: {}", callRelationshipList.size(), callRelationshipList);
+        LOGGER.info("endpointNodes size: {}", endpointNodes.size());
+        LOGGER.info("service node size: {}", serviceNodes.size());
+        LOGGER.info("call realtionship size: {}", callRelationshipList.size());
 
         //save to database
         callRelationshipRepository.save(callRelationshipList);

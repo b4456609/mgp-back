@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S3697 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S3697 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3697 endpoint /path1 POST",
+			"to":"S1536 serviceCall /path0 DELETE"
+		},
+		{
+			"from":"S3697 endpoint /path1 POST",
+			"to":"S1450 serviceCall /path10 DELETE"
+		}
+	],
+	"name":"S3697",
+	"serviceCall":[
+		{
+			"id":"S1536 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1450 serviceCall /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

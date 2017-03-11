@@ -1,0 +1,42 @@
+{
+	"endpoint":[
+		{
+			"id":"S1413 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S1413 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S1413 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S1413 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1413 endpoint /path2 GET",
+			"to":"S77 serviceCall /path33 GET"
+		}
+	],
+	"name":"S1413",
+	"serviceCall":[
+		{
+			"id":"S77 serviceCall /path33 GET",
+			"method":"GET",
+			"path":"/path33",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

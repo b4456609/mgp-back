@@ -1,0 +1,27 @@
+{
+	"endpoint":[
+		{
+			"id":"S3760 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3760 endpoint /path0 GET",
+			"to":"S3334 serviceCall /path22 PUT"
+		}
+	],
+	"name":"S3760",
+	"serviceCall":[
+		{
+			"id":"S3334 serviceCall /path22 PUT",
+			"method":"PUT",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,133 @@
+{
+	"endpoint":[
+		{
+			"id":"S2140 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S2140 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S2140 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S2140 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S2140 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S2140 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S2140 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S2140 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S2140 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S2140 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S2140 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S2140 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
+		},
+		{
+			"id":"S2140 endpoint /path12 GET",
+			"method":"GET",
+			"path":"/path12"
+		},
+		{
+			"id":"S2140 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
+		},
+		{
+			"id":"S2140 endpoint /path14 POST",
+			"method":"POST",
+			"path":"/path14"
+		},
+		{
+			"id":"S2140 endpoint /path15 PUT",
+			"method":"PUT",
+			"path":"/path15"
+		},
+		{
+			"id":"S2140 endpoint /path16 GET",
+			"method":"GET",
+			"path":"/path16"
+		},
+		{
+			"id":"S2140 endpoint /path17 POST",
+			"method":"POST",
+			"path":"/path17"
+		},
+		{
+			"id":"S2140 endpoint /path18 DELETE",
+			"method":"DELETE",
+			"path":"/path18"
+		},
+		{
+			"id":"S2140 endpoint /path19 DELETE",
+			"method":"DELETE",
+			"path":"/path19"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2140 endpoint /path0 PUT",
+			"to":"S488 serviceCall /path15 DELETE"
+		},
+		{
+			"from":"S2140 endpoint /path0 PUT",
+			"to":"S249 serviceCall /path39 POST"
+		}
+	],
+	"name":"S2140",
+	"serviceCall":[
+		{
+			"id":"S488 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S249 serviceCall /path39 POST",
+			"method":"POST",
+			"path":"/path39",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

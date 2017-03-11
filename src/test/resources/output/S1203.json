@@ -1,0 +1,106 @@
+{
+	"endpoint":[
+		{
+			"id":"S1203 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S1203 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S1203 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S1203 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S1203 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S1203 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S1203 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S1203 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1203 endpoint /path0 DELETE",
+			"to":"S1746 serviceCall /path212 PUT"
+		},
+		{
+			"from":"S1203 endpoint /path0 DELETE",
+			"to":"S4557 serviceCall /path8 DELETE"
+		},
+		{
+			"from":"S1203 endpoint /path0 DELETE",
+			"to":"S1984 serviceCall /path1 DELETE"
+		},
+		{
+			"from":"S1203 endpoint /path5 POST",
+			"to":"S2120 serviceCall /path1 DELETE"
+		},
+		{
+			"from":"S1203 endpoint /path1 GET",
+			"to":"S2502 serviceCall /path4 POST"
+		}
+	],
+	"name":"S1203",
+	"serviceCall":[
+		{
+			"id":"S1746 serviceCall /path212 PUT",
+			"method":"PUT",
+			"path":"/path212",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4557 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1984 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2120 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2502 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

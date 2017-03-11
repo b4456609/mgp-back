@@ -1,0 +1,66 @@
+{
+	"endpoint":[
+		{
+			"id":"S2074 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2074 endpoint /path0 POST",
+			"to":"S2648 serviceCall /path50 GET"
+		},
+		{
+			"from":"S2074 endpoint /path0 POST",
+			"to":"S3310 serviceCall /path105 POST"
+		}
+	],
+	"name":"S2074",
+	"serviceCall":[
+		{
+			"id":"S1763 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2105 serviceCall /path13 PUT",
+			"method":"PUT",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2648 serviceCall /path50 GET",
+			"method":"GET",
+			"path":"/path50",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3310 serviceCall /path105 POST",
+			"method":"POST",
+			"path":"/path105",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1836 serviceCall /path99 PUT",
+			"method":"PUT",
+			"path":"/path99",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S993 serviceCall /path8 GET",
+			"method":"GET",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S4404 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S4404 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4404 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4404 endpoint /path1 POST",
+			"to":"S2785 serviceCall /path5 POST"
+		}
+	],
+	"name":"S4404",
+	"serviceCall":[
+		{
+			"id":"S2785 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,53 @@
+{
+	"endpoint":[
+		{
+			"id":"S1490 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1490 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S1490 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S1490 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1490 endpoint /path0 GET",
+			"to":"S3573 serviceCall /path0 POST"
+		},
+		{
+			"from":"S1490 endpoint /path1 GET",
+			"to":"S303 serviceCall /path57 POST"
+		}
+	],
+	"name":"S1490",
+	"serviceCall":[
+		{
+			"id":"S3573 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S303 serviceCall /path57 POST",
+			"method":"POST",
+			"path":"/path57",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

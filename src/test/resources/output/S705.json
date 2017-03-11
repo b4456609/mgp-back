@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S705 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S705 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S705 endpoint /path0 GET",
+			"to":"S485 serviceCall /path94 GET"
+		},
+		{
+			"from":"S705 endpoint /path1 PUT",
+			"to":"S352 serviceCall /path74 POST"
+		}
+	],
+	"name":"S705",
+	"serviceCall":[
+		{
+			"id":"S485 serviceCall /path94 GET",
+			"method":"GET",
+			"path":"/path94",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S352 serviceCall /path74 POST",
+			"method":"POST",
+			"path":"/path74",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

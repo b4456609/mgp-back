@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S513 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S513 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S513 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S513 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S513 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S513 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S513 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S513 endpoint /path1 DELETE",
+			"to":"S3500 serviceCall /path25 GET"
+		},
+		{
+			"from":"S513 endpoint /path0 DELETE",
+			"to":"S4136 serviceCall /path3 DELETE"
+		},
+		{
+			"from":"S513 endpoint /path0 DELETE",
+			"to":"S4764 serviceCall /path1 POST"
+		},
+		{
+			"from":"S513 endpoint /path2 DELETE",
+			"to":"S3523 serviceCall /path11 POST"
+		},
+		{
+			"from":"S513 endpoint /path1 DELETE",
+			"to":"S941 serviceCall /path26 PUT"
+		},
+		{
+			"from":"S513 endpoint /path2 DELETE",
+			"to":"S3821 serviceCall /path0 POST"
+		}
+	],
+	"name":"S513",
+	"serviceCall":[
+		{
+			"id":"S3500 serviceCall /path25 GET",
+			"method":"GET",
+			"path":"/path25",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4136 serviceCall /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4764 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3523 serviceCall /path11 POST",
+			"method":"POST",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S941 serviceCall /path26 PUT",
+			"method":"PUT",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3821 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

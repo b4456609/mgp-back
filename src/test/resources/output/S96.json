@@ -1,0 +1,110 @@
+{
+	"endpoint":[
+		{
+			"id":"S96 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S96 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S96 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S645 serviceCall /path13 GET"
+		},
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S4881 serviceCall /path8 DELETE"
+		},
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S2480 serviceCall /path28 DELETE"
+		},
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S2133 serviceCall /path18 DELETE"
+		},
+		{
+			"from":"S96 endpoint /path1 GET",
+			"to":"S562 serviceCall /path42 POST"
+		},
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S2110 serviceCall /path46 DELETE"
+		},
+		{
+			"from":"S96 endpoint /path0 GET",
+			"to":"S3478 serviceCall /path7 GET"
+		}
+	],
+	"name":"S96",
+	"serviceCall":[
+		{
+			"id":"S645 serviceCall /path13 GET",
+			"method":"GET",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4881 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2480 serviceCall /path28 DELETE",
+			"method":"DELETE",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2133 serviceCall /path18 DELETE",
+			"method":"DELETE",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S562 serviceCall /path42 POST",
+			"method":"POST",
+			"path":"/path42",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2110 serviceCall /path46 DELETE",
+			"method":"DELETE",
+			"path":"/path46",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2937 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3478 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

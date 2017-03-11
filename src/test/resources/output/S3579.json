@@ -1,0 +1,84 @@
+{
+	"endpoint":[
+		{
+			"id":"S3579 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3579 endpoint /path0 GET",
+			"to":"S4960 serviceCall /path1 POST"
+		},
+		{
+			"from":"S3579 endpoint /path0 GET",
+			"to":"S1961 serviceCall /path2 POST"
+		},
+		{
+			"from":"S3579 endpoint /path0 GET",
+			"to":"S78 serviceCall /path1 GET"
+		}
+	],
+	"name":"S3579",
+	"serviceCall":[
+		{
+			"id":"S2498 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1235 serviceCall /path37 POST",
+			"method":"POST",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4960 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1805 serviceCall /path6 GET",
+			"method":"GET",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1961 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1875 serviceCall /path23 PUT",
+			"method":"PUT",
+			"path":"/path23",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S78 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1567 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

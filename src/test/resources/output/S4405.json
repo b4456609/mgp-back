@@ -1,0 +1,64 @@
+{
+	"endpoint":[
+		{
+			"id":"S4405 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4405 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S4405 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S4405 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4405 endpoint /path1 PUT",
+			"to":"S493 serviceCall /path107 GET"
+		},
+		{
+			"from":"S4405 endpoint /path0 POST",
+			"to":"S4339 serviceCall /path22 GET"
+		},
+		{
+			"from":"S4405 endpoint /path0 POST",
+			"to":"S4344 serviceCall /path73 PUT"
+		}
+	],
+	"name":"S4405",
+	"serviceCall":[
+		{
+			"id":"S493 serviceCall /path107 GET",
+			"method":"GET",
+			"path":"/path107",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4339 serviceCall /path22 GET",
+			"method":"GET",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4344 serviceCall /path73 PUT",
+			"method":"PUT",
+			"path":"/path73",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

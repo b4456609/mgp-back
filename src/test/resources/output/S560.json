@@ -1,0 +1,45 @@
+{
+	"endpoint":[
+		{
+			"id":"S560 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S560 endpoint /path0 PUT",
+			"to":"S2065 serviceCall /path32 GET"
+		},
+		{
+			"from":"S560 endpoint /path0 PUT",
+			"to":"S4147 serviceCall /path26 GET"
+		}
+	],
+	"name":"S560",
+	"serviceCall":[
+		{
+			"id":"S4702 serviceCall /path46 POST",
+			"method":"POST",
+			"path":"/path46",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2065 serviceCall /path32 GET",
+			"method":"GET",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4147 serviceCall /path26 GET",
+			"method":"GET",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

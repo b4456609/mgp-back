@@ -1,0 +1,77 @@
+{
+	"endpoint":[
+		{
+			"id":"S4326 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4326 endpoint /path0 GET",
+			"to":"S2004 serviceCall /path8 GET"
+		},
+		{
+			"from":"S4326 endpoint /path0 GET",
+			"to":"S4033 serviceCall /path23 DELETE"
+		},
+		{
+			"from":"S4326 endpoint /path0 GET",
+			"to":"S2458 serviceCall /path84 POST"
+		}
+	],
+	"name":"S4326",
+	"serviceCall":[
+		{
+			"id":"S1831 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2004 serviceCall /path8 GET",
+			"method":"GET",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4033 serviceCall /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2458 serviceCall /path84 POST",
+			"method":"POST",
+			"path":"/path84",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2767 serviceCall /path30 POST",
+			"method":"POST",
+			"path":"/path30",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4082 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1450 serviceCall /path2 GET",
+			"method":"GET",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

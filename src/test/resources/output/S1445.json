@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S1445 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1445 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S1445 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S1445 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S1445 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S1445 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S1445 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S1445 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S1445 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S1445 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1445 endpoint /path3 DELETE",
+			"to":"S3115 serviceCall /path74 PUT"
+		},
+		{
+			"from":"S1445 endpoint /path1 POST",
+			"to":"S4490 serviceCall /path37 DELETE"
+		},
+		{
+			"from":"S1445 endpoint /path2 GET",
+			"to":"S249 serviceCall /path3 DELETE"
+		},
+		{
+			"from":"S1445 endpoint /path1 POST",
+			"to":"S2612 serviceCall /path1 GET"
+		},
+		{
+			"from":"S1445 endpoint /path0 GET",
+			"to":"S481 serviceCall /path80 PUT"
+		}
+	],
+	"name":"S1445",
+	"serviceCall":[
+		{
+			"id":"S3115 serviceCall /path74 PUT",
+			"method":"PUT",
+			"path":"/path74",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4490 serviceCall /path37 DELETE",
+			"method":"DELETE",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S249 serviceCall /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2612 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S481 serviceCall /path80 PUT",
+			"method":"PUT",
+			"path":"/path80",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

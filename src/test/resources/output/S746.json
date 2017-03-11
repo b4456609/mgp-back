@@ -1,0 +1,79 @@
+{
+	"endpoint":[
+		{
+			"id":"S746 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S746 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S746 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S746 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S746 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S746 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S746 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S746 endpoint /path1 POST",
+			"to":"S1493 serviceCall /path146 GET"
+		},
+		{
+			"from":"S746 endpoint /path0 GET",
+			"to":"S2389 serviceCall /path2 POST"
+		},
+		{
+			"from":"S746 endpoint /path1 POST",
+			"to":"S3066 serviceCall /path2 PUT"
+		}
+	],
+	"name":"S746",
+	"serviceCall":[
+		{
+			"id":"S1493 serviceCall /path146 GET",
+			"method":"GET",
+			"path":"/path146",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2389 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3066 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

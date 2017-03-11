@@ -1,0 +1,71 @@
+{
+	"endpoint":[
+		{
+			"id":"S2405 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S2405 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S2405 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S2405 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2405 endpoint /path0 POST",
+			"to":"S2182 serviceCall /path12 GET"
+		},
+		{
+			"from":"S2405 endpoint /path1 POST",
+			"to":"S3642 serviceCall /path1 GET"
+		},
+		{
+			"from":"S2405 endpoint /path1 POST",
+			"to":"S3316 serviceCall /path65 GET"
+		}
+	],
+	"name":"S2405",
+	"serviceCall":[
+		{
+			"id":"S1643 serviceCall /path9 GET",
+			"method":"GET",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2182 serviceCall /path12 GET",
+			"method":"GET",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3642 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3316 serviceCall /path65 GET",
+			"method":"GET",
+			"path":"/path65",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,47 @@
+{
+	"endpoint":[
+		{
+			"id":"S4216 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4216 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4216 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S4216 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S4216 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4216 endpoint /path0 POST",
+			"to":"S4637 serviceCall /path55 POST"
+		}
+	],
+	"name":"S4216",
+	"serviceCall":[
+		{
+			"id":"S4637 serviceCall /path55 POST",
+			"method":"POST",
+			"path":"/path55",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

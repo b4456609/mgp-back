@@ -1,0 +1,42 @@
+{
+	"endpoint":[
+		{
+			"id":"S1201 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S1201 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S1201 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S1201 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1201 endpoint /path2 POST",
+			"to":"S116 serviceCall /path232 DELETE"
+		}
+	],
+	"name":"S1201",
+	"serviceCall":[
+		{
+			"id":"S116 serviceCall /path232 DELETE",
+			"method":"DELETE",
+			"path":"/path232",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

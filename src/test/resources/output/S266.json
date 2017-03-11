@@ -1,0 +1,48 @@
+{
+	"endpoint":[
+		{
+			"id":"S266 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S266 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S266 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S266 endpoint /path1 POST",
+			"to":"S1904 serviceCall /path1 GET"
+		},
+		{
+			"from":"S266 endpoint /path0 PUT",
+			"to":"S1491 serviceCall /path249 POST"
+		}
+	],
+	"name":"S266",
+	"serviceCall":[
+		{
+			"id":"S1904 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1491 serviceCall /path249 POST",
+			"method":"POST",
+			"path":"/path249",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

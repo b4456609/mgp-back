@@ -1,0 +1,117 @@
+{
+	"endpoint":[
+		{
+			"id":"S465 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S465 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S465 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S465 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S465 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S465 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S465 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S465 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S465 endpoint /path0 POST",
+			"to":"S581 serviceCall /path5 POST"
+		},
+		{
+			"from":"S465 endpoint /path0 POST",
+			"to":"S4351 serviceCall /path8 PUT"
+		},
+		{
+			"from":"S465 endpoint /path1 GET",
+			"to":"S2616 serviceCall /path10 GET"
+		},
+		{
+			"from":"S465 endpoint /path0 POST",
+			"to":"S1818 serviceCall /path7 GET"
+		},
+		{
+			"from":"S465 endpoint /path1 GET",
+			"to":"S1831 serviceCall /path22 PUT"
+		},
+		{
+			"from":"S465 endpoint /path3 POST",
+			"to":"S3778 serviceCall /path3 GET"
+		}
+	],
+	"name":"S465",
+	"serviceCall":[
+		{
+			"id":"S581 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4351 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2616 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1818 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1831 serviceCall /path22 PUT",
+			"method":"PUT",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3778 serviceCall /path3 GET",
+			"method":"GET",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

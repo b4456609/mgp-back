@@ -1,0 +1,70 @@
+{
+	"endpoint":[
+		{
+			"id":"S2650 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2650 endpoint /path0 GET",
+			"to":"S594 serviceCall /path53 GET"
+		},
+		{
+			"from":"S2650 endpoint /path0 GET",
+			"to":"S4264 serviceCall /path20 DELETE"
+		},
+		{
+			"from":"S2650 endpoint /path0 GET",
+			"to":"S3264 serviceCall /path3 PUT"
+		}
+	],
+	"name":"S2650",
+	"serviceCall":[
+		{
+			"id":"S594 serviceCall /path53 GET",
+			"method":"GET",
+			"path":"/path53",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2655 serviceCall /path232 POST",
+			"method":"POST",
+			"path":"/path232",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4264 serviceCall /path20 DELETE",
+			"method":"DELETE",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2794 serviceCall /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1282 serviceCall /path125 PUT",
+			"method":"PUT",
+			"path":"/path125",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3264 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

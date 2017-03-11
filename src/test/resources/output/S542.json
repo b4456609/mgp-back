@@ -1,0 +1,85 @@
+{
+	"endpoint":[
+		{
+			"id":"S542 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S542 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S542 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S542 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S542 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S542 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S542 endpoint /path0 DELETE",
+			"to":"S3725 serviceCall /path59 PUT"
+		},
+		{
+			"from":"S542 endpoint /path0 DELETE",
+			"to":"S3256 serviceCall /path15 DELETE"
+		},
+		{
+			"from":"S542 endpoint /path0 DELETE",
+			"to":"S3865 serviceCall /path8 GET"
+		},
+		{
+			"from":"S542 endpoint /path0 DELETE",
+			"to":"S4707 serviceCall /path43 DELETE"
+		}
+	],
+	"name":"S542",
+	"serviceCall":[
+		{
+			"id":"S3725 serviceCall /path59 PUT",
+			"method":"PUT",
+			"path":"/path59",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3256 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3865 serviceCall /path8 GET",
+			"method":"GET",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4707 serviceCall /path43 DELETE",
+			"method":"DELETE",
+			"path":"/path43",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S4755 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4755 endpoint /path0 POST",
+			"to":"S599 serviceCall /path54 PUT"
+		}
+	],
+	"name":"S4755",
+	"serviceCall":[
+		{
+			"id":"S599 serviceCall /path54 PUT",
+			"method":"PUT",
+			"path":"/path54",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2930 serviceCall /path10 POST",
+			"method":"POST",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

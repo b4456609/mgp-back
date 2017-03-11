@@ -1,0 +1,137 @@
+{
+	"endpoint":[
+		{
+			"id":"S334 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S334 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S334 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S334 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S334 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S334 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S334 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S334 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S334 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S334 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S334 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S334 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S334 endpoint /path1 PUT",
+			"to":"S562 serviceCall /path79 DELETE"
+		},
+		{
+			"from":"S334 endpoint /path0 PUT",
+			"to":"S3530 serviceCall /path32 POST"
+		},
+		{
+			"from":"S334 endpoint /path2 DELETE",
+			"to":"S1878 serviceCall /path13 GET"
+		},
+		{
+			"from":"S334 endpoint /path0 PUT",
+			"to":"S889 serviceCall /path28 GET"
+		},
+		{
+			"from":"S334 endpoint /path3 DELETE",
+			"to":"S258 serviceCall /path31 GET"
+		},
+		{
+			"from":"S334 endpoint /path2 DELETE",
+			"to":"S121 serviceCall /path15 POST"
+		}
+	],
+	"name":"S334",
+	"serviceCall":[
+		{
+			"id":"S562 serviceCall /path79 DELETE",
+			"method":"DELETE",
+			"path":"/path79",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3530 serviceCall /path32 POST",
+			"method":"POST",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1878 serviceCall /path13 GET",
+			"method":"GET",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S889 serviceCall /path28 GET",
+			"method":"GET",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S258 serviceCall /path31 GET",
+			"method":"GET",
+			"path":"/path31",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S121 serviceCall /path15 POST",
+			"method":"POST",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

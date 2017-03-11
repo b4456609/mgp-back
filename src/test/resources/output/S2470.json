@@ -1,0 +1,64 @@
+{
+	"endpoint":[
+		{
+			"id":"S2470 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S2470 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2470 endpoint /path0 PUT",
+			"to":"S3120 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S2470 endpoint /path0 PUT",
+			"to":"S4029 serviceCall /path15 POST"
+		}
+	],
+	"name":"S2470",
+	"serviceCall":[
+		{
+			"id":"S3806 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S894 serviceCall /path142 PUT",
+			"method":"PUT",
+			"path":"/path142",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3120 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3719 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4029 serviceCall /path15 POST",
+			"method":"POST",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

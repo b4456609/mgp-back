@@ -1,0 +1,83 @@
+{
+	"endpoint":[
+		{
+			"id":"S1754 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S1754 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1754 endpoint /path0 POST",
+			"to":"S2213 serviceCall /path0 GET"
+		},
+		{
+			"from":"S1754 endpoint /path1 POST",
+			"to":"S1746 serviceCall /path163 GET"
+		},
+		{
+			"from":"S1754 endpoint /path1 POST",
+			"to":"S206 serviceCall /path144 GET"
+		},
+		{
+			"from":"S1754 endpoint /path0 POST",
+			"to":"S400 serviceCall /path40 POST"
+		},
+		{
+			"from":"S1754 endpoint /path0 POST",
+			"to":"S1952 serviceCall /path11 PUT"
+		}
+	],
+	"name":"S1754",
+	"serviceCall":[
+		{
+			"id":"S2544 serviceCall /path69 GET",
+			"method":"GET",
+			"path":"/path69",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2213 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1746 serviceCall /path163 GET",
+			"method":"GET",
+			"path":"/path163",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S206 serviceCall /path144 GET",
+			"method":"GET",
+			"path":"/path144",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S400 serviceCall /path40 POST",
+			"method":"POST",
+			"path":"/path40",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1952 serviceCall /path11 PUT",
+			"method":"PUT",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

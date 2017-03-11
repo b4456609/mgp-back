@@ -1,0 +1,133 @@
+{
+	"endpoint":[
+		{
+			"id":"S4376 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4376 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4376 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S4376 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S4376 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S4376 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S4376 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S4376 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S4376 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S4376 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S4376 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S4376 endpoint /path11 POST",
+			"method":"POST",
+			"path":"/path11"
+		},
+		{
+			"id":"S4376 endpoint /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12"
+		},
+		{
+			"id":"S4376 endpoint /path13 PUT",
+			"method":"PUT",
+			"path":"/path13"
+		},
+		{
+			"id":"S4376 endpoint /path14 DELETE",
+			"method":"DELETE",
+			"path":"/path14"
+		},
+		{
+			"id":"S4376 endpoint /path15 GET",
+			"method":"GET",
+			"path":"/path15"
+		},
+		{
+			"id":"S4376 endpoint /path16 GET",
+			"method":"GET",
+			"path":"/path16"
+		},
+		{
+			"id":"S4376 endpoint /path17 POST",
+			"method":"POST",
+			"path":"/path17"
+		},
+		{
+			"id":"S4376 endpoint /path18 PUT",
+			"method":"PUT",
+			"path":"/path18"
+		},
+		{
+			"id":"S4376 endpoint /path19 DELETE",
+			"method":"DELETE",
+			"path":"/path19"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4376 endpoint /path2 GET",
+			"to":"S200 serviceCall /path9 POST"
+		},
+		{
+			"from":"S4376 endpoint /path1 DELETE",
+			"to":"S1571 serviceCall /path5 DELETE"
+		}
+	],
+	"name":"S4376",
+	"serviceCall":[
+		{
+			"id":"S200 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1571 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

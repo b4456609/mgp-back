@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S310 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S310 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S310 endpoint /path0 PUT",
+			"to":"S0 serviceCall /path13 POST"
+		}
+	],
+	"name":"S310",
+	"serviceCall":[
+		{
+			"id":"S0 serviceCall /path13 POST",
+			"method":"POST",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

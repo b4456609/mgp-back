@@ -1,0 +1,63 @@
+{
+	"endpoint":[
+		{
+			"id":"S4722 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4722 endpoint /path0 GET",
+			"to":"S2715 serviceCall /path11 POST"
+		},
+		{
+			"from":"S4722 endpoint /path0 GET",
+			"to":"S3617 serviceCall /path12 PUT"
+		},
+		{
+			"from":"S4722 endpoint /path0 GET",
+			"to":"S3122 serviceCall /path87 GET"
+		}
+	],
+	"name":"S4722",
+	"serviceCall":[
+		{
+			"id":"S1240 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2715 serviceCall /path11 POST",
+			"method":"POST",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2619 serviceCall /path111 GET",
+			"method":"GET",
+			"path":"/path111",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3617 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3122 serviceCall /path87 GET",
+			"method":"GET",
+			"path":"/path87",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

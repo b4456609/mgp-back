@@ -1,0 +1,108 @@
+{
+	"endpoint":[
+		{
+			"id":"S3269 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S3269 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S3269 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S3269 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3269 endpoint /path0 DELETE",
+			"to":"S3193 serviceCall /path19 DELETE"
+		},
+		{
+			"from":"S3269 endpoint /path0 DELETE",
+			"to":"S4806 serviceCall /path1 POST"
+		},
+		{
+			"from":"S3269 endpoint /path3 GET",
+			"to":"S1414 serviceCall /path10 GET"
+		},
+		{
+			"from":"S3269 endpoint /path1 PUT",
+			"to":"S2120 serviceCall /path0 GET"
+		},
+		{
+			"from":"S3269 endpoint /path1 PUT",
+			"to":"S2480 serviceCall /path36 POST"
+		},
+		{
+			"from":"S3269 endpoint /path0 DELETE",
+			"to":"S474 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S3269 endpoint /path0 DELETE",
+			"to":"S2402 serviceCall /path93 GET"
+		}
+	],
+	"name":"S3269",
+	"serviceCall":[
+		{
+			"id":"S3193 serviceCall /path19 DELETE",
+			"method":"DELETE",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4806 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1414 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2120 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2480 serviceCall /path36 POST",
+			"method":"POST",
+			"path":"/path36",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S474 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2402 serviceCall /path93 GET",
+			"method":"GET",
+			"path":"/path93",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

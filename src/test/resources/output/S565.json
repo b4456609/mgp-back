@@ -1,0 +1,78 @@
+{
+	"endpoint":[
+		{
+			"id":"S565 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S565 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S565 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S565 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S565 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S565 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S565 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S565 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S565 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S565 endpoint /path1 GET",
+			"to":"S4401 serviceCall /path117 GET"
+		},
+		{
+			"from":"S565 endpoint /path6 PUT",
+			"to":"S1752 serviceCall /path5 DELETE"
+		}
+	],
+	"name":"S565",
+	"serviceCall":[
+		{
+			"id":"S4401 serviceCall /path117 GET",
+			"method":"GET",
+			"path":"/path117",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1752 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

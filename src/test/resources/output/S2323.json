@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S2323 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S2323 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S2323 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2323 endpoint /path0 GET",
+			"to":"S493 serviceCall /path22 DELETE"
+		}
+	],
+	"name":"S2323",
+	"serviceCall":[
+		{
+			"id":"S493 serviceCall /path22 DELETE",
+			"method":"DELETE",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

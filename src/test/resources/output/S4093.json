@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S4093 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4093 endpoint /path0 DELETE",
+			"to":"S961 serviceCall /path4 PUT"
+		}
+	],
+	"name":"S4093",
+	"serviceCall":[
+		{
+			"id":"S961 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S541 serviceCall /path181 POST",
+			"method":"POST",
+			"path":"/path181",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1373 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

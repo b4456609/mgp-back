@@ -1,0 +1,54 @@
+{
+	"endpoint":[
+		{
+			"id":"S4556 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4556 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4556 endpoint /path0 POST",
+			"to":"S4935 serviceCall /path26 DELETE"
+		},
+		{
+			"from":"S4556 endpoint /path0 POST",
+			"to":"S996 serviceCall /path27 DELETE"
+		},
+		{
+			"from":"S4556 endpoint /path1 POST",
+			"to":"S12 serviceCall /path7 PUT"
+		}
+	],
+	"name":"S4556",
+	"serviceCall":[
+		{
+			"id":"S4935 serviceCall /path26 DELETE",
+			"method":"DELETE",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S996 serviceCall /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S12 serviceCall /path7 PUT",
+			"method":"PUT",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

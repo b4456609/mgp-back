@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S639 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S639 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S639 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S639 endpoint /path1 GET",
+			"to":"S2757 serviceCall /path2 GET"
+		}
+	],
+	"name":"S639",
+	"serviceCall":[
+		{
+			"id":"S2757 serviceCall /path2 GET",
+			"method":"GET",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

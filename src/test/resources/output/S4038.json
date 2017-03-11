@@ -1,0 +1,55 @@
+{
+	"endpoint":[
+		{
+			"id":"S4038 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S4038 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4038 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4038 endpoint /path0 GET",
+			"to":"S860 serviceCall /path8 GET"
+		},
+		{
+			"from":"S4038 endpoint /path0 GET",
+			"to":"S1312 serviceCall /path34 PUT"
+		}
+	],
+	"name":"S4038",
+	"serviceCall":[
+		{
+			"id":"S860 serviceCall /path8 GET",
+			"method":"GET",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1312 serviceCall /path34 PUT",
+			"method":"PUT",
+			"path":"/path34",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2552 serviceCall /path152 POST",
+			"method":"POST",
+			"path":"/path152",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

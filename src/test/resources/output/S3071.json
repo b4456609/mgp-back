@@ -1,0 +1,107 @@
+{
+	"endpoint":[
+		{
+			"id":"S3071 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S3071 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S3071 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S3071 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S3071 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S3071 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3071 endpoint /path0 GET",
+			"to":"S1652 serviceCall /path12 GET"
+		},
+		{
+			"from":"S3071 endpoint /path1 POST",
+			"to":"S4822 serviceCall /path77 DELETE"
+		},
+		{
+			"from":"S3071 endpoint /path1 POST",
+			"to":"S2120 serviceCall /path36 DELETE"
+		},
+		{
+			"from":"S3071 endpoint /path4 POST",
+			"to":"S2857 serviceCall /path16 PUT"
+		},
+		{
+			"from":"S3071 endpoint /path0 GET",
+			"to":"S1886 serviceCall /path5 PUT"
+		},
+		{
+			"from":"S3071 endpoint /path0 GET",
+			"to":"S1010 serviceCall /path25 POST"
+		}
+	],
+	"name":"S3071",
+	"serviceCall":[
+		{
+			"id":"S1652 serviceCall /path12 GET",
+			"method":"GET",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4822 serviceCall /path77 DELETE",
+			"method":"DELETE",
+			"path":"/path77",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2120 serviceCall /path36 DELETE",
+			"method":"DELETE",
+			"path":"/path36",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2857 serviceCall /path16 PUT",
+			"method":"PUT",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1886 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1010 serviceCall /path25 POST",
+			"method":"POST",
+			"path":"/path25",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

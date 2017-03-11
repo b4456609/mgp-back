@@ -1,0 +1,106 @@
+{
+	"endpoint":[
+		{
+			"id":"S2366 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S2366 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S2366 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2366 endpoint /path0 PUT",
+			"to":"S1469 serviceCall /path115 DELETE"
+		},
+		{
+			"from":"S2366 endpoint /path0 PUT",
+			"to":"S4172 serviceCall /path201 PUT"
+		},
+		{
+			"from":"S2366 endpoint /path0 PUT",
+			"to":"S1874 serviceCall /path5 PUT"
+		},
+		{
+			"from":"S2366 endpoint /path0 PUT",
+			"to":"S1730 serviceCall /path19 PUT"
+		},
+		{
+			"from":"S2366 endpoint /path0 PUT",
+			"to":"S879 serviceCall /path9 DELETE"
+		},
+		{
+			"from":"S2366 endpoint /path1 GET",
+			"to":"S2005 serviceCall /path10 POST"
+		}
+	],
+	"name":"S2366",
+	"serviceCall":[
+		{
+			"id":"S1469 serviceCall /path115 DELETE",
+			"method":"DELETE",
+			"path":"/path115",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4172 serviceCall /path201 PUT",
+			"method":"PUT",
+			"path":"/path201",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1874 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1730 serviceCall /path19 PUT",
+			"method":"PUT",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3402 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S879 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2127 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2005 serviceCall /path10 POST",
+			"method":"POST",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

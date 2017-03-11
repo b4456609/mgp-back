@@ -1,0 +1,59 @@
+{
+	"endpoint":[
+		{
+			"id":"S1326 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1326 endpoint /path0 GET",
+			"to":"S3023 serviceCall /path77 GET"
+		},
+		{
+			"from":"S1326 endpoint /path0 GET",
+			"to":"S4049 serviceCall /path20 POST"
+		}
+	],
+	"name":"S1326",
+	"serviceCall":[
+		{
+			"id":"S990 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2652 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3023 serviceCall /path77 GET",
+			"method":"GET",
+			"path":"/path77",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4049 serviceCall /path20 POST",
+			"method":"POST",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1187 serviceCall /path17 PUT",
+			"method":"PUT",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

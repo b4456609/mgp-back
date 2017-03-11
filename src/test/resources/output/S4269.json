@@ -1,0 +1,49 @@
+{
+	"endpoint":[
+		{
+			"id":"S4269 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4269 endpoint /path0 PUT",
+			"to":"S3 serviceCall /path44 DELETE"
+		},
+		{
+			"from":"S4269 endpoint /path0 PUT",
+			"to":"S4475 serviceCall /path1 PUT"
+		},
+		{
+			"from":"S4269 endpoint /path0 PUT",
+			"to":"S4303 serviceCall /path0 PUT"
+		}
+	],
+	"name":"S4269",
+	"serviceCall":[
+		{
+			"id":"S3 serviceCall /path44 DELETE",
+			"method":"DELETE",
+			"path":"/path44",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4475 serviceCall /path1 PUT",
+			"method":"PUT",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4303 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

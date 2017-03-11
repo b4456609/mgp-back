@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S4364 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S4364 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4364 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S4364 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S4364 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S4364 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S4364 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4364 endpoint /path0 PUT",
+			"to":"S952 serviceCall /path56 POST"
+		},
+		{
+			"from":"S4364 endpoint /path1 POST",
+			"to":"S53 serviceCall /path91 DELETE"
+		},
+		{
+			"from":"S4364 endpoint /path1 POST",
+			"to":"S3216 serviceCall /path134 POST"
+		},
+		{
+			"from":"S4364 endpoint /path0 PUT",
+			"to":"S4812 serviceCall /path0 POST"
+		},
+		{
+			"from":"S4364 endpoint /path2 PUT",
+			"to":"S2832 serviceCall /path24 GET"
+		},
+		{
+			"from":"S4364 endpoint /path1 POST",
+			"to":"S3923 serviceCall /path233 GET"
+		}
+	],
+	"name":"S4364",
+	"serviceCall":[
+		{
+			"id":"S952 serviceCall /path56 POST",
+			"method":"POST",
+			"path":"/path56",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S53 serviceCall /path91 DELETE",
+			"method":"DELETE",
+			"path":"/path91",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3216 serviceCall /path134 POST",
+			"method":"POST",
+			"path":"/path134",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4812 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2832 serviceCall /path24 GET",
+			"method":"GET",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3923 serviceCall /path233 GET",
+			"method":"GET",
+			"path":"/path233",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

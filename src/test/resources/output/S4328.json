@@ -1,0 +1,54 @@
+{
+	"endpoint":[
+		{
+			"id":"S4328 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4328 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4328 endpoint /path0 POST",
+			"to":"S2004 serviceCall /path195 GET"
+		},
+		{
+			"from":"S4328 endpoint /path0 POST",
+			"to":"S1282 serviceCall /path134 PUT"
+		},
+		{
+			"from":"S4328 endpoint /path1 POST",
+			"to":"S207 serviceCall /path3 POST"
+		}
+	],
+	"name":"S4328",
+	"serviceCall":[
+		{
+			"id":"S2004 serviceCall /path195 GET",
+			"method":"GET",
+			"path":"/path195",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1282 serviceCall /path134 PUT",
+			"method":"PUT",
+			"path":"/path134",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S207 serviceCall /path3 POST",
+			"method":"POST",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

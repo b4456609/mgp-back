@@ -1,0 +1,111 @@
+{
+	"endpoint":[
+		{
+			"id":"S4112 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S4112 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S4112 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S4112 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S4112 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S4112 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S4112 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S4112 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S4112 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4112 endpoint /path1 POST",
+			"to":"S188 serviceCall /path4 DELETE"
+		},
+		{
+			"from":"S4112 endpoint /path3 PUT",
+			"to":"S1305 serviceCall /path27 DELETE"
+		},
+		{
+			"from":"S4112 endpoint /path1 POST",
+			"to":"S2345 serviceCall /path41 POST"
+		},
+		{
+			"from":"S4112 endpoint /path1 POST",
+			"to":"S2314 serviceCall /path91 DELETE"
+		},
+		{
+			"from":"S4112 endpoint /path4 DELETE",
+			"to":"S4147 serviceCall /path105 GET"
+		}
+	],
+	"name":"S4112",
+	"serviceCall":[
+		{
+			"id":"S188 serviceCall /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1305 serviceCall /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2345 serviceCall /path41 POST",
+			"method":"POST",
+			"path":"/path41",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2314 serviceCall /path91 DELETE",
+			"method":"DELETE",
+			"path":"/path91",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4147 serviceCall /path105 GET",
+			"method":"GET",
+			"path":"/path105",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

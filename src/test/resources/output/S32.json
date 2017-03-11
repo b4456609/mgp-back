@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S32 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S32 endpoint /path0 DELETE",
+			"to":"S4459 serviceCall /path2 PUT"
+		}
+	],
+	"name":"S32",
+	"serviceCall":[
+		{
+			"id":"S4459 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S850 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S211 serviceCall /path14 PUT",
+			"method":"PUT",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

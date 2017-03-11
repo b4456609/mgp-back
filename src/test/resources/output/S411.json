@@ -1,0 +1,84 @@
+{
+	"endpoint":[
+		{
+			"id":"S411 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S411 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S411 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S411 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S411 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S411 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S411 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S411 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S411 endpoint /path1 GET",
+			"to":"S599 serviceCall /path70 POST"
+		},
+		{
+			"from":"S411 endpoint /path0 PUT",
+			"to":"S4997 serviceCall /path94 POST"
+		},
+		{
+			"from":"S411 endpoint /path0 PUT",
+			"to":"S2368 serviceCall /path15 POST"
+		}
+	],
+	"name":"S411",
+	"serviceCall":[
+		{
+			"id":"S599 serviceCall /path70 POST",
+			"method":"POST",
+			"path":"/path70",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4997 serviceCall /path94 POST",
+			"method":"POST",
+			"path":"/path94",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2368 serviceCall /path15 POST",
+			"method":"POST",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

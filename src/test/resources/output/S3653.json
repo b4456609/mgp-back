@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S3653 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3653 endpoint /path0 DELETE",
+			"to":"S3159 serviceCall /path43 PUT"
+		}
+	],
+	"name":"S3653",
+	"serviceCall":[
+		{
+			"id":"S81 serviceCall /path74 GET",
+			"method":"GET",
+			"path":"/path74",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3159 serviceCall /path43 PUT",
+			"method":"PUT",
+			"path":"/path43",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

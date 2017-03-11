@@ -1,0 +1,38 @@
+{
+	"endpoint":[
+		{
+			"id":"S823 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S823 endpoint /path0 DELETE",
+			"to":"S899 serviceCall /path0 PUT"
+		},
+		{
+			"from":"S823 endpoint /path0 DELETE",
+			"to":"S4474 serviceCall /path96 POST"
+		}
+	],
+	"name":"S823",
+	"serviceCall":[
+		{
+			"id":"S899 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4474 serviceCall /path96 POST",
+			"method":"POST",
+			"path":"/path96",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S1582 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1582 endpoint /path0 PUT",
+			"to":"S732 serviceCall /path20 POST"
+		}
+	],
+	"name":"S1582",
+	"serviceCall":[
+		{
+			"id":"S2681 serviceCall /path22 DELETE",
+			"method":"DELETE",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S732 serviceCall /path20 POST",
+			"method":"POST",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,53 @@
+{
+	"endpoint":[
+		{
+			"id":"S1951 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S1951 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S1951 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S1951 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1951 endpoint /path1 DELETE",
+			"to":"S1607 serviceCall /path14 POST"
+		},
+		{
+			"from":"S1951 endpoint /path1 DELETE",
+			"to":"S1588 serviceCall /path21 DELETE"
+		}
+	],
+	"name":"S1951",
+	"serviceCall":[
+		{
+			"id":"S1607 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1588 serviceCall /path21 DELETE",
+			"method":"DELETE",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

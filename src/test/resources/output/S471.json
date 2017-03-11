@@ -1,0 +1,161 @@
+{
+	"endpoint":[
+		{
+			"id":"S471 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S471 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S471 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S471 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S471 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S471 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S471 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S471 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S471 endpoint /path5 POST",
+			"to":"S3424 serviceCall /path34 PUT"
+		},
+		{
+			"from":"S471 endpoint /path2 PUT",
+			"to":"S1836 serviceCall /path51 POST"
+		},
+		{
+			"from":"S471 endpoint /path4 PUT",
+			"to":"S1486 serviceCall /path93 GET"
+		},
+		{
+			"from":"S471 endpoint /path3 POST",
+			"to":"S1902 serviceCall /path9 GET"
+		},
+		{
+			"from":"S471 endpoint /path0 GET",
+			"to":"S1137 serviceCall /path6 POST"
+		},
+		{
+			"from":"S471 endpoint /path1 POST",
+			"to":"S2583 serviceCall /path156 GET"
+		},
+		{
+			"from":"S471 endpoint /path0 GET",
+			"to":"S153 serviceCall /path64 PUT"
+		},
+		{
+			"from":"S471 endpoint /path4 PUT",
+			"to":"S2316 serviceCall /path147 POST"
+		},
+		{
+			"from":"S471 endpoint /path0 GET",
+			"to":"S1469 serviceCall /path36 PUT"
+		},
+		{
+			"from":"S471 endpoint /path0 GET",
+			"to":"S352 serviceCall /path57 POST"
+		}
+	],
+	"name":"S471",
+	"serviceCall":[
+		{
+			"id":"S3424 serviceCall /path34 PUT",
+			"method":"PUT",
+			"path":"/path34",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1836 serviceCall /path51 POST",
+			"method":"POST",
+			"path":"/path51",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1486 serviceCall /path93 GET",
+			"method":"GET",
+			"path":"/path93",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1902 serviceCall /path9 GET",
+			"method":"GET",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1137 serviceCall /path6 POST",
+			"method":"POST",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2583 serviceCall /path156 GET",
+			"method":"GET",
+			"path":"/path156",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S153 serviceCall /path64 PUT",
+			"method":"PUT",
+			"path":"/path64",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2316 serviceCall /path147 POST",
+			"method":"POST",
+			"path":"/path147",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1469 serviceCall /path36 PUT",
+			"method":"PUT",
+			"path":"/path36",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S352 serviceCall /path57 POST",
+			"method":"POST",
+			"path":"/path57",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

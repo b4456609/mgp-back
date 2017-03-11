@@ -1,0 +1,106 @@
+{
+	"endpoint":[
+		{
+			"id":"S4337 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S4337 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S4337 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S4337 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S4337 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S4337 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S4337 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S4337 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4337 endpoint /path1 DELETE",
+			"to":"S3989 serviceCall /path12 GET"
+		},
+		{
+			"from":"S4337 endpoint /path1 DELETE",
+			"to":"S326 serviceCall /path10 POST"
+		},
+		{
+			"from":"S4337 endpoint /path0 PUT",
+			"to":"S445 serviceCall /path10 DELETE"
+		},
+		{
+			"from":"S4337 endpoint /path0 PUT",
+			"to":"S596 serviceCall /path39 DELETE"
+		},
+		{
+			"from":"S4337 endpoint /path0 PUT",
+			"to":"S308 serviceCall /path8 DELETE"
+		}
+	],
+	"name":"S4337",
+	"serviceCall":[
+		{
+			"id":"S3989 serviceCall /path12 GET",
+			"method":"GET",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S326 serviceCall /path10 POST",
+			"method":"POST",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S445 serviceCall /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S596 serviceCall /path39 DELETE",
+			"method":"DELETE",
+			"path":"/path39",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S308 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

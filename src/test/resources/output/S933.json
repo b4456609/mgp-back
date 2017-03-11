@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S933 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S933 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S933 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S933 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S933 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S933 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S933 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S933 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S933 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S933 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S933 endpoint /path1 PUT",
+			"to":"S2552 serviceCall /path95 DELETE"
+		},
+		{
+			"from":"S933 endpoint /path0 POST",
+			"to":"S4457 serviceCall /path14 POST"
+		},
+		{
+			"from":"S933 endpoint /path0 POST",
+			"to":"S4108 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S933 endpoint /path0 POST",
+			"to":"S84 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S933 endpoint /path0 POST",
+			"to":"S4222 serviceCall /path8 GET"
+		}
+	],
+	"name":"S933",
+	"serviceCall":[
+		{
+			"id":"S2552 serviceCall /path95 DELETE",
+			"method":"DELETE",
+			"path":"/path95",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4457 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4108 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S84 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4222 serviceCall /path8 GET",
+			"method":"GET",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

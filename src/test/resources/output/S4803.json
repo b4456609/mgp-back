@@ -1,0 +1,65 @@
+{
+	"endpoint":[
+		{
+			"id":"S4803 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4803 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4803 endpoint /path0 POST",
+			"to":"S2897 serviceCall /path0 GET"
+		},
+		{
+			"from":"S4803 endpoint /path1 POST",
+			"to":"S1879 serviceCall /path37 DELETE"
+		},
+		{
+			"from":"S4803 endpoint /path1 POST",
+			"to":"S2495 serviceCall /path4 PUT"
+		},
+		{
+			"from":"S4803 endpoint /path0 POST",
+			"to":"S4933 serviceCall /path17 DELETE"
+		}
+	],
+	"name":"S4803",
+	"serviceCall":[
+		{
+			"id":"S2897 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1879 serviceCall /path37 DELETE",
+			"method":"DELETE",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2495 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4933 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

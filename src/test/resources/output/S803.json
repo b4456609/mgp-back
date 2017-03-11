@@ -1,0 +1,85 @@
+{
+	"endpoint":[
+		{
+			"id":"S803 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S803 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S803 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S803 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S803 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S803 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S803 endpoint /path1 POST",
+			"to":"S541 serviceCall /path22 PUT"
+		},
+		{
+			"from":"S803 endpoint /path1 POST",
+			"to":"S2806 serviceCall /path55 POST"
+		},
+		{
+			"from":"S803 endpoint /path0 DELETE",
+			"to":"S1147 serviceCall /path0 PUT"
+		},
+		{
+			"from":"S803 endpoint /path1 POST",
+			"to":"S4851 serviceCall /path29 PUT"
+		}
+	],
+	"name":"S803",
+	"serviceCall":[
+		{
+			"id":"S541 serviceCall /path22 PUT",
+			"method":"PUT",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2806 serviceCall /path55 POST",
+			"method":"POST",
+			"path":"/path55",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1147 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4851 serviceCall /path29 PUT",
+			"method":"PUT",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

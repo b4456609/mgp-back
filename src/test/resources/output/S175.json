@@ -1,0 +1,68 @@
+{
+	"endpoint":[
+		{
+			"id":"S175 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S175 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S175 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S175 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S175 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S175 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S175 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S175 endpoint /path2 PUT",
+			"to":"S1518 serviceCall /path1 POST"
+		},
+		{
+			"from":"S175 endpoint /path1 DELETE",
+			"to":"S3115 serviceCall /path83 POST"
+		}
+	],
+	"name":"S175",
+	"serviceCall":[
+		{
+			"id":"S1518 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3115 serviceCall /path83 POST",
+			"method":"POST",
+			"path":"/path83",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

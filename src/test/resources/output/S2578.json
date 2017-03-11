@@ -1,0 +1,56 @@
+{
+	"endpoint":[
+		{
+			"id":"S2578 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2578 endpoint /path0 PUT",
+			"to":"S3320 serviceCall /path127 DELETE"
+		},
+		{
+			"from":"S2578 endpoint /path0 PUT",
+			"to":"S1661 serviceCall /path5 GET"
+		},
+		{
+			"from":"S2578 endpoint /path0 PUT",
+			"to":"S1493 serviceCall /path74 PUT"
+		}
+	],
+	"name":"S2578",
+	"serviceCall":[
+		{
+			"id":"S3320 serviceCall /path127 DELETE",
+			"method":"DELETE",
+			"path":"/path127",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1661 serviceCall /path5 GET",
+			"method":"GET",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1493 serviceCall /path74 PUT",
+			"method":"PUT",
+			"path":"/path74",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3370 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

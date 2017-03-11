@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S150 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S150 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S150 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S150 endpoint /path1 POST",
+			"to":"S4490 serviceCall /path72 POST"
+		}
+	],
+	"name":"S150",
+	"serviceCall":[
+		{
+			"id":"S4490 serviceCall /path72 POST",
+			"method":"POST",
+			"path":"/path72",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

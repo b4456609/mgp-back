@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S2481 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S2481 endpoint /path0 DELETE",
+			"to":"S3407 serviceCall /path44 GET"
+		}
+	],
+	"name":"S2481",
+	"serviceCall":[
+		{
+			"id":"S3407 serviceCall /path44 GET",
+			"method":"GET",
+			"path":"/path44",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4738 serviceCall /path70 DELETE",
+			"method":"DELETE",
+			"path":"/path70",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4409 serviceCall /path5 PUT",
+			"method":"PUT",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

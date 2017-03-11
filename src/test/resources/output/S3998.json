@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S3998 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S3998 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S3998 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S3998 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S3998 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S3998 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S3998 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S3998 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S3998 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S3998 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S3998 endpoint /path1 PUT",
+			"to":"S909 serviceCall /path37 DELETE"
+		},
+		{
+			"from":"S3998 endpoint /path0 POST",
+			"to":"S1404 serviceCall /path6 GET"
+		},
+		{
+			"from":"S3998 endpoint /path4 GET",
+			"to":"S2104 serviceCall /path51 POST"
+		},
+		{
+			"from":"S3998 endpoint /path0 POST",
+			"to":"S1730 serviceCall /path259 POST"
+		},
+		{
+			"from":"S3998 endpoint /path1 PUT",
+			"to":"S3589 serviceCall /path8 DELETE"
+		}
+	],
+	"name":"S3998",
+	"serviceCall":[
+		{
+			"id":"S909 serviceCall /path37 DELETE",
+			"method":"DELETE",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1404 serviceCall /path6 GET",
+			"method":"GET",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2104 serviceCall /path51 POST",
+			"method":"POST",
+			"path":"/path51",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1730 serviceCall /path259 POST",
+			"method":"POST",
+			"path":"/path259",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3589 serviceCall /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}
