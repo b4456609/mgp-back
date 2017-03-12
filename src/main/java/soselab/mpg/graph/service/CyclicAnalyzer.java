@@ -35,7 +35,7 @@ public class CyclicAnalyzer {
                             return allItems.size() < path.size();
                         });
 
-                group.setCyclicType(isEnhanceCyclic ? CyclicType.ENHANCE : CyclicType.NORMAL);
+                group.setCyclicType(isEnhanceCyclic ? CyclicType.STRONG : CyclicType.WEEK);
             }
         });
     }

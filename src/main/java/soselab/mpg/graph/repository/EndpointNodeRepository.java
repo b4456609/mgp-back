@@ -5,7 +5,6 @@ import org.springframework.data.neo4j.repository.GraphRepository;
 import soselab.mpg.graph.controller.dto.ProviderEndpointWithConsumerPairItem;
 import soselab.mpg.graph.model.EndpointNode;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 
 public interface EndpointNodeRepository extends GraphRepository<EndpointNode> {
@@ -19,8 +18,7 @@ public interface EndpointNodeRepository extends GraphRepository<EndpointNode> {
             "RETURN service.name as source, e.endpointId as target")
     List<ProviderEndpointWithConsumerPairItem> getProviderEndpointWithConsumerPairPair();
 
-    @Query("MATCH p=(s:Endpoint)-[r:CALL*]->(e:Endpoint) " +
-            "RETURN nodes(p)")
-    List<List<LinkedHashMap>> getPathEndpoints();
+    @Query("MATCH p=(s:Endpoint)-[r:CALL*]->(e:Endpoint) RETURN extract(n IN nodes(p)|n.endpointId)")
+    List<List<String>> getPathEndpoints();
 
 }

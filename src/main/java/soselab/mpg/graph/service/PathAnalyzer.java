@@ -6,7 +6,10 @@ import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.repository.EndpointNodeRepository;
 import soselab.mpg.mpd.model.IDExtractor;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class PathAnalyzer {
@@ -20,17 +23,21 @@ public class PathAnalyzer {
     }
 
     public List<PathGroup> getPathNodeIdGroups() {
-        List<List<LinkedHashMap>> pathEndpoints = endpointNodeRepository.getPathEndpoints();
-        LOGGER.debug("all path endpoint {}", pathEndpoints);
-
-        //translation to endpoint id string list
-        List<List<String>> endpointIds = pathEndpoints.stream()
-                .map(linkedHashMaps -> linkedHashMaps.stream()
-                        .map(linkedHashMap -> (String) linkedHashMap.get("endpointId"))
-                        .collect(Collectors.toList()))
+        List<List<String>> endpointIds = endpointNodeRepository.getPathEndpoints()
+                .stream()
                 //sort by first endpoint id
                 .sorted(Comparator.comparing(a -> a.get(0)))
                 .collect(Collectors.toList());
+        LOGGER.debug("all path endpoint {}", endpointIds);
+
+//        //translation to endpoint id string list
+//        List<List<String>> endpointIds = pathEndpoints.stream()
+//                .map(linkedHashMaps -> linkedHashMaps.stream()
+//                        .map(linkedHashMap -> (String) linkedHashMap.get("endpointId"))
+//                        .collect(Collectors.toList()))
+//                //sort by first endpoint id
+//                .sorted(Comparator.comparing(a -> a.get(0)))
+//                .collect(Collectors.toList());
         LOGGER.debug("endpoint id {}", endpointIds);
 
         //remove the same start node but shorter path

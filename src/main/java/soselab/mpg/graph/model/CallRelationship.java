@@ -23,8 +23,6 @@ public class CallRelationship {
         this.unTest = unTest;
         this.consumer = consumer;
         this.provider = provider;
-        consumer.getCallRelationships().add(this);
-//        provider.getCallRelationships().add(this);
     }
 
     public Long getId() {

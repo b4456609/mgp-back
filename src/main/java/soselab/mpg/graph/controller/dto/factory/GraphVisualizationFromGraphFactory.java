@@ -248,9 +248,9 @@ public class GraphVisualizationFromGraphFactory {
         if (isStartNode)
             postfix = "-start";
 
-        if (pathGroup.getCyclicType() == CyclicType.NORMAL) {
+        if (pathGroup.getCyclicType() == CyclicType.WEEK) {
             return String.format("cyclic%d%s ", index, postfix);
-        } else if (pathGroup.getCyclicType() == CyclicType.ENHANCE) {
+        } else if (pathGroup.getCyclicType() == CyclicType.STRONG) {
             return String.format("cyclic-enhance%d%s ", index, postfix);
         }
         return "";

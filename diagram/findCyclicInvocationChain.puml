@@ -4,11 +4,11 @@ start
 :Check All Invocation Chain Path;
 -> A path has two endpoint\nowned by the same service;
 if() then(yes)
-:Check the Path has the same\nEndpoint show more than 2 times;
+:Check the Path has the same\nEndpoint exist more than once;
 if() then(yes)
-:Mark the group is\nEnhanced Cyclic;
+:Mark the group is\nStrong Cyclic;
 else(no)
-:Mark the group is\nNormal Cyclic;
+:Mark the group is\nWeek Cyclic;
 endif
 else(no)
 endif
