@@ -1,0 +1,38 @@
+{
+	"endpoint":[
+		{
+			"id":"S7241 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7241 endpoint /path0 POST",
+			"to":"S3807 serviceCall /path13 GET"
+		},
+		{
+			"from":"S7241 endpoint /path0 POST",
+			"to":"S2395 serviceCall /path0 POST"
+		}
+	],
+	"name":"S7241",
+	"serviceCall":[
+		{
+			"id":"S3807 serviceCall /path13 GET",
+			"method":"GET",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2395 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

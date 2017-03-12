@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S4249 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4249 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
@@ -16,116 +16,137 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S4249 endpoint /path3 POST",
-			"method":"POST",
+			"id":"S4249 endpoint /path3 DELETE",
+			"method":"DELETE",
 			"path":"/path3"
 		},
 		{
-			"id":"S4249 endpoint /path4 DELETE",
-			"method":"DELETE",
+			"id":"S4249 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S4249 endpoint /path5 POST",
-			"method":"POST",
+			"id":"S4249 endpoint /path5 DELETE",
+			"method":"DELETE",
 			"path":"/path5"
 		},
 		{
-			"id":"S4249 endpoint /path6 POST",
-			"method":"POST",
+			"id":"S4249 endpoint /path6 DELETE",
+			"method":"DELETE",
 			"path":"/path6"
 		},
 		{
-			"id":"S4249 endpoint /path7 GET",
-			"method":"GET",
+			"id":"S4249 endpoint /path7 POST",
+			"method":"POST",
 			"path":"/path7"
 		},
 		{
-			"id":"S4249 endpoint /path8 PUT",
-			"method":"PUT",
+			"id":"S4249 endpoint /path8 GET",
+			"method":"GET",
 			"path":"/path8"
+		},
+		{
+			"id":"S4249 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S4249 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4249 endpoint /path1 POST",
-			"to":"S3756 serviceCall /path43 DELETE"
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S3937 serviceCall /path3 DELETE"
 		},
 		{
-			"from":"S4249 endpoint /path1 POST",
-			"to":"S1935 serviceCall /path64 POST"
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S2739 serviceCall /path12 DELETE"
 		},
 		{
-			"from":"S4249 endpoint /path1 POST",
-			"to":"S889 serviceCall /path136 DELETE"
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S4410 serviceCall /path8 PUT"
 		},
 		{
-			"from":"S4249 endpoint /path0 GET",
-			"to":"S3804 serviceCall /path15 POST"
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S6303 serviceCall /path34 PUT"
 		},
 		{
-			"from":"S4249 endpoint /path0 GET",
-			"to":"S3839 serviceCall /path113 POST"
+			"from":"S4249 endpoint /path2 POST",
+			"to":"S7830 serviceCall /path95 GET"
 		},
 		{
-			"from":"S4249 endpoint /path1 POST",
-			"to":"S2207 serviceCall /path9 DELETE"
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S3631 serviceCall /path19 PUT"
 		},
 		{
-			"from":"S4249 endpoint /path0 GET",
-			"to":"S1467 serviceCall /path1 GET"
+			"from":"S4249 endpoint /path2 POST",
+			"to":"S9145 serviceCall /path3 DELETE"
+		},
+		{
+			"from":"S4249 endpoint /path0 POST",
+			"to":"S9450 serviceCall /path91 POST"
 		}
 	],
 	"name":"S4249",
 	"serviceCall":[
 		{
-			"id":"S3756 serviceCall /path43 DELETE",
+			"id":"S3937 serviceCall /path3 DELETE",
 			"method":"DELETE",
-			"path":"/path43",
+			"path":"/path3",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1935 serviceCall /path64 POST",
-			"method":"POST",
-			"path":"/path64",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S889 serviceCall /path136 DELETE",
+			"id":"S2739 serviceCall /path12 DELETE",
 			"method":"DELETE",
-			"path":"/path136",
+			"path":"/path12",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3804 serviceCall /path15 POST",
-			"method":"POST",
-			"path":"/path15",
+			"id":"S4410 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6303 serviceCall /path34 PUT",
+			"method":"PUT",
+			"path":"/path34",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3839 serviceCall /path113 POST",
-			"method":"POST",
-			"path":"/path113",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2207 serviceCall /path9 DELETE",
-			"method":"DELETE",
-			"path":"/path9",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1467 serviceCall /path1 GET",
+			"id":"S7830 serviceCall /path95 GET",
 			"method":"GET",
-			"path":"/path1",
+			"path":"/path95",
 			"provider":"endpoint",
 			"unTest":true
+		},
+		{
+			"id":"S3631 serviceCall /path19 PUT",
+			"method":"PUT",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9145 serviceCall /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9450 serviceCall /path91 POST",
+			"method":"POST",
+			"path":"/path91",
+			"provider":"endpoint",
+			"unTest":false
 		}
 	],
 	"swagger":"",

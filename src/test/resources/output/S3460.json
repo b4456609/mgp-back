@@ -1,37 +1,35 @@
 {
 	"endpoint":[
 		{
-			"id":"S3460 endpoint /path0 POST",
-			"method":"POST",
+          "id": "S3460 endpoint /path0 DELETE",
+          "method": "DELETE",
 			"path":"/path0"
 		},
 		{
-			"id":"S3460 endpoint /path1 PUT",
-			"method":"PUT",
+          "id": "S3460 endpoint /path1 DELETE",
+          "method": "DELETE",
 			"path":"/path1"
+        },
+      {
+        "id": "S3460 endpoint /path2 DELETE",
+        "method": "DELETE",
+        "path": "/path2"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3460 endpoint /path0 POST",
-			"to":"S1836 serviceCall /path86 GET"
+          "from": "S3460 endpoint /path1 DELETE",
+          "to": "S7456 serviceCall /path50 POST"
 		}
 	],
 	"name":"S3460",
 	"serviceCall":[
 		{
-			"id":"S107 serviceCall /path9 GET",
-			"method":"GET",
-			"path":"/path9",
+          "id": "S7456 serviceCall /path50 POST",
+          "method": "POST",
+          "path": "/path50",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1836 serviceCall /path86 GET",
-			"method":"GET",
-			"path":"/path86",
-			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
 		}
 	],
 	"swagger":"",

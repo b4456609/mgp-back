@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S5060 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S5060 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5060 endpoint /path0 GET",
+			"to":"S5401 serviceCall /path98 POST"
+		},
+		{
+			"from":"S5060 endpoint /path0 GET",
+			"to":"S1359 serviceCall /path216 POST"
+		}
+	],
+	"name":"S5060",
+	"serviceCall":[
+		{
+			"id":"S5401 serviceCall /path98 POST",
+			"method":"POST",
+			"path":"/path98",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1359 serviceCall /path216 POST",
+			"method":"POST",
+			"path":"/path216",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

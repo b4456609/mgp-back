@@ -1,25 +1,98 @@
 {
 	"endpoint":[
 		{
-			"id":"S3760 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S3760 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
+        },
+      {
+        "id": "S3760 endpoint /path1 GET",
+        "method": "GET",
+        "path": "/path1"
+      },
+      {
+        "id": "S3760 endpoint /path2 DELETE",
+        "method": "DELETE",
+        "path": "/path2"
+      },
+      {
+        "id": "S3760 endpoint /path3 GET",
+        "method": "GET",
+        "path": "/path3"
+      },
+      {
+        "id": "S3760 endpoint /path4 POST",
+        "method": "POST",
+        "path": "/path4"
+      },
+      {
+        "id": "S3760 endpoint /path5 GET",
+        "method": "GET",
+        "path": "/path5"
+      },
+      {
+        "id": "S3760 endpoint /path6 GET",
+        "method": "GET",
+        "path": "/path6"
+      },
+      {
+        "id": "S3760 endpoint /path7 POST",
+        "method": "POST",
+        "path": "/path7"
+      },
+      {
+        "id": "S3760 endpoint /path8 PUT",
+        "method": "PUT",
+        "path": "/path8"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3760 endpoint /path0 GET",
-			"to":"S3334 serviceCall /path22 PUT"
+          "from": "S3760 endpoint /path1 GET",
+          "to": "S9140 serviceCall /path8 POST"
+        },
+      {
+        "from": "S3760 endpoint /path2 DELETE",
+        "to": "S2572 serviceCall /path16 DELETE"
+      },
+      {
+        "from": "S3760 endpoint /path0 POST",
+        "to": "S8585 serviceCall /path40 POST"
+      },
+      {
+        "from": "S3760 endpoint /path0 POST",
+        "to": "S8032 serviceCall /path0 PUT"
 		}
 	],
 	"name":"S3760",
 	"serviceCall":[
 		{
-			"id":"S3334 serviceCall /path22 PUT",
-			"method":"PUT",
-			"path":"/path22",
+          "id": "S9140 serviceCall /path8 POST",
+          "method": "POST",
+          "path": "/path8",
+          "provider": "endpoint",
+          "unTest": false
+        },
+      {
+        "id": "S2572 serviceCall /path16 DELETE",
+        "method": "DELETE",
+        "path": "/path16",
 			"provider":"endpoint",
 			"unTest":true
+      },
+      {
+        "id": "S8585 serviceCall /path40 POST",
+        "method": "POST",
+        "path": "/path40",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S8032 serviceCall /path0 PUT",
+        "method": "PUT",
+        "path": "/path0",
+        "provider": "endpoint",
+        "unTest": false
 		}
 	],
 	"swagger":"",

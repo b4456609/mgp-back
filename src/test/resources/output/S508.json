@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S508 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S508 endpoint /path0 DELETE",
+			"method":"DELETE",
 			"path":"/path0"
 		},
 		{
@@ -11,8 +11,8 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S508 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S508 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
@@ -26,71 +26,34 @@
 			"path":"/path4"
 		},
 		{
-			"id":"S508 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S508 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
-		}
-	],
-	"endpointDep":[
-		{
-			"from":"S508 endpoint /path0 GET",
-			"to":"S4457 serviceCall /path43 GET"
 		},
 		{
-			"from":"S508 endpoint /path1 GET",
-			"to":"S2816 serviceCall /path66 DELETE"
+			"id":"S508 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
 		},
 		{
-			"from":"S508 endpoint /path0 GET",
-			"to":"S307 serviceCall /path24 DELETE"
-		},
-		{
-			"from":"S508 endpoint /path1 GET",
-			"to":"S489 serviceCall /path1 DELETE"
-		},
-		{
-			"from":"S508 endpoint /path0 GET",
-			"to":"S3743 serviceCall /path3 PUT"
-		}
-	],
-	"name":"S508",
-	"serviceCall":[
-		{
-			"id":"S4457 serviceCall /path43 GET",
-			"method":"GET",
-			"path":"/path43",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2816 serviceCall /path66 DELETE",
-			"method":"DELETE",
-			"path":"/path66",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S307 serviceCall /path24 DELETE",
-			"method":"DELETE",
-			"path":"/path24",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S489 serviceCall /path1 DELETE",
-			"method":"DELETE",
-			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3743 serviceCall /path3 PUT",
+			"id":"S508 endpoint /path7 PUT",
 			"method":"PUT",
-			"path":"/path3",
-			"provider":"endpoint",
-			"unTest":false
+			"path":"/path7"
+		},
+		{
+			"id":"S508 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S508 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
 		}
 	],
+	"endpointDep":[],
+	"name":"S508",
+	"serviceCall":[],
 	"swagger":"",
 	"timestamp":0
 }

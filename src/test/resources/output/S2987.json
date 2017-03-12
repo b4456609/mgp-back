@@ -6,13 +6,13 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S2987 endpoint /path1 GET",
-			"method":"GET",
+			"id":"S2987 endpoint /path1 DELETE",
+			"method":"DELETE",
 			"path":"/path1"
 		},
 		{
-			"id":"S2987 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S2987 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
@@ -21,13 +21,13 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S2987 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S2987 endpoint /path4 GET",
+			"method":"GET",
 			"path":"/path4"
 		},
 		{
-			"id":"S2987 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S2987 endpoint /path5 PUT",
+			"method":"PUT",
 			"path":"/path5"
 		},
 		{
@@ -36,14 +36,74 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S2987 endpoint /path7 DELETE",
-			"method":"DELETE",
+			"id":"S2987 endpoint /path7 POST",
+			"method":"POST",
 			"path":"/path7"
+		},
+		{
+			"id":"S2987 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S2987 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S2987 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S2987 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S2987 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S2987 endpoint /path1 DELETE",
+			"to":"S5155 serviceCall /path5 POST"
+		},
+		{
+			"from":"S2987 endpoint /path1 DELETE",
+			"to":"S1986 serviceCall /path26 GET"
+		},
+		{
+			"from":"S2987 endpoint /path1 DELETE",
+			"to":"S1621 serviceCall /path0 DELETE"
+		}
+	],
 	"name":"S2987",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S5155 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1986 serviceCall /path26 GET",
+			"method":"GET",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1621 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

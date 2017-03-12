@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S3463 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S3463 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
@@ -11,18 +11,18 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S3463 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S3463 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S3463 endpoint /path3 DELETE",
-			"method":"DELETE",
+			"id":"S3463 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S3463 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S3463 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
@@ -36,45 +36,39 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S3463 endpoint /path7 GET",
-			"method":"GET",
+			"id":"S3463 endpoint /path7 DELETE",
+			"method":"DELETE",
 			"path":"/path7"
+		},
+		{
+			"id":"S3463 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3463 endpoint /path2 DELETE",
-			"to":"S2788 serviceCall /path4 PUT"
+			"from":"S3463 endpoint /path0 GET",
+			"to":"S9944 serviceCall /path52 DELETE"
 		},
 		{
-			"from":"S3463 endpoint /path0 DELETE",
-			"to":"S1490 serviceCall /path3 DELETE"
-		},
-		{
-			"from":"S3463 endpoint /path0 DELETE",
-			"to":"S4965 serviceCall /path32 GET"
+			"from":"S3463 endpoint /path2 GET",
+			"to":"S2542 serviceCall /path9 POST"
 		}
 	],
 	"name":"S3463",
 	"serviceCall":[
 		{
-			"id":"S2788 serviceCall /path4 PUT",
-			"method":"PUT",
-			"path":"/path4",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1490 serviceCall /path3 DELETE",
+			"id":"S9944 serviceCall /path52 DELETE",
 			"method":"DELETE",
-			"path":"/path3",
+			"path":"/path52",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S4965 serviceCall /path32 GET",
-			"method":"GET",
-			"path":"/path32",
+			"id":"S2542 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
 			"provider":"endpoint",
 			"unTest":true
 		}

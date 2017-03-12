@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S3306 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S3306 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S3306 endpoint /path1 DELETE",
-			"method":"DELETE",
+			"id":"S3306 endpoint /path1 GET",
+			"method":"GET",
 			"path":"/path1"
 		},
 		{
@@ -29,35 +29,31 @@
 			"id":"S3306 endpoint /path5 GET",
 			"method":"GET",
 			"path":"/path5"
-		},
-		{
-			"id":"S3306 endpoint /path6 POST",
-			"method":"POST",
-			"path":"/path6"
-		},
-		{
-			"id":"S3306 endpoint /path7 POST",
-			"method":"POST",
-			"path":"/path7"
-		},
-		{
-			"id":"S3306 endpoint /path8 GET",
-			"method":"GET",
-			"path":"/path8"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3306 endpoint /path0 DELETE",
-			"to":"S2067 serviceCall /path32 POST"
+			"from":"S3306 endpoint /path0 GET",
+			"to":"S232 serviceCall /path17 POST"
+		},
+		{
+			"from":"S3306 endpoint /path0 GET",
+			"to":"S5876 serviceCall /path2 GET"
 		}
 	],
 	"name":"S3306",
 	"serviceCall":[
 		{
-			"id":"S2067 serviceCall /path32 POST",
+			"id":"S232 serviceCall /path17 POST",
 			"method":"POST",
-			"path":"/path32",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5876 serviceCall /path2 GET",
+			"method":"GET",
+			"path":"/path2",
 			"provider":"endpoint",
 			"unTest":true
 		}

@@ -1,69 +1,44 @@
 {
 	"endpoint":[
 		{
-			"id":"S3170 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S3170 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
 		},
 		{
-			"id":"S3170 endpoint /path1 PUT",
-			"method":"PUT",
+          "id": "S3170 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
 		},
 		{
-			"id":"S3170 endpoint /path2 GET",
-			"method":"GET",
+          "id": "S3170 endpoint /path2 PUT",
+          "method": "PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S3170 endpoint /path3 DELETE",
-			"method":"DELETE",
+          "id": "S3170 endpoint /path3 GET",
+          "method": "GET",
 			"path":"/path3"
 		},
 		{
-			"id":"S3170 endpoint /path4 POST",
-			"method":"POST",
+          "id": "S3170 endpoint /path4 PUT",
+          "method": "PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S3170 endpoint /path5 POST",
-			"method":"POST",
+          "id": "S3170 endpoint /path5 DELETE",
+          "method": "DELETE",
 			"path":"/path5"
 		},
 		{
-			"id":"S3170 endpoint /path6 PUT",
-			"method":"PUT",
-			"path":"/path6"
-		},
-		{
-			"id":"S3170 endpoint /path7 GET",
+          "id": "S3170 endpoint /path6 GET",
 			"method":"GET",
-			"path":"/path7"
+          "path": "/path6"
 		}
 	],
-	"endpointDep":[
-		{
-			"from":"S3170 endpoint /path2 GET",
-			"to":"S3006 serviceCall /path63 PUT"
-		}
-	],
+  "endpointDep": [],
 	"name":"S3170",
-	"serviceCall":[
-		{
-			"id":"S3006 serviceCall /path63 PUT",
-			"method":"PUT",
-			"path":"/path63",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S993 serviceCall /path8 GET",
-			"method":"GET",
-			"path":"/path8",
-			"provider":"endpoint",
-			"unTest":false
-		}
-	],
+  "serviceCall": [],
 	"swagger":"",
 	"timestamp":0
 }

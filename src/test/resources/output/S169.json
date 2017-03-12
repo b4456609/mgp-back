@@ -1,8 +1,223 @@
 {
-	"endpoint":[],
-	"endpointDep":[],
+	"endpoint":[
+		{
+			"id":"S169 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S169 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S169 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S169 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S169 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S169 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S169 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S169 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S169 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S169 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S169 endpoint /path10 PUT",
+			"method":"PUT",
+			"path":"/path10"
+		},
+		{
+			"id":"S169 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S169 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S169 endpoint /path13 PUT",
+			"method":"PUT",
+			"path":"/path13"
+		},
+		{
+			"id":"S169 endpoint /path14 POST",
+			"method":"POST",
+			"path":"/path14"
+		},
+		{
+			"id":"S169 endpoint /path15 GET",
+			"method":"GET",
+			"path":"/path15"
+		},
+		{
+			"id":"S169 endpoint /path16 DELETE",
+			"method":"DELETE",
+			"path":"/path16"
+		},
+		{
+			"id":"S169 endpoint /path17 GET",
+			"method":"GET",
+			"path":"/path17"
+		},
+		{
+			"id":"S169 endpoint /path18 POST",
+			"method":"POST",
+			"path":"/path18"
+		},
+		{
+			"id":"S169 endpoint /path19 GET",
+			"method":"GET",
+			"path":"/path19"
+		},
+		{
+			"id":"S169 endpoint /path20 DELETE",
+			"method":"DELETE",
+			"path":"/path20"
+		},
+		{
+			"id":"S169 endpoint /path21 PUT",
+			"method":"PUT",
+			"path":"/path21"
+		},
+		{
+			"id":"S169 endpoint /path22 PUT",
+			"method":"PUT",
+			"path":"/path22"
+		},
+		{
+			"id":"S169 endpoint /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23"
+		},
+		{
+			"id":"S169 endpoint /path24 POST",
+			"method":"POST",
+			"path":"/path24"
+		},
+		{
+			"id":"S169 endpoint /path25 PUT",
+			"method":"PUT",
+			"path":"/path25"
+		},
+		{
+			"id":"S169 endpoint /path26 PUT",
+			"method":"PUT",
+			"path":"/path26"
+		},
+		{
+			"id":"S169 endpoint /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27"
+		},
+		{
+			"id":"S169 endpoint /path28 DELETE",
+			"method":"DELETE",
+			"path":"/path28"
+		},
+		{
+			"id":"S169 endpoint /path29 GET",
+			"method":"GET",
+			"path":"/path29"
+		},
+		{
+			"id":"S169 endpoint /path30 DELETE",
+			"method":"DELETE",
+			"path":"/path30"
+		},
+		{
+			"id":"S169 endpoint /path31 GET",
+			"method":"GET",
+			"path":"/path31"
+		},
+		{
+			"id":"S169 endpoint /path32 GET",
+			"method":"GET",
+			"path":"/path32"
+		},
+		{
+			"id":"S169 endpoint /path33 PUT",
+			"method":"PUT",
+			"path":"/path33"
+		},
+		{
+			"id":"S169 endpoint /path34 PUT",
+			"method":"PUT",
+			"path":"/path34"
+		},
+		{
+			"id":"S169 endpoint /path35 GET",
+			"method":"GET",
+			"path":"/path35"
+		},
+		{
+			"id":"S169 endpoint /path36 PUT",
+			"method":"PUT",
+			"path":"/path36"
+		},
+		{
+			"id":"S169 endpoint /path37 PUT",
+			"method":"PUT",
+			"path":"/path37"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S169 endpoint /path0 DELETE",
+			"to":"S8866 serviceCall /path37 PUT"
+		},
+		{
+			"from":"S169 endpoint /path0 DELETE",
+			"to":"S249 serviceCall /path0 POST"
+		}
+	],
 	"name":"S169",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S8866 serviceCall /path37 PUT",
+			"method":"PUT",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S249 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

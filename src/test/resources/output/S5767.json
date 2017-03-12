@@ -1,0 +1,106 @@
+{
+	"endpoint":[
+		{
+			"id":"S5767 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S5767 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S5767 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S5767 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S5767 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S5767 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S5767 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S5767 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5767 endpoint /path0 DELETE",
+			"to":"S7498 serviceCall /path25 GET"
+		},
+		{
+			"from":"S5767 endpoint /path0 DELETE",
+			"to":"S2359 serviceCall /path46 PUT"
+		},
+		{
+			"from":"S5767 endpoint /path0 DELETE",
+			"to":"S4380 serviceCall /path71 POST"
+		},
+		{
+			"from":"S5767 endpoint /path3 POST",
+			"to":"S8316 serviceCall /path68 PUT"
+		},
+		{
+			"from":"S5767 endpoint /path1 DELETE",
+			"to":"S5786 serviceCall /path10 POST"
+		}
+	],
+	"name":"S5767",
+	"serviceCall":[
+		{
+			"id":"S7498 serviceCall /path25 GET",
+			"method":"GET",
+			"path":"/path25",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2359 serviceCall /path46 PUT",
+			"method":"PUT",
+			"path":"/path46",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4380 serviceCall /path71 POST",
+			"method":"POST",
+			"path":"/path71",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8316 serviceCall /path68 PUT",
+			"method":"PUT",
+			"path":"/path68",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5786 serviceCall /path10 POST",
+			"method":"POST",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -6,8 +6,8 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S5 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S5 endpoint /path1 POST",
+			"method":"POST",
 			"path":"/path1"
 		},
 		{
@@ -26,29 +26,117 @@
 			"path":"/path4"
 		},
 		{
-			"id":"S5 endpoint /path5 POST",
-			"method":"POST",
+			"id":"S5 endpoint /path5 PUT",
+			"method":"PUT",
 			"path":"/path5"
 		},
 		{
-			"id":"S5 endpoint /path6 GET",
-			"method":"GET",
+			"id":"S5 endpoint /path6 DELETE",
+			"method":"DELETE",
 			"path":"/path6"
 		},
 		{
-			"id":"S5 endpoint /path7 GET",
-			"method":"GET",
+			"id":"S5 endpoint /path7 DELETE",
+			"method":"DELETE",
 			"path":"/path7"
 		},
 		{
-			"id":"S5 endpoint /path8 GET",
-			"method":"GET",
+			"id":"S5 endpoint /path8 POST",
+			"method":"POST",
 			"path":"/path8"
+		},
+		{
+			"id":"S5 endpoint /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9"
+		},
+		{
+			"id":"S5 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S5 endpoint /path11 POST",
+			"method":"POST",
+			"path":"/path11"
+		},
+		{
+			"id":"S5 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S5 endpoint /path13 POST",
+			"method":"POST",
+			"path":"/path13"
+		},
+		{
+			"id":"S5 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S5 endpoint /path15 POST",
+			"method":"POST",
+			"path":"/path15"
+		},
+		{
+			"id":"S5 endpoint /path16 GET",
+			"method":"GET",
+			"path":"/path16"
+		},
+		{
+			"id":"S5 endpoint /path17 GET",
+			"method":"GET",
+			"path":"/path17"
+		},
+		{
+			"id":"S5 endpoint /path18 PUT",
+			"method":"PUT",
+			"path":"/path18"
+		},
+		{
+			"id":"S5 endpoint /path19 PUT",
+			"method":"PUT",
+			"path":"/path19"
+		},
+		{
+			"id":"S5 endpoint /path20 DELETE",
+			"method":"DELETE",
+			"path":"/path20"
+		},
+		{
+			"id":"S5 endpoint /path21 PUT",
+			"method":"PUT",
+			"path":"/path21"
+		},
+		{
+			"id":"S5 endpoint /path22 PUT",
+			"method":"PUT",
+			"path":"/path22"
+		},
+		{
+			"id":"S5 endpoint /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S5 endpoint /path0 DELETE",
+			"to":"S6296 serviceCall /path8 POST"
+		}
+	],
 	"name":"S5",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S6296 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

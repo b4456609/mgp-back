@@ -1,0 +1,27 @@
+{
+  "endpoint": [
+    {
+      "id": "S7686 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7686 endpoint /path0 GET",
+      "to": "S2949 serviceCall /path30 GET"
+    }
+  ],
+  "name": "S7686",
+  "serviceCall": [
+    {
+      "id": "S2949 serviceCall /path30 GET",
+      "method": "GET",
+      "path": "/path30",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

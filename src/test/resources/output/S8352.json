@@ -1,0 +1,49 @@
+{
+  "endpoint": [
+    {
+      "id": "S8352 endpoint /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S8352 endpoint /path0 DELETE",
+      "to": "S7679 serviceCall /path65 POST"
+    },
+    {
+      "from": "S8352 endpoint /path0 DELETE",
+      "to": "S9635 serviceCall /path112 DELETE"
+    },
+    {
+      "from": "S8352 endpoint /path0 DELETE",
+      "to": "S175 serviceCall /path14 GET"
+    }
+  ],
+  "name": "S8352",
+  "serviceCall": [
+    {
+      "id": "S7679 serviceCall /path65 POST",
+      "method": "POST",
+      "path": "/path65",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9635 serviceCall /path112 DELETE",
+      "method": "DELETE",
+      "path": "/path112",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S175 serviceCall /path14 GET",
+      "method": "GET",
+      "path": "/path14",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

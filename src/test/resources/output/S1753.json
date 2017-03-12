@@ -6,53 +6,84 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S1753 endpoint /path1 POST",
-			"method":"POST",
+			"id":"S1753 endpoint /path1 DELETE",
+			"method":"DELETE",
 			"path":"/path1"
 		},
 		{
-			"id":"S1753 endpoint /path2 PUT",
-			"method":"PUT",
+			"id":"S1753 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S1753 endpoint /path3 PUT",
-			"method":"PUT",
+			"id":"S1753 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S1753 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S1753 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S1753 endpoint /path5 POST",
-			"method":"POST",
+			"id":"S1753 endpoint /path5 GET",
+			"method":"GET",
 			"path":"/path5"
 		},
 		{
-			"id":"S1753 endpoint /path6 PUT",
-			"method":"PUT",
+			"id":"S1753 endpoint /path6 DELETE",
+			"method":"DELETE",
 			"path":"/path6"
 		},
 		{
 			"id":"S1753 endpoint /path7 POST",
 			"method":"POST",
 			"path":"/path7"
+		},
+		{
+			"id":"S1753 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S1753 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S1753 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S1753 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S1753 endpoint /path0 POST",
-			"to":"S1264 serviceCall /path8 PUT"
+			"from":"S1753 endpoint /path1 DELETE",
+			"to":"S4261 serviceCall /path9 GET"
+		},
+		{
+			"from":"S1753 endpoint /path1 DELETE",
+			"to":"S3931 serviceCall /path79 GET"
 		}
 	],
 	"name":"S1753",
 	"serviceCall":[
 		{
-			"id":"S1264 serviceCall /path8 PUT",
-			"method":"PUT",
-			"path":"/path8",
+			"id":"S4261 serviceCall /path9 GET",
+			"method":"GET",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3931 serviceCall /path79 GET",
+			"method":"GET",
+			"path":"/path79",
 			"provider":"endpoint",
 			"unTest":false
 		}

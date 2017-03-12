@@ -1,0 +1,72 @@
+{
+  "endpoint": [
+    {
+      "id": "S5535 endpoint /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0"
+    },
+    {
+      "id": "S5535 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    },
+    {
+      "id": "S5535 endpoint /path2 POST",
+      "method": "POST",
+      "path": "/path2"
+    },
+    {
+      "id": "S5535 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S5535 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S5535 endpoint /path5 GET",
+      "method": "GET",
+      "path": "/path5"
+    },
+    {
+      "id": "S5535 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S5535 endpoint /path7 DELETE",
+      "method": "DELETE",
+      "path": "/path7"
+    },
+    {
+      "id": "S5535 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    },
+    {
+      "id": "S5535 endpoint /path9 POST",
+      "method": "POST",
+      "path": "/path9"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5535 endpoint /path4 DELETE",
+      "to": "S1764 serviceCall /path49 PUT"
+    }
+  ],
+  "name": "S5535",
+  "serviceCall": [
+    {
+      "id": "S1764 serviceCall /path49 PUT",
+      "method": "PUT",
+      "path": "/path49",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

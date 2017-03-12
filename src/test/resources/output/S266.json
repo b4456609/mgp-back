@@ -11,34 +11,46 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S266 endpoint /path2 PUT",
-			"method":"PUT",
+          "id": "S266 endpoint /path2 DELETE",
+          "method": "DELETE",
 			"path":"/path2"
+        },
+      {
+        "id": "S266 endpoint /path3 POST",
+        "method": "POST",
+        "path": "/path3"
 		}
 	],
 	"endpointDep":[
 		{
 			"from":"S266 endpoint /path1 POST",
-			"to":"S1904 serviceCall /path1 GET"
+          "to": "S9140 serviceCall /path8 POST"
 		},
 		{
-			"from":"S266 endpoint /path0 PUT",
-			"to":"S1491 serviceCall /path249 POST"
+          "from": "S266 endpoint /path1 POST",
+          "to": "S9926 serviceCall /path78 PUT"
 		}
 	],
 	"name":"S266",
 	"serviceCall":[
 		{
-			"id":"S1904 serviceCall /path1 GET",
+          "id": "S5402 serviceCall /path18 GET",
 			"method":"GET",
-			"path":"/path1",
+          "path": "/path18",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1491 serviceCall /path249 POST",
+          "id": "S9140 serviceCall /path8 POST",
 			"method":"POST",
-			"path":"/path249",
+          "path": "/path8",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S9926 serviceCall /path78 PUT",
+        "method": "PUT",
+        "path": "/path78",
 			"provider":"endpoint",
 			"unTest":true
 		}

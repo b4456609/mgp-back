@@ -1,49 +1,99 @@
 {
 	"endpoint":[
 		{
-			"id":"S3492 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S3492 endpoint /path0 PUT",
+          "method": "PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S3492 endpoint /path1 DELETE",
-			"method":"DELETE",
+          "id": "S3492 endpoint /path1 GET",
+          "method": "GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S3492 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		},
-		{
-			"id":"S3492 endpoint /path3 POST",
+          "id": "S3492 endpoint /path2 POST",
 			"method":"POST",
-			"path":"/path3"
+          "path": "/path2"
 		},
 		{
-			"id":"S3492 endpoint /path4 GET",
+          "id": "S3492 endpoint /path3 GET",
 			"method":"GET",
+          "path": "/path3"
+        },
+      {
+        "id": "S3492 endpoint /path4 PUT",
+        "method": "PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S3492 endpoint /path5 DELETE",
-			"method":"DELETE",
+          "id": "S3492 endpoint /path5 POST",
+          "method": "POST",
 			"path":"/path5"
 		},
 		{
-			"id":"S3492 endpoint /path6 PUT",
-			"method":"PUT",
+          "id": "S3492 endpoint /path6 DELETE",
+          "method": "DELETE",
 			"path":"/path6"
 		},
 		{
 			"id":"S3492 endpoint /path7 POST",
 			"method":"POST",
 			"path":"/path7"
+        },
+      {
+        "id": "S3492 endpoint /path8 DELETE",
+        "method": "DELETE",
+        "path": "/path8"
+      },
+      {
+        "id": "S3492 endpoint /path9 GET",
+        "method": "GET",
+        "path": "/path9"
+      },
+      {
+        "id": "S3492 endpoint /path10 PUT",
+        "method": "PUT",
+        "path": "/path10"
 		}
 	],
-	"endpointDep":[],
+  "endpointDep": [
+    {
+      "from": "S3492 endpoint /path2 POST",
+      "to": "S1986 serviceCall /path35 PUT"
+    },
+    {
+      "from": "S3492 endpoint /path0 PUT",
+      "to": "S3058 serviceCall /path4 GET"
+    },
+    {
+      "from": "S3492 endpoint /path1 GET",
+      "to": "S529 serviceCall /path9 DELETE"
+    }
+  ],
 	"name":"S3492",
-	"serviceCall":[],
+  "serviceCall": [
+    {
+      "id": "S1986 serviceCall /path35 PUT",
+      "method": "PUT",
+      "path": "/path35",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3058 serviceCall /path4 GET",
+      "method": "GET",
+      "path": "/path4",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S529 serviceCall /path9 DELETE",
+      "method": "DELETE",
+      "path": "/path9",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
 	"swagger":"",
 	"timestamp":0
 }

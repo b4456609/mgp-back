@@ -1,0 +1,98 @@
+{
+  "endpoint": [
+    {
+      "id": "S8930 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S8930 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S8930 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S8930 endpoint /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3"
+    },
+    {
+      "id": "S8930 endpoint /path4 POST",
+      "method": "POST",
+      "path": "/path4"
+    },
+    {
+      "id": "S8930 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    },
+    {
+      "id": "S8930 endpoint /path6 POST",
+      "method": "POST",
+      "path": "/path6"
+    },
+    {
+      "id": "S8930 endpoint /path7 GET",
+      "method": "GET",
+      "path": "/path7"
+    },
+    {
+      "id": "S8930 endpoint /path8 GET",
+      "method": "GET",
+      "path": "/path8"
+    },
+    {
+      "id": "S8930 endpoint /path9 DELETE",
+      "method": "DELETE",
+      "path": "/path9"
+    },
+    {
+      "id": "S8930 endpoint /path10 GET",
+      "method": "GET",
+      "path": "/path10"
+    },
+    {
+      "id": "S8930 endpoint /path11 POST",
+      "method": "POST",
+      "path": "/path11"
+    },
+    {
+      "id": "S8930 endpoint /path12 POST",
+      "method": "POST",
+      "path": "/path12"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S8930 endpoint /path0 PUT",
+      "to": "S6222 serviceCall /path65 POST"
+    },
+    {
+      "from": "S8930 endpoint /path1 PUT",
+      "to": "S7543 serviceCall /path7 DELETE"
+    }
+  ],
+  "name": "S8930",
+  "serviceCall": [
+    {
+      "id": "S6222 serviceCall /path65 POST",
+      "method": "POST",
+      "path": "/path65",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7543 serviceCall /path7 DELETE",
+      "method": "DELETE",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

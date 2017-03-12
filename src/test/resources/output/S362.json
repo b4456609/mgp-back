@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S362 endpoint /path0 POST",
-			"method":"POST",
+			"id":"S362 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S362 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S362 endpoint /path1 GET",
+			"method":"GET",
 			"path":"/path1"
 		},
 		{
@@ -16,65 +16,25 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S362 endpoint /path3 DELETE",
-			"method":"DELETE",
-			"path":"/path3"
-		},
-		{
-			"id":"S362 endpoint /path4 DELETE",
-			"method":"DELETE",
-			"path":"/path4"
-		},
-		{
-			"id":"S362 endpoint /path5 PUT",
-			"method":"PUT",
-			"path":"/path5"
-		},
-		{
-			"id":"S362 endpoint /path6 PUT",
-			"method":"PUT",
-			"path":"/path6"
-		},
-		{
-			"id":"S362 endpoint /path7 PUT",
-			"method":"PUT",
-			"path":"/path7"
-		},
-		{
-			"id":"S362 endpoint /path8 PUT",
-			"method":"PUT",
-			"path":"/path8"
-		},
-		{
-			"id":"S362 endpoint /path9 GET",
-			"method":"GET",
-			"path":"/path9"
-		},
-		{
-			"id":"S362 endpoint /path10 DELETE",
-			"method":"DELETE",
-			"path":"/path10"
-		},
-		{
-			"id":"S362 endpoint /path11 POST",
+			"id":"S362 endpoint /path3 POST",
 			"method":"POST",
-			"path":"/path11"
+			"path":"/path3"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S362 endpoint /path6 PUT",
-			"to":"S91 serviceCall /path194 PUT"
+			"from":"S362 endpoint /path0 PUT",
+			"to":"S5887 serviceCall /path38 POST"
 		}
 	],
 	"name":"S362",
 	"serviceCall":[
 		{
-			"id":"S91 serviceCall /path194 PUT",
-			"method":"PUT",
-			"path":"/path194",
+			"id":"S5887 serviceCall /path38 POST",
+			"method":"POST",
+			"path":"/path38",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		}
 	],
 	"swagger":"",

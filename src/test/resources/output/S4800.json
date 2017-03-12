@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S4800 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4800 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
@@ -16,23 +16,23 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S4800 endpoint /path3 DELETE",
-			"method":"DELETE",
+			"id":"S4800 endpoint /path3 GET",
+			"method":"GET",
 			"path":"/path3"
 		},
 		{
-			"id":"S4800 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S4800 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S4800 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S4800 endpoint /path5 PUT",
+			"method":"PUT",
 			"path":"/path5"
 		},
 		{
-			"id":"S4800 endpoint /path6 PUT",
-			"method":"PUT",
+			"id":"S4800 endpoint /path6 POST",
+			"method":"POST",
 			"path":"/path6"
 		},
 		{
@@ -41,84 +41,32 @@
 			"path":"/path7"
 		},
 		{
-			"id":"S4800 endpoint /path8 POST",
-			"method":"POST",
+			"id":"S4800 endpoint /path8 GET",
+			"method":"GET",
 			"path":"/path8"
 		},
 		{
-			"id":"S4800 endpoint /path9 DELETE",
-			"method":"DELETE",
+			"id":"S4800 endpoint /path9 PUT",
+			"method":"PUT",
 			"path":"/path9"
-		},
-		{
-			"id":"S4800 endpoint /path10 PUT",
-			"method":"PUT",
-			"path":"/path10"
-		},
-		{
-			"id":"S4800 endpoint /path11 DELETE",
-			"method":"DELETE",
-			"path":"/path11"
-		},
-		{
-			"id":"S4800 endpoint /path12 POST",
-			"method":"POST",
-			"path":"/path12"
-		},
-		{
-			"id":"S4800 endpoint /path13 GET",
-			"method":"GET",
-			"path":"/path13"
-		},
-		{
-			"id":"S4800 endpoint /path14 POST",
-			"method":"POST",
-			"path":"/path14"
-		},
-		{
-			"id":"S4800 endpoint /path15 PUT",
-			"method":"PUT",
-			"path":"/path15"
-		},
-		{
-			"id":"S4800 endpoint /path16 POST",
-			"method":"POST",
-			"path":"/path16"
-		},
-		{
-			"id":"S4800 endpoint /path17 DELETE",
-			"method":"DELETE",
-			"path":"/path17"
-		},
-		{
-			"id":"S4800 endpoint /path18 POST",
-			"method":"POST",
-			"path":"/path18"
-		},
-		{
-			"id":"S4800 endpoint /path19 PUT",
-			"method":"PUT",
-			"path":"/path19"
-		},
-		{
-			"id":"S4800 endpoint /path20 DELETE",
-			"method":"DELETE",
-			"path":"/path20"
-		},
-		{
-			"id":"S4800 endpoint /path21 POST",
-			"method":"POST",
-			"path":"/path21"
-		},
-		{
-			"id":"S4800 endpoint /path22 POST",
-			"method":"POST",
-			"path":"/path22"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S4800 endpoint /path0 PUT",
+			"to":"S5184 serviceCall /path30 GET"
+		}
+	],
 	"name":"S4800",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S5184 serviceCall /path30 GET",
+			"method":"GET",
+			"path":"/path30",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

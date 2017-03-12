@@ -1,0 +1,38 @@
+{
+  "endpoint": [
+    {
+      "id": "S5956 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5956 endpoint /path0 GET",
+      "to": "S1395 serviceCall /path20 GET"
+    },
+    {
+      "from": "S5956 endpoint /path0 GET",
+      "to": "S8094 serviceCall /path4 DELETE"
+    }
+  ],
+  "name": "S5956",
+  "serviceCall": [
+    {
+      "id": "S1395 serviceCall /path20 GET",
+      "method": "GET",
+      "path": "/path20",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S8094 serviceCall /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

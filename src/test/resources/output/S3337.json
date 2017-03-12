@@ -6,131 +6,93 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S3337 endpoint /path1 PUT",
-			"method":"PUT",
+          "id": "S3337 endpoint /path1 GET",
+          "method": "GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S3337 endpoint /path2 PUT",
-			"method":"PUT",
+          "id": "S3337 endpoint /path2 DELETE",
+          "method": "DELETE",
 			"path":"/path2"
-		},
-		{
-			"id":"S3337 endpoint /path3 GET",
-			"method":"GET",
-			"path":"/path3"
-		},
-		{
-			"id":"S3337 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
-		},
-		{
-			"id":"S3337 endpoint /path5 GET",
-			"method":"GET",
-			"path":"/path5"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3337 endpoint /path1 PUT",
-			"to":"S3746 serviceCall /path35 GET"
+          "from": "S3337 endpoint /path2 DELETE",
+          "to": "S1413 serviceCall /path161 GET"
+        },
+      {
+        "from": "S3337 endpoint /path1 GET",
+        "to": "S9285 serviceCall /path26 PUT"
+      },
+      {
+        "from": "S3337 endpoint /path1 GET",
+        "to": "S5594 serviceCall /path8 PUT"
+      },
+      {
+        "from": "S3337 endpoint /path1 GET",
+        "to": "S9852 serviceCall /path44 GET"
 		},
 		{
 			"from":"S3337 endpoint /path0 PUT",
-			"to":"S3174 serviceCall /path13 PUT"
-		},
-		{
-			"from":"S3337 endpoint /path1 PUT",
-			"to":"S3502 serviceCall /path145 GET"
-		},
-		{
-			"from":"S3337 endpoint /path0 PUT",
-			"to":"S2863 serviceCall /path42 DELETE"
-		},
-		{
-			"from":"S3337 endpoint /path1 PUT",
-			"to":"S1776 serviceCall /path2 DELETE"
-		},
-		{
-			"from":"S3337 endpoint /path1 PUT",
-			"to":"S182 serviceCall /path0 PUT"
-		},
-		{
-			"from":"S3337 endpoint /path1 PUT",
-			"to":"S2006 serviceCall /path18 GET"
-		},
-		{
-			"from":"S3337 endpoint /path0 PUT",
-			"to":"S1257 serviceCall /path149 PUT"
-		},
-		{
-			"from":"S3337 endpoint /path2 PUT",
-			"to":"S647 serviceCall /path18 GET"
+          "to": "S2877 serviceCall /path44 DELETE"
 		}
 	],
 	"name":"S3337",
 	"serviceCall":[
 		{
-			"id":"S3746 serviceCall /path35 GET",
-			"method":"GET",
-			"path":"/path35",
+          "id": "S4014 serviceCall /path8 POST",
+          "method": "POST",
+          "path": "/path8",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3174 serviceCall /path13 PUT",
+          "id": "S8486 serviceCall /path1 PUT",
 			"method":"PUT",
-			"path":"/path13",
+          "path": "/path1",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3502 serviceCall /path145 GET",
+          "id": "S1413 serviceCall /path161 GET",
 			"method":"GET",
-			"path":"/path145",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S2863 serviceCall /path42 DELETE",
-			"method":"DELETE",
-			"path":"/path42",
+          "path": "/path161",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S1776 serviceCall /path2 DELETE",
-			"method":"DELETE",
-			"path":"/path2",
+          "id": "S9285 serviceCall /path26 PUT",
+          "method": "PUT",
+          "path": "/path26",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S182 serviceCall /path0 PUT",
+          "id": "S5594 serviceCall /path8 PUT",
 			"method":"PUT",
-			"path":"/path0",
+          "path": "/path8",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S2006 serviceCall /path18 GET",
+          "id": "S1936 serviceCall /path11 GET",
 			"method":"GET",
-			"path":"/path18",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1257 serviceCall /path149 PUT",
-			"method":"PUT",
-			"path":"/path149",
+          "path": "/path11",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S647 serviceCall /path18 GET",
+          "id": "S9852 serviceCall /path44 GET",
 			"method":"GET",
-			"path":"/path18",
+          "path": "/path44",
+          "provider": "endpoint",
+          "unTest": false
+        },
+      {
+        "id": "S2877 serviceCall /path44 DELETE",
+        "method": "DELETE",
+        "path": "/path44",
 			"provider":"endpoint",
 			"unTest":false
 		}

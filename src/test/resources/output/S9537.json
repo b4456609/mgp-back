@@ -1,0 +1,180 @@
+{
+  "endpoint": [
+    {
+      "id": "S9537 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S9537 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    },
+    {
+      "id": "S9537 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S9537 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S9537 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S9537 endpoint /path5 GET",
+      "method": "GET",
+      "path": "/path5"
+    },
+    {
+      "id": "S9537 endpoint /path6 PUT",
+      "method": "PUT",
+      "path": "/path6"
+    },
+    {
+      "id": "S9537 endpoint /path7 DELETE",
+      "method": "DELETE",
+      "path": "/path7"
+    },
+    {
+      "id": "S9537 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    },
+    {
+      "id": "S9537 endpoint /path9 GET",
+      "method": "GET",
+      "path": "/path9"
+    },
+    {
+      "id": "S9537 endpoint /path10 DELETE",
+      "method": "DELETE",
+      "path": "/path10"
+    },
+    {
+      "id": "S9537 endpoint /path11 GET",
+      "method": "GET",
+      "path": "/path11"
+    },
+    {
+      "id": "S9537 endpoint /path12 GET",
+      "method": "GET",
+      "path": "/path12"
+    },
+    {
+      "id": "S9537 endpoint /path13 POST",
+      "method": "POST",
+      "path": "/path13"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9537 endpoint /path0 GET",
+      "to": "S7984 serviceCall /path106 GET"
+    },
+    {
+      "from": "S9537 endpoint /path1 GET",
+      "to": "S763 serviceCall /path9 POST"
+    },
+    {
+      "from": "S9537 endpoint /path3 POST",
+      "to": "S2449 serviceCall /path34 DELETE"
+    },
+    {
+      "from": "S9537 endpoint /path1 GET",
+      "to": "S5571 serviceCall /path36 GET"
+    },
+    {
+      "from": "S9537 endpoint /path4 DELETE",
+      "to": "S7745 serviceCall /path160 DELETE"
+    },
+    {
+      "from": "S9537 endpoint /path1 GET",
+      "to": "S1067 serviceCall /path11 POST"
+    },
+    {
+      "from": "S9537 endpoint /path0 GET",
+      "to": "S9856 serviceCall /path52 GET"
+    },
+    {
+      "from": "S9537 endpoint /path3 POST",
+      "to": "S2137 serviceCall /path26 GET"
+    },
+    {
+      "from": "S9537 endpoint /path0 GET",
+      "to": "S8711 serviceCall /path49 GET"
+    }
+  ],
+  "name": "S9537",
+  "serviceCall": [
+    {
+      "id": "S7984 serviceCall /path106 GET",
+      "method": "GET",
+      "path": "/path106",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S763 serviceCall /path9 POST",
+      "method": "POST",
+      "path": "/path9",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2449 serviceCall /path34 DELETE",
+      "method": "DELETE",
+      "path": "/path34",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S5571 serviceCall /path36 GET",
+      "method": "GET",
+      "path": "/path36",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7745 serviceCall /path160 DELETE",
+      "method": "DELETE",
+      "path": "/path160",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S1067 serviceCall /path11 POST",
+      "method": "POST",
+      "path": "/path11",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9856 serviceCall /path52 GET",
+      "method": "GET",
+      "path": "/path52",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2137 serviceCall /path26 GET",
+      "method": "GET",
+      "path": "/path26",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8711 serviceCall /path49 GET",
+      "method": "GET",
+      "path": "/path49",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

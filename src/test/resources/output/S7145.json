@@ -1,0 +1,116 @@
+{
+	"endpoint":[
+		{
+			"id":"S7145 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S7145 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S7145 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S7145 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S7145 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S7145 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S7145 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S7145 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S7145 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S7145 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7145 endpoint /path2 DELETE",
+			"to":"S496 serviceCall /path151 GET"
+		},
+		{
+			"from":"S7145 endpoint /path1 POST",
+			"to":"S7320 serviceCall /path156 GET"
+		},
+		{
+			"from":"S7145 endpoint /path0 PUT",
+			"to":"S1464 serviceCall /path63 GET"
+		},
+		{
+			"from":"S7145 endpoint /path2 DELETE",
+			"to":"S591 serviceCall /path16 POST"
+		},
+		{
+			"from":"S7145 endpoint /path0 PUT",
+			"to":"S2099 serviceCall /path18 DELETE"
+		}
+	],
+	"name":"S7145",
+	"serviceCall":[
+		{
+			"id":"S496 serviceCall /path151 GET",
+			"method":"GET",
+			"path":"/path151",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7320 serviceCall /path156 GET",
+			"method":"GET",
+			"path":"/path156",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1464 serviceCall /path63 GET",
+			"method":"GET",
+			"path":"/path63",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S591 serviceCall /path16 POST",
+			"method":"POST",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2099 serviceCall /path18 DELETE",
+			"method":"DELETE",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

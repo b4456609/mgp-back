@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S8480 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S8480 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8480 endpoint /path0 GET",
+			"to":"S997 serviceCall /path17 GET"
+		}
+	],
+	"name":"S8480",
+	"serviceCall":[
+		{
+			"id":"S997 serviceCall /path17 GET",
+			"method":"GET",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

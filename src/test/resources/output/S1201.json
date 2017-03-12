@@ -6,8 +6,8 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S1201 endpoint /path1 DELETE",
-			"method":"DELETE",
+          "id": "S1201 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
 		},
 		{
@@ -16,23 +16,152 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S1201 endpoint /path3 DELETE",
-			"method":"DELETE",
+          "id": "S1201 endpoint /path3 GET",
+          "method": "GET",
 			"path":"/path3"
+        },
+      {
+        "id": "S1201 endpoint /path4 GET",
+        "method": "GET",
+        "path": "/path4"
+      },
+      {
+        "id": "S1201 endpoint /path5 GET",
+        "method": "GET",
+        "path": "/path5"
+      },
+      {
+        "id": "S1201 endpoint /path6 DELETE",
+        "method": "DELETE",
+        "path": "/path6"
+      },
+      {
+        "id": "S1201 endpoint /path7 POST",
+        "method": "POST",
+        "path": "/path7"
+      },
+      {
+        "id": "S1201 endpoint /path8 GET",
+        "method": "GET",
+        "path": "/path8"
+      },
+      {
+        "id": "S1201 endpoint /path9 DELETE",
+        "method": "DELETE",
+        "path": "/path9"
 		}
 	],
 	"endpointDep":[
 		{
 			"from":"S1201 endpoint /path2 POST",
-			"to":"S116 serviceCall /path232 DELETE"
+          "to": "S3874 serviceCall /path71 PUT"
+        },
+      {
+        "from": "S1201 endpoint /path2 POST",
+        "to": "S1354 serviceCall /path64 GET"
+      },
+      {
+        "from": "S1201 endpoint /path0 PUT",
+        "to": "S5521 serviceCall /path17 POST"
+      },
+      {
+        "from": "S1201 endpoint /path4 GET",
+        "to": "S8500 serviceCall /path0 GET"
+      },
+      {
+        "from": "S1201 endpoint /path3 GET",
+        "to": "S7487 serviceCall /path82 POST"
+      },
+      {
+        "from": "S1201 endpoint /path0 PUT",
+        "to": "S9157 serviceCall /path73 POST"
+      },
+      {
+        "from": "S1201 endpoint /path0 PUT",
+        "to": "S905 serviceCall /path9 PUT"
+      },
+      {
+        "from": "S1201 endpoint /path2 POST",
+        "to": "S6917 serviceCall /path130 DELETE"
+      },
+      {
+        "from": "S1201 endpoint /path0 PUT",
+        "to": "S3286 serviceCall /path8 GET"
+      },
+      {
+        "from": "S1201 endpoint /path1 POST",
+        "to": "S4937 serviceCall /path22 GET"
 		}
 	],
 	"name":"S1201",
 	"serviceCall":[
 		{
-			"id":"S116 serviceCall /path232 DELETE",
+          "id": "S3874 serviceCall /path71 PUT",
+          "method": "PUT",
+          "path": "/path71",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S1354 serviceCall /path64 GET",
+        "method": "GET",
+        "path": "/path64",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S5521 serviceCall /path17 POST",
+        "method": "POST",
+        "path": "/path17",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S8500 serviceCall /path0 GET",
+        "method": "GET",
+        "path": "/path0",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S7487 serviceCall /path82 POST",
+        "method": "POST",
+        "path": "/path82",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S9157 serviceCall /path73 POST",
+        "method": "POST",
+        "path": "/path73",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S905 serviceCall /path9 PUT",
+        "method": "PUT",
+        "path": "/path9",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S6917 serviceCall /path130 DELETE",
 			"method":"DELETE",
-			"path":"/path232",
+        "path": "/path130",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S3286 serviceCall /path8 GET",
+        "method": "GET",
+        "path": "/path8",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S4937 serviceCall /path22 GET",
+        "method": "GET",
+        "path": "/path22",
 			"provider":"endpoint",
 			"unTest":true
 		}

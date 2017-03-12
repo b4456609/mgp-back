@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S2112 endpoint /path0 PUT",
-			"method":"PUT",
+			"id":"S2112 endpoint /path0 DELETE",
+			"method":"DELETE",
 			"path":"/path0"
 		},
 		{
@@ -11,8 +11,8 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S2112 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S2112 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
@@ -21,65 +21,49 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S2112 endpoint /path4 PUT",
-			"method":"PUT",
+			"id":"S2112 endpoint /path4 GET",
+			"method":"GET",
 			"path":"/path4"
 		},
 		{
-			"id":"S2112 endpoint /path5 DELETE",
-			"method":"DELETE",
+			"id":"S2112 endpoint /path5 GET",
+			"method":"GET",
 			"path":"/path5"
+		},
+		{
+			"id":"S2112 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S2112 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S2112 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S2112 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S2112 endpoint /path10 PUT",
+			"method":"PUT",
+			"path":"/path10"
+		},
+		{
+			"id":"S2112 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
 		}
 	],
-	"endpointDep":[
-		{
-			"from":"S2112 endpoint /path0 PUT",
-			"to":"S3749 serviceCall /path28 POST"
-		},
-		{
-			"from":"S2112 endpoint /path3 DELETE",
-			"to":"S360 serviceCall /path27 DELETE"
-		},
-		{
-			"from":"S2112 endpoint /path0 PUT",
-			"to":"S105 serviceCall /path189 POST"
-		},
-		{
-			"from":"S2112 endpoint /path0 PUT",
-			"to":"S4960 serviceCall /path7 DELETE"
-		}
-	],
+	"endpointDep":[],
 	"name":"S2112",
-	"serviceCall":[
-		{
-			"id":"S3749 serviceCall /path28 POST",
-			"method":"POST",
-			"path":"/path28",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S360 serviceCall /path27 DELETE",
-			"method":"DELETE",
-			"path":"/path27",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S105 serviceCall /path189 POST",
-			"method":"POST",
-			"path":"/path189",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S4960 serviceCall /path7 DELETE",
-			"method":"DELETE",
-			"path":"/path7",
-			"provider":"endpoint",
-			"unTest":true
-		}
-	],
+	"serviceCall":[],
 	"swagger":"",
 	"timestamp":0
 }

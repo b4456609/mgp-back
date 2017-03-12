@@ -1,0 +1,61 @@
+{
+	"endpoint":[
+		{
+			"id":"S5376 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S5376 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5376 endpoint /path0 POST",
+			"to":"S6023 serviceCall /path86 POST"
+		},
+		{
+			"from":"S5376 endpoint /path0 POST",
+			"to":"S5549 serviceCall /path12 DELETE"
+		},
+		{
+			"from":"S5376 endpoint /path0 POST",
+			"to":"S3320 serviceCall /path38 POST"
+		}
+	],
+	"name":"S5376",
+	"serviceCall":[
+		{
+			"id":"S6023 serviceCall /path86 POST",
+			"method":"POST",
+			"path":"/path86",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5549 serviceCall /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3320 serviceCall /path38 POST",
+			"method":"POST",
+			"path":"/path38",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3585 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S2781 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S2781 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S2781 endpoint /path1 POST",
-			"method":"POST",
+			"id":"S2781 endpoint /path1 DELETE",
+			"method":"DELETE",
 			"path":"/path1"
 		},
 		{
@@ -16,13 +16,13 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S2781 endpoint /path3 POST",
-			"method":"POST",
+			"id":"S2781 endpoint /path3 GET",
+			"method":"GET",
 			"path":"/path3"
 		},
 		{
-			"id":"S2781 endpoint /path4 DELETE",
-			"method":"DELETE",
+			"id":"S2781 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
@@ -36,8 +36,8 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S2781 endpoint /path7 GET",
-			"method":"GET",
+			"id":"S2781 endpoint /path7 POST",
+			"method":"POST",
 			"path":"/path7"
 		},
 		{
@@ -46,81 +46,111 @@
 			"path":"/path8"
 		},
 		{
-			"id":"S2781 endpoint /path9 PUT",
-			"method":"PUT",
+			"id":"S2781 endpoint /path9 POST",
+			"method":"POST",
 			"path":"/path9"
 		},
 		{
-			"id":"S2781 endpoint /path10 DELETE",
-			"method":"DELETE",
+			"id":"S2781 endpoint /path10 GET",
+			"method":"GET",
 			"path":"/path10"
 		},
 		{
-			"id":"S2781 endpoint /path11 POST",
-			"method":"POST",
+			"id":"S2781 endpoint /path11 GET",
+			"method":"GET",
 			"path":"/path11"
 		},
 		{
-			"id":"S2781 endpoint /path12 PUT",
-			"method":"PUT",
+			"id":"S2781 endpoint /path12 DELETE",
+			"method":"DELETE",
 			"path":"/path12"
 		},
 		{
-			"id":"S2781 endpoint /path13 PUT",
-			"method":"PUT",
-			"path":"/path13"
-		},
-		{
-			"id":"S2781 endpoint /path14 POST",
-			"method":"POST",
-			"path":"/path14"
-		},
-		{
-			"id":"S2781 endpoint /path15 DELETE",
-			"method":"DELETE",
-			"path":"/path15"
-		},
-		{
-			"id":"S2781 endpoint /path16 GET",
+			"id":"S2781 endpoint /path13 GET",
 			"method":"GET",
-			"path":"/path16"
-		},
-		{
-			"id":"S2781 endpoint /path17 POST",
-			"method":"POST",
-			"path":"/path17"
-		},
-		{
-			"id":"S2781 endpoint /path18 PUT",
-			"method":"PUT",
-			"path":"/path18"
+			"path":"/path13"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S2781 endpoint /path0 DELETE",
-			"to":"S4345 serviceCall /path17 GET"
+			"from":"S2781 endpoint /path1 DELETE",
+			"to":"S6098 serviceCall /path0 POST"
 		},
 		{
-			"from":"S2781 endpoint /path0 DELETE",
-			"to":"S90 serviceCall /path49 PUT"
+			"from":"S2781 endpoint /path3 GET",
+			"to":"S6564 serviceCall /path15 POST"
+		},
+		{
+			"from":"S2781 endpoint /path0 PUT",
+			"to":"S9102 serviceCall /path29 GET"
+		},
+		{
+			"from":"S2781 endpoint /path0 PUT",
+			"to":"S8417 serviceCall /path118 GET"
+		},
+		{
+			"from":"S2781 endpoint /path0 PUT",
+			"to":"S5184 serviceCall /path32 GET"
+		},
+		{
+			"from":"S2781 endpoint /path0 PUT",
+			"to":"S8767 serviceCall /path278 GET"
+		},
+		{
+			"from":"S2781 endpoint /path0 PUT",
+			"to":"S6493 serviceCall /path16 GET"
 		}
 	],
 	"name":"S2781",
 	"serviceCall":[
 		{
-			"id":"S4345 serviceCall /path17 GET",
-			"method":"GET",
-			"path":"/path17",
+			"id":"S6098 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S90 serviceCall /path49 PUT",
-			"method":"PUT",
-			"path":"/path49",
+			"id":"S6564 serviceCall /path15 POST",
+			"method":"POST",
+			"path":"/path15",
 			"provider":"endpoint",
 			"unTest":true
+		},
+		{
+			"id":"S9102 serviceCall /path29 GET",
+			"method":"GET",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8417 serviceCall /path118 GET",
+			"method":"GET",
+			"path":"/path118",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5184 serviceCall /path32 GET",
+			"method":"GET",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8767 serviceCall /path278 GET",
+			"method":"GET",
+			"path":"/path278",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6493 serviceCall /path16 GET",
+			"method":"GET",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":false
 		}
 	],
 	"swagger":"",

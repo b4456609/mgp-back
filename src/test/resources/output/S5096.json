@@ -1,0 +1,63 @@
+{
+	"endpoint":[
+		{
+			"id":"S5096 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S5096 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S5096 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S5096 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S5096 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S5096 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5096 endpoint /path1 POST",
+			"to":"S6204 serviceCall /path20 GET"
+		},
+		{
+			"from":"S5096 endpoint /path2 GET",
+			"to":"S3488 serviceCall /path165 GET"
+		}
+	],
+	"name":"S5096",
+	"serviceCall":[
+		{
+			"id":"S6204 serviceCall /path20 GET",
+			"method":"GET",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3488 serviceCall /path165 GET",
+			"method":"GET",
+			"path":"/path165",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

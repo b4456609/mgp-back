@@ -1,0 +1,138 @@
+{
+	"endpoint":[
+		{
+			"id":"S9076 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S9076 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S9076 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S9076 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S9076 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S9076 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S9076 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S9076 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S9076 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S9076 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S9076 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S9076 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
+		},
+		{
+			"id":"S9076 endpoint /path12 GET",
+			"method":"GET",
+			"path":"/path12"
+		},
+		{
+			"id":"S9076 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
+		},
+		{
+			"id":"S9076 endpoint /path14 DELETE",
+			"method":"DELETE",
+			"path":"/path14"
+		},
+		{
+			"id":"S9076 endpoint /path15 POST",
+			"method":"POST",
+			"path":"/path15"
+		},
+		{
+			"id":"S9076 endpoint /path16 POST",
+			"method":"POST",
+			"path":"/path16"
+		},
+		{
+			"id":"S9076 endpoint /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17"
+		},
+		{
+			"id":"S9076 endpoint /path18 POST",
+			"method":"POST",
+			"path":"/path18"
+		},
+		{
+			"id":"S9076 endpoint /path19 DELETE",
+			"method":"DELETE",
+			"path":"/path19"
+		},
+		{
+			"id":"S9076 endpoint /path20 GET",
+			"method":"GET",
+			"path":"/path20"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9076 endpoint /path0 PUT",
+			"to":"S9672 serviceCall /path3 DELETE"
+		},
+		{
+			"from":"S9076 endpoint /path0 PUT",
+			"to":"S5103 serviceCall /path56 POST"
+		}
+	],
+	"name":"S9076",
+	"serviceCall":[
+		{
+			"id":"S9672 serviceCall /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5103 serviceCall /path56 POST",
+			"method":"POST",
+			"path":"/path56",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

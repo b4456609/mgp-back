@@ -1,0 +1,181 @@
+{
+  "endpoint": [
+    {
+      "id": "S7994 endpoint /path0 POST",
+      "method": "POST",
+      "path": "/path0"
+    },
+    {
+      "id": "S7994 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S7994 endpoint /path2 GET",
+      "method": "GET",
+      "path": "/path2"
+    },
+    {
+      "id": "S7994 endpoint /path3 GET",
+      "method": "GET",
+      "path": "/path3"
+    },
+    {
+      "id": "S7994 endpoint /path4 POST",
+      "method": "POST",
+      "path": "/path4"
+    },
+    {
+      "id": "S7994 endpoint /path5 DELETE",
+      "method": "DELETE",
+      "path": "/path5"
+    },
+    {
+      "id": "S7994 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S7994 endpoint /path7 GET",
+      "method": "GET",
+      "path": "/path7"
+    },
+    {
+      "id": "S7994 endpoint /path8 POST",
+      "method": "POST",
+      "path": "/path8"
+    },
+    {
+      "id": "S7994 endpoint /path9 GET",
+      "method": "GET",
+      "path": "/path9"
+    },
+    {
+      "id": "S7994 endpoint /path10 POST",
+      "method": "POST",
+      "path": "/path10"
+    },
+    {
+      "id": "S7994 endpoint /path11 DELETE",
+      "method": "DELETE",
+      "path": "/path11"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S3211 serviceCall /path0 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S6570 serviceCall /path227 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S9941 serviceCall /path40 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S9256 serviceCall /path8 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path1 PUT",
+      "to": "S3987 serviceCall /path26 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S952 serviceCall /path9 PUT"
+    },
+    {
+      "from": "S7994 endpoint /path1 PUT",
+      "to": "S24 serviceCall /path20 DELETE"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S8647 serviceCall /path6 GET"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S7345 serviceCall /path54 GET"
+    },
+    {
+      "from": "S7994 endpoint /path0 POST",
+      "to": "S3188 serviceCall /path76 DELETE"
+    }
+  ],
+  "name": "S7994",
+  "serviceCall": [
+    {
+      "id": "S3211 serviceCall /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6570 serviceCall /path227 DELETE",
+      "method": "DELETE",
+      "path": "/path227",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S9941 serviceCall /path40 DELETE",
+      "method": "DELETE",
+      "path": "/path40",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9256 serviceCall /path8 DELETE",
+      "method": "DELETE",
+      "path": "/path8",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S3987 serviceCall /path26 DELETE",
+      "method": "DELETE",
+      "path": "/path26",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S952 serviceCall /path9 PUT",
+      "method": "PUT",
+      "path": "/path9",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S24 serviceCall /path20 DELETE",
+      "method": "DELETE",
+      "path": "/path20",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8647 serviceCall /path6 GET",
+      "method": "GET",
+      "path": "/path6",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7345 serviceCall /path54 GET",
+      "method": "GET",
+      "path": "/path54",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S3188 serviceCall /path76 DELETE",
+      "method": "DELETE",
+      "path": "/path76",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

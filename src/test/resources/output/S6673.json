@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S6673 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S6673 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6673 endpoint /path0 GET",
+			"to":"S3407 serviceCall /path15 DELETE"
+		}
+	],
+	"name":"S6673",
+	"serviceCall":[
+		{
+			"id":"S3407 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

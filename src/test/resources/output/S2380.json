@@ -6,23 +6,80 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S2380 endpoint /path1 PUT",
-			"method":"PUT",
+          "id": "S2380 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
+        },
+      {
+        "id": "S2380 endpoint /path2 DELETE",
+        "method": "DELETE",
+        "path": "/path2"
+      },
+      {
+        "id": "S2380 endpoint /path3 POST",
+        "method": "POST",
+        "path": "/path3"
+      },
+      {
+        "id": "S2380 endpoint /path4 DELETE",
+        "method": "DELETE",
+        "path": "/path4"
+      },
+      {
+        "id": "S2380 endpoint /path5 PUT",
+        "method": "PUT",
+        "path": "/path5"
+      },
+      {
+        "id": "S2380 endpoint /path6 GET",
+        "method": "GET",
+        "path": "/path6"
+      },
+      {
+        "id": "S2380 endpoint /path7 GET",
+        "method": "GET",
+        "path": "/path7"
+      },
+      {
+        "id": "S2380 endpoint /path8 DELETE",
+        "method": "DELETE",
+        "path": "/path8"
 		}
 	],
 	"endpointDep":[
 		{
 			"from":"S2380 endpoint /path0 POST",
-			"to":"S2808 serviceCall /path5 GET"
+          "to": "S2159 serviceCall /path52 GET"
+        },
+      {
+        "from": "S2380 endpoint /path1 POST",
+        "to": "S3259 serviceCall /path15 DELETE"
+      },
+      {
+        "from": "S2380 endpoint /path2 DELETE",
+        "to": "S9944 serviceCall /path69 PUT"
 		}
 	],
 	"name":"S2380",
 	"serviceCall":[
 		{
-			"id":"S2808 serviceCall /path5 GET",
+          "id": "S2159 serviceCall /path52 GET",
 			"method":"GET",
-			"path":"/path5",
+          "path": "/path52",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S3259 serviceCall /path15 DELETE",
+        "method": "DELETE",
+        "path": "/path15",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S9944 serviceCall /path69 PUT",
+        "method": "PUT",
+        "path": "/path69",
 			"provider":"endpoint",
 			"unTest":true
 		}

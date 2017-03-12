@@ -1,0 +1,27 @@
+{
+  "endpoint": [
+    {
+      "id": "S9775 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9775 endpoint /path0 PUT",
+      "to": "S144 serviceCall /path11 DELETE"
+    }
+  ],
+  "name": "S9775",
+  "serviceCall": [
+    {
+      "id": "S144 serviceCall /path11 DELETE",
+      "method": "DELETE",
+      "path": "/path11",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S1363 endpoint /path0 PUT",
-			"method":"PUT",
+			"id":"S1363 endpoint /path0 DELETE",
+			"method":"DELETE",
 			"path":"/path0"
 		},
 		{
@@ -11,65 +11,46 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S1363 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S1363 endpoint /path2 DELETE",
+			"method":"DELETE",
 			"path":"/path2"
+		},
+		{
+			"id":"S1363 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S1363 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S1363 endpoint /path0 PUT",
-			"to":"S2060 serviceCall /path2 POST"
+			"from":"S1363 endpoint /path0 DELETE",
+			"to":"S1223 serviceCall /path46 PUT"
 		},
 		{
-			"from":"S1363 endpoint /path0 PUT",
-			"to":"S4231 serviceCall /path4 PUT"
-		},
-		{
-			"from":"S1363 endpoint /path2 POST",
-			"to":"S1777 serviceCall /path14 POST"
-		},
-		{
-			"from":"S1363 endpoint /path1 GET",
-			"to":"S2854 serviceCall /path106 PUT"
+			"from":"S1363 endpoint /path0 DELETE",
+			"to":"S8713 serviceCall /path26 DELETE"
 		}
 	],
 	"name":"S1363",
 	"serviceCall":[
 		{
-			"id":"S2060 serviceCall /path2 POST",
-			"method":"POST",
-			"path":"/path2",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S4231 serviceCall /path4 PUT",
+			"id":"S1223 serviceCall /path46 PUT",
 			"method":"PUT",
-			"path":"/path4",
+			"path":"/path46",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1777 serviceCall /path14 POST",
-			"method":"POST",
-			"path":"/path14",
+			"id":"S8713 serviceCall /path26 DELETE",
+			"method":"DELETE",
+			"path":"/path26",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S941 serviceCall /path119 GET",
-			"method":"GET",
-			"path":"/path119",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2854 serviceCall /path106 PUT",
-			"method":"PUT",
-			"path":"/path106",
-			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		}
 	],
 	"swagger":"",

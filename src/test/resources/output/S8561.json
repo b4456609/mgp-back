@@ -1,0 +1,114 @@
+{
+	"endpoint":[
+		{
+			"id":"S8561 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S8561 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S8561 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S8561 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S8561 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S8561 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S8561 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S8561 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S8561 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S8561 endpoint /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9"
+		},
+		{
+			"id":"S8561 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		},
+		{
+			"id":"S8561 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
+		},
+		{
+			"id":"S8561 endpoint /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12"
+		},
+		{
+			"id":"S8561 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8561 endpoint /path3 DELETE",
+			"to":"S2697 serviceCall /path130 DELETE"
+		},
+		{
+			"from":"S8561 endpoint /path0 POST",
+			"to":"S8745 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S8561 endpoint /path0 POST",
+			"to":"S3658 serviceCall /path175 PUT"
+		}
+	],
+	"name":"S8561",
+	"serviceCall":[
+		{
+			"id":"S2697 serviceCall /path130 DELETE",
+			"method":"DELETE",
+			"path":"/path130",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8745 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3658 serviceCall /path175 PUT",
+			"method":"PUT",
+			"path":"/path175",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,28 +1,28 @@
 {
 	"endpoint":[
 		{
-			"id":"S3199 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
-			"id":"S3199 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S3199 endpoint /path1 GET",
+			"method":"GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S3199 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S3199 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S3199 endpoint /path3 DELETE",
-			"method":"DELETE",
+			"id":"S3199 endpoint /path3 GET",
+			"method":"GET",
 			"path":"/path3"
 		},
 		{
-			"id":"S3199 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
@@ -31,13 +31,13 @@
 			"path":"/path5"
 		},
 		{
-			"id":"S3199 endpoint /path6 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path6 POST",
+			"method":"POST",
 			"path":"/path6"
 		},
 		{
-			"id":"S3199 endpoint /path7 PUT",
-			"method":"PUT",
+			"id":"S3199 endpoint /path7 DELETE",
+			"method":"DELETE",
 			"path":"/path7"
 		},
 		{
@@ -46,18 +46,18 @@
 			"path":"/path8"
 		},
 		{
-			"id":"S3199 endpoint /path9 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path9 PUT",
+			"method":"PUT",
 			"path":"/path9"
 		},
 		{
-			"id":"S3199 endpoint /path10 POST",
-			"method":"POST",
+			"id":"S3199 endpoint /path10 PUT",
+			"method":"PUT",
 			"path":"/path10"
 		},
 		{
-			"id":"S3199 endpoint /path11 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path11 PUT",
+			"method":"PUT",
 			"path":"/path11"
 		},
 		{
@@ -66,33 +66,33 @@
 			"path":"/path12"
 		},
 		{
-			"id":"S3199 endpoint /path13 PUT",
-			"method":"PUT",
+			"id":"S3199 endpoint /path13 DELETE",
+			"method":"DELETE",
 			"path":"/path13"
 		},
 		{
-			"id":"S3199 endpoint /path14 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path14 DELETE",
+			"method":"DELETE",
 			"path":"/path14"
 		},
 		{
-			"id":"S3199 endpoint /path15 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path15 POST",
+			"method":"POST",
 			"path":"/path15"
 		},
 		{
-			"id":"S3199 endpoint /path16 PUT",
-			"method":"PUT",
+			"id":"S3199 endpoint /path16 GET",
+			"method":"GET",
 			"path":"/path16"
 		},
 		{
-			"id":"S3199 endpoint /path17 DELETE",
-			"method":"DELETE",
+			"id":"S3199 endpoint /path17 PUT",
+			"method":"PUT",
 			"path":"/path17"
 		},
 		{
-			"id":"S3199 endpoint /path18 DELETE",
-			"method":"DELETE",
+			"id":"S3199 endpoint /path18 PUT",
+			"method":"PUT",
 			"path":"/path18"
 		},
 		{
@@ -101,13 +101,13 @@
 			"path":"/path19"
 		},
 		{
-			"id":"S3199 endpoint /path20 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path20 DELETE",
+			"method":"DELETE",
 			"path":"/path20"
 		},
 		{
-			"id":"S3199 endpoint /path21 DELETE",
-			"method":"DELETE",
+			"id":"S3199 endpoint /path21 GET",
+			"method":"GET",
 			"path":"/path21"
 		},
 		{
@@ -116,19 +116,72 @@
 			"path":"/path22"
 		},
 		{
-			"id":"S3199 endpoint /path23 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path23 PUT",
+			"method":"PUT",
 			"path":"/path23"
 		},
 		{
-			"id":"S3199 endpoint /path24 GET",
-			"method":"GET",
+			"id":"S3199 endpoint /path24 POST",
+			"method":"POST",
 			"path":"/path24"
+		},
+		{
+			"id":"S3199 endpoint /path25 GET",
+			"method":"GET",
+			"path":"/path25"
+		},
+		{
+			"id":"S3199 endpoint /path26 GET",
+			"method":"GET",
+			"path":"/path26"
+		},
+		{
+			"id":"S3199 endpoint /path27 DELETE",
+			"method":"DELETE",
+			"path":"/path27"
+		},
+		{
+			"id":"S3199 endpoint /path28 GET",
+			"method":"GET",
+			"path":"/path28"
+		},
+		{
+			"id":"S3199 endpoint /path29 POST",
+			"method":"POST",
+			"path":"/path29"
+		},
+		{
+			"id":"S3199 endpoint /path30 POST",
+			"method":"POST",
+			"path":"/path30"
+		},
+		{
+			"id":"S3199 endpoint /path31 POST",
+			"method":"POST",
+			"path":"/path31"
+		},
+		{
+			"id":"S3199 endpoint /path32 POST",
+			"method":"POST",
+			"path":"/path32"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S3199 endpoint /path1 GET",
+			"to":"S8516 serviceCall /path86 POST"
+		}
+	],
 	"name":"S3199",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S8516 serviceCall /path86 POST",
+			"method":"POST",
+			"path":"/path86",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

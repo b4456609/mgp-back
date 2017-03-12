@@ -1,0 +1,83 @@
+{
+  "endpoint": [
+    {
+      "id": "S7361 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S7361 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    },
+    {
+      "id": "S7361 endpoint /path2 GET",
+      "method": "GET",
+      "path": "/path2"
+    },
+    {
+      "id": "S7361 endpoint /path3 PUT",
+      "method": "PUT",
+      "path": "/path3"
+    },
+    {
+      "id": "S7361 endpoint /path4 GET",
+      "method": "GET",
+      "path": "/path4"
+    },
+    {
+      "id": "S7361 endpoint /path5 GET",
+      "method": "GET",
+      "path": "/path5"
+    },
+    {
+      "id": "S7361 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S7361 endpoint /path7 POST",
+      "method": "POST",
+      "path": "/path7"
+    },
+    {
+      "id": "S7361 endpoint /path8 GET",
+      "method": "GET",
+      "path": "/path8"
+    },
+    {
+      "id": "S7361 endpoint /path9 DELETE",
+      "method": "DELETE",
+      "path": "/path9"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7361 endpoint /path2 GET",
+      "to": "S7830 serviceCall /path169 POST"
+    },
+    {
+      "from": "S7361 endpoint /path0 GET",
+      "to": "S9412 serviceCall /path25 GET"
+    }
+  ],
+  "name": "S7361",
+  "serviceCall": [
+    {
+      "id": "S7830 serviceCall /path169 POST",
+      "method": "POST",
+      "path": "/path169",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9412 serviceCall /path25 GET",
+      "method": "GET",
+      "path": "/path25",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

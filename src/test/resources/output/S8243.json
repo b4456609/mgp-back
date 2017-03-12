@@ -1,0 +1,128 @@
+{
+	"endpoint":[
+		{
+			"id":"S8243 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S8243 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S8243 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S8243 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S8243 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S8243 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S8243 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S8243 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8243 endpoint /path1 POST",
+			"to":"S7385 serviceCall /path11 PUT"
+		},
+		{
+			"from":"S8243 endpoint /path0 GET",
+			"to":"S4039 serviceCall /path125 PUT"
+		},
+		{
+			"from":"S8243 endpoint /path0 GET",
+			"to":"S9669 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S8243 endpoint /path1 POST",
+			"to":"S1406 serviceCall /path8 POST"
+		},
+		{
+			"from":"S8243 endpoint /path1 POST",
+			"to":"S1606 serviceCall /path80 PUT"
+		},
+		{
+			"from":"S8243 endpoint /path0 GET",
+			"to":"S9450 serviceCall /path97 GET"
+		},
+		{
+			"from":"S8243 endpoint /path1 POST",
+			"to":"S9334 serviceCall /path92 GET"
+		}
+	],
+	"name":"S8243",
+	"serviceCall":[
+		{
+			"id":"S7385 serviceCall /path11 PUT",
+			"method":"PUT",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4039 serviceCall /path125 PUT",
+			"method":"PUT",
+			"path":"/path125",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9669 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1406 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1606 serviceCall /path80 PUT",
+			"method":"PUT",
+			"path":"/path80",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S9450 serviceCall /path97 GET",
+			"method":"GET",
+			"path":"/path97",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S9334 serviceCall /path92 GET",
+			"method":"GET",
+			"path":"/path92",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

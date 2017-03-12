@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S407 endpoint /path0 PUT",
-			"method":"PUT",
+          "id": "S407 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
 		},
 		{
@@ -11,50 +11,45 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S407 endpoint /path2 PUT",
-			"method":"PUT",
+          "id": "S407 endpoint /path2 POST",
+          "method": "POST",
 			"path":"/path2"
-		},
-		{
-			"id":"S407 endpoint /path3 DELETE",
-			"method":"DELETE",
-			"path":"/path3"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S407 endpoint /path2 PUT",
-			"to":"S1129 serviceCall /path9 POST"
+          "from": "S407 endpoint /path2 POST",
+          "to": "S6299 serviceCall /path48 DELETE"
 		},
 		{
-			"from":"S407 endpoint /path0 PUT",
-			"to":"S4199 serviceCall /path0 GET"
+          "from": "S407 endpoint /path0 POST",
+          "to": "S5265 serviceCall /path2 GET"
 		},
 		{
-			"from":"S407 endpoint /path2 PUT",
-			"to":"S4154 serviceCall /path13 GET"
+          "from": "S407 endpoint /path2 POST",
+          "to": "S1583 serviceCall /path2 POST"
 		}
 	],
 	"name":"S407",
 	"serviceCall":[
 		{
-			"id":"S1129 serviceCall /path9 POST",
-			"method":"POST",
-			"path":"/path9",
+          "id": "S6299 serviceCall /path48 DELETE",
+          "method": "DELETE",
+          "path": "/path48",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S4199 serviceCall /path0 GET",
+          "id": "S5265 serviceCall /path2 GET",
 			"method":"GET",
-			"path":"/path0",
+          "path": "/path2",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S4154 serviceCall /path13 GET",
-			"method":"GET",
-			"path":"/path13",
+          "id": "S1583 serviceCall /path2 POST",
+          "method": "POST",
+          "path": "/path2",
 			"provider":"endpoint",
 			"unTest":true
 		}

@@ -1,0 +1,27 @@
+{
+	"endpoint":[
+		{
+			"id":"S8024 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8024 endpoint /path0 DELETE",
+			"to":"S5830 serviceCall /path10 GET"
+		}
+	],
+	"name":"S8024",
+	"serviceCall":[
+		{
+			"id":"S5830 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,23 +1,23 @@
 {
 	"endpoint":[
 		{
-			"id":"S4074 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S4074 endpoint /path0 PUT",
+          "method": "PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S4074 endpoint /path1 DELETE",
-			"method":"DELETE",
+          "id": "S4074 endpoint /path1 GET",
+          "method": "GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S4074 endpoint /path2 POST",
-			"method":"POST",
+          "id": "S4074 endpoint /path2 GET",
+          "method": "GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S4074 endpoint /path3 DELETE",
-			"method":"DELETE",
+          "id": "S4074 endpoint /path3 PUT",
+          "method": "PUT",
 			"path":"/path3"
 		},
 		{
@@ -26,8 +26,8 @@
 			"path":"/path4"
 		},
 		{
-			"id":"S4074 endpoint /path5 GET",
-			"method":"GET",
+          "id": "S4074 endpoint /path5 DELETE",
+          "method": "DELETE",
 			"path":"/path5"
 		},
 		{
@@ -36,39 +36,34 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S4074 endpoint /path7 POST",
-			"method":"POST",
+          "id": "S4074 endpoint /path7 DELETE",
+          "method": "DELETE",
 			"path":"/path7"
-		},
-		{
-			"id":"S4074 endpoint /path8 GET",
-			"method":"GET",
-			"path":"/path8"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4074 endpoint /path1 DELETE",
-			"to":"S919 serviceCall /path1 POST"
+          "from": "S4074 endpoint /path2 GET",
+          "to": "S5663 serviceCall /path3 GET"
 		},
 		{
-			"from":"S4074 endpoint /path1 DELETE",
-			"to":"S4737 serviceCall /path12 DELETE"
+          "from": "S4074 endpoint /path0 PUT",
+          "to": "S8771 serviceCall /path57 POST"
 		}
 	],
 	"name":"S4074",
 	"serviceCall":[
 		{
-			"id":"S919 serviceCall /path1 POST",
-			"method":"POST",
-			"path":"/path1",
+          "id": "S5663 serviceCall /path3 GET",
+          "method": "GET",
+          "path": "/path3",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S4737 serviceCall /path12 DELETE",
-			"method":"DELETE",
-			"path":"/path12",
+          "id": "S8771 serviceCall /path57 POST",
+          "method": "POST",
+          "path": "/path57",
 			"provider":"endpoint",
 			"unTest":true
 		}

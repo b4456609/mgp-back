@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S600 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S600 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
 		},
 		{
@@ -11,28 +11,28 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S600 endpoint /path2 DELETE",
-			"method":"DELETE",
+          "id": "S600 endpoint /path2 POST",
+          "method": "POST",
 			"path":"/path2"
 		},
 		{
-			"id":"S600 endpoint /path3 GET",
-			"method":"GET",
-			"path":"/path3"
-		},
-		{
-			"id":"S600 endpoint /path4 PUT",
+          "id": "S600 endpoint /path3 PUT",
 			"method":"PUT",
-			"path":"/path4"
+          "path": "/path3"
 		},
 		{
-			"id":"S600 endpoint /path5 POST",
+          "id": "S600 endpoint /path4 POST",
 			"method":"POST",
+          "path": "/path4"
+        },
+      {
+        "id": "S600 endpoint /path5 DELETE",
+        "method": "DELETE",
 			"path":"/path5"
 		},
 		{
-			"id":"S600 endpoint /path6 GET",
-			"method":"GET",
+          "id": "S600 endpoint /path6 DELETE",
+          "method": "DELETE",
 			"path":"/path6"
 		},
 		{
@@ -41,8 +41,8 @@
 			"path":"/path7"
 		},
 		{
-			"id":"S600 endpoint /path8 PUT",
-			"method":"PUT",
+          "id": "S600 endpoint /path8 POST",
+          "method": "POST",
 			"path":"/path8"
 		},
 		{
@@ -51,23 +51,23 @@
 			"path":"/path9"
 		},
 		{
-			"id":"S600 endpoint /path10 POST",
-			"method":"POST",
+          "id": "S600 endpoint /path10 DELETE",
+          "method": "DELETE",
 			"path":"/path10"
 		},
 		{
-			"id":"S600 endpoint /path11 POST",
-			"method":"POST",
+          "id": "S600 endpoint /path11 GET",
+          "method": "GET",
 			"path":"/path11"
 		},
 		{
-			"id":"S600 endpoint /path12 POST",
-			"method":"POST",
+          "id": "S600 endpoint /path12 GET",
+          "method": "GET",
 			"path":"/path12"
 		},
 		{
-			"id":"S600 endpoint /path13 DELETE",
-			"method":"DELETE",
+          "id": "S600 endpoint /path13 POST",
+          "method": "POST",
 			"path":"/path13"
 		},
 		{
@@ -86,8 +86,8 @@
 			"path":"/path16"
 		},
 		{
-			"id":"S600 endpoint /path17 PUT",
-			"method":"PUT",
+          "id": "S600 endpoint /path17 POST",
+          "method": "POST",
 			"path":"/path17"
 		},
 		{
@@ -96,8 +96,8 @@
 			"path":"/path18"
 		},
 		{
-			"id":"S600 endpoint /path19 DELETE",
-			"method":"DELETE",
+          "id": "S600 endpoint /path19 POST",
+          "method": "POST",
 			"path":"/path19"
 		},
 		{
@@ -106,83 +106,95 @@
 			"path":"/path20"
 		},
 		{
-			"id":"S600 endpoint /path21 DELETE",
-			"method":"DELETE",
+          "id": "S600 endpoint /path21 PUT",
+          "method": "PUT",
 			"path":"/path21"
 		},
 		{
-			"id":"S600 endpoint /path22 GET",
-			"method":"GET",
+          "id": "S600 endpoint /path22 POST",
+          "method": "POST",
 			"path":"/path22"
+        },
+      {
+        "id": "S600 endpoint /path23 PUT",
+        "method": "PUT",
+        "path": "/path23"
+      },
+      {
+        "id": "S600 endpoint /path24 DELETE",
+        "method": "DELETE",
+        "path": "/path24"
+      },
+      {
+        "id": "S600 endpoint /path25 PUT",
+        "method": "PUT",
+        "path": "/path25"
+      },
+      {
+        "id": "S600 endpoint /path26 POST",
+        "method": "POST",
+        "path": "/path26"
+      },
+      {
+        "id": "S600 endpoint /path27 GET",
+        "method": "GET",
+        "path": "/path27"
+      },
+      {
+        "id": "S600 endpoint /path28 GET",
+        "method": "GET",
+        "path": "/path28"
+      },
+      {
+        "id": "S600 endpoint /path29 DELETE",
+        "method": "DELETE",
+        "path": "/path29"
+      },
+      {
+        "id": "S600 endpoint /path30 PUT",
+        "method": "PUT",
+        "path": "/path30"
+      },
+      {
+        "id": "S600 endpoint /path31 DELETE",
+        "method": "DELETE",
+        "path": "/path31"
 		}
 	],
 	"endpointDep":[
 		{
+          "from": "S600 endpoint /path0 POST",
+          "to": "S2089 serviceCall /path77 DELETE"
+        },
+      {
+        "from": "S600 endpoint /path0 POST",
+        "to": "S2180 serviceCall /path2 PUT"
+      },
+      {
 			"from":"S600 endpoint /path1 PUT",
-			"to":"S88 serviceCall /path56 GET"
-		},
-		{
-			"from":"S600 endpoint /path0 GET",
-			"to":"S1395 serviceCall /path94 PUT"
-		},
-		{
-			"from":"S600 endpoint /path2 DELETE",
-			"to":"S4559 serviceCall /path2 DELETE"
-		},
-		{
-			"from":"S600 endpoint /path0 GET",
-			"to":"S1950 serviceCall /path14 GET"
-		},
-		{
-			"from":"S600 endpoint /path0 GET",
-			"to":"S4253 serviceCall /path26 DELETE"
-		},
-		{
-			"from":"S600 endpoint /path0 GET",
-			"to":"S105 serviceCall /path27 PUT"
+        "to": "S2888 serviceCall /path17 GET"
 		}
 	],
 	"name":"S600",
 	"serviceCall":[
 		{
-			"id":"S88 serviceCall /path56 GET",
-			"method":"GET",
-			"path":"/path56",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1395 serviceCall /path94 PUT",
-			"method":"PUT",
-			"path":"/path94",
+          "id": "S2089 serviceCall /path77 DELETE",
+          "method": "DELETE",
+          "path": "/path77",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S4559 serviceCall /path2 DELETE",
-			"method":"DELETE",
+          "id": "S2180 serviceCall /path2 PUT",
+          "method": "PUT",
 			"path":"/path2",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1950 serviceCall /path14 GET",
+          "id": "S2888 serviceCall /path17 GET",
 			"method":"GET",
-			"path":"/path14",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S4253 serviceCall /path26 DELETE",
-			"method":"DELETE",
-			"path":"/path26",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S105 serviceCall /path27 PUT",
-			"method":"PUT",
-			"path":"/path27",
+          "path": "/path17",
 			"provider":"endpoint",
 			"unTest":true
 		}

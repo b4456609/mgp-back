@@ -11,23 +11,23 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S157 endpoint /path2 GET",
-			"method":"GET",
+			"id":"S157 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S157 endpoint /path3 PUT",
-			"method":"PUT",
+			"id":"S157 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S157 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S157 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S157 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S157 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
 		},
 		{
@@ -41,124 +41,74 @@
 			"path":"/path7"
 		},
 		{
-			"id":"S157 endpoint /path8 POST",
-			"method":"POST",
+			"id":"S157 endpoint /path8 DELETE",
+			"method":"DELETE",
 			"path":"/path8"
+		},
+		{
+			"id":"S157 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S157 endpoint /path0 PUT",
-			"to":"S2344 serviceCall /path19 DELETE"
-		},
-		{
-			"from":"S157 endpoint /path2 GET",
-			"to":"S1532 serviceCall /path11 DELETE"
+			"from":"S157 endpoint /path1 PUT",
+			"to":"S9405 serviceCall /path5 POST"
 		},
 		{
 			"from":"S157 endpoint /path0 PUT",
-			"to":"S402 serviceCall /path0 DELETE"
+			"to":"S2547 serviceCall /path181 DELETE"
 		},
 		{
 			"from":"S157 endpoint /path1 PUT",
-			"to":"S1919 serviceCall /path8 GET"
+			"to":"S7321 serviceCall /path11 PUT"
+		},
+		{
+			"from":"S157 endpoint /path2 PUT",
+			"to":"S6303 serviceCall /path34 PUT"
 		},
 		{
 			"from":"S157 endpoint /path0 PUT",
-			"to":"S3046 serviceCall /path14 DELETE"
-		},
-		{
-			"from":"S157 endpoint /path0 PUT",
-			"to":"S1438 serviceCall /path12 GET"
-		},
-		{
-			"from":"S157 endpoint /path0 PUT",
-			"to":"S3184 serviceCall /path1 DELETE"
-		},
-		{
-			"from":"S157 endpoint /path0 PUT",
-			"to":"S1862 serviceCall /path24 PUT"
-		},
-		{
-			"from":"S157 endpoint /path1 PUT",
-			"to":"S4153 serviceCall /path140 GET"
-		},
-		{
-			"from":"S157 endpoint /path1 PUT",
-			"to":"S1960 serviceCall /path12 PUT"
+			"to":"S4122 serviceCall /path1 POST"
 		}
 	],
 	"name":"S157",
 	"serviceCall":[
 		{
-			"id":"S2344 serviceCall /path19 DELETE",
+			"id":"S9405 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2547 serviceCall /path181 DELETE",
 			"method":"DELETE",
-			"path":"/path19",
+			"path":"/path181",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7321 serviceCall /path11 PUT",
+			"method":"PUT",
+			"path":"/path11",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1532 serviceCall /path11 DELETE",
-			"method":"DELETE",
-			"path":"/path11",
+			"id":"S6303 serviceCall /path34 PUT",
+			"method":"PUT",
+			"path":"/path34",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S402 serviceCall /path0 DELETE",
-			"method":"DELETE",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1919 serviceCall /path8 GET",
-			"method":"GET",
-			"path":"/path8",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3046 serviceCall /path14 DELETE",
-			"method":"DELETE",
-			"path":"/path14",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1438 serviceCall /path12 GET",
-			"method":"GET",
-			"path":"/path12",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3184 serviceCall /path1 DELETE",
-			"method":"DELETE",
+			"id":"S4122 serviceCall /path1 POST",
+			"method":"POST",
 			"path":"/path1",
 			"provider":"endpoint",
 			"unTest":true
-		},
-		{
-			"id":"S1862 serviceCall /path24 PUT",
-			"method":"PUT",
-			"path":"/path24",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S4153 serviceCall /path140 GET",
-			"method":"GET",
-			"path":"/path140",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1960 serviceCall /path12 PUT",
-			"method":"PUT",
-			"path":"/path12",
-			"provider":"endpoint",
-			"unTest":false
 		}
 	],
 	"swagger":"",

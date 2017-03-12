@@ -1,28 +1,28 @@
 {
 	"endpoint":[
 		{
-			"id":"S2968 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S2968 endpoint /path0 DELETE",
+          "method": "DELETE",
 			"path":"/path0"
 		},
 		{
-			"id":"S2968 endpoint /path1 PUT",
-			"method":"PUT",
+          "id": "S2968 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
 		},
 		{
-			"id":"S2968 endpoint /path2 PUT",
-			"method":"PUT",
+          "id": "S2968 endpoint /path2 POST",
+          "method": "POST",
 			"path":"/path2"
 		},
 		{
-			"id":"S2968 endpoint /path3 GET",
-			"method":"GET",
+          "id": "S2968 endpoint /path3 POST",
+          "method": "POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S2968 endpoint /path4 GET",
-			"method":"GET",
+          "id": "S2968 endpoint /path4 POST",
+          "method": "POST",
 			"path":"/path4"
 		},
 		{
@@ -31,25 +31,82 @@
 			"path":"/path5"
 		},
 		{
-			"id":"S2968 endpoint /path6 GET",
-			"method":"GET",
+          "id": "S2968 endpoint /path6 DELETE",
+          "method": "DELETE",
 			"path":"/path6"
+        },
+      {
+        "id": "S2968 endpoint /path7 PUT",
+        "method": "PUT",
+        "path": "/path7"
+      },
+      {
+        "id": "S2968 endpoint /path8 POST",
+        "method": "POST",
+        "path": "/path8"
+      },
+      {
+        "id": "S2968 endpoint /path9 GET",
+        "method": "GET",
+        "path": "/path9"
+      },
+      {
+        "id": "S2968 endpoint /path10 DELETE",
+        "method": "DELETE",
+        "path": "/path10"
+      },
+      {
+        "id": "S2968 endpoint /path11 GET",
+        "method": "GET",
+        "path": "/path11"
+      },
+      {
+        "id": "S2968 endpoint /path12 DELETE",
+        "method": "DELETE",
+        "path": "/path12"
+      },
+      {
+        "id": "S2968 endpoint /path13 PUT",
+        "method": "PUT",
+        "path": "/path13"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S2968 endpoint /path1 PUT",
-			"to":"S1052 serviceCall /path0 GET"
+          "from": "S2968 endpoint /path1 POST",
+          "to": "S8771 serviceCall /path27 POST"
+        },
+      {
+        "from": "S2968 endpoint /path0 DELETE",
+        "to": "S7036 serviceCall /path44 POST"
+      },
+      {
+        "from": "S2968 endpoint /path2 POST",
+        "to": "S6672 serviceCall /path31 DELETE"
 		}
 	],
 	"name":"S2968",
 	"serviceCall":[
 		{
-			"id":"S1052 serviceCall /path0 GET",
-			"method":"GET",
-			"path":"/path0",
+          "id": "S8771 serviceCall /path27 POST",
+          "method": "POST",
+          "path": "/path27",
 			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
+        },
+      {
+        "id": "S7036 serviceCall /path44 POST",
+        "method": "POST",
+        "path": "/path44",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S6672 serviceCall /path31 DELETE",
+        "method": "DELETE",
+        "path": "/path31",
+        "provider": "endpoint",
+        "unTest": false
 		}
 	],
 	"swagger":"",

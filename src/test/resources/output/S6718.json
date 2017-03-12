@@ -1,0 +1,89 @@
+{
+  "endpoint": [
+    {
+      "id": "S6718 endpoint /path0 POST",
+      "method": "POST",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S4426 serviceCall /path41 DELETE"
+    },
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S6803 serviceCall /path15 POST"
+    },
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S154 serviceCall /path25 POST"
+    },
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S6898 serviceCall /path5 PUT"
+    },
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S4609 serviceCall /path0 PUT"
+    },
+    {
+      "from": "S6718 endpoint /path0 POST",
+      "to": "S25 serviceCall /path10 GET"
+    }
+  ],
+  "name": "S6718",
+  "serviceCall": [
+    {
+      "id": "S4426 serviceCall /path41 DELETE",
+      "method": "DELETE",
+      "path": "/path41",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6803 serviceCall /path15 POST",
+      "method": "POST",
+      "path": "/path15",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S154 serviceCall /path25 POST",
+      "method": "POST",
+      "path": "/path25",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3265 serviceCall /path41 DELETE",
+      "method": "DELETE",
+      "path": "/path41",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6898 serviceCall /path5 PUT",
+      "method": "PUT",
+      "path": "/path5",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S4609 serviceCall /path0 PUT",
+      "method": "PUT",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S25 serviceCall /path10 GET",
+      "method": "GET",
+      "path": "/path10",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

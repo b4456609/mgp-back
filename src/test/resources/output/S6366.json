@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S6366 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S6366 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S6366 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S6366 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S6366 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S6366 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S6366 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6366 endpoint /path1 DELETE",
+			"to":"S453 serviceCall /path9 PUT"
+		},
+		{
+			"from":"S6366 endpoint /path2 PUT",
+			"to":"S7828 serviceCall /path28 POST"
+		},
+		{
+			"from":"S6366 endpoint /path1 DELETE",
+			"to":"S8181 serviceCall /path14 DELETE"
+		},
+		{
+			"from":"S6366 endpoint /path0 GET",
+			"to":"S1825 serviceCall /path12 DELETE"
+		},
+		{
+			"from":"S6366 endpoint /path0 GET",
+			"to":"S1764 serviceCall /path14 POST"
+		},
+		{
+			"from":"S6366 endpoint /path1 DELETE",
+			"to":"S785 serviceCall /path1 DELETE"
+		}
+	],
+	"name":"S6366",
+	"serviceCall":[
+		{
+			"id":"S453 serviceCall /path9 PUT",
+			"method":"PUT",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7828 serviceCall /path28 POST",
+			"method":"POST",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8181 serviceCall /path14 DELETE",
+			"method":"DELETE",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1825 serviceCall /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1764 serviceCall /path14 POST",
+			"method":"POST",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S785 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

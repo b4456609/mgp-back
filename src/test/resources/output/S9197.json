@@ -1,0 +1,67 @@
+{
+  "endpoint": [
+    {
+      "id": "S9197 endpoint /path0 POST",
+      "method": "POST",
+      "path": "/path0"
+    },
+    {
+      "id": "S9197 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    },
+    {
+      "id": "S9197 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S9197 endpoint /path3 PUT",
+      "method": "PUT",
+      "path": "/path3"
+    },
+    {
+      "id": "S9197 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S9197 endpoint /path5 POST",
+      "method": "POST",
+      "path": "/path5"
+    },
+    {
+      "id": "S9197 endpoint /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6"
+    },
+    {
+      "id": "S9197 endpoint /path7 PUT",
+      "method": "PUT",
+      "path": "/path7"
+    },
+    {
+      "id": "S9197 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9197 endpoint /path0 POST",
+      "to": "S3350 serviceCall /path4 POST"
+    }
+  ],
+  "name": "S9197",
+  "serviceCall": [
+    {
+      "id": "S3350 serviceCall /path4 POST",
+      "method": "POST",
+      "path": "/path4",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

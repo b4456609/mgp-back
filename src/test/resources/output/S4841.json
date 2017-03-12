@@ -1,64 +1,73 @@
 {
 	"endpoint":[
 		{
-			"id":"S4841 endpoint /path0 POST",
-			"method":"POST",
+			"id":"S4841 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S4841 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S4841 endpoint /path1 GET",
+			"method":"GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S4841 endpoint /path2 PUT",
-			"method":"PUT",
+			"id":"S4841 endpoint /path2 POST",
+			"method":"POST",
 			"path":"/path2"
 		},
 		{
-			"id":"S4841 endpoint /path3 GET",
-			"method":"GET",
+			"id":"S4841 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S4841 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S4841 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S4841 endpoint /path5 PUT",
-			"method":"PUT",
+			"id":"S4841 endpoint /path5 GET",
+			"method":"GET",
 			"path":"/path5"
 		},
 		{
-			"id":"S4841 endpoint /path6 PUT",
-			"method":"PUT",
+			"id":"S4841 endpoint /path6 DELETE",
+			"method":"DELETE",
 			"path":"/path6"
+		},
+		{
+			"id":"S4841 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S4841 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S4841 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S4841 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4841 endpoint /path0 POST",
-			"to":"S1485 serviceCall /path6 GET"
-		},
-		{
-			"from":"S4841 endpoint /path0 POST",
-			"to":"S1694 serviceCall /path20 GET"
+			"from":"S4841 endpoint /path0 GET",
+			"to":"S6298 serviceCall /path51 PUT"
 		}
 	],
 	"name":"S4841",
 	"serviceCall":[
 		{
-			"id":"S1485 serviceCall /path6 GET",
-			"method":"GET",
-			"path":"/path6",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1694 serviceCall /path20 GET",
-			"method":"GET",
-			"path":"/path20",
+			"id":"S6298 serviceCall /path51 PUT",
+			"method":"PUT",
+			"path":"/path51",
 			"provider":"endpoint",
 			"unTest":true
 		}

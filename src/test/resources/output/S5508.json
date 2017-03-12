@@ -1,0 +1,59 @@
+{
+  "endpoint": [
+    {
+      "id": "S5508 endpoint /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0"
+    },
+    {
+      "id": "S5508 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    },
+    {
+      "id": "S5508 endpoint /path2 POST",
+      "method": "POST",
+      "path": "/path2"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5508 endpoint /path0 DELETE",
+      "to": "S2395 serviceCall /path2 PUT"
+    },
+    {
+      "from": "S5508 endpoint /path0 DELETE",
+      "to": "S2270 serviceCall /path45 POST"
+    },
+    {
+      "from": "S5508 endpoint /path1 DELETE",
+      "to": "S8224 serviceCall /path63 DELETE"
+    }
+  ],
+  "name": "S5508",
+  "serviceCall": [
+    {
+      "id": "S2395 serviceCall /path2 PUT",
+      "method": "PUT",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2270 serviceCall /path45 POST",
+      "method": "POST",
+      "path": "/path45",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S8224 serviceCall /path63 DELETE",
+      "method": "DELETE",
+      "path": "/path63",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

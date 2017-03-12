@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S1085 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S1085 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
 		},
 		{
-			"id":"S1085 endpoint /path1 GET",
-			"method":"GET",
+          "id": "S1085 endpoint /path1 PUT",
+          "method": "PUT",
 			"path":"/path1"
 		},
 		{
@@ -16,79 +16,115 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S1085 endpoint /path3 POST",
-			"method":"POST",
+          "id": "S1085 endpoint /path3 PUT",
+          "method": "PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S1085 endpoint /path4 GET",
-			"method":"GET",
+          "id": "S1085 endpoint /path4 DELETE",
+          "method": "DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S1085 endpoint /path5 PUT",
-			"method":"PUT",
+          "id": "S1085 endpoint /path5 DELETE",
+          "method": "DELETE",
 			"path":"/path5"
+        },
+      {
+        "id": "S1085 endpoint /path6 GET",
+        "method": "GET",
+        "path": "/path6"
+      },
+      {
+        "id": "S1085 endpoint /path7 GET",
+        "method": "GET",
+        "path": "/path7"
+      },
+      {
+        "id": "S1085 endpoint /path8 PUT",
+        "method": "PUT",
+        "path": "/path8"
+      },
+      {
+        "id": "S1085 endpoint /path9 PUT",
+        "method": "PUT",
+        "path": "/path9"
+      },
+      {
+        "id": "S1085 endpoint /path10 GET",
+        "method": "GET",
+        "path": "/path10"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S1085 endpoint /path1 GET",
-			"to":"S3430 serviceCall /path39 DELETE"
+          "from": "S1085 endpoint /path1 PUT",
+          "to": "S9181 serviceCall /path36 GET"
 		},
 		{
-			"from":"S1085 endpoint /path0 GET",
-			"to":"S102 serviceCall /path2 DELETE"
+          "from": "S1085 endpoint /path3 PUT",
+          "to": "S9971 serviceCall /path182 GET"
 		},
 		{
-			"from":"S1085 endpoint /path1 GET",
-			"to":"S116 serviceCall /path115 GET"
+          "from": "S1085 endpoint /path0 POST",
+          "to": "S5476 serviceCall /path97 DELETE"
 		},
 		{
-			"from":"S1085 endpoint /path5 PUT",
-			"to":"S1298 serviceCall /path20 DELETE"
+          "from": "S1085 endpoint /path0 POST",
+          "to": "S2056 serviceCall /path8 PUT"
 		},
 		{
-			"from":"S1085 endpoint /path0 GET",
-			"to":"S1809 serviceCall /path9 POST"
+          "from": "S1085 endpoint /path4 DELETE",
+          "to": "S7362 serviceCall /path9 POST"
+        },
+      {
+        "from": "S1085 endpoint /path1 PUT",
+        "to": "S9214 serviceCall /path37 PUT"
 		}
 	],
 	"name":"S1085",
 	"serviceCall":[
 		{
-			"id":"S3430 serviceCall /path39 DELETE",
-			"method":"DELETE",
-			"path":"/path39",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S102 serviceCall /path2 DELETE",
-			"method":"DELETE",
-			"path":"/path2",
+          "id": "S9181 serviceCall /path36 GET",
+          "method": "GET",
+          "path": "/path36",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S116 serviceCall /path115 GET",
+          "id": "S9971 serviceCall /path182 GET",
 			"method":"GET",
-			"path":"/path115",
+          "path": "/path182",
 			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
 		},
 		{
-			"id":"S1298 serviceCall /path20 DELETE",
+          "id": "S5476 serviceCall /path97 DELETE",
 			"method":"DELETE",
-			"path":"/path20",
+          "path": "/path97",
 			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
 		},
 		{
-			"id":"S1809 serviceCall /path9 POST",
+          "id": "S2056 serviceCall /path8 PUT",
+          "method": "PUT",
+          "path": "/path8",
+          "provider": "endpoint",
+          "unTest": false
+        },
+      {
+        "id": "S7362 serviceCall /path9 POST",
 			"method":"POST",
 			"path":"/path9",
 			"provider":"endpoint",
 			"unTest":false
+      },
+      {
+        "id": "S9214 serviceCall /path37 PUT",
+        "method": "PUT",
+        "path": "/path37",
+        "provider": "endpoint",
+        "unTest": false
 		}
 	],
 	"swagger":"",

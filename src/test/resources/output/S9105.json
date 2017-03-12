@@ -1,0 +1,69 @@
+{
+  "endpoint": [
+    {
+      "id": "S9105 endpoint /path0 POST",
+      "method": "POST",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9105 endpoint /path0 POST",
+      "to": "S1545 serviceCall /path3 DELETE"
+    }
+  ],
+  "name": "S9105",
+  "serviceCall": [
+    {
+      "id": "S2594 serviceCall /path14 GET",
+      "method": "GET",
+      "path": "/path14",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2990 serviceCall /path77 GET",
+      "method": "GET",
+      "path": "/path77",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S1545 serviceCall /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8314 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2570 serviceCall /path163 POST",
+      "method": "POST",
+      "path": "/path163",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S2927 serviceCall /path1 POST",
+      "method": "POST",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S530 serviceCall /path25 POST",
+      "method": "POST",
+      "path": "/path25",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

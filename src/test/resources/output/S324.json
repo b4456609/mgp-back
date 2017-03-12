@@ -1,68 +1,55 @@
 {
 	"endpoint":[
 		{
-			"id":"S324 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S324 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
+		},
+		{
+			"id":"S324 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S324 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S324 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S324 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S324 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S324 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S324 endpoint /path0 DELETE",
-			"to":"S4419 serviceCall /path11 GET"
-		},
-		{
-			"from":"S324 endpoint /path0 DELETE",
-			"to":"S192 serviceCall /path70 DELETE"
-		},
-		{
-			"from":"S324 endpoint /path0 DELETE",
-			"to":"S2403 serviceCall /path55 POST"
+			"from":"S324 endpoint /path1 POST",
+			"to":"S7863 serviceCall /path128 PUT"
 		}
 	],
 	"name":"S324",
 	"serviceCall":[
 		{
-			"id":"S4419 serviceCall /path11 GET",
-			"method":"GET",
-			"path":"/path11",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2264 serviceCall /path7 DELETE",
-			"method":"DELETE",
-			"path":"/path7",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3905 serviceCall /path12 PUT",
+			"id":"S7863 serviceCall /path128 PUT",
 			"method":"PUT",
-			"path":"/path12",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S192 serviceCall /path70 DELETE",
-			"method":"DELETE",
-			"path":"/path70",
+			"path":"/path128",
 			"provider":"endpoint",
 			"unTest":true
-		},
-		{
-			"id":"S2403 serviceCall /path55 POST",
-			"method":"POST",
-			"path":"/path55",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2159 serviceCall /path5 PUT",
-			"method":"PUT",
-			"path":"/path5",
-			"provider":"endpoint",
-			"unTest":false
 		}
 	],
 	"swagger":"",

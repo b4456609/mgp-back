@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S8237 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S8237 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S8237 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S8237 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S8237 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S8237 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S8237 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8237 endpoint /path3 GET",
+			"to":"S5216 serviceCall /path29 GET"
+		},
+		{
+			"from":"S8237 endpoint /path0 POST",
+			"to":"S6077 serviceCall /path0 DELETE"
+		},
+		{
+			"from":"S8237 endpoint /path0 POST",
+			"to":"S3566 serviceCall /path32 GET"
+		},
+		{
+			"from":"S8237 endpoint /path3 GET",
+			"to":"S4915 serviceCall /path191 POST"
+		},
+		{
+			"from":"S8237 endpoint /path0 POST",
+			"to":"S1098 serviceCall /path18 PUT"
+		},
+		{
+			"from":"S8237 endpoint /path1 DELETE",
+			"to":"S3836 serviceCall /path0 DELETE"
+		}
+	],
+	"name":"S8237",
+	"serviceCall":[
+		{
+			"id":"S5216 serviceCall /path29 GET",
+			"method":"GET",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6077 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3566 serviceCall /path32 GET",
+			"method":"GET",
+			"path":"/path32",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4915 serviceCall /path191 POST",
+			"method":"POST",
+			"path":"/path191",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1098 serviceCall /path18 PUT",
+			"method":"PUT",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3836 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

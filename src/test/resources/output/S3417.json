@@ -1,23 +1,23 @@
 {
 	"endpoint":[
 		{
-			"id":"S3417 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S3417 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S3417 endpoint /path1 POST",
-			"method":"POST",
+			"id":"S3417 endpoint /path1 GET",
+			"method":"GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S3417 endpoint /path2 GET",
-			"method":"GET",
+			"id":"S3417 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S3417 endpoint /path3 GET",
-			"method":"GET",
+			"id":"S3417 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
@@ -26,58 +26,142 @@
 			"path":"/path4"
 		},
 		{
-			"id":"S3417 endpoint /path5 DELETE",
-			"method":"DELETE",
+			"id":"S3417 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
+		},
+		{
+			"id":"S3417 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S3417 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
+		},
+		{
+			"id":"S3417 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S3417 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S3417 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S3417 endpoint /path11 POST",
+			"method":"POST",
+			"path":"/path11"
+		},
+		{
+			"id":"S3417 endpoint /path12 POST",
+			"method":"POST",
+			"path":"/path12"
+		},
+		{
+			"id":"S3417 endpoint /path13 POST",
+			"method":"POST",
+			"path":"/path13"
+		},
+		{
+			"id":"S3417 endpoint /path14 DELETE",
+			"method":"DELETE",
+			"path":"/path14"
+		},
+		{
+			"id":"S3417 endpoint /path15 GET",
+			"method":"GET",
+			"path":"/path15"
+		},
+		{
+			"id":"S3417 endpoint /path16 DELETE",
+			"method":"DELETE",
+			"path":"/path16"
+		},
+		{
+			"id":"S3417 endpoint /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17"
+		},
+		{
+			"id":"S3417 endpoint /path18 GET",
+			"method":"GET",
+			"path":"/path18"
+		},
+		{
+			"id":"S3417 endpoint /path19 PUT",
+			"method":"PUT",
+			"path":"/path19"
+		},
+		{
+			"id":"S3417 endpoint /path20 GET",
+			"method":"GET",
+			"path":"/path20"
+		},
+		{
+			"id":"S3417 endpoint /path21 DELETE",
+			"method":"DELETE",
+			"path":"/path21"
+		},
+		{
+			"id":"S3417 endpoint /path22 POST",
+			"method":"POST",
+			"path":"/path22"
+		},
+		{
+			"id":"S3417 endpoint /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23"
+		},
+		{
+			"id":"S3417 endpoint /path24 DELETE",
+			"method":"DELETE",
+			"path":"/path24"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3417 endpoint /path1 POST",
-			"to":"S4190 serviceCall /path0 GET"
+			"from":"S3417 endpoint /path1 GET",
+			"to":"S4032 serviceCall /path3 PUT"
 		},
 		{
-			"from":"S3417 endpoint /path0 DELETE",
-			"to":"S1475 serviceCall /path2 PUT"
+			"from":"S3417 endpoint /path0 GET",
+			"to":"S8928 serviceCall /path2 DELETE"
 		},
 		{
-			"from":"S3417 endpoint /path1 POST",
-			"to":"S1395 serviceCall /path82 DELETE"
-		},
-		{
-			"from":"S3417 endpoint /path0 DELETE",
-			"to":"S3852 serviceCall /path1 DELETE"
+			"from":"S3417 endpoint /path0 GET",
+			"to":"S9966 serviceCall /path17 DELETE"
 		}
 	],
 	"name":"S3417",
 	"serviceCall":[
 		{
-			"id":"S4190 serviceCall /path0 GET",
-			"method":"GET",
-			"path":"/path0",
+			"id":"S4032 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		},
 		{
-			"id":"S1475 serviceCall /path2 PUT",
-			"method":"PUT",
+			"id":"S8928 serviceCall /path2 DELETE",
+			"method":"DELETE",
 			"path":"/path2",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		},
 		{
-			"id":"S1395 serviceCall /path82 DELETE",
+			"id":"S9966 serviceCall /path17 DELETE",
 			"method":"DELETE",
-			"path":"/path82",
+			"path":"/path17",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3852 serviceCall /path1 DELETE",
-			"method":"DELETE",
-			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		}
 	],
 	"swagger":"",

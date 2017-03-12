@@ -1,0 +1,111 @@
+{
+  "endpoint": [
+    {
+      "id": "S5669 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S5669 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5669 endpoint /path0 PUT",
+      "to": "S6221 serviceCall /path54 DELETE"
+    },
+    {
+      "from": "S5669 endpoint /path0 PUT",
+      "to": "S8248 serviceCall /path0 GET"
+    },
+    {
+      "from": "S5669 endpoint /path0 PUT",
+      "to": "S7095 serviceCall /path45 POST"
+    },
+    {
+      "from": "S5669 endpoint /path1 DELETE",
+      "to": "S7980 serviceCall /path10 POST"
+    },
+    {
+      "from": "S5669 endpoint /path1 DELETE",
+      "to": "S5401 serviceCall /path151 GET"
+    }
+  ],
+  "name": "S5669",
+  "serviceCall": [
+    {
+      "id": "S1476 serviceCall /path46 DELETE",
+      "method": "DELETE",
+      "path": "/path46",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6221 serviceCall /path54 DELETE",
+      "method": "DELETE",
+      "path": "/path54",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S8248 serviceCall /path0 GET",
+      "method": "GET",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7095 serviceCall /path45 POST",
+      "method": "POST",
+      "path": "/path45",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9150 serviceCall /path1 PUT",
+      "method": "PUT",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S4665 serviceCall /path98 GET",
+      "method": "GET",
+      "path": "/path98",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7071 serviceCall /path2 POST",
+      "method": "POST",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8585 serviceCall /path78 DELETE",
+      "method": "DELETE",
+      "path": "/path78",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7980 serviceCall /path10 POST",
+      "method": "POST",
+      "path": "/path10",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S5401 serviceCall /path151 GET",
+      "method": "GET",
+      "path": "/path151",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

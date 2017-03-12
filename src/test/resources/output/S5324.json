@@ -1,0 +1,57 @@
+{
+  "endpoint": [
+    {
+      "id": "S5324 endpoint /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0"
+    },
+    {
+      "id": "S5324 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    },
+    {
+      "id": "S5324 endpoint /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2"
+    },
+    {
+      "id": "S5324 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S5324 endpoint /path4 GET",
+      "method": "GET",
+      "path": "/path4"
+    },
+    {
+      "id": "S5324 endpoint /path5 POST",
+      "method": "POST",
+      "path": "/path5"
+    },
+    {
+      "id": "S5324 endpoint /path6 PUT",
+      "method": "PUT",
+      "path": "/path6"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5324 endpoint /path0 DELETE",
+      "to": "S7413 serviceCall /path187 POST"
+    }
+  ],
+  "name": "S5324",
+  "serviceCall": [
+    {
+      "id": "S7413 serviceCall /path187 POST",
+      "method": "POST",
+      "path": "/path187",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

@@ -1,0 +1,32 @@
+{
+  "endpoint": [
+    {
+      "id": "S5370 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S5370 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5370 endpoint /path0 GET",
+      "to": "S5599 serviceCall /path2 PUT"
+    }
+  ],
+  "name": "S5370",
+  "serviceCall": [
+    {
+      "id": "S5599 serviceCall /path2 PUT",
+      "method": "PUT",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

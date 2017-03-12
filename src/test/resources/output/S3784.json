@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S3784 endpoint /path0 POST",
-			"method":"POST",
+			"id":"S3784 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
@@ -11,24 +11,72 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S3784 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S3784 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S3784 endpoint /path3 GET",
-			"method":"GET",
+			"id":"S3784 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S3784 endpoint /path4 DELETE",
-			"method":"DELETE",
+			"id":"S3784 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
+		},
+		{
+			"id":"S3784 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S3784 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S3784 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S3784 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S3784 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S3784 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S3784 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S3784 endpoint /path4 PUT",
+			"to":"S1311 serviceCall /path90 PUT"
+		}
+	],
 	"name":"S3784",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S1311 serviceCall /path90 PUT",
+			"method":"PUT",
+			"path":"/path90",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

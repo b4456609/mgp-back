@@ -1,54 +1,168 @@
 {
-	"endpoint":[],
-	"endpointDep":[],
+	"endpoint":[
+		{
+			"id":"S1072 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S1072 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S1072 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S1072 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S1072 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S1072 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S1072 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S1072 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S1072 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		},
+		{
+			"id":"S1072 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S1072 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S1072 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S1072 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S1072 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
+		},
+		{
+			"id":"S1072 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S1072 endpoint /path15 POST",
+			"method":"POST",
+			"path":"/path15"
+		},
+		{
+			"id":"S1072 endpoint /path16 GET",
+			"method":"GET",
+			"path":"/path16"
+		},
+		{
+			"id":"S1072 endpoint /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17"
+		},
+		{
+			"id":"S1072 endpoint /path18 POST",
+			"method":"POST",
+			"path":"/path18"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1072 endpoint /path1 DELETE",
+			"to":"S5352 serviceCall /path72 PUT"
+		},
+		{
+			"from":"S1072 endpoint /path0 GET",
+			"to":"S3524 serviceCall /path19 PUT"
+		},
+		{
+			"from":"S1072 endpoint /path2 PUT",
+			"to":"S9683 serviceCall /path181 PUT"
+		},
+		{
+			"from":"S1072 endpoint /path1 DELETE",
+			"to":"S6317 serviceCall /path8 POST"
+		},
+		{
+			"from":"S1072 endpoint /path0 GET",
+			"to":"S4833 serviceCall /path3 GET"
+		},
+		{
+			"from":"S1072 endpoint /path1 DELETE",
+			"to":"S6446 serviceCall /path28 PUT"
+		}
+	],
 	"name":"S1072",
 	"serviceCall":[
 		{
-			"id":"S3084 serviceCall /path8 GET",
-			"method":"GET",
+			"id":"S5352 serviceCall /path72 PUT",
+			"method":"PUT",
+			"path":"/path72",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3524 serviceCall /path19 PUT",
+			"method":"PUT",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9683 serviceCall /path181 PUT",
+			"method":"PUT",
+			"path":"/path181",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6317 serviceCall /path8 POST",
+			"method":"POST",
 			"path":"/path8",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S1491 serviceCall /path236 POST",
-			"method":"POST",
-			"path":"/path236",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S4452 serviceCall /path44 DELETE",
-			"method":"DELETE",
-			"path":"/path44",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S2510 serviceCall /path1 POST",
-			"method":"POST",
-			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S4912 serviceCall /path88 GET",
+			"id":"S4833 serviceCall /path3 GET",
 			"method":"GET",
-			"path":"/path88",
+			"path":"/path3",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S3309 serviceCall /path0 POST",
-			"method":"POST",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3647 serviceCall /path7 DELETE",
-			"method":"DELETE",
-			"path":"/path7",
+			"id":"S6446 serviceCall /path28 PUT",
+			"method":"PUT",
+			"path":"/path28",
 			"provider":"endpoint",
 			"unTest":false
 		}

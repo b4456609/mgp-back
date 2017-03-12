@@ -1,0 +1,80 @@
+{
+	"endpoint":[
+		{
+			"id":"S5386 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S5386 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S5386 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S5386 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S5386 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5386 endpoint /path0 PUT",
+			"to":"S6541 serviceCall /path21 GET"
+		},
+		{
+			"from":"S5386 endpoint /path3 POST",
+			"to":"S5108 serviceCall /path5 GET"
+		},
+		{
+			"from":"S5386 endpoint /path2 GET",
+			"to":"S7226 serviceCall /path20 PUT"
+		},
+		{
+			"from":"S5386 endpoint /path1 PUT",
+			"to":"S4942 serviceCall /path21 PUT"
+		}
+	],
+	"name":"S5386",
+	"serviceCall":[
+		{
+			"id":"S6541 serviceCall /path21 GET",
+			"method":"GET",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5108 serviceCall /path5 GET",
+			"method":"GET",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7226 serviceCall /path20 PUT",
+			"method":"PUT",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4942 serviceCall /path21 PUT",
+			"method":"PUT",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

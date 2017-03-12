@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S4126 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4126 endpoint /path0 DELETE",
+			"method":"DELETE",
 			"path":"/path0"
 		},
 		{
-			"id":"S4126 endpoint /path1 GET",
-			"method":"GET",
+			"id":"S4126 endpoint /path1 DELETE",
+			"method":"DELETE",
 			"path":"/path1"
 		},
 		{
@@ -16,23 +16,23 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S4126 endpoint /path3 POST",
-			"method":"POST",
+			"id":"S4126 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S4126 endpoint /path4 DELETE",
-			"method":"DELETE",
+			"id":"S4126 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S4126 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S4126 endpoint /path5 DELETE",
+			"method":"DELETE",
 			"path":"/path5"
 		},
 		{
-			"id":"S4126 endpoint /path6 GET",
-			"method":"GET",
+			"id":"S4126 endpoint /path6 PUT",
+			"method":"PUT",
 			"path":"/path6"
 		},
 		{
@@ -44,93 +44,88 @@
 			"id":"S4126 endpoint /path8 GET",
 			"method":"GET",
 			"path":"/path8"
-		},
-		{
-			"id":"S4126 endpoint /path9 GET",
-			"method":"GET",
-			"path":"/path9"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4126 endpoint /path1 GET",
-			"to":"S3503 serviceCall /path0 PUT"
+			"from":"S4126 endpoint /path4 PUT",
+			"to":"S7310 serviceCall /path116 PUT"
 		},
 		{
-			"from":"S4126 endpoint /path0 GET",
-			"to":"S3667 serviceCall /path6 POST"
+			"from":"S4126 endpoint /path0 DELETE",
+			"to":"S4403 serviceCall /path7 GET"
+		},
+		{
+			"from":"S4126 endpoint /path0 DELETE",
+			"to":"S1540 serviceCall /path25 GET"
 		},
 		{
 			"from":"S4126 endpoint /path2 PUT",
-			"to":"S4149 serviceCall /path25 DELETE"
+			"to":"S295 serviceCall /path82 GET"
+		},
+		{
+			"from":"S4126 endpoint /path0 DELETE",
+			"to":"S5764 serviceCall /path137 PUT"
 		},
 		{
 			"from":"S4126 endpoint /path2 PUT",
-			"to":"S2300 serviceCall /path9 GET"
+			"to":"S4665 serviceCall /path52 POST"
 		},
 		{
-			"from":"S4126 endpoint /path0 GET",
-			"to":"S3948 serviceCall /path13 PUT"
-		},
-		{
-			"from":"S4126 endpoint /path3 POST",
-			"to":"S4147 serviceCall /path53 POST"
-		},
-		{
-			"from":"S4126 endpoint /path0 GET",
-			"to":"S1145 serviceCall /path44 POST"
+			"from":"S4126 endpoint /path0 DELETE",
+			"to":"S9856 serviceCall /path57 DELETE"
 		}
 	],
 	"name":"S4126",
 	"serviceCall":[
 		{
-			"id":"S3503 serviceCall /path0 PUT",
+			"id":"S7310 serviceCall /path116 PUT",
 			"method":"PUT",
-			"path":"/path0",
+			"path":"/path116",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S3667 serviceCall /path6 POST",
-			"method":"POST",
-			"path":"/path6",
+			"id":"S4403 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S4149 serviceCall /path25 DELETE",
-			"method":"DELETE",
+			"id":"S1540 serviceCall /path25 GET",
+			"method":"GET",
 			"path":"/path25",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S2300 serviceCall /path9 GET",
+			"id":"S295 serviceCall /path82 GET",
 			"method":"GET",
-			"path":"/path9",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3948 serviceCall /path13 PUT",
-			"method":"PUT",
-			"path":"/path13",
+			"path":"/path82",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S4147 serviceCall /path53 POST",
-			"method":"POST",
-			"path":"/path53",
+			"id":"S5764 serviceCall /path137 PUT",
+			"method":"PUT",
+			"path":"/path137",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		},
 		{
-			"id":"S1145 serviceCall /path44 POST",
+			"id":"S4665 serviceCall /path52 POST",
 			"method":"POST",
-			"path":"/path44",
+			"path":"/path52",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
+		},
+		{
+			"id":"S9856 serviceCall /path57 DELETE",
+			"method":"DELETE",
+			"path":"/path57",
+			"provider":"endpoint",
+			"unTest":false
 		}
 	],
 	"swagger":"",

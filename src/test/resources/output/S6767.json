@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S6767 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S6767 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6767 endpoint /path0 DELETE",
+			"to":"S5825 serviceCall /path7 POST"
+		},
+		{
+			"from":"S6767 endpoint /path0 DELETE",
+			"to":"S3883 serviceCall /path6 DELETE"
+		}
+	],
+	"name":"S6767",
+	"serviceCall":[
+		{
+			"id":"S5825 serviceCall /path7 POST",
+			"method":"POST",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3883 serviceCall /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

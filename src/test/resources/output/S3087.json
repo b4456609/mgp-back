@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S3087 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S3087 endpoint /path0 DELETE",
+          "method": "DELETE",
 			"path":"/path0"
 		},
 		{
@@ -11,56 +11,57 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S3087 endpoint /path2 POST",
-			"method":"POST",
+          "id": "S3087 endpoint /path2 PUT",
+          "method": "PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S3087 endpoint /path3 POST",
-			"method":"POST",
+          "id": "S3087 endpoint /path3 GET",
+          "method": "GET",
 			"path":"/path3"
 		},
 		{
 			"id":"S3087 endpoint /path4 GET",
 			"method":"GET",
 			"path":"/path4"
-		},
-		{
-			"id":"S3087 endpoint /path5 POST",
-			"method":"POST",
-			"path":"/path5"
-		},
-		{
-			"id":"S3087 endpoint /path6 DELETE",
-			"method":"DELETE",
-			"path":"/path6"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3087 endpoint /path2 POST",
-			"to":"S3242 serviceCall /path68 POST"
+          "from": "S3087 endpoint /path0 DELETE",
+          "to": "S6061 serviceCall /path52 PUT"
 		},
 		{
-			"from":"S3087 endpoint /path2 POST",
-			"to":"S1312 serviceCall /path43 GET"
+          "from": "S3087 endpoint /path0 DELETE",
+          "to": "S4524 serviceCall /path19 POST"
+        },
+      {
+        "from": "S3087 endpoint /path2 PUT",
+        "to": "S4791 serviceCall /path10 POST"
 		}
 	],
 	"name":"S3087",
 	"serviceCall":[
 		{
-			"id":"S3242 serviceCall /path68 POST",
-			"method":"POST",
-			"path":"/path68",
+          "id": "S6061 serviceCall /path52 PUT",
+          "method": "PUT",
+          "path": "/path52",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1312 serviceCall /path43 GET",
-			"method":"GET",
-			"path":"/path43",
+          "id": "S4524 serviceCall /path19 POST",
+          "method": "POST",
+          "path": "/path19",
 			"provider":"endpoint",
 			"unTest":true
+        },
+      {
+        "id": "S4791 serviceCall /path10 POST",
+        "method": "POST",
+        "path": "/path10",
+        "provider": "endpoint",
+        "unTest": false
 		}
 	],
 	"swagger":"",

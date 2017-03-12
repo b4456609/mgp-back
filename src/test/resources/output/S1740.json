@@ -1,19 +1,84 @@
 {
 	"endpoint":[
 		{
-			"id":"S1740 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S1740 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
-			"id":"S1740 endpoint /path1 GET",
-			"method":"GET",
+			"id":"S1740 endpoint /path1 POST",
+			"method":"POST",
 			"path":"/path1"
+		},
+		{
+			"id":"S1740 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S1740 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S1740 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S1740 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S1740 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S1740 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S1740 endpoint /path0 POST",
+			"to":"S5264 serviceCall /path22 DELETE"
+		},
+		{
+			"from":"S1740 endpoint /path0 POST",
+			"to":"S107 serviceCall /path11 DELETE"
+		},
+		{
+			"from":"S1740 endpoint /path4 PUT",
+			"to":"S6818 serviceCall /path13 POST"
+		}
+	],
 	"name":"S1740",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S5264 serviceCall /path22 DELETE",
+			"method":"DELETE",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S107 serviceCall /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6818 serviceCall /path13 POST",
+			"method":"POST",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

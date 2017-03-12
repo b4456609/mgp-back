@@ -1,0 +1,210 @@
+{
+	"endpoint":[
+		{
+			"id":"S6380 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S6380 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S6380 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S6380 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S6380 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S6380 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S6380 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S6380 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S6380 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S6380 endpoint /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9"
+		},
+		{
+			"id":"S6380 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S6380 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
+		},
+		{
+			"id":"S6380 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S6380 endpoint /path13 GET",
+			"method":"GET",
+			"path":"/path13"
+		},
+		{
+			"id":"S6380 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S6380 endpoint /path15 PUT",
+			"method":"PUT",
+			"path":"/path15"
+		},
+		{
+			"id":"S6380 endpoint /path16 POST",
+			"method":"POST",
+			"path":"/path16"
+		},
+		{
+			"id":"S6380 endpoint /path17 POST",
+			"method":"POST",
+			"path":"/path17"
+		},
+		{
+			"id":"S6380 endpoint /path18 POST",
+			"method":"POST",
+			"path":"/path18"
+		},
+		{
+			"id":"S6380 endpoint /path19 PUT",
+			"method":"PUT",
+			"path":"/path19"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6380 endpoint /path2 DELETE",
+			"to":"S3780 serviceCall /path9 GET"
+		},
+		{
+			"from":"S6380 endpoint /path3 DELETE",
+			"to":"S1648 serviceCall /path191 DELETE"
+		},
+		{
+			"from":"S6380 endpoint /path2 DELETE",
+			"to":"S1011 serviceCall /path82 POST"
+		},
+		{
+			"from":"S6380 endpoint /path0 POST",
+			"to":"S5014 serviceCall /path84 POST"
+		},
+		{
+			"from":"S6380 endpoint /path0 POST",
+			"to":"S2232 serviceCall /path20 GET"
+		},
+		{
+			"from":"S6380 endpoint /path1 POST",
+			"to":"S5571 serviceCall /path59 POST"
+		},
+		{
+			"from":"S6380 endpoint /path0 POST",
+			"to":"S5103 serviceCall /path86 PUT"
+		},
+		{
+			"from":"S6380 endpoint /path0 POST",
+			"to":"S7362 serviceCall /path23 DELETE"
+		},
+		{
+			"from":"S6380 endpoint /path1 POST",
+			"to":"S2216 serviceCall /path58 PUT"
+		}
+	],
+	"name":"S6380",
+	"serviceCall":[
+		{
+			"id":"S3780 serviceCall /path9 GET",
+			"method":"GET",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1648 serviceCall /path191 DELETE",
+			"method":"DELETE",
+			"path":"/path191",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1011 serviceCall /path82 POST",
+			"method":"POST",
+			"path":"/path82",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5014 serviceCall /path84 POST",
+			"method":"POST",
+			"path":"/path84",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2232 serviceCall /path20 GET",
+			"method":"GET",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5571 serviceCall /path59 POST",
+			"method":"POST",
+			"path":"/path59",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5103 serviceCall /path86 PUT",
+			"method":"PUT",
+			"path":"/path86",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7362 serviceCall /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2216 serviceCall /path58 PUT",
+			"method":"PUT",
+			"path":"/path58",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

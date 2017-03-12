@@ -1,0 +1,116 @@
+{
+  "endpoint": [
+    {
+      "id": "S6390 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S6390 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S6390 endpoint /path0 PUT",
+      "to": "S7103 serviceCall /path1 GET"
+    },
+    {
+      "from": "S6390 endpoint /path1 POST",
+      "to": "S147 serviceCall /path2 PUT"
+    },
+    {
+      "from": "S6390 endpoint /path0 PUT",
+      "to": "S1472 serviceCall /path7 PUT"
+    },
+    {
+      "from": "S6390 endpoint /path1 POST",
+      "to": "S9041 serviceCall /path10 GET"
+    },
+    {
+      "from": "S6390 endpoint /path0 PUT",
+      "to": "S7456 serviceCall /path94 DELETE"
+    },
+    {
+      "from": "S6390 endpoint /path1 POST",
+      "to": "S545 serviceCall /path3 PUT"
+    },
+    {
+      "from": "S6390 endpoint /path0 PUT",
+      "to": "S7501 serviceCall /path0 POST"
+    },
+    {
+      "from": "S6390 endpoint /path0 PUT",
+      "to": "S6648 serviceCall /path41 GET"
+    }
+  ],
+  "name": "S6390",
+  "serviceCall": [
+    {
+      "id": "S7103 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S147 serviceCall /path2 PUT",
+      "method": "PUT",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S3677 serviceCall /path125 GET",
+      "method": "GET",
+      "path": "/path125",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1472 serviceCall /path7 PUT",
+      "method": "PUT",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9041 serviceCall /path10 GET",
+      "method": "GET",
+      "path": "/path10",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7456 serviceCall /path94 DELETE",
+      "method": "DELETE",
+      "path": "/path94",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S545 serviceCall /path3 PUT",
+      "method": "PUT",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7501 serviceCall /path0 POST",
+      "method": "POST",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6648 serviceCall /path41 GET",
+      "method": "GET",
+      "path": "/path41",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

@@ -1,0 +1,47 @@
+{
+	"endpoint":[
+		{
+			"id":"S9717 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S9717 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S9717 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S9717 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S9717 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9717 endpoint /path0 DELETE",
+			"to":"S1826 serviceCall /path116 PUT"
+		}
+	],
+	"name":"S9717",
+	"serviceCall":[
+		{
+			"id":"S1826 serviceCall /path116 PUT",
+			"method":"PUT",
+			"path":"/path116",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

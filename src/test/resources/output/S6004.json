@@ -1,0 +1,113 @@
+{
+	"endpoint":[
+		{
+			"id":"S6004 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S6004 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S6004 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S6004 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S6004 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6004 endpoint /path0 PUT",
+			"to":"S6430 serviceCall /path109 PUT"
+		},
+		{
+			"from":"S6004 endpoint /path3 PUT",
+			"to":"S4117 serviceCall /path4 PUT"
+		},
+		{
+			"from":"S6004 endpoint /path0 PUT",
+			"to":"S1835 serviceCall /path4 GET"
+		},
+		{
+			"from":"S6004 endpoint /path0 PUT",
+			"to":"S4790 serviceCall /path52 DELETE"
+		},
+		{
+			"from":"S6004 endpoint /path0 PUT",
+			"to":"S172 serviceCall /path25 POST"
+		},
+		{
+			"from":"S6004 endpoint /path2 GET",
+			"to":"S382 serviceCall /path42 GET"
+		},
+		{
+			"from":"S6004 endpoint /path0 PUT",
+			"to":"S1952 serviceCall /path10 POST"
+		}
+	],
+	"name":"S6004",
+	"serviceCall":[
+		{
+			"id":"S6430 serviceCall /path109 PUT",
+			"method":"PUT",
+			"path":"/path109",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4117 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1835 serviceCall /path4 GET",
+			"method":"GET",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4790 serviceCall /path52 DELETE",
+			"method":"DELETE",
+			"path":"/path52",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S172 serviceCall /path25 POST",
+			"method":"POST",
+			"path":"/path25",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S382 serviceCall /path42 GET",
+			"method":"GET",
+			"path":"/path42",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1952 serviceCall /path10 POST",
+			"method":"POST",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

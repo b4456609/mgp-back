@@ -1,48 +1,49 @@
 {
 	"endpoint":[
 		{
-			"id":"S3123 endpoint /path0 PUT",
-			"method":"PUT",
+			"id":"S3123 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S3123 endpoint /path1 POST",
-			"method":"POST",
+			"id":"S3123 endpoint /path1 PUT",
+			"method":"PUT",
 			"path":"/path1"
 		},
 		{
-			"id":"S3123 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		}
-	],
-	"endpointDep":[
-		{
-			"from":"S3123 endpoint /path0 PUT",
-			"to":"S4782 serviceCall /path86 DELETE"
-		},
-		{
-			"from":"S3123 endpoint /path0 PUT",
-			"to":"S3539 serviceCall /path55 GET"
-		}
-	],
-	"name":"S3123",
-	"serviceCall":[
-		{
-			"id":"S4782 serviceCall /path86 DELETE",
+			"id":"S3123 endpoint /path2 DELETE",
 			"method":"DELETE",
-			"path":"/path86",
-			"provider":"endpoint",
-			"unTest":false
+			"path":"/path2"
 		},
 		{
-			"id":"S3539 serviceCall /path55 GET",
+			"id":"S3123 endpoint /path3 GET",
 			"method":"GET",
-			"path":"/path55",
-			"provider":"endpoint",
-			"unTest":true
+			"path":"/path3"
+		},
+		{
+			"id":"S3123 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S3123 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S3123 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S3123 endpoint /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7"
 		}
 	],
+	"endpointDep":[],
+	"name":"S3123",
+	"serviceCall":[],
 	"swagger":"",
 	"timestamp":0
 }

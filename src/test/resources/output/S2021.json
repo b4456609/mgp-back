@@ -6,93 +6,23 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S2021 endpoint /path1 GET",
-			"method":"GET",
+			"id":"S2021 endpoint /path1 POST",
+			"method":"POST",
 			"path":"/path1"
-		},
-		{
-			"id":"S2021 endpoint /path2 DELETE",
-			"method":"DELETE",
-			"path":"/path2"
-		},
-		{
-			"id":"S2021 endpoint /path3 GET",
-			"method":"GET",
-			"path":"/path3"
-		},
-		{
-			"id":"S2021 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S2021 endpoint /path4 GET",
-			"to":"S3440 serviceCall /path49 DELETE"
-		},
-		{
-			"from":"S2021 endpoint /path0 DELETE",
-			"to":"S2297 serviceCall /path14 GET"
-		},
-		{
-			"from":"S2021 endpoint /path1 GET",
-			"to":"S3913 serviceCall /path22 POST"
-		},
-		{
-			"from":"S2021 endpoint /path0 DELETE",
-			"to":"S1777 serviceCall /path160 GET"
-		},
-		{
-			"from":"S2021 endpoint /path0 DELETE",
-			"to":"S3785 serviceCall /path8 POST"
-		},
-		{
-			"from":"S2021 endpoint /path0 DELETE",
-			"to":"S3410 serviceCall /path12 DELETE"
+			"from":"S2021 endpoint /path1 POST",
+			"to":"S43 serviceCall /path0 PUT"
 		}
 	],
 	"name":"S2021",
 	"serviceCall":[
 		{
-			"id":"S3440 serviceCall /path49 DELETE",
-			"method":"DELETE",
-			"path":"/path49",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2297 serviceCall /path14 GET",
-			"method":"GET",
-			"path":"/path14",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3913 serviceCall /path22 POST",
-			"method":"POST",
-			"path":"/path22",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1777 serviceCall /path160 GET",
-			"method":"GET",
-			"path":"/path160",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3785 serviceCall /path8 POST",
-			"method":"POST",
-			"path":"/path8",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3410 serviceCall /path12 DELETE",
-			"method":"DELETE",
-			"path":"/path12",
+			"id":"S43 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
 			"provider":"endpoint",
 			"unTest":false
 		}

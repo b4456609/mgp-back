@@ -4,41 +4,53 @@
 			"id":"S4084 endpoint /path0 GET",
 			"method":"GET",
 			"path":"/path0"
-		},
-		{
-			"id":"S4084 endpoint /path1 GET",
-			"method":"GET",
-			"path":"/path1"
-		},
-		{
-			"id":"S4084 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		},
-		{
-			"id":"S4084 endpoint /path3 GET",
-			"method":"GET",
-			"path":"/path3"
-		},
-		{
-			"id":"S4084 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
-		},
-		{
-			"id":"S4084 endpoint /path5 PUT",
-			"method":"PUT",
-			"path":"/path5"
-		},
-		{
-			"id":"S4084 endpoint /path6 PUT",
-			"method":"PUT",
-			"path":"/path6"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S4084 endpoint /path0 GET",
+			"to":"S7047 serviceCall /path78 PUT"
+		},
+		{
+			"from":"S4084 endpoint /path0 GET",
+			"to":"S7219 serviceCall /path60 POST"
+		},
+		{
+			"from":"S4084 endpoint /path0 GET",
+			"to":"S8773 serviceCall /path1 PUT"
+		}
+	],
 	"name":"S4084",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S9137 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7047 serviceCall /path78 PUT",
+			"method":"PUT",
+			"path":"/path78",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7219 serviceCall /path60 POST",
+			"method":"POST",
+			"path":"/path60",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8773 serviceCall /path1 PUT",
+			"method":"PUT",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

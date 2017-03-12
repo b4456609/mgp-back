@@ -1,0 +1,110 @@
+{
+	"endpoint":[
+		{
+			"id":"S9060 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S9060 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S9060 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S9060 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S9060 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S9060 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S9060 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		},
+		{
+			"id":"S9060 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S9060 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S9060 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S9060 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9060 endpoint /path1 POST",
+			"to":"S4852 serviceCall /path64 GET"
+		},
+		{
+			"from":"S9060 endpoint /path5 DELETE",
+			"to":"S4083 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S9060 endpoint /path0 POST",
+			"to":"S445 serviceCall /path17 DELETE"
+		},
+		{
+			"from":"S9060 endpoint /path2 GET",
+			"to":"S9763 serviceCall /path8 POST"
+		}
+	],
+	"name":"S9060",
+	"serviceCall":[
+		{
+			"id":"S4852 serviceCall /path64 GET",
+			"method":"GET",
+			"path":"/path64",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4083 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S445 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9763 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,90 @@
+{
+  "endpoint": [
+    {
+      "id": "S5840 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S5840 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5840 endpoint /path0 GET",
+      "to": "S7294 serviceCall /path9 PUT"
+    },
+    {
+      "from": "S5840 endpoint /path0 GET",
+      "to": "S7062 serviceCall /path10 POST"
+    },
+    {
+      "from": "S5840 endpoint /path0 GET",
+      "to": "S6647 serviceCall /path35 PUT"
+    },
+    {
+      "from": "S5840 endpoint /path0 GET",
+      "to": "S7726 serviceCall /path0 PUT"
+    },
+    {
+      "from": "S5840 endpoint /path0 GET",
+      "to": "S4098 serviceCall /path2 PUT"
+    }
+  ],
+  "name": "S5840",
+  "serviceCall": [
+    {
+      "id": "S7294 serviceCall /path9 PUT",
+      "method": "PUT",
+      "path": "/path9",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7062 serviceCall /path10 POST",
+      "method": "POST",
+      "path": "/path10",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6647 serviceCall /path35 PUT",
+      "method": "PUT",
+      "path": "/path35",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7726 serviceCall /path0 PUT",
+      "method": "PUT",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S9652 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S4098 serviceCall /path2 PUT",
+      "method": "PUT",
+      "path": "/path2",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2140 serviceCall /path0 POST",
+      "method": "POST",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

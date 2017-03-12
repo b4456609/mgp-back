@@ -1,49 +1,70 @@
 {
 	"endpoint":[
 		{
-			"id":"S4188 endpoint /path0 PUT",
-			"method":"PUT",
+          "id": "S4188 endpoint /path0 GET",
+          "method": "GET",
 			"path":"/path0"
+        }
+    ],
+  "endpointDep": [
+    {
+      "from": "S4188 endpoint /path0 GET",
+      "to": "S5912 serviceCall /path5 GET"
 		},
 		{
-			"id":"S4188 endpoint /path1 PUT",
+          "from": "S4188 endpoint /path0 GET",
+          "to": "S8041 serviceCall /path0 DELETE"
+        },
+    {
+      "from": "S4188 endpoint /path0 GET",
+      "to": "S9898 serviceCall /path11 POST"
+    }
+  ],
+  "name": "S4188",
+  "serviceCall": [
+    {
+      "id": "S8009 serviceCall /path0 PUT",
 			"method":"PUT",
-			"path":"/path1"
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": false
 		},
 		{
-			"id":"S4188 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		},
-		{
-			"id":"S4188 endpoint /path3 GET",
+          "id": "S5912 serviceCall /path5 GET",
 			"method":"GET",
-			"path":"/path3"
+          "path": "/path5",
+          "provider": "endpoint",
+          "unTest": true
 		},
 		{
-			"id":"S4188 endpoint /path4 POST",
-			"method":"POST",
-			"path":"/path4"
-		},
-		{
-			"id":"S4188 endpoint /path5 POST",
-			"method":"POST",
-			"path":"/path5"
-		},
-		{
-			"id":"S4188 endpoint /path6 DELETE",
+          "id": "S8041 serviceCall /path0 DELETE",
 			"method":"DELETE",
-			"path":"/path6"
+          "path": "/path0",
+          "provider": "endpoint",
+          "unTest": true
 		},
 		{
-			"id":"S4188 endpoint /path7 DELETE",
-			"method":"DELETE",
-			"path":"/path7"
+          "id": "S9898 serviceCall /path11 POST",
+          "method": "POST",
+          "path": "/path11",
+          "provider": "endpoint",
+          "unTest": false
+        },
+    {
+      "id": "S6202 serviceCall /path12 GET",
+      "method": "GET",
+      "path": "/path12",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1088 serviceCall /path28 GET",
+      "method": "GET",
+      "path": "/path28",
+      "provider": "endpoint",
+      "unTest": true
 		}
 	],
-	"endpointDep":[],
-	"name":"S4188",
-	"serviceCall":[],
 	"swagger":"",
 	"timestamp":0
 }

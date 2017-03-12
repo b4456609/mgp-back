@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S3599 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S3599 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
@@ -11,8 +11,8 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S3599 endpoint /path2 GET",
-			"method":"GET",
+			"id":"S3599 endpoint /path2 POST",
+			"method":"POST",
 			"path":"/path2"
 		},
 		{
@@ -21,29 +21,58 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S3599 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S3599 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S3599 endpoint /path5 GET",
-			"method":"GET",
+			"id":"S3599 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
 		},
 		{
-			"id":"S3599 endpoint /path6 DELETE",
-			"method":"DELETE",
+			"id":"S3599 endpoint /path6 PUT",
+			"method":"PUT",
 			"path":"/path6"
 		},
 		{
-			"id":"S3599 endpoint /path7 POST",
-			"method":"POST",
+			"id":"S3599 endpoint /path7 DELETE",
+			"method":"DELETE",
 			"path":"/path7"
+		},
+		{
+			"id":"S3599 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S3599 endpoint /path0 POST",
+			"to":"S6512 serviceCall /path29 PUT"
+		},
+		{
+			"from":"S3599 endpoint /path0 POST",
+			"to":"S8172 serviceCall /path84 DELETE"
+		}
+	],
 	"name":"S3599",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S6512 serviceCall /path29 PUT",
+			"method":"PUT",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8172 serviceCall /path84 DELETE",
+			"method":"DELETE",
+			"path":"/path84",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

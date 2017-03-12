@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S8481 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8481 endpoint /path0 GET",
+			"to":"S9868 serviceCall /path13 GET"
+		}
+	],
+	"name":"S8481",
+	"serviceCall":[
+		{
+			"id":"S9868 serviceCall /path13 GET",
+			"method":"GET",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7044 serviceCall /path40 PUT",
+			"method":"PUT",
+			"path":"/path40",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

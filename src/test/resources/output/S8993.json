@@ -1,0 +1,103 @@
+{
+	"endpoint":[
+		{
+			"id":"S8993 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S8993 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S8993 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8993 endpoint /path2 PUT",
+			"to":"S2230 serviceCall /path10 DELETE"
+		},
+		{
+			"from":"S8993 endpoint /path2 PUT",
+			"to":"S4965 serviceCall /path82 GET"
+		},
+		{
+			"from":"S8993 endpoint /path1 POST",
+			"to":"S5707 serviceCall /path80 POST"
+		},
+		{
+			"from":"S8993 endpoint /path0 POST",
+			"to":"S9882 serviceCall /path10 PUT"
+		},
+		{
+			"from":"S8993 endpoint /path1 POST",
+			"to":"S6028 serviceCall /path14 DELETE"
+		},
+		{
+			"from":"S8993 endpoint /path0 POST",
+			"to":"S914 serviceCall /path69 DELETE"
+		},
+		{
+			"from":"S8993 endpoint /path0 POST",
+			"to":"S3701 serviceCall /path12 PUT"
+		}
+	],
+	"name":"S8993",
+	"serviceCall":[
+		{
+			"id":"S2230 serviceCall /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4965 serviceCall /path82 GET",
+			"method":"GET",
+			"path":"/path82",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5707 serviceCall /path80 POST",
+			"method":"POST",
+			"path":"/path80",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9882 serviceCall /path10 PUT",
+			"method":"PUT",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6028 serviceCall /path14 DELETE",
+			"method":"DELETE",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S914 serviceCall /path69 DELETE",
+			"method":"DELETE",
+			"path":"/path69",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3701 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

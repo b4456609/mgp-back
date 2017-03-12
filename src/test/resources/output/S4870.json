@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S4870 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S4870 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
@@ -16,96 +16,119 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S4870 endpoint /path3 DELETE",
-			"method":"DELETE",
+			"id":"S4870 endpoint /path3 GET",
+			"method":"GET",
 			"path":"/path3"
 		},
 		{
-			"id":"S4870 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S4870 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
+		},
+		{
+			"id":"S4870 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S4870 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S4870 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S4870 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S4870 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S4870 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S4870 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S4870 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S4870 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S2561 serviceCall /path68 PUT"
-		},
-		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S479 serviceCall /path8 POST"
+			"from":"S4870 endpoint /path1 GET",
+			"to":"S4288 serviceCall /path18 DELETE"
 		},
 		{
 			"from":"S4870 endpoint /path1 GET",
-			"to":"S2738 serviceCall /path0 POST"
+			"to":"S3152 serviceCall /path1 DELETE"
 		},
 		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S4479 serviceCall /path0 GET"
+			"from":"S4870 endpoint /path0 GET",
+			"to":"S5969 serviceCall /path29 PUT"
 		},
 		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S3032 serviceCall /path11 GET"
+			"from":"S4870 endpoint /path1 GET",
+			"to":"S256 serviceCall /path18 DELETE"
 		},
 		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S3264 serviceCall /path2 PUT"
-		},
-		{
-			"from":"S4870 endpoint /path0 DELETE",
-			"to":"S2639 serviceCall /path3 DELETE"
+			"from":"S4870 endpoint /path3 GET",
+			"to":"S4039 serviceCall /path16 POST"
 		}
 	],
 	"name":"S4870",
 	"serviceCall":[
 		{
-			"id":"S2561 serviceCall /path68 PUT",
-			"method":"PUT",
-			"path":"/path68",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S479 serviceCall /path8 POST",
-			"method":"POST",
-			"path":"/path8",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2738 serviceCall /path0 POST",
-			"method":"POST",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S4479 serviceCall /path0 GET",
-			"method":"GET",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3032 serviceCall /path11 GET",
-			"method":"GET",
-			"path":"/path11",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3264 serviceCall /path2 PUT",
-			"method":"PUT",
-			"path":"/path2",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S2639 serviceCall /path3 DELETE",
+			"id":"S4288 serviceCall /path18 DELETE",
 			"method":"DELETE",
-			"path":"/path3",
+			"path":"/path18",
 			"provider":"endpoint",
 			"unTest":false
+		},
+		{
+			"id":"S3152 serviceCall /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5969 serviceCall /path29 PUT",
+			"method":"PUT",
+			"path":"/path29",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S256 serviceCall /path18 DELETE",
+			"method":"DELETE",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4039 serviceCall /path16 POST",
+			"method":"POST",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":true
 		}
 	],
 	"swagger":"",

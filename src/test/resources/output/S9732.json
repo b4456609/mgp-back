@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S9732 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S9732 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S9732 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9732 endpoint /path0 GET",
+			"to":"S2990 serviceCall /path80 POST"
+		}
+	],
+	"name":"S9732",
+	"serviceCall":[
+		{
+			"id":"S2990 serviceCall /path80 POST",
+			"method":"POST",
+			"path":"/path80",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

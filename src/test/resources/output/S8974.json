@@ -1,0 +1,111 @@
+{
+	"endpoint":[
+		{
+			"id":"S8974 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S8974 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S8974 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S8974 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S8974 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S8974 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S8974 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S8974 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S8974 endpoint /path8 DELETE",
+			"method":"DELETE",
+			"path":"/path8"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8974 endpoint /path1 PUT",
+			"to":"S1621 serviceCall /path4 POST"
+		},
+		{
+			"from":"S8974 endpoint /path0 DELETE",
+			"to":"S5103 serviceCall /path17 DELETE"
+		},
+		{
+			"from":"S8974 endpoint /path0 DELETE",
+			"to":"S3488 serviceCall /path62 DELETE"
+		},
+		{
+			"from":"S8974 endpoint /path3 GET",
+			"to":"S5482 serviceCall /path152 PUT"
+		},
+		{
+			"from":"S8974 endpoint /path0 DELETE",
+			"to":"S3628 serviceCall /path12 PUT"
+		}
+	],
+	"name":"S8974",
+	"serviceCall":[
+		{
+			"id":"S1621 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5103 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3488 serviceCall /path62 DELETE",
+			"method":"DELETE",
+			"path":"/path62",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5482 serviceCall /path152 PUT",
+			"method":"PUT",
+			"path":"/path152",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3628 serviceCall /path12 PUT",
+			"method":"PUT",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

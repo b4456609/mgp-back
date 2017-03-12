@@ -1,82 +1,129 @@
 {
 	"endpoint":[
 		{
-			"id":"S3786 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S3786 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
+        },
+      {
+        "id": "S3786 endpoint /path1 GET",
+        "method": "GET",
+        "path": "/path1"
+      },
+      {
+        "id": "S3786 endpoint /path2 POST",
+        "method": "POST",
+        "path": "/path2"
+      },
+      {
+        "id": "S3786 endpoint /path3 GET",
+        "method": "GET",
+        "path": "/path3"
+      },
+      {
+        "id": "S3786 endpoint /path4 DELETE",
+        "method": "DELETE",
+        "path": "/path4"
+      },
+      {
+        "id": "S3786 endpoint /path5 GET",
+        "method": "GET",
+        "path": "/path5"
+      },
+      {
+        "id": "S3786 endpoint /path6 PUT",
+        "method": "PUT",
+        "path": "/path6"
+      },
+      {
+        "id": "S3786 endpoint /path7 DELETE",
+        "method": "DELETE",
+        "path": "/path7"
+      },
+      {
+        "id": "S3786 endpoint /path8 POST",
+        "method": "POST",
+        "path": "/path8"
+      },
+      {
+        "id": "S3786 endpoint /path9 POST",
+        "method": "POST",
+        "path": "/path9"
+      },
+      {
+        "id": "S3786 endpoint /path10 PUT",
+        "method": "PUT",
+        "path": "/path10"
+      },
+      {
+        "id": "S3786 endpoint /path11 POST",
+        "method": "POST",
+        "path": "/path11"
+      },
+      {
+        "id": "S3786 endpoint /path12 DELETE",
+        "method": "DELETE",
+        "path": "/path12"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3786 endpoint /path0 GET",
-			"to":"S1181 serviceCall /path14 DELETE"
+          "from": "S3786 endpoint /path0 POST",
+          "to": "S3999 serviceCall /path42 POST"
 		},
 		{
-			"from":"S3786 endpoint /path0 GET",
-			"to":"S3699 serviceCall /path31 GET"
+          "from": "S3786 endpoint /path0 POST",
+          "to": "S7845 serviceCall /path45 PUT"
 		},
 		{
-			"from":"S3786 endpoint /path0 GET",
-			"to":"S2060 serviceCall /path12 POST"
+          "from": "S3786 endpoint /path1 GET",
+          "to": "S2131 serviceCall /path23 GET"
+        },
+      {
+        "from": "S3786 endpoint /path3 GET",
+        "to": "S2257 serviceCall /path148 GET"
+      },
+      {
+        "from": "S3786 endpoint /path0 POST",
+        "to": "S7417 serviceCall /path11 GET"
 		}
 	],
 	"name":"S3786",
 	"serviceCall":[
 		{
-			"id":"S3447 serviceCall /path9 GET",
-			"method":"GET",
-			"path":"/path9",
+          "id": "S3999 serviceCall /path42 POST",
+          "method": "POST",
+          "path": "/path42",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S1181 serviceCall /path14 DELETE",
-			"method":"DELETE",
-			"path":"/path14",
+          "id": "S7845 serviceCall /path45 PUT",
+          "method": "PUT",
+          "path": "/path45",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3522 serviceCall /path1 GET",
+          "id": "S2131 serviceCall /path23 GET",
 			"method":"GET",
-			"path":"/path1",
+          "path": "/path23",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S4924 serviceCall /path152 GET",
+          "id": "S2257 serviceCall /path148 GET",
 			"method":"GET",
-			"path":"/path152",
+          "path": "/path148",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S3699 serviceCall /path31 GET",
+          "id": "S7417 serviceCall /path11 GET",
 			"method":"GET",
-			"path":"/path31",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1896 serviceCall /path6 DELETE",
-			"method":"DELETE",
-			"path":"/path6",
+          "path": "/path11",
 			"provider":"endpoint",
 			"unTest":true
-		},
-		{
-			"id":"S1145 serviceCall /path36 DELETE",
-			"method":"DELETE",
-			"path":"/path36",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S2060 serviceCall /path12 POST",
-			"method":"POST",
-			"path":"/path12",
-			"provider":"endpoint",
-			"unTest":false
 		}
 	],
 	"swagger":"",

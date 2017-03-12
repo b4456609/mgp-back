@@ -1,0 +1,110 @@
+{
+	"endpoint":[
+		{
+			"id":"S5694 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S5694 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S5694 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5694 endpoint /path2 GET",
+			"to":"S5791 serviceCall /path11 DELETE"
+		},
+		{
+			"from":"S5694 endpoint /path0 PUT",
+			"to":"S3784 serviceCall /path0 PUT"
+		},
+		{
+			"from":"S5694 endpoint /path0 PUT",
+			"to":"S4766 serviceCall /path38 PUT"
+		},
+		{
+			"from":"S5694 endpoint /path1 POST",
+			"to":"S1385 serviceCall /path9 DELETE"
+		},
+		{
+			"from":"S5694 endpoint /path0 PUT",
+			"to":"S3343 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S5694 endpoint /path0 PUT",
+			"to":"S9468 serviceCall /path147 GET"
+		},
+		{
+			"from":"S5694 endpoint /path1 POST",
+			"to":"S6371 serviceCall /path1 PUT"
+		}
+	],
+	"name":"S5694",
+	"serviceCall":[
+		{
+			"id":"S8857 serviceCall /path61 PUT",
+			"method":"PUT",
+			"path":"/path61",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5791 serviceCall /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3784 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4766 serviceCall /path38 PUT",
+			"method":"PUT",
+			"path":"/path38",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1385 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3343 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S9468 serviceCall /path147 GET",
+			"method":"GET",
+			"path":"/path147",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6371 serviceCall /path1 PUT",
+			"method":"PUT",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

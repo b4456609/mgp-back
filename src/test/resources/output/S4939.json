@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S4939 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4939 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
@@ -11,8 +11,8 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S4939 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S4939 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
@@ -21,116 +21,30 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S4939 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S4939 endpoint /path4 POST",
+			"method":"POST",
 			"path":"/path4"
 		},
 		{
-			"id":"S4939 endpoint /path5 POST",
-			"method":"POST",
+			"id":"S4939 endpoint /path5 PUT",
+			"method":"PUT",
 			"path":"/path5"
-		},
-		{
-			"id":"S4939 endpoint /path6 POST",
-			"method":"POST",
-			"path":"/path6"
-		},
-		{
-			"id":"S4939 endpoint /path7 PUT",
-			"method":"PUT",
-			"path":"/path7"
-		},
-		{
-			"id":"S4939 endpoint /path8 PUT",
-			"method":"PUT",
-			"path":"/path8"
-		},
-		{
-			"id":"S4939 endpoint /path9 DELETE",
-			"method":"DELETE",
-			"path":"/path9"
-		},
-		{
-			"id":"S4939 endpoint /path10 GET",
-			"method":"GET",
-			"path":"/path10"
-		},
-		{
-			"id":"S4939 endpoint /path11 GET",
-			"method":"GET",
-			"path":"/path11"
-		},
-		{
-			"id":"S4939 endpoint /path12 POST",
-			"method":"POST",
-			"path":"/path12"
-		},
-		{
-			"id":"S4939 endpoint /path13 DELETE",
-			"method":"DELETE",
-			"path":"/path13"
-		},
-		{
-			"id":"S4939 endpoint /path14 DELETE",
-			"method":"DELETE",
-			"path":"/path14"
-		},
-		{
-			"id":"S4939 endpoint /path15 GET",
-			"method":"GET",
-			"path":"/path15"
-		},
-		{
-			"id":"S4939 endpoint /path16 DELETE",
-			"method":"DELETE",
-			"path":"/path16"
-		},
-		{
-			"id":"S4939 endpoint /path17 PUT",
-			"method":"PUT",
-			"path":"/path17"
-		},
-		{
-			"id":"S4939 endpoint /path18 PUT",
-			"method":"PUT",
-			"path":"/path18"
-		},
-		{
-			"id":"S4939 endpoint /path19 DELETE",
-			"method":"DELETE",
-			"path":"/path19"
-		},
-		{
-			"id":"S4939 endpoint /path20 PUT",
-			"method":"PUT",
-			"path":"/path20"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4939 endpoint /path0 GET",
-			"to":"S851 serviceCall /path5 PUT"
-		},
-		{
-			"from":"S4939 endpoint /path0 GET",
-			"to":"S4812 serviceCall /path7 PUT"
+			"from":"S4939 endpoint /path0 PUT",
+			"to":"S9933 serviceCall /path0 PUT"
 		}
 	],
 	"name":"S4939",
 	"serviceCall":[
 		{
-			"id":"S851 serviceCall /path5 PUT",
+			"id":"S9933 serviceCall /path0 PUT",
 			"method":"PUT",
-			"path":"/path5",
+			"path":"/path0",
 			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S4812 serviceCall /path7 PUT",
-			"method":"PUT",
-			"path":"/path7",
-			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		}
 	],
 	"swagger":"",

@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S5022 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S5022 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5022 endpoint /path0 PUT",
+			"to":"S1786 serviceCall /path1 GET"
+		}
+	],
+	"name":"S5022",
+	"serviceCall":[
+		{
+			"id":"S1786 serviceCall /path1 GET",
+			"method":"GET",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,139 +1,91 @@
 {
 	"endpoint":[
 		{
-			"id":"S4137 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S4137 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S4137 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S4137 endpoint /path1 POST",
+			"method":"POST",
 			"path":"/path1"
 		},
 		{
-			"id":"S4137 endpoint /path2 PUT",
-			"method":"PUT",
+			"id":"S4137 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S4137 endpoint /path3 PUT",
-			"method":"PUT",
+			"id":"S4137 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
+		},
+		{
+			"id":"S4137 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S4137 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S4137 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S4137 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S4137 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S4137 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S4137 endpoint /path10 PUT",
+			"method":"PUT",
+			"path":"/path10"
+		},
+		{
+			"id":"S4137 endpoint /path11 POST",
+			"method":"POST",
+			"path":"/path11"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4137 endpoint /path1 PUT",
-			"to":"S392 serviceCall /path11 POST"
+			"from":"S4137 endpoint /path2 GET",
+			"to":"S2871 serviceCall /path7 POST"
 		},
 		{
-			"from":"S4137 endpoint /path0 DELETE",
-			"to":"S3404 serviceCall /path3 PUT"
-		},
-		{
-			"from":"S4137 endpoint /path0 DELETE",
-			"to":"S3138 serviceCall /path0 DELETE"
-		},
-		{
-			"from":"S4137 endpoint /path1 PUT",
-			"to":"S3823 serviceCall /path10 DELETE"
-		},
-		{
-			"from":"S4137 endpoint /path3 PUT",
-			"to":"S2038 serviceCall /path39 POST"
-		},
-		{
-			"from":"S4137 endpoint /path1 PUT",
-			"to":"S1299 serviceCall /path213 DELETE"
-		},
-		{
-			"from":"S4137 endpoint /path1 PUT",
-			"to":"S1351 serviceCall /path1 PUT"
-		},
-		{
-			"from":"S4137 endpoint /path0 DELETE",
-			"to":"S240 serviceCall /path20 GET"
-		},
-		{
-			"from":"S4137 endpoint /path3 PUT",
-			"to":"S2927 serviceCall /path11 PUT"
-		},
-		{
-			"from":"S4137 endpoint /path1 PUT",
-			"to":"S1786 serviceCall /path94 DELETE"
+			"from":"S4137 endpoint /path0 PUT",
+			"to":"S3978 serviceCall /path3 GET"
 		}
 	],
 	"name":"S4137",
 	"serviceCall":[
 		{
-			"id":"S392 serviceCall /path11 POST",
+			"id":"S2871 serviceCall /path7 POST",
 			"method":"POST",
-			"path":"/path11",
+			"path":"/path7",
 			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		},
 		{
-			"id":"S3404 serviceCall /path3 PUT",
-			"method":"PUT",
+			"id":"S3978 serviceCall /path3 GET",
+			"method":"GET",
 			"path":"/path3",
 			"provider":"endpoint",
 			"unTest":false
-		},
-		{
-			"id":"S3138 serviceCall /path0 DELETE",
-			"method":"DELETE",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3823 serviceCall /path10 DELETE",
-			"method":"DELETE",
-			"path":"/path10",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2038 serviceCall /path39 POST",
-			"method":"POST",
-			"path":"/path39",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1299 serviceCall /path213 DELETE",
-			"method":"DELETE",
-			"path":"/path213",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1351 serviceCall /path1 PUT",
-			"method":"PUT",
-			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S240 serviceCall /path20 GET",
-			"method":"GET",
-			"path":"/path20",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2927 serviceCall /path11 PUT",
-			"method":"PUT",
-			"path":"/path11",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1786 serviceCall /path94 DELETE",
-			"method":"DELETE",
-			"path":"/path94",
-			"provider":"endpoint",
-			"unTest":true
 		}
 	],
 	"swagger":"",

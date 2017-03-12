@@ -1,39 +1,226 @@
 {
 	"endpoint":[
 		{
-			"id":"S752 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S752 endpoint /path0 PUT",
+          "method": "PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S752 endpoint /path1 GET",
-			"method":"GET",
+          "id": "S752 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
 		},
 		{
-			"id":"S752 endpoint /path2 DELETE",
-			"method":"DELETE",
-			"path":"/path2"
-		},
-		{
-			"id":"S752 endpoint /path3 POST",
+          "id": "S752 endpoint /path2 POST",
 			"method":"POST",
+          "path": "/path2"
+        },
+      {
+        "id": "S752 endpoint /path3 PUT",
+        "method": "PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S752 endpoint /path4 DELETE",
-			"method":"DELETE",
+          "id": "S752 endpoint /path4 POST",
+          "method": "POST",
 			"path":"/path4"
 		},
 		{
 			"id":"S752 endpoint /path5 DELETE",
 			"method":"DELETE",
 			"path":"/path5"
+        },
+      {
+        "id": "S752 endpoint /path6 PUT",
+        "method": "PUT",
+        "path": "/path6"
+      },
+      {
+        "id": "S752 endpoint /path7 DELETE",
+        "method": "DELETE",
+        "path": "/path7"
+      },
+      {
+        "id": "S752 endpoint /path8 DELETE",
+        "method": "DELETE",
+        "path": "/path8"
+      },
+      {
+        "id": "S752 endpoint /path9 DELETE",
+        "method": "DELETE",
+        "path": "/path9"
+      },
+      {
+        "id": "S752 endpoint /path10 DELETE",
+        "method": "DELETE",
+        "path": "/path10"
+      },
+      {
+        "id": "S752 endpoint /path11 PUT",
+        "method": "PUT",
+        "path": "/path11"
+      },
+      {
+        "id": "S752 endpoint /path12 GET",
+        "method": "GET",
+        "path": "/path12"
+      },
+      {
+        "id": "S752 endpoint /path13 POST",
+        "method": "POST",
+        "path": "/path13"
+      },
+      {
+        "id": "S752 endpoint /path14 POST",
+        "method": "POST",
+        "path": "/path14"
+      },
+      {
+        "id": "S752 endpoint /path15 PUT",
+        "method": "PUT",
+        "path": "/path15"
+      },
+      {
+        "id": "S752 endpoint /path16 DELETE",
+        "method": "DELETE",
+        "path": "/path16"
+      },
+      {
+        "id": "S752 endpoint /path17 DELETE",
+        "method": "DELETE",
+        "path": "/path17"
+      },
+      {
+        "id": "S752 endpoint /path18 DELETE",
+        "method": "DELETE",
+        "path": "/path18"
+      },
+      {
+        "id": "S752 endpoint /path19 POST",
+        "method": "POST",
+        "path": "/path19"
+      },
+      {
+        "id": "S752 endpoint /path20 DELETE",
+        "method": "DELETE",
+        "path": "/path20"
+      },
+      {
+        "id": "S752 endpoint /path21 DELETE",
+        "method": "DELETE",
+        "path": "/path21"
+      },
+      {
+        "id": "S752 endpoint /path22 GET",
+        "method": "GET",
+        "path": "/path22"
+      },
+      {
+        "id": "S752 endpoint /path23 DELETE",
+        "method": "DELETE",
+        "path": "/path23"
+      },
+      {
+        "id": "S752 endpoint /path24 GET",
+        "method": "GET",
+        "path": "/path24"
+      },
+      {
+        "id": "S752 endpoint /path25 POST",
+        "method": "POST",
+        "path": "/path25"
+      },
+      {
+        "id": "S752 endpoint /path26 GET",
+        "method": "GET",
+        "path": "/path26"
+      },
+      {
+        "id": "S752 endpoint /path27 POST",
+        "method": "POST",
+        "path": "/path27"
+      },
+      {
+        "id": "S752 endpoint /path28 POST",
+        "method": "POST",
+        "path": "/path28"
+      },
+      {
+        "id": "S752 endpoint /path29 POST",
+        "method": "POST",
+        "path": "/path29"
+      },
+      {
+        "id": "S752 endpoint /path30 DELETE",
+        "method": "DELETE",
+        "path": "/path30"
+      },
+      {
+        "id": "S752 endpoint /path31 DELETE",
+        "method": "DELETE",
+        "path": "/path31"
 		}
 	],
-	"endpointDep":[],
+  "endpointDep": [
+    {
+      "from": "S752 endpoint /path0 PUT",
+      "to": "S6815 serviceCall /path75 DELETE"
+    },
+    {
+      "from": "S752 endpoint /path0 PUT",
+      "to": "S7744 serviceCall /path25 PUT"
+    },
+    {
+      "from": "S752 endpoint /path0 PUT",
+      "to": "S9184 serviceCall /path1 PUT"
+    },
+    {
+      "from": "S752 endpoint /path0 PUT",
+      "to": "S6286 serviceCall /path14 PUT"
+    },
+    {
+      "from": "S752 endpoint /path0 PUT",
+      "to": "S1804 serviceCall /path40 DELETE"
+    }
+  ],
 	"name":"S752",
-	"serviceCall":[],
+  "serviceCall": [
+    {
+      "id": "S6815 serviceCall /path75 DELETE",
+      "method": "DELETE",
+      "path": "/path75",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7744 serviceCall /path25 PUT",
+      "method": "PUT",
+      "path": "/path25",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S9184 serviceCall /path1 PUT",
+      "method": "PUT",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6286 serviceCall /path14 PUT",
+      "method": "PUT",
+      "path": "/path14",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1804 serviceCall /path40 DELETE",
+      "method": "DELETE",
+      "path": "/path40",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
 	"swagger":"",
 	"timestamp":0
 }

@@ -218,7 +218,7 @@ public class GraphVisualizationFromGraphFactory {
                 }
             });
         }
-        LOGGER.info("finalClassName: {} ", className);
+        LOGGER.debug("finalClassName: {} ", className);
         return className.toString().trim();
     }
 

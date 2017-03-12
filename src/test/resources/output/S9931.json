@@ -1,0 +1,61 @@
+{
+  "endpoint": [
+    {
+      "id": "S9931 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S9931 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9931 endpoint /path1 DELETE",
+      "to": "S7060 serviceCall /path11 PUT"
+    },
+    {
+      "from": "S9931 endpoint /path1 DELETE",
+      "to": "S6576 serviceCall /path22 DELETE"
+    },
+    {
+      "from": "S9931 endpoint /path1 DELETE",
+      "to": "S982 serviceCall /path8 PUT"
+    }
+  ],
+  "name": "S9931",
+  "serviceCall": [
+    {
+      "id": "S7060 serviceCall /path11 PUT",
+      "method": "PUT",
+      "path": "/path11",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7528 serviceCall /path80 PUT",
+      "method": "PUT",
+      "path": "/path80",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S6576 serviceCall /path22 DELETE",
+      "method": "DELETE",
+      "path": "/path22",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S982 serviceCall /path8 PUT",
+      "method": "PUT",
+      "path": "/path8",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

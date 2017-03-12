@@ -1,0 +1,61 @@
+{
+	"endpoint":[
+		{
+			"id":"S9006 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S9006 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9006 endpoint /path0 DELETE",
+			"to":"S2973 serviceCall /path42 GET"
+		},
+		{
+			"from":"S9006 endpoint /path1 PUT",
+			"to":"S4347 serviceCall /path26 GET"
+		},
+		{
+			"from":"S9006 endpoint /path1 PUT",
+			"to":"S1902 serviceCall /path18 GET"
+		}
+	],
+	"name":"S9006",
+	"serviceCall":[
+		{
+			"id":"S2973 serviceCall /path42 GET",
+			"method":"GET",
+			"path":"/path42",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4347 serviceCall /path26 GET",
+			"method":"GET",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9576 serviceCall /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1902 serviceCall /path18 GET",
+			"method":"GET",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

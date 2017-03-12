@@ -1,37 +1,73 @@
 {
 	"endpoint":[
 		{
-			"id":"S480 endpoint /path0 GET",
-			"method":"GET",
+          "id": "S480 endpoint /path0 DELETE",
+          "method": "DELETE",
 			"path":"/path0"
 		},
 		{
-			"id":"S480 endpoint /path1 POST",
-			"method":"POST",
+          "id": "S480 endpoint /path1 PUT",
+          "method": "PUT",
 			"path":"/path1"
+        },
+      {
+        "id": "S480 endpoint /path2 PUT",
+        "method": "PUT",
+        "path": "/path2"
+      },
+      {
+        "id": "S480 endpoint /path3 GET",
+        "method": "GET",
+        "path": "/path3"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S480 endpoint /path0 GET",
-			"to":"S3289 serviceCall /path14 POST"
+          "from": "S480 endpoint /path1 PUT",
+          "to": "S7249 serviceCall /path1 PUT"
+        },
+      {
+        "from": "S480 endpoint /path0 DELETE",
+        "to": "S8274 serviceCall /path0 GET"
+      },
+      {
+        "from": "S480 endpoint /path1 PUT",
+        "to": "S6092 serviceCall /path29 PUT"
+      },
+      {
+        "from": "S480 endpoint /path1 PUT",
+        "to": "S9586 serviceCall /path27 POST"
 		}
 	],
 	"name":"S480",
 	"serviceCall":[
 		{
-			"id":"S3289 serviceCall /path14 POST",
-			"method":"POST",
-			"path":"/path14",
+          "id": "S7249 serviceCall /path1 PUT",
+          "method": "PUT",
+          "path": "/path1",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S1163 serviceCall /path204 POST",
+          "id": "S8274 serviceCall /path0 GET",
+          "method": "GET",
+          "path": "/path0",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S6092 serviceCall /path29 PUT",
+        "method": "PUT",
+        "path": "/path29",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S9586 serviceCall /path27 POST",
 			"method":"POST",
-			"path":"/path204",
+        "path": "/path27",
 			"provider":"endpoint",
-			"unTest":false
+        "unTest": true
 		}
 	],
 	"swagger":"",

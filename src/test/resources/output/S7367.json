@@ -1,0 +1,112 @@
+{
+	"endpoint":[
+		{
+			"id":"S7367 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S7367 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S7367 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S7367 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S7367 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S7367 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		},
+		{
+			"id":"S7367 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7367 endpoint /path0 DELETE",
+			"to":"S1815 serviceCall /path11 POST"
+		},
+		{
+			"from":"S7367 endpoint /path1 POST",
+			"to":"S4524 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S7367 endpoint /path0 DELETE",
+			"to":"S295 serviceCall /path143 POST"
+		},
+		{
+			"from":"S7367 endpoint /path0 DELETE",
+			"to":"S3313 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S7367 endpoint /path1 POST",
+			"to":"S502 serviceCall /path9 POST"
+		},
+		{
+			"from":"S7367 endpoint /path3 DELETE",
+			"to":"S4647 serviceCall /path30 POST"
+		}
+	],
+	"name":"S7367",
+	"serviceCall":[
+		{
+			"id":"S1815 serviceCall /path11 POST",
+			"method":"POST",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4524 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S295 serviceCall /path143 POST",
+			"method":"POST",
+			"path":"/path143",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3313 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S502 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4647 serviceCall /path30 POST",
+			"method":"POST",
+			"path":"/path30",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

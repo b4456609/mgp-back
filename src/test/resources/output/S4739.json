@@ -1,13 +1,13 @@
 {
 	"endpoint":[
 		{
-			"id":"S4739 endpoint /path0 GET",
-			"method":"GET",
-			"path":"/path0"
-		},
-		{
-			"id":"S4739 endpoint /path1 POST",
+          "id": "S4739 endpoint /path0 POST",
 			"method":"POST",
+          "path": "/path0"
+        },
+      {
+        "id": "S4739 endpoint /path1 PUT",
+        "method": "PUT",
 			"path":"/path1"
 		},
 		{
@@ -21,101 +21,105 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S4739 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
-		},
-		{
-			"id":"S4739 endpoint /path5 DELETE",
+          "id": "S4739 endpoint /path4 DELETE",
 			"method":"DELETE",
+          "path": "/path4"
+        },
+      {
+        "id": "S4739 endpoint /path5 POST",
+        "method": "POST",
 			"path":"/path5"
 		},
 		{
 			"id":"S4739 endpoint /path6 GET",
 			"method":"GET",
 			"path":"/path6"
+        },
+      {
+        "id": "S4739 endpoint /path7 GET",
+        "method": "GET",
+        "path": "/path7"
+      },
+      {
+        "id": "S4739 endpoint /path8 PUT",
+        "method": "PUT",
+        "path": "/path8"
+      },
+      {
+        "id": "S4739 endpoint /path9 DELETE",
+        "method": "DELETE",
+        "path": "/path9"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4739 endpoint /path0 GET",
-			"to":"S2115 serviceCall /path205 POST"
+          "from": "S4739 endpoint /path0 POST",
+          "to": "S9135 serviceCall /path155 DELETE"
+        },
+      {
+        "from": "S4739 endpoint /path0 POST",
+        "to": "S278 serviceCall /path16 GET"
 		},
 		{
 			"from":"S4739 endpoint /path2 GET",
-			"to":"S1340 serviceCall /path31 POST"
+          "to": "S5957 serviceCall /path77 GET"
 		},
 		{
-			"from":"S4739 endpoint /path0 GET",
-			"to":"S3300 serviceCall /path6 GET"
+          "from": "S4739 endpoint /path0 POST",
+          "to": "S7047 serviceCall /path144 PUT"
 		},
 		{
 			"from":"S4739 endpoint /path3 PUT",
-			"to":"S703 serviceCall /path13 POST"
+          "to": "S3546 serviceCall /path27 PUT"
 		},
 		{
-			"from":"S4739 endpoint /path1 POST",
-			"to":"S2648 serviceCall /path39 PUT"
-		},
-		{
-			"from":"S4739 endpoint /path0 GET",
-			"to":"S4133 serviceCall /path4 PUT"
-		},
-		{
-			"from":"S4739 endpoint /path0 GET",
-			"to":"S2785 serviceCall /path6 GET"
+          "from": "S4739 endpoint /path4 DELETE",
+          "to": "S3188 serviceCall /path35 DELETE"
 		}
 	],
 	"name":"S4739",
 	"serviceCall":[
 		{
-			"id":"S2115 serviceCall /path205 POST",
-			"method":"POST",
-			"path":"/path205",
+          "id": "S9135 serviceCall /path155 DELETE",
+          "method": "DELETE",
+          "path": "/path155",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1340 serviceCall /path31 POST",
-			"method":"POST",
-			"path":"/path31",
+          "id": "S278 serviceCall /path16 GET",
+          "method": "GET",
+          "path": "/path16",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S3300 serviceCall /path6 GET",
+          "id": "S5957 serviceCall /path77 GET",
 			"method":"GET",
-			"path":"/path6",
+          "path": "/path77",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S703 serviceCall /path13 POST",
-			"method":"POST",
-			"path":"/path13",
+          "id": "S7047 serviceCall /path144 PUT",
+          "method": "PUT",
+          "path": "/path144",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S2648 serviceCall /path39 PUT",
+          "id": "S3546 serviceCall /path27 PUT",
 			"method":"PUT",
-			"path":"/path39",
+          "path": "/path27",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S4133 serviceCall /path4 PUT",
-			"method":"PUT",
-			"path":"/path4",
+          "id": "S3188 serviceCall /path35 DELETE",
+          "method": "DELETE",
+          "path": "/path35",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2785 serviceCall /path6 GET",
-			"method":"GET",
-			"path":"/path6",
-			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
 		}
 	],
 	"swagger":"",

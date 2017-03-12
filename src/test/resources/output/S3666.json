@@ -1,30 +1,26 @@
 {
-	"endpoint":[
-		{
-			"id":"S3666 endpoint /path0 GET",
-			"method":"GET",
-			"path":"/path0"
-		}
-	],
-	"endpointDep":[
-		{
-			"from":"S3666 endpoint /path0 GET",
-			"to":"S4253 serviceCall /path8 PUT"
-		}
-	],
+  "endpoint": [],
+  "endpointDep": [],
 	"name":"S3666",
 	"serviceCall":[
 		{
-			"id":"S3068 serviceCall /path6 DELETE",
-			"method":"DELETE",
-			"path":"/path6",
+          "id": "S4392 serviceCall /path9 POST",
+          "method": "POST",
+          "path": "/path9",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S4253 serviceCall /path8 PUT",
+          "id": "S4122 serviceCall /path7 PUT",
 			"method":"PUT",
-			"path":"/path8",
+          "path": "/path7",
+          "provider": "endpoint",
+          "unTest": false
+        },
+      {
+        "id": "S6952 serviceCall /path113 POST",
+        "method": "POST",
+        "path": "/path113",
 			"provider":"endpoint",
 			"unTest":false
 		}

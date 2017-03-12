@@ -1,90 +1,126 @@
 {
 	"endpoint":[
 		{
-			"id":"S4335 endpoint /path0 PUT",
-			"method":"PUT",
+          "id": "S4335 endpoint /path0 POST",
+          "method": "POST",
 			"path":"/path0"
 		},
 		{
-			"id":"S4335 endpoint /path1 DELETE",
-			"method":"DELETE",
+          "id": "S4335 endpoint /path1 POST",
+          "method": "POST",
 			"path":"/path1"
 		},
 		{
 			"id":"S4335 endpoint /path2 GET",
 			"method":"GET",
 			"path":"/path2"
+        },
+      {
+        "id": "S4335 endpoint /path3 GET",
+        "method": "GET",
+        "path": "/path3"
+      },
+      {
+        "id": "S4335 endpoint /path4 DELETE",
+        "method": "DELETE",
+        "path": "/path4"
+      },
+      {
+        "id": "S4335 endpoint /path5 DELETE",
+        "method": "DELETE",
+        "path": "/path5"
+      },
+      {
+        "id": "S4335 endpoint /path6 PUT",
+        "method": "PUT",
+        "path": "/path6"
+      },
+      {
+        "id": "S4335 endpoint /path7 GET",
+        "method": "GET",
+        "path": "/path7"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4335 endpoint /path1 DELETE",
-			"to":"S3384 serviceCall /path11 PUT"
+          "from": "S4335 endpoint /path3 GET",
+          "to": "S6469 serviceCall /path174 POST"
 		},
 		{
-			"from":"S4335 endpoint /path2 GET",
-			"to":"S1469 serviceCall /path117 GET"
+          "from": "S4335 endpoint /path1 POST",
+          "to": "S470 serviceCall /path12 POST"
 		},
 		{
-			"from":"S4335 endpoint /path0 PUT",
-			"to":"S105 serviceCall /path149 POST"
+          "from": "S4335 endpoint /path0 POST",
+          "to": "S2748 serviceCall /path41 GET"
 		},
 		{
-			"from":"S4335 endpoint /path1 DELETE",
-			"to":"S1310 serviceCall /path117 GET"
+          "from": "S4335 endpoint /path0 POST",
+          "to": "S2222 serviceCall /path17 GET"
 		},
 		{
-			"from":"S4335 endpoint /path0 PUT",
-			"to":"S3232 serviceCall /path43 PUT"
+          "from": "S4335 endpoint /path4 DELETE",
+          "to": "S9531 serviceCall /path28 DELETE"
 		},
 		{
-			"from":"S4335 endpoint /path1 DELETE",
-			"to":"S1332 serviceCall /path4 POST"
+          "from": "S4335 endpoint /path0 POST",
+          "to": "S5970 serviceCall /path262 POST"
+        },
+      {
+        "from": "S4335 endpoint /path0 POST",
+        "to": "S5505 serviceCall /path2 PUT"
 		}
 	],
 	"name":"S4335",
 	"serviceCall":[
 		{
-			"id":"S3384 serviceCall /path11 PUT",
-			"method":"PUT",
-			"path":"/path11",
+          "id": "S6469 serviceCall /path174 POST",
+          "method": "POST",
+          "path": "/path174",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1469 serviceCall /path117 GET",
-			"method":"GET",
-			"path":"/path117",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S105 serviceCall /path149 POST",
+          "id": "S470 serviceCall /path12 POST",
 			"method":"POST",
-			"path":"/path149",
+          "path": "/path12",
 			"provider":"endpoint",
-			"unTest":true
+          "unTest": false
 		},
 		{
-			"id":"S1310 serviceCall /path117 GET",
+          "id": "S2748 serviceCall /path41 GET",
 			"method":"GET",
-			"path":"/path117",
+          "path": "/path41",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S3232 serviceCall /path43 PUT",
-			"method":"PUT",
-			"path":"/path43",
+          "id": "S2222 serviceCall /path17 GET",
+          "method": "GET",
+          "path": "/path17",
 			"provider":"endpoint",
-			"unTest":false
+          "unTest": true
 		},
 		{
-			"id":"S1332 serviceCall /path4 POST",
+          "id": "S9531 serviceCall /path28 DELETE",
+          "method": "DELETE",
+          "path": "/path28",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S5970 serviceCall /path262 POST",
 			"method":"POST",
-			"path":"/path4",
+        "path": "/path262",
 			"provider":"endpoint",
-			"unTest":false
+        "unTest": true
+      },
+      {
+        "id": "S5505 serviceCall /path2 PUT",
+        "method": "PUT",
+        "path": "/path2",
+        "provider": "endpoint",
+        "unTest": true
 		}
 	],
 	"swagger":"",

@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S8579 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S8579 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8579 endpoint /path0 POST",
+			"to":"S3489 serviceCall /path9 POST"
+		},
+		{
+			"from":"S8579 endpoint /path1 GET",
+			"to":"S180 serviceCall /path116 POST"
+		}
+	],
+	"name":"S8579",
+	"serviceCall":[
+		{
+			"id":"S3489 serviceCall /path9 POST",
+			"method":"POST",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S180 serviceCall /path116 POST",
+			"method":"POST",
+			"path":"/path116",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

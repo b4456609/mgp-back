@@ -6,33 +6,33 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S4310 endpoint /path1 POST",
-			"method":"POST",
+          "id": "S4310 endpoint /path1 DELETE",
+          "method": "DELETE",
 			"path":"/path1"
 		},
 		{
-			"id":"S4310 endpoint /path2 PUT",
-			"method":"PUT",
+          "id": "S4310 endpoint /path2 POST",
+          "method": "POST",
 			"path":"/path2"
 		},
 		{
-			"id":"S4310 endpoint /path3 GET",
-			"method":"GET",
+          "id": "S4310 endpoint /path3 POST",
+          "method": "POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S4310 endpoint /path4 PUT",
-			"method":"PUT",
+          "id": "S4310 endpoint /path4 DELETE",
+          "method": "DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S4310 endpoint /path5 POST",
-			"method":"POST",
+          "id": "S4310 endpoint /path5 DELETE",
+          "method": "DELETE",
 			"path":"/path5"
 		},
 		{
-			"id":"S4310 endpoint /path6 PUT",
-			"method":"PUT",
+          "id": "S4310 endpoint /path6 DELETE",
+          "method": "DELETE",
 			"path":"/path6"
 		},
 		{
@@ -41,8 +41,8 @@
 			"path":"/path7"
 		},
 		{
-			"id":"S4310 endpoint /path8 DELETE",
-			"method":"DELETE",
+          "id": "S4310 endpoint /path8 POST",
+          "method": "POST",
 			"path":"/path8"
 		},
 		{
@@ -51,35 +51,101 @@
 			"path":"/path9"
 		},
 		{
-			"id":"S4310 endpoint /path10 DELETE",
-			"method":"DELETE",
+          "id": "S4310 endpoint /path10 GET",
+          "method": "GET",
 			"path":"/path10"
 		},
 		{
-			"id":"S4310 endpoint /path11 DELETE",
-			"method":"DELETE",
+          "id": "S4310 endpoint /path11 GET",
+          "method": "GET",
 			"path":"/path11"
 		},
 		{
-			"id":"S4310 endpoint /path12 PUT",
-			"method":"PUT",
+          "id": "S4310 endpoint /path12 DELETE",
+          "method": "DELETE",
 			"path":"/path12"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4310 endpoint /path2 PUT",
-			"to":"S490 serviceCall /path16 POST"
+          "from": "S4310 endpoint /path2 POST",
+          "to": "S4364 serviceCall /path4 PUT"
+        },
+      {
+        "from": "S4310 endpoint /path0 PUT",
+        "to": "S8504 serviceCall /path86 DELETE"
+      },
+      {
+        "from": "S4310 endpoint /path0 PUT",
+        "to": "S1479 serviceCall /path2 DELETE"
+      },
+      {
+        "from": "S4310 endpoint /path0 PUT",
+        "to": "S3868 serviceCall /path31 PUT"
+      },
+      {
+        "from": "S4310 endpoint /path1 DELETE",
+        "to": "S821 serviceCall /path9 POST"
+      },
+      {
+        "from": "S4310 endpoint /path1 DELETE",
+        "to": "S680 serviceCall /path10 PUT"
+      },
+      {
+        "from": "S4310 endpoint /path0 PUT",
+        "to": "S2401 serviceCall /path14 POST"
 		}
 	],
 	"name":"S4310",
 	"serviceCall":[
 		{
-			"id":"S490 serviceCall /path16 POST",
+          "id": "S4364 serviceCall /path4 PUT",
+          "method": "PUT",
+          "path": "/path4",
+          "provider": "endpoint",
+          "unTest": true
+        },
+      {
+        "id": "S8504 serviceCall /path86 DELETE",
+        "method": "DELETE",
+        "path": "/path86",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S1479 serviceCall /path2 DELETE",
+        "method": "DELETE",
+        "path": "/path2",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S3868 serviceCall /path31 PUT",
+        "method": "PUT",
+        "path": "/path31",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S821 serviceCall /path9 POST",
 			"method":"POST",
-			"path":"/path16",
+        "path": "/path9",
 			"provider":"endpoint",
 			"unTest":false
+      },
+      {
+        "id": "S680 serviceCall /path10 PUT",
+        "method": "PUT",
+        "path": "/path10",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S2401 serviceCall /path14 POST",
+        "method": "POST",
+        "path": "/path14",
+        "provider": "endpoint",
+        "unTest": true
 		}
 	],
 	"swagger":"",

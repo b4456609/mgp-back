@@ -16,13 +16,13 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S3239 endpoint /path3 PUT",
-			"method":"PUT",
+          "id": "S3239 endpoint /path3 DELETE",
+          "method": "DELETE",
 			"path":"/path3"
 		},
 		{
-			"id":"S3239 endpoint /path4 PUT",
-			"method":"PUT",
+          "id": "S3239 endpoint /path4 POST",
+          "method": "POST",
 			"path":"/path4"
 		},
 		{
@@ -36,19 +36,74 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S3239 endpoint /path7 POST",
-			"method":"POST",
+          "id": "S3239 endpoint /path7 GET",
+          "method": "GET",
 			"path":"/path7"
 		},
 		{
 			"id":"S3239 endpoint /path8 DELETE",
 			"method":"DELETE",
 			"path":"/path8"
+        },
+      {
+        "id": "S3239 endpoint /path9 DELETE",
+        "method": "DELETE",
+        "path": "/path9"
+      },
+      {
+        "id": "S3239 endpoint /path10 GET",
+        "method": "GET",
+        "path": "/path10"
+      },
+      {
+        "id": "S3239 endpoint /path11 POST",
+        "method": "POST",
+        "path": "/path11"
+      },
+      {
+        "id": "S3239 endpoint /path12 GET",
+        "method": "GET",
+        "path": "/path12"
 		}
 	],
-	"endpointDep":[],
+  "endpointDep": [
+    {
+      "from": "S3239 endpoint /path1 GET",
+      "to": "S1523 serviceCall /path8 PUT"
+    },
+    {
+      "from": "S3239 endpoint /path1 GET",
+      "to": "S459 serviceCall /path6 DELETE"
+    },
+    {
+      "from": "S3239 endpoint /path0 PUT",
+      "to": "S9377 serviceCall /path6 DELETE"
+    }
+  ],
 	"name":"S3239",
-	"serviceCall":[],
+  "serviceCall": [
+    {
+      "id": "S1523 serviceCall /path8 PUT",
+      "method": "PUT",
+      "path": "/path8",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S459 serviceCall /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S9377 serviceCall /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
 	"swagger":"",
 	"timestamp":0
 }

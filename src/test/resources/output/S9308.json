@@ -1,0 +1,181 @@
+{
+  "endpoint": [
+    {
+      "id": "S9308 endpoint /path0 POST",
+      "method": "POST",
+      "path": "/path0"
+    },
+    {
+      "id": "S9308 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S9308 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S9308 endpoint /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3"
+    },
+    {
+      "id": "S9308 endpoint /path4 GET",
+      "method": "GET",
+      "path": "/path4"
+    },
+    {
+      "id": "S9308 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    },
+    {
+      "id": "S9308 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S9308 endpoint /path7 POST",
+      "method": "POST",
+      "path": "/path7"
+    },
+    {
+      "id": "S9308 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    },
+    {
+      "id": "S9308 endpoint /path9 GET",
+      "method": "GET",
+      "path": "/path9"
+    },
+    {
+      "id": "S9308 endpoint /path10 POST",
+      "method": "POST",
+      "path": "/path10"
+    },
+    {
+      "id": "S9308 endpoint /path11 GET",
+      "method": "GET",
+      "path": "/path11"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9308 endpoint /path0 POST",
+      "to": "S3436 serviceCall /path132 GET"
+    },
+    {
+      "from": "S9308 endpoint /path1 PUT",
+      "to": "S1242 serviceCall /path13 PUT"
+    },
+    {
+      "from": "S9308 endpoint /path5 PUT",
+      "to": "S9200 serviceCall /path63 DELETE"
+    },
+    {
+      "from": "S9308 endpoint /path1 PUT",
+      "to": "S8259 serviceCall /path93 GET"
+    },
+    {
+      "from": "S9308 endpoint /path4 GET",
+      "to": "S4742 serviceCall /path17 PUT"
+    },
+    {
+      "from": "S9308 endpoint /path1 PUT",
+      "to": "S5828 serviceCall /path7 GET"
+    },
+    {
+      "from": "S9308 endpoint /path5 PUT",
+      "to": "S7744 serviceCall /path18 GET"
+    },
+    {
+      "from": "S9308 endpoint /path1 PUT",
+      "to": "S6666 serviceCall /path7 GET"
+    },
+    {
+      "from": "S9308 endpoint /path1 PUT",
+      "to": "S4732 serviceCall /path69 DELETE"
+    },
+    {
+      "from": "S9308 endpoint /path0 POST",
+      "to": "S1349 serviceCall /path40 PUT"
+    }
+  ],
+  "name": "S9308",
+  "serviceCall": [
+    {
+      "id": "S3436 serviceCall /path132 GET",
+      "method": "GET",
+      "path": "/path132",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1242 serviceCall /path13 PUT",
+      "method": "PUT",
+      "path": "/path13",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9200 serviceCall /path63 DELETE",
+      "method": "DELETE",
+      "path": "/path63",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8259 serviceCall /path93 GET",
+      "method": "GET",
+      "path": "/path93",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S4742 serviceCall /path17 PUT",
+      "method": "PUT",
+      "path": "/path17",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S5828 serviceCall /path7 GET",
+      "method": "GET",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7744 serviceCall /path18 GET",
+      "method": "GET",
+      "path": "/path18",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S6666 serviceCall /path7 GET",
+      "method": "GET",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S4732 serviceCall /path69 DELETE",
+      "method": "DELETE",
+      "path": "/path69",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S1349 serviceCall /path40 PUT",
+      "method": "PUT",
+      "path": "/path40",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

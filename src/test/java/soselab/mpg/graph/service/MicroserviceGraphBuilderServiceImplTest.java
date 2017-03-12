@@ -8,10 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import soselab.mpg.app.controller.SettingController;
 import soselab.mpg.graph.controller.GraphController;
 import soselab.mpg.graph.controller.UploadFile;
 import soselab.mpg.graph.service.handler.ServiceBuildHandler;
@@ -31,20 +29,15 @@ import static org.mockito.BDDMockito.given;
 @ActiveProfiles("log")
 public class MicroserviceGraphBuilderServiceImplTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(MicroserviceGraphBuilderServiceImplTest.class);
-
-    private int[] numData = {5,10,20,30,40,50,100,200,300,400,500,1000,2000,3000,4000,5000};
-
     @MockBean
     MPDService mpdService;
-
     @Autowired
     ServiceBuildHandler serviceBuildHandler;
-
     @Autowired
     MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader;
-
-//    @Autowired
-//    GraphController graphController;
+    @Autowired
+    GraphController graphController;
+    private int[] numData = {5,10,20,30,40,50,100,200,300,400,500,1000,2000,3000,4000,5000};
 
     @Test
     public void build() throws Exception {
@@ -61,17 +54,20 @@ public class MicroserviceGraphBuilderServiceImplTest {
         System.out.println(microserviceProjectDescriptions.size());
 
 
+        for (int j = 0; j < 20; j++){
+            LOGGER.info("start {}th", j);
+            for (int i = 0; i <numData.length; i++){
+                int num = numData[i];
+                given(mpdService.getMicroserviceProjectDescriptions())
+                        .willReturn(microserviceProjectDescriptions.subList(0, num));
+                LOGGER.info("start {}th, num {}", i, num);
+                long start = System.currentTimeMillis();
+                serviceBuildHandler.build();
+                graphController.getGraphData();
+                long end = System.currentTimeMillis();
+                LOGGER.info("{}th time: {}ms", i, end - start);
+            }
 
-        for (int i = 0; i <numData.length; i++){
-            int num = numData[i];
-            given(mpdService.getMicroserviceProjectDescriptions())
-                    .willReturn(microserviceProjectDescriptions.subList(0, num));
-            LOGGER.info("start {}th, num {}", i, num);
-            long start = System.currentTimeMillis();
-            serviceBuildHandler.build();
-//            graphController.getGraphData();
-            long end = System.currentTimeMillis();
-            LOGGER.info("{}th time: {}ms", i, end - start);
         }
 
     }

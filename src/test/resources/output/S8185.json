@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S8185 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S8185 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S8185 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8185 endpoint /path2 GET",
+			"to":"S207 serviceCall /path21 DELETE"
+		}
+	],
+	"name":"S8185",
+	"serviceCall":[
+		{
+			"id":"S207 serviceCall /path21 DELETE",
+			"method":"DELETE",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

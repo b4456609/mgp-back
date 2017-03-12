@@ -1,0 +1,59 @@
+{
+	"endpoint":[
+		{
+			"id":"S6780 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S6780 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S6780 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6780 endpoint /path0 POST",
+			"to":"S8941 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S6780 endpoint /path0 POST",
+			"to":"S8771 serviceCall /path28 POST"
+		},
+		{
+			"from":"S6780 endpoint /path1 PUT",
+			"to":"S6163 serviceCall /path4 DELETE"
+		}
+	],
+	"name":"S6780",
+	"serviceCall":[
+		{
+			"id":"S8941 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8771 serviceCall /path28 POST",
+			"method":"POST",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6163 serviceCall /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

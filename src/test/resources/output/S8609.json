@@ -1,0 +1,140 @@
+{
+	"endpoint":[
+		{
+			"id":"S8609 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S8609 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S8609 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S8609 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S8609 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S8609 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8609 endpoint /path0 PUT",
+			"to":"S739 serviceCall /path0 POST"
+		},
+		{
+			"from":"S8609 endpoint /path2 DELETE",
+			"to":"S5588 serviceCall /path2 DELETE"
+		},
+		{
+			"from":"S8609 endpoint /path1 GET",
+			"to":"S2220 serviceCall /path42 DELETE"
+		},
+		{
+			"from":"S8609 endpoint /path0 PUT",
+			"to":"S9616 serviceCall /path14 GET"
+		},
+		{
+			"from":"S8609 endpoint /path0 PUT",
+			"to":"S7429 serviceCall /path94 DELETE"
+		},
+		{
+			"from":"S8609 endpoint /path1 GET",
+			"to":"S6033 serviceCall /path4 GET"
+		},
+		{
+			"from":"S8609 endpoint /path2 DELETE",
+			"to":"S5430 serviceCall /path24 GET"
+		},
+		{
+			"from":"S8609 endpoint /path1 GET",
+			"to":"S3822 serviceCall /path10 DELETE"
+		},
+		{
+			"from":"S8609 endpoint /path0 PUT",
+			"to":"S4971 serviceCall /path41 PUT"
+		}
+	],
+	"name":"S8609",
+	"serviceCall":[
+		{
+			"id":"S739 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5588 serviceCall /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2220 serviceCall /path42 DELETE",
+			"method":"DELETE",
+			"path":"/path42",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9616 serviceCall /path14 GET",
+			"method":"GET",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7429 serviceCall /path94 DELETE",
+			"method":"DELETE",
+			"path":"/path94",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6033 serviceCall /path4 GET",
+			"method":"GET",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5430 serviceCall /path24 GET",
+			"method":"GET",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3822 serviceCall /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4971 serviceCall /path41 PUT",
+			"method":"PUT",
+			"path":"/path41",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

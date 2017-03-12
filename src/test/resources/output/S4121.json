@@ -4,21 +4,31 @@
 			"id":"S4121 endpoint /path0 GET",
 			"method":"GET",
 			"path":"/path0"
-		},
-		{
-			"id":"S4121 endpoint /path1 GET",
-			"method":"GET",
-			"path":"/path1"
-		},
-		{
-			"id":"S4121 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S4121 endpoint /path0 GET",
+			"to":"S1476 serviceCall /path96 PUT"
+		}
+	],
 	"name":"S4121",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S5377 serviceCall /path2 GET",
+			"method":"GET",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1476 serviceCall /path96 PUT",
+			"method":"PUT",
+			"path":"/path96",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

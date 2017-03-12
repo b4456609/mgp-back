@@ -11,56 +11,52 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S45 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S45 endpoint /path2 DELETE",
+			"method":"DELETE",
 			"path":"/path2"
 		},
 		{
-			"id":"S45 endpoint /path3 GET",
-			"method":"GET",
-			"path":"/path3"
-		},
-		{
-			"id":"S45 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
-		},
-		{
-			"id":"S45 endpoint /path5 POST",
-			"method":"POST",
-			"path":"/path5"
-		},
-		{
-			"id":"S45 endpoint /path6 PUT",
+			"id":"S45 endpoint /path3 PUT",
 			"method":"PUT",
-			"path":"/path6"
+			"path":"/path3"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S45 endpoint /path2 POST",
-			"to":"S665 serviceCall /path7 DELETE"
+			"from":"S45 endpoint /path1 DELETE",
+			"to":"S8191 serviceCall /path24 POST"
 		},
 		{
-			"from":"S45 endpoint /path2 POST",
-			"to":"S941 serviceCall /path62 POST"
+			"from":"S45 endpoint /path0 PUT",
+			"to":"S4367 serviceCall /path99 GET"
+		},
+		{
+			"from":"S45 endpoint /path0 PUT",
+			"to":"S2452 serviceCall /path36 GET"
 		}
 	],
 	"name":"S45",
 	"serviceCall":[
 		{
-			"id":"S665 serviceCall /path7 DELETE",
-			"method":"DELETE",
-			"path":"/path7",
+			"id":"S8191 serviceCall /path24 POST",
+			"method":"POST",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4367 serviceCall /path99 GET",
+			"method":"GET",
+			"path":"/path99",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S941 serviceCall /path62 POST",
-			"method":"POST",
-			"path":"/path62",
+			"id":"S2452 serviceCall /path36 GET",
+			"method":"GET",
+			"path":"/path36",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		}
 	],
 	"swagger":"",

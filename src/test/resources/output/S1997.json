@@ -1,61 +1,64 @@
 {
-	"endpoint":[],
-	"endpointDep":[],
+	"endpoint":[
+		{
+			"id":"S1997 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S1997 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S1997 endpoint /path1 GET",
+			"to":"S6386 serviceCall /path4 DELETE"
+		},
+		{
+			"from":"S1997 endpoint /path0 POST",
+			"to":"S3678 serviceCall /path3 POST"
+		},
+		{
+			"from":"S1997 endpoint /path1 GET",
+			"to":"S1876 serviceCall /path1 DELETE"
+		}
+	],
 	"name":"S1997",
 	"serviceCall":[
 		{
-			"id":"S652 serviceCall /path21 DELETE",
-			"method":"DELETE",
-			"path":"/path21",
+			"id":"S6124 serviceCall /path81 POST",
+			"method":"POST",
+			"path":"/path81",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S3721 serviceCall /path3 PUT",
-			"method":"PUT",
+			"id":"S6386 serviceCall /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3678 serviceCall /path3 POST",
+			"method":"POST",
 			"path":"/path3",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S4455 serviceCall /path5 PUT",
-			"method":"PUT",
-			"path":"/path5",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3023 serviceCall /path140 GET",
-			"method":"GET",
-			"path":"/path140",
-			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S132 serviceCall /path18 GET",
-			"method":"GET",
-			"path":"/path18",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1680 serviceCall /path10 DELETE",
+			"id":"S3419 serviceCall /path2 DELETE",
 			"method":"DELETE",
-			"path":"/path10",
+			"path":"/path2",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S1290 serviceCall /path1 DELETE",
+			"id":"S1876 serviceCall /path1 DELETE",
 			"method":"DELETE",
 			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3519 serviceCall /path2 GET",
-			"method":"GET",
-			"path":"/path2",
 			"provider":"endpoint",
 			"unTest":false
 		}

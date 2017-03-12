@@ -1,0 +1,90 @@
+{
+	"endpoint":[
+		{
+			"id":"S7070 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S7070 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S7070 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S7070 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S7070 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S7070 endpoint /path5 POST",
+			"method":"POST",
+			"path":"/path5"
+		},
+		{
+			"id":"S7070 endpoint /path6 PUT",
+			"method":"PUT",
+			"path":"/path6"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7070 endpoint /path2 PUT",
+			"to":"S8818 serviceCall /path37 PUT"
+		},
+		{
+			"from":"S7070 endpoint /path1 GET",
+			"to":"S4920 serviceCall /path150 POST"
+		},
+		{
+			"from":"S7070 endpoint /path0 PUT",
+			"to":"S3200 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S7070 endpoint /path1 GET",
+			"to":"S3634 serviceCall /path8 PUT"
+		}
+	],
+	"name":"S7070",
+	"serviceCall":[
+		{
+			"id":"S8818 serviceCall /path37 PUT",
+			"method":"PUT",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4920 serviceCall /path150 POST",
+			"method":"POST",
+			"path":"/path150",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3200 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3634 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

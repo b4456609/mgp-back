@@ -11,28 +11,71 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S2214 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S2214 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
-			"id":"S2214 endpoint /path3 POST",
-			"method":"POST",
+			"id":"S2214 endpoint /path3 DELETE",
+			"method":"DELETE",
 			"path":"/path3"
+		},
+		{
+			"id":"S2214 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S2214 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
 		}
 	],
 	"endpointDep":[
 		{
+			"from":"S2214 endpoint /path0 DELETE",
+			"to":"S5906 serviceCall /path2 PUT"
+		},
+		{
+			"from":"S2214 endpoint /path0 DELETE",
+			"to":"S1244 serviceCall /path0 POST"
+		},
+		{
 			"from":"S2214 endpoint /path1 PUT",
-			"to":"S3725 serviceCall /path110 POST"
+			"to":"S443 serviceCall /path5 POST"
+		},
+		{
+			"from":"S2214 endpoint /path1 PUT",
+			"to":"S3658 serviceCall /path201 PUT"
 		}
 	],
 	"name":"S2214",
 	"serviceCall":[
 		{
-			"id":"S3725 serviceCall /path110 POST",
+			"id":"S5906 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1244 serviceCall /path0 POST",
 			"method":"POST",
-			"path":"/path110",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S443 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3658 serviceCall /path201 PUT",
+			"method":"PUT",
+			"path":"/path201",
 			"provider":"endpoint",
 			"unTest":true
 		}

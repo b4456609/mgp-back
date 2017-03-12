@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S3914 endpoint /path0 POST",
-			"method":"POST",
+			"id":"S3914 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
@@ -11,8 +11,8 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S3914 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S3914 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
@@ -21,13 +21,13 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S3914 endpoint /path4 DELETE",
-			"method":"DELETE",
+			"id":"S3914 endpoint /path4 PUT",
+			"method":"PUT",
 			"path":"/path4"
 		},
 		{
-			"id":"S3914 endpoint /path5 DELETE",
-			"method":"DELETE",
+			"id":"S3914 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
 		},
 		{
@@ -38,49 +38,49 @@
 	],
 	"endpointDep":[
 		{
+			"from":"S3914 endpoint /path1 DELETE",
+			"to":"S2072 serviceCall /path26 POST"
+		},
+		{
+			"from":"S3914 endpoint /path0 PUT",
+			"to":"S2082 serviceCall /path16 PUT"
+		},
+		{
+			"from":"S3914 endpoint /path0 PUT",
+			"to":"S3658 serviceCall /path102 GET"
+		},
+		{
 			"from":"S3914 endpoint /path3 PUT",
-			"to":"S757 serviceCall /path1 PUT"
-		},
-		{
-			"from":"S3914 endpoint /path0 POST",
-			"to":"S1395 serviceCall /path158 DELETE"
-		},
-		{
-			"from":"S3914 endpoint /path0 POST",
-			"to":"S2168 serviceCall /path38 DELETE"
-		},
-		{
-			"from":"S3914 endpoint /path3 PUT",
-			"to":"S3424 serviceCall /path94 PUT"
+			"to":"S328 serviceCall /path8 POST"
 		}
 	],
 	"name":"S3914",
 	"serviceCall":[
 		{
-			"id":"S757 serviceCall /path1 PUT",
+			"id":"S2072 serviceCall /path26 POST",
+			"method":"POST",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2082 serviceCall /path16 PUT",
 			"method":"PUT",
-			"path":"/path1",
+			"path":"/path16",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3658 serviceCall /path102 GET",
+			"method":"GET",
+			"path":"/path102",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S1395 serviceCall /path158 DELETE",
-			"method":"DELETE",
-			"path":"/path158",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S2168 serviceCall /path38 DELETE",
-			"method":"DELETE",
-			"path":"/path38",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3424 serviceCall /path94 PUT",
-			"method":"PUT",
-			"path":"/path94",
+			"id":"S328 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
 			"provider":"endpoint",
 			"unTest":true
 		}

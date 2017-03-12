@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S7513 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S7513 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7513 endpoint /path1 DELETE",
+			"to":"S5065 serviceCall /path7 PUT"
+		},
+		{
+			"from":"S7513 endpoint /path0 GET",
+			"to":"S216 serviceCall /path18 PUT"
+		}
+	],
+	"name":"S7513",
+	"serviceCall":[
+		{
+			"id":"S5065 serviceCall /path7 PUT",
+			"method":"PUT",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S216 serviceCall /path18 PUT",
+			"method":"PUT",
+			"path":"/path18",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

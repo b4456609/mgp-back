@@ -1,0 +1,100 @@
+{
+  "endpoint": [
+    {
+      "id": "S7351 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S7351 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S7351 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S7351 endpoint /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3"
+    },
+    {
+      "id": "S7351 endpoint /path4 GET",
+      "method": "GET",
+      "path": "/path4"
+    },
+    {
+      "id": "S7351 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    },
+    {
+      "id": "S7351 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S7351 endpoint /path7 PUT",
+      "method": "PUT",
+      "path": "/path7"
+    },
+    {
+      "id": "S7351 endpoint /path8 GET",
+      "method": "GET",
+      "path": "/path8"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7351 endpoint /path1 PUT",
+      "to": "S2318 serviceCall /path48 PUT"
+    },
+    {
+      "from": "S7351 endpoint /path0 PUT",
+      "to": "S7837 serviceCall /path229 GET"
+    },
+    {
+      "from": "S7351 endpoint /path0 PUT",
+      "to": "S3158 serviceCall /path33 POST"
+    },
+    {
+      "from": "S7351 endpoint /path4 GET",
+      "to": "S425 serviceCall /path7 POST"
+    }
+  ],
+  "name": "S7351",
+  "serviceCall": [
+    {
+      "id": "S2318 serviceCall /path48 PUT",
+      "method": "PUT",
+      "path": "/path48",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S7837 serviceCall /path229 GET",
+      "method": "GET",
+      "path": "/path229",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3158 serviceCall /path33 POST",
+      "method": "POST",
+      "path": "/path33",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S425 serviceCall /path7 POST",
+      "method": "POST",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

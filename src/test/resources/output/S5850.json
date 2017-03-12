@@ -1,0 +1,67 @@
+{
+  "endpoint": [
+    {
+      "id": "S5850 endpoint /path0 PUT",
+      "method": "PUT",
+      "path": "/path0"
+    },
+    {
+      "id": "S5850 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    },
+    {
+      "id": "S5850 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S5850 endpoint /path3 PUT",
+      "method": "PUT",
+      "path": "/path3"
+    },
+    {
+      "id": "S5850 endpoint /path4 PUT",
+      "method": "PUT",
+      "path": "/path4"
+    },
+    {
+      "id": "S5850 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    },
+    {
+      "id": "S5850 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S5850 endpoint /path7 GET",
+      "method": "GET",
+      "path": "/path7"
+    },
+    {
+      "id": "S5850 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5850 endpoint /path1 GET",
+      "to": "S4752 serviceCall /path24 DELETE"
+    }
+  ],
+  "name": "S5850",
+  "serviceCall": [
+    {
+      "id": "S4752 serviceCall /path24 DELETE",
+      "method": "DELETE",
+      "path": "/path24",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

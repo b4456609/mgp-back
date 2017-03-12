@@ -1,0 +1,92 @@
+{
+  "endpoint": [
+    {
+      "id": "S8248 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S8248 endpoint /path1 DELETE",
+      "method": "DELETE",
+      "path": "/path1"
+    },
+    {
+      "id": "S8248 endpoint /path2 GET",
+      "method": "GET",
+      "path": "/path2"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S8248 endpoint /path0 GET",
+      "to": "S4927 serviceCall /path8 DELETE"
+    },
+    {
+      "from": "S8248 endpoint /path0 GET",
+      "to": "S5057 serviceCall /path24 PUT"
+    },
+    {
+      "from": "S8248 endpoint /path0 GET",
+      "to": "S4556 serviceCall /path3 DELETE"
+    },
+    {
+      "from": "S8248 endpoint /path2 GET",
+      "to": "S8462 serviceCall /path21 DELETE"
+    },
+    {
+      "from": "S8248 endpoint /path0 GET",
+      "to": "S3453 serviceCall /path1 GET"
+    },
+    {
+      "from": "S8248 endpoint /path0 GET",
+      "to": "S6822 serviceCall /path52 POST"
+    }
+  ],
+  "name": "S8248",
+  "serviceCall": [
+    {
+      "id": "S4927 serviceCall /path8 DELETE",
+      "method": "DELETE",
+      "path": "/path8",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S5057 serviceCall /path24 PUT",
+      "method": "PUT",
+      "path": "/path24",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S4556 serviceCall /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S8462 serviceCall /path21 DELETE",
+      "method": "DELETE",
+      "path": "/path21",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3453 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S6822 serviceCall /path52 POST",
+      "method": "POST",
+      "path": "/path52",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

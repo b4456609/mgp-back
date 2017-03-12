@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S4634 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4634 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
@@ -11,47 +11,76 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S4634 endpoint /path2 GET",
-			"method":"GET",
+			"id":"S4634 endpoint /path2 POST",
+			"method":"POST",
 			"path":"/path2"
+		},
+		{
+			"id":"S4634 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S4634 endpoint /path4 POST",
+			"method":"POST",
+			"path":"/path4"
+		},
+		{
+			"id":"S4634 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S4634 endpoint /path6 POST",
+			"method":"POST",
+			"path":"/path6"
+		},
+		{
+			"id":"S4634 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
+		},
+		{
+			"id":"S4634 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S4634 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
+		},
+		{
+			"id":"S4634 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4634 endpoint /path0 GET",
-			"to":"S1708 serviceCall /path4 POST"
+			"from":"S4634 endpoint /path0 POST",
+			"to":"S3491 serviceCall /path0 GET"
 		},
 		{
-			"from":"S4634 endpoint /path0 GET",
-			"to":"S860 serviceCall /path211 POST"
-		},
-		{
-			"from":"S4634 endpoint /path0 GET",
-			"to":"S171 serviceCall /path3 POST"
+			"from":"S4634 endpoint /path0 POST",
+			"to":"S9524 serviceCall /path7 POST"
 		}
 	],
 	"name":"S4634",
 	"serviceCall":[
 		{
-			"id":"S1708 serviceCall /path4 POST",
-			"method":"POST",
-			"path":"/path4",
+			"id":"S3491 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S860 serviceCall /path211 POST",
+			"id":"S9524 serviceCall /path7 POST",
 			"method":"POST",
-			"path":"/path211",
+			"path":"/path7",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S171 serviceCall /path3 POST",
-			"method":"POST",
-			"path":"/path3",
-			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		}
 	],
 	"swagger":"",

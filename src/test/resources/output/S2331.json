@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S2331 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S2331 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
@@ -11,13 +11,13 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S2331 endpoint /path2 GET",
-			"method":"GET",
+			"id":"S2331 endpoint /path2 POST",
+			"method":"POST",
 			"path":"/path2"
 		},
 		{
-			"id":"S2331 endpoint /path3 GET",
-			"method":"GET",
+			"id":"S2331 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
@@ -59,75 +59,125 @@
 			"id":"S2331 endpoint /path11 DELETE",
 			"method":"DELETE",
 			"path":"/path11"
+		},
+		{
+			"id":"S2331 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S2331 endpoint /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13"
+		},
+		{
+			"id":"S2331 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S2331 endpoint /path15 PUT",
+			"method":"PUT",
+			"path":"/path15"
+		},
+		{
+			"id":"S2331 endpoint /path16 PUT",
+			"method":"PUT",
+			"path":"/path16"
+		},
+		{
+			"id":"S2331 endpoint /path17 PUT",
+			"method":"PUT",
+			"path":"/path17"
+		},
+		{
+			"id":"S2331 endpoint /path18 POST",
+			"method":"POST",
+			"path":"/path18"
+		},
+		{
+			"id":"S2331 endpoint /path19 POST",
+			"method":"POST",
+			"path":"/path19"
+		},
+		{
+			"id":"S2331 endpoint /path20 GET",
+			"method":"GET",
+			"path":"/path20"
+		},
+		{
+			"id":"S2331 endpoint /path21 DELETE",
+			"method":"DELETE",
+			"path":"/path21"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S2331 endpoint /path0 DELETE",
-			"to":"S58 serviceCall /path12 DELETE"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S9552 serviceCall /path44 POST"
 		},
 		{
-			"from":"S2331 endpoint /path0 DELETE",
-			"to":"S2702 serviceCall /path7 DELETE"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S3944 serviceCall /path19 GET"
 		},
 		{
-			"from":"S2331 endpoint /path2 GET",
-			"to":"S2472 serviceCall /path0 DELETE"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S6430 serviceCall /path102 DELETE"
 		},
 		{
-			"from":"S2331 endpoint /path0 DELETE",
-			"to":"S3430 serviceCall /path5 PUT"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S6802 serviceCall /path8 POST"
 		},
 		{
-			"from":"S2331 endpoint /path0 DELETE",
-			"to":"S551 serviceCall /path1 GET"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S3892 serviceCall /path7 POST"
 		},
 		{
-			"from":"S2331 endpoint /path0 DELETE",
-			"to":"S1592 serviceCall /path37 DELETE"
+			"from":"S2331 endpoint /path0 POST",
+			"to":"S2633 serviceCall /path23 GET"
 		}
 	],
 	"name":"S2331",
 	"serviceCall":[
 		{
-			"id":"S58 serviceCall /path12 DELETE",
-			"method":"DELETE",
-			"path":"/path12",
+			"id":"S9552 serviceCall /path44 POST",
+			"method":"POST",
+			"path":"/path44",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S2702 serviceCall /path7 DELETE",
+			"id":"S3944 serviceCall /path19 GET",
+			"method":"GET",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6430 serviceCall /path102 DELETE",
 			"method":"DELETE",
+			"path":"/path102",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6802 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3892 serviceCall /path7 POST",
+			"method":"POST",
 			"path":"/path7",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S2472 serviceCall /path0 DELETE",
-			"method":"DELETE",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3430 serviceCall /path5 PUT",
-			"method":"PUT",
-			"path":"/path5",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S551 serviceCall /path1 GET",
+			"id":"S2633 serviceCall /path23 GET",
 			"method":"GET",
-			"path":"/path1",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1592 serviceCall /path37 DELETE",
-			"method":"DELETE",
-			"path":"/path37",
+			"path":"/path23",
 			"provider":"endpoint",
 			"unTest":true
 		}

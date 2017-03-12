@@ -1,0 +1,103 @@
+{
+	"endpoint":[
+		{
+			"id":"S7097 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S7097 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		},
+		{
+			"id":"S7097 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7097 endpoint /path2 PUT",
+			"to":"S5226 serviceCall /path20 DELETE"
+		},
+		{
+			"from":"S7097 endpoint /path1 POST",
+			"to":"S8101 serviceCall /path15 DELETE"
+		},
+		{
+			"from":"S7097 endpoint /path0 POST",
+			"to":"S1648 serviceCall /path139 DELETE"
+		},
+		{
+			"from":"S7097 endpoint /path2 PUT",
+			"to":"S5923 serviceCall /path5 DELETE"
+		},
+		{
+			"from":"S7097 endpoint /path0 POST",
+			"to":"S3891 serviceCall /path26 PUT"
+		},
+		{
+			"from":"S7097 endpoint /path0 POST",
+			"to":"S2482 serviceCall /path9 DELETE"
+		},
+		{
+			"from":"S7097 endpoint /path1 POST",
+			"to":"S8479 serviceCall /path59 GET"
+		}
+	],
+	"name":"S7097",
+	"serviceCall":[
+		{
+			"id":"S5226 serviceCall /path20 DELETE",
+			"method":"DELETE",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8101 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1648 serviceCall /path139 DELETE",
+			"method":"DELETE",
+			"path":"/path139",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5923 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3891 serviceCall /path26 PUT",
+			"method":"PUT",
+			"path":"/path26",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2482 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8479 serviceCall /path59 GET",
+			"method":"GET",
+			"path":"/path59",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,53 @@
+{
+	"endpoint":[
+		{
+			"id":"S7322 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S7322 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S7322 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S7322 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7322 endpoint /path0 POST",
+			"to":"S4647 serviceCall /path10 GET"
+		},
+		{
+			"from":"S7322 endpoint /path0 POST",
+			"to":"S1021 serviceCall /path166 POST"
+		}
+	],
+	"name":"S7322",
+	"serviceCall":[
+		{
+			"id":"S4647 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1021 serviceCall /path166 POST",
+			"method":"POST",
+			"path":"/path166",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

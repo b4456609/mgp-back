@@ -1,40 +1,28 @@
 {
-	"endpoint":[],
-	"endpointDep":[],
+	"endpoint":[
+		{
+			"id":"S4235 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S4235 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4235 endpoint /path0 DELETE",
+			"to":"S5135 serviceCall /path181 PUT"
+		}
+	],
 	"name":"S4235",
 	"serviceCall":[
 		{
-			"id":"S4230 serviceCall /path6 PUT",
+			"id":"S5135 serviceCall /path181 PUT",
 			"method":"PUT",
-			"path":"/path6",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S382 serviceCall /path5 PUT",
-			"method":"PUT",
-			"path":"/path5",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2764 serviceCall /path55 POST",
-			"method":"POST",
-			"path":"/path55",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1282 serviceCall /path29 GET",
-			"method":"GET",
-			"path":"/path29",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1866 serviceCall /path2 GET",
-			"method":"GET",
-			"path":"/path2",
+			"path":"/path181",
 			"provider":"endpoint",
 			"unTest":false
 		}

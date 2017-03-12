@@ -1,48 +1,55 @@
 {
 	"endpoint":[
 		{
-			"id":"S4202 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S4202 endpoint /path0 PUT",
+			"method":"PUT",
 			"path":"/path0"
 		},
 		{
-			"id":"S4202 endpoint /path1 PUT",
-			"method":"PUT",
+			"id":"S4202 endpoint /path1 DELETE",
+			"method":"DELETE",
 			"path":"/path1"
+		},
+		{
+			"id":"S4202 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S4202 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S4202 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S4202 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S4202 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S4202 endpoint /path0 GET",
-			"to":"S4584 serviceCall /path140 GET"
-		},
-		{
-			"from":"S4202 endpoint /path0 GET",
-			"to":"S894 serviceCall /path75 PUT"
+			"from":"S4202 endpoint /path0 PUT",
+			"to":"S2273 serviceCall /path79 GET"
 		}
 	],
 	"name":"S4202",
 	"serviceCall":[
 		{
-			"id":"S4584 serviceCall /path140 GET",
+			"id":"S2273 serviceCall /path79 GET",
 			"method":"GET",
-			"path":"/path140",
+			"path":"/path79",
 			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S894 serviceCall /path75 PUT",
-			"method":"PUT",
-			"path":"/path75",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S2787 serviceCall /path19 GET",
-			"method":"GET",
-			"path":"/path19",
-			"provider":"endpoint",
-			"unTest":true
+			"unTest":false
 		}
 	],
 	"swagger":"",

@@ -1,0 +1,41 @@
+{
+	"endpoint":[
+		{
+			"id":"S9113 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9113 endpoint /path0 POST",
+			"to":"S217 serviceCall /path61 GET"
+		}
+	],
+	"name":"S9113",
+	"serviceCall":[
+		{
+			"id":"S8322 serviceCall /path63 POST",
+			"method":"POST",
+			"path":"/path63",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S217 serviceCall /path61 GET",
+			"method":"GET",
+			"path":"/path61",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1413 serviceCall /path107 POST",
+			"method":"POST",
+			"path":"/path107",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

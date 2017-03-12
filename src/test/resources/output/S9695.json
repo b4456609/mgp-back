@@ -1,0 +1,63 @@
+{
+	"endpoint":[
+		{
+			"id":"S9695 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S9695 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S9695 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S9695 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S9695 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S9695 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9695 endpoint /path0 DELETE",
+			"to":"S9468 serviceCall /path153 PUT"
+		},
+		{
+			"from":"S9695 endpoint /path2 GET",
+			"to":"S4944 serviceCall /path7 PUT"
+		}
+	],
+	"name":"S9695",
+	"serviceCall":[
+		{
+			"id":"S9468 serviceCall /path153 PUT",
+			"method":"PUT",
+			"path":"/path153",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4944 serviceCall /path7 PUT",
+			"method":"PUT",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

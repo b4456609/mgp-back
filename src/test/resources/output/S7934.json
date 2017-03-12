@@ -1,0 +1,61 @@
+{
+	"endpoint":[
+		{
+			"id":"S7934 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S7934 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7934 endpoint /path0 GET",
+			"to":"S2099 serviceCall /path99 DELETE"
+		},
+		{
+			"from":"S7934 endpoint /path1 POST",
+			"to":"S8376 serviceCall /path178 GET"
+		},
+		{
+			"from":"S7934 endpoint /path1 POST",
+			"to":"S2399 serviceCall /path58 GET"
+		}
+	],
+	"name":"S7934",
+	"serviceCall":[
+		{
+			"id":"S2099 serviceCall /path99 DELETE",
+			"method":"DELETE",
+			"path":"/path99",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9792 serviceCall /path17 DELETE",
+			"method":"DELETE",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8376 serviceCall /path178 GET",
+			"method":"GET",
+			"path":"/path178",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2399 serviceCall /path58 GET",
+			"method":"GET",
+			"path":"/path58",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,19 +1,99 @@
 {
-	"endpoint":[],
-	"endpointDep":[],
+	"endpoint":[
+		{
+			"id":"S4644 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S4644 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S4644 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		},
+		{
+			"id":"S4644 endpoint /path3 POST",
+			"method":"POST",
+			"path":"/path3"
+		},
+		{
+			"id":"S4644 endpoint /path4 DELETE",
+			"method":"DELETE",
+			"path":"/path4"
+		},
+		{
+			"id":"S4644 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		},
+		{
+			"id":"S4644 endpoint /path6 GET",
+			"method":"GET",
+			"path":"/path6"
+		},
+		{
+			"id":"S4644 endpoint /path7 PUT",
+			"method":"PUT",
+			"path":"/path7"
+		},
+		{
+			"id":"S4644 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S4644 endpoint /path9 POST",
+			"method":"POST",
+			"path":"/path9"
+		},
+		{
+			"id":"S4644 endpoint /path10 DELETE",
+			"method":"DELETE",
+			"path":"/path10"
+		},
+		{
+			"id":"S4644 endpoint /path11 GET",
+			"method":"GET",
+			"path":"/path11"
+		},
+		{
+			"id":"S4644 endpoint /path12 PUT",
+			"method":"PUT",
+			"path":"/path12"
+		},
+		{
+			"id":"S4644 endpoint /path13 GET",
+			"method":"GET",
+			"path":"/path13"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S4644 endpoint /path1 GET",
+			"to":"S8827 serviceCall /path34 GET"
+		},
+		{
+			"from":"S4644 endpoint /path0 POST",
+			"to":"S5539 serviceCall /path32 DELETE"
+		}
+	],
 	"name":"S4644",
 	"serviceCall":[
 		{
-			"id":"S485 serviceCall /path177 POST",
-			"method":"POST",
-			"path":"/path177",
+			"id":"S8827 serviceCall /path34 GET",
+			"method":"GET",
+			"path":"/path34",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S3965 serviceCall /path7 POST",
-			"method":"POST",
-			"path":"/path7",
+			"id":"S5539 serviceCall /path32 DELETE",
+			"method":"DELETE",
+			"path":"/path32",
 			"provider":"endpoint",
 			"unTest":true
 		}

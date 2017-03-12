@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S7806 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S7806 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S7806 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7806 endpoint /path2 DELETE",
+			"to":"S2123 serviceCall /path97 POST"
+		}
+	],
+	"name":"S7806",
+	"serviceCall":[
+		{
+			"id":"S2123 serviceCall /path97 POST",
+			"method":"POST",
+			"path":"/path97",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

@@ -1,0 +1,110 @@
+{
+	"endpoint":[
+		{
+			"id":"S8594 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S8594 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S8594 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8594 endpoint /path1 GET",
+			"to":"S4482 serviceCall /path9 PUT"
+		},
+		{
+			"from":"S8594 endpoint /path0 DELETE",
+			"to":"S5618 serviceCall /path30 POST"
+		},
+		{
+			"from":"S8594 endpoint /path0 DELETE",
+			"to":"S965 serviceCall /path0 POST"
+		},
+		{
+			"from":"S8594 endpoint /path0 DELETE",
+			"to":"S2547 serviceCall /path158 GET"
+		},
+		{
+			"from":"S8594 endpoint /path0 DELETE",
+			"to":"S4893 serviceCall /path28 PUT"
+		},
+		{
+			"from":"S8594 endpoint /path0 DELETE",
+			"to":"S5441 serviceCall /path7 PUT"
+		},
+		{
+			"from":"S8594 endpoint /path1 GET",
+			"to":"S5310 serviceCall /path3 PUT"
+		}
+	],
+	"name":"S8594",
+	"serviceCall":[
+		{
+			"id":"S4482 serviceCall /path9 PUT",
+			"method":"PUT",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5618 serviceCall /path30 POST",
+			"method":"POST",
+			"path":"/path30",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S965 serviceCall /path0 POST",
+			"method":"POST",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S9365 serviceCall /path60 PUT",
+			"method":"PUT",
+			"path":"/path60",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2547 serviceCall /path158 GET",
+			"method":"GET",
+			"path":"/path158",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S4893 serviceCall /path28 PUT",
+			"method":"PUT",
+			"path":"/path28",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5441 serviceCall /path7 PUT",
+			"method":"PUT",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5310 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

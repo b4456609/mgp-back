@@ -1,53 +1,53 @@
 {
 	"endpoint":[
 		{
-			"id":"S2689 endpoint /path0 PUT",
-			"method":"PUT",
+          "id": "S2689 endpoint /path0 GET",
+          "method": "GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S2689 endpoint /path1 POST",
-			"method":"POST",
+          "id": "S2689 endpoint /path1 GET",
+          "method": "GET",
 			"path":"/path1"
 		},
 		{
-			"id":"S2689 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		},
-		{
-			"id":"S2689 endpoint /path3 POST",
+          "id": "S2689 endpoint /path2 POST",
 			"method":"POST",
+          "path": "/path2"
+        },
+      {
+        "id": "S2689 endpoint /path3 DELETE",
+        "method": "DELETE",
 			"path":"/path3"
 		},
 		{
-			"id":"S2689 endpoint /path4 POST",
-			"method":"POST",
-			"path":"/path4"
-		},
-		{
-			"id":"S2689 endpoint /path5 GET",
+          "id": "S2689 endpoint /path4 GET",
 			"method":"GET",
+          "path": "/path4"
+        },
+      {
+        "id": "S2689 endpoint /path5 PUT",
+        "method": "PUT",
 			"path":"/path5"
 		},
 		{
-			"id":"S2689 endpoint /path6 GET",
-			"method":"GET",
+          "id": "S2689 endpoint /path6 DELETE",
+          "method": "DELETE",
 			"path":"/path6"
 		},
 		{
-			"id":"S2689 endpoint /path7 PUT",
-			"method":"PUT",
+          "id": "S2689 endpoint /path7 GET",
+          "method": "GET",
 			"path":"/path7"
 		},
 		{
-			"id":"S2689 endpoint /path8 POST",
-			"method":"POST",
+          "id": "S2689 endpoint /path8 GET",
+          "method": "GET",
 			"path":"/path8"
 		},
 		{
-			"id":"S2689 endpoint /path9 PUT",
-			"method":"PUT",
+          "id": "S2689 endpoint /path9 GET",
+          "method": "GET",
 			"path":"/path9"
 		},
 		{
@@ -56,69 +56,54 @@
 			"path":"/path10"
 		},
 		{
-			"id":"S2689 endpoint /path11 GET",
-			"method":"GET",
+          "id": "S2689 endpoint /path11 POST",
+          "method": "POST",
 			"path":"/path11"
 		},
 		{
-			"id":"S2689 endpoint /path12 GET",
-			"method":"GET",
-			"path":"/path12"
-		},
-		{
-			"id":"S2689 endpoint /path13 PUT",
+          "id": "S2689 endpoint /path12 PUT",
 			"method":"PUT",
-			"path":"/path13"
+          "path": "/path12"
+        }
+    ],
+  "endpointDep": [
+		{
+          "from": "S2689 endpoint /path1 GET",
+          "to": "S1708 serviceCall /path44 GET"
 		},
 		{
-			"id":"S2689 endpoint /path14 POST",
-			"method":"POST",
-			"path":"/path14"
+          "from": "S2689 endpoint /path2 POST",
+          "to": "S1968 serviceCall /path27 GET"
 		},
 		{
-			"id":"S2689 endpoint /path15 PUT",
-			"method":"PUT",
-			"path":"/path15"
-		},
+          "from": "S2689 endpoint /path3 DELETE",
+          "to": "S6430 serviceCall /path153 GET"
+        }
+  ],
+  "name": "S2689",
+  "serviceCall": [
 		{
-			"id":"S2689 endpoint /path16 PUT",
-			"method":"PUT",
-			"path":"/path16"
-		},
-		{
-			"id":"S2689 endpoint /path17 GET",
+          "id": "S1708 serviceCall /path44 GET",
 			"method":"GET",
-			"path":"/path17"
+          "path": "/path44",
+          "provider": "endpoint",
+          "unTest": true
 		},
 		{
-			"id":"S2689 endpoint /path18 GET",
+          "id": "S1968 serviceCall /path27 GET",
 			"method":"GET",
-			"path":"/path18"
+          "path": "/path27",
+          "provider": "endpoint",
+          "unTest": true
 		},
 		{
-			"id":"S2689 endpoint /path19 PUT",
-			"method":"PUT",
-			"path":"/path19"
-		},
-		{
-			"id":"S2689 endpoint /path20 GET",
+          "id": "S6430 serviceCall /path153 GET",
 			"method":"GET",
-			"path":"/path20"
-		},
-		{
-			"id":"S2689 endpoint /path21 GET",
-			"method":"GET",
-			"path":"/path21"
-		},
-		{
-			"id":"S2689 endpoint /path22 POST",
-			"method":"POST",
-			"path":"/path22"
+          "path": "/path153",
+          "provider": "endpoint",
+          "unTest": true
 		}
 	],
-	"endpointDep":[],
-	"name":"S2689",
-	"serviceCall":[],
 	"swagger":"",
 	"timestamp":0
 }

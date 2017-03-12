@@ -1,50 +1,64 @@
 {
 	"endpoint":[
 		{
-			"id":"S3004 endpoint /path0 PUT",
-			"method":"PUT",
-			"path":"/path0"
-		},
-		{
-			"id":"S3004 endpoint /path1 PUT",
-			"method":"PUT",
-			"path":"/path1"
-		},
-		{
-			"id":"S3004 endpoint /path2 PUT",
-			"method":"PUT",
-			"path":"/path2"
-		},
-		{
-			"id":"S3004 endpoint /path3 DELETE",
-			"method":"DELETE",
-			"path":"/path3"
-		},
-		{
-			"id":"S3004 endpoint /path4 GET",
-			"method":"GET",
-			"path":"/path4"
-		},
-		{
-			"id":"S3004 endpoint /path5 POST",
+          "id": "S3004 endpoint /path0 POST",
 			"method":"POST",
-			"path":"/path5"
+          "path": "/path0"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S3004 endpoint /path1 PUT",
-			"to":"S1181 serviceCall /path25 DELETE"
+          "from": "S3004 endpoint /path0 POST",
+          "to": "S6557 serviceCall /path2 GET"
+        },
+      {
+        "from": "S3004 endpoint /path0 POST",
+        "to": "S6654 serviceCall /path9 GET"
 		}
 	],
 	"name":"S3004",
 	"serviceCall":[
 		{
-			"id":"S1181 serviceCall /path25 DELETE",
-			"method":"DELETE",
-			"path":"/path25",
+          "id": "S6557 serviceCall /path2 GET",
+          "method": "GET",
+          "path": "/path2",
 			"provider":"endpoint",
 			"unTest":true
+        },
+      {
+        "id": "S5776 serviceCall /path39 PUT",
+        "method": "PUT",
+        "path": "/path39",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S232 serviceCall /path13 PUT",
+        "method": "PUT",
+        "path": "/path13",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S9278 serviceCall /path7 GET",
+        "method": "GET",
+        "path": "/path7",
+        "provider": "endpoint",
+        "unTest": true
+      },
+      {
+        "id": "S778 serviceCall /path12 PUT",
+        "method": "PUT",
+        "path": "/path12",
+        "provider": "endpoint",
+        "unTest": false
+      },
+      {
+        "id": "S6654 serviceCall /path9 GET",
+        "method": "GET",
+        "path": "/path9",
+        "provider": "endpoint",
+        "unTest": false
 		}
 	],
 	"swagger":"",

@@ -1,0 +1,110 @@
+{
+	"endpoint":[
+		{
+			"id":"S8675 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S8675 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S8675 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8675 endpoint /path1 DELETE",
+			"to":"S2333 serviceCall /path4 POST"
+		},
+		{
+			"from":"S8675 endpoint /path1 DELETE",
+			"to":"S6986 serviceCall /path41 GET"
+		},
+		{
+			"from":"S8675 endpoint /path1 DELETE",
+			"to":"S1223 serviceCall /path86 GET"
+		},
+		{
+			"from":"S8675 endpoint /path1 DELETE",
+			"to":"S7620 serviceCall /path33 PUT"
+		},
+		{
+			"from":"S8675 endpoint /path0 GET",
+			"to":"S3258 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S8675 endpoint /path1 DELETE",
+			"to":"S8556 serviceCall /path13 DELETE"
+		},
+		{
+			"from":"S8675 endpoint /path0 GET",
+			"to":"S8332 serviceCall /path41 PUT"
+		}
+	],
+	"name":"S8675",
+	"serviceCall":[
+		{
+			"id":"S2333 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1963 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6986 serviceCall /path41 GET",
+			"method":"GET",
+			"path":"/path41",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1223 serviceCall /path86 GET",
+			"method":"GET",
+			"path":"/path86",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S7620 serviceCall /path33 PUT",
+			"method":"PUT",
+			"path":"/path33",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3258 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8556 serviceCall /path13 DELETE",
+			"method":"DELETE",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8332 serviceCall /path41 PUT",
+			"method":"PUT",
+			"path":"/path41",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

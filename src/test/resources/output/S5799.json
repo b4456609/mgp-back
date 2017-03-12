@@ -1,0 +1,107 @@
+{
+	"endpoint":[
+		{
+			"id":"S5799 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S5799 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S5799 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		},
+		{
+			"id":"S5799 endpoint /path3 PUT",
+			"method":"PUT",
+			"path":"/path3"
+		},
+		{
+			"id":"S5799 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S5799 endpoint /path5 GET",
+			"method":"GET",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5799 endpoint /path1 DELETE",
+			"to":"S864 serviceCall /path21 GET"
+		},
+		{
+			"from":"S5799 endpoint /path0 GET",
+			"to":"S5948 serviceCall /path171 GET"
+		},
+		{
+			"from":"S5799 endpoint /path0 GET",
+			"to":"S3225 serviceCall /path174 POST"
+		},
+		{
+			"from":"S5799 endpoint /path0 GET",
+			"to":"S9707 serviceCall /path133 GET"
+		},
+		{
+			"from":"S5799 endpoint /path0 GET",
+			"to":"S2794 serviceCall /path5 GET"
+		},
+		{
+			"from":"S5799 endpoint /path0 GET",
+			"to":"S6030 serviceCall /path233 PUT"
+		}
+	],
+	"name":"S5799",
+	"serviceCall":[
+		{
+			"id":"S864 serviceCall /path21 GET",
+			"method":"GET",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5948 serviceCall /path171 GET",
+			"method":"GET",
+			"path":"/path171",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3225 serviceCall /path174 POST",
+			"method":"POST",
+			"path":"/path174",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9707 serviceCall /path133 GET",
+			"method":"GET",
+			"path":"/path133",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2794 serviceCall /path5 GET",
+			"method":"GET",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6030 serviceCall /path233 PUT",
+			"method":"PUT",
+			"path":"/path233",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

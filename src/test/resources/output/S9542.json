@@ -1,0 +1,105 @@
+{
+	"endpoint":[
+		{
+			"id":"S9542 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		},
+		{
+			"id":"S9542 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S6733 serviceCall /path5 DELETE"
+		},
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S8790 serviceCall /path98 DELETE"
+		},
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S8898 serviceCall /path24 POST"
+		},
+		{
+			"from":"S9542 endpoint /path1 PUT",
+			"to":"S1977 serviceCall /path0 DELETE"
+		},
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S8486 serviceCall /path8 PUT"
+		},
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S9726 serviceCall /path17 PUT"
+		},
+		{
+			"from":"S9542 endpoint /path0 DELETE",
+			"to":"S1459 serviceCall /path2 PUT"
+		}
+	],
+	"name":"S9542",
+	"serviceCall":[
+		{
+			"id":"S6733 serviceCall /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1482 serviceCall /path4 POST",
+			"method":"POST",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8790 serviceCall /path98 DELETE",
+			"method":"DELETE",
+			"path":"/path98",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S8898 serviceCall /path24 POST",
+			"method":"POST",
+			"path":"/path24",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1977 serviceCall /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8486 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9726 serviceCall /path17 PUT",
+			"method":"PUT",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1459 serviceCall /path2 PUT",
+			"method":"PUT",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

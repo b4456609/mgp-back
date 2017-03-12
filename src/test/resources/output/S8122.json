@@ -1,0 +1,59 @@
+{
+	"endpoint":[
+		{
+			"id":"S8122 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S8122 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S8122 endpoint /path2 PUT",
+			"method":"PUT",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8122 endpoint /path0 PUT",
+			"to":"S2014 serviceCall /path0 PUT"
+		},
+		{
+			"from":"S8122 endpoint /path0 PUT",
+			"to":"S2806 serviceCall /path177 GET"
+		},
+		{
+			"from":"S8122 endpoint /path1 PUT",
+			"to":"S3422 serviceCall /path59 PUT"
+		}
+	],
+	"name":"S8122",
+	"serviceCall":[
+		{
+			"id":"S2014 serviceCall /path0 PUT",
+			"method":"PUT",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2806 serviceCall /path177 GET",
+			"method":"GET",
+			"path":"/path177",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3422 serviceCall /path59 PUT",
+			"method":"PUT",
+			"path":"/path59",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

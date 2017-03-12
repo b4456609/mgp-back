@@ -1,0 +1,88 @@
+{
+  "endpoint": [
+    {
+      "id": "S5343 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S5343 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S5343 endpoint /path2 PUT",
+      "method": "PUT",
+      "path": "/path2"
+    },
+    {
+      "id": "S5343 endpoint /path3 GET",
+      "method": "GET",
+      "path": "/path3"
+    },
+    {
+      "id": "S5343 endpoint /path4 POST",
+      "method": "POST",
+      "path": "/path4"
+    },
+    {
+      "id": "S5343 endpoint /path5 POST",
+      "method": "POST",
+      "path": "/path5"
+    },
+    {
+      "id": "S5343 endpoint /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6"
+    },
+    {
+      "id": "S5343 endpoint /path7 DELETE",
+      "method": "DELETE",
+      "path": "/path7"
+    },
+    {
+      "id": "S5343 endpoint /path8 GET",
+      "method": "GET",
+      "path": "/path8"
+    },
+    {
+      "id": "S5343 endpoint /path9 DELETE",
+      "method": "DELETE",
+      "path": "/path9"
+    },
+    {
+      "id": "S5343 endpoint /path10 PUT",
+      "method": "PUT",
+      "path": "/path10"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S5343 endpoint /path0 GET",
+      "to": "S542 serviceCall /path105 POST"
+    },
+    {
+      "from": "S5343 endpoint /path2 PUT",
+      "to": "S9895 serviceCall /path136 GET"
+    }
+  ],
+  "name": "S5343",
+  "serviceCall": [
+    {
+      "id": "S542 serviceCall /path105 POST",
+      "method": "POST",
+      "path": "/path105",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S9895 serviceCall /path136 GET",
+      "method": "GET",
+      "path": "/path136",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

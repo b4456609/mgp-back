@@ -6,13 +6,13 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S3 endpoint /path1 DELETE",
-			"method":"DELETE",
+			"id":"S3 endpoint /path1 PUT",
+			"method":"PUT",
 			"path":"/path1"
 		},
 		{
-			"id":"S3 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S3 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
 		},
 		{
@@ -21,8 +21,8 @@
 			"path":"/path3"
 		},
 		{
-			"id":"S3 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S3 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
@@ -41,194 +41,120 @@
 			"path":"/path7"
 		},
 		{
-			"id":"S3 endpoint /path8 GET",
-			"method":"GET",
+			"id":"S3 endpoint /path8 POST",
+			"method":"POST",
 			"path":"/path8"
 		},
 		{
-			"id":"S3 endpoint /path9 GET",
-			"method":"GET",
+			"id":"S3 endpoint /path9 POST",
+			"method":"POST",
 			"path":"/path9"
-		},
-		{
-			"id":"S3 endpoint /path10 DELETE",
-			"method":"DELETE",
-			"path":"/path10"
-		},
-		{
-			"id":"S3 endpoint /path11 POST",
-			"method":"POST",
-			"path":"/path11"
-		},
-		{
-			"id":"S3 endpoint /path12 DELETE",
-			"method":"DELETE",
-			"path":"/path12"
-		},
-		{
-			"id":"S3 endpoint /path13 GET",
-			"method":"GET",
-			"path":"/path13"
-		},
-		{
-			"id":"S3 endpoint /path14 GET",
-			"method":"GET",
-			"path":"/path14"
-		},
-		{
-			"id":"S3 endpoint /path15 GET",
-			"method":"GET",
-			"path":"/path15"
-		},
-		{
-			"id":"S3 endpoint /path16 DELETE",
-			"method":"DELETE",
-			"path":"/path16"
-		},
-		{
-			"id":"S3 endpoint /path17 PUT",
-			"method":"PUT",
-			"path":"/path17"
-		},
-		{
-			"id":"S3 endpoint /path18 POST",
-			"method":"POST",
-			"path":"/path18"
-		},
-		{
-			"id":"S3 endpoint /path19 PUT",
-			"method":"PUT",
-			"path":"/path19"
-		},
-		{
-			"id":"S3 endpoint /path20 GET",
-			"method":"GET",
-			"path":"/path20"
-		},
-		{
-			"id":"S3 endpoint /path21 PUT",
-			"method":"PUT",
-			"path":"/path21"
-		},
-		{
-			"id":"S3 endpoint /path22 POST",
-			"method":"POST",
-			"path":"/path22"
-		},
-		{
-			"id":"S3 endpoint /path23 POST",
-			"method":"POST",
-			"path":"/path23"
-		},
-		{
-			"id":"S3 endpoint /path24 GET",
-			"method":"GET",
-			"path":"/path24"
-		},
-		{
-			"id":"S3 endpoint /path25 PUT",
-			"method":"PUT",
-			"path":"/path25"
-		},
-		{
-			"id":"S3 endpoint /path26 GET",
-			"method":"GET",
-			"path":"/path26"
-		},
-		{
-			"id":"S3 endpoint /path27 PUT",
-			"method":"PUT",
-			"path":"/path27"
-		},
-		{
-			"id":"S3 endpoint /path28 DELETE",
-			"method":"DELETE",
-			"path":"/path28"
-		},
-		{
-			"id":"S3 endpoint /path29 GET",
-			"method":"GET",
-			"path":"/path29"
-		},
-		{
-			"id":"S3 endpoint /path30 GET",
-			"method":"GET",
-			"path":"/path30"
-		},
-		{
-			"id":"S3 endpoint /path31 GET",
-			"method":"GET",
-			"path":"/path31"
-		},
-		{
-			"id":"S3 endpoint /path32 PUT",
-			"method":"PUT",
-			"path":"/path32"
-		},
-		{
-			"id":"S3 endpoint /path33 POST",
-			"method":"POST",
-			"path":"/path33"
-		},
-		{
-			"id":"S3 endpoint /path34 PUT",
-			"method":"PUT",
-			"path":"/path34"
-		},
-		{
-			"id":"S3 endpoint /path35 DELETE",
-			"method":"DELETE",
-			"path":"/path35"
-		},
-		{
-			"id":"S3 endpoint /path36 POST",
-			"method":"POST",
-			"path":"/path36"
-		},
-		{
-			"id":"S3 endpoint /path37 POST",
-			"method":"POST",
-			"path":"/path37"
-		},
-		{
-			"id":"S3 endpoint /path38 GET",
-			"method":"GET",
-			"path":"/path38"
-		},
-		{
-			"id":"S3 endpoint /path39 PUT",
-			"method":"PUT",
-			"path":"/path39"
-		},
-		{
-			"id":"S3 endpoint /path40 PUT",
-			"method":"PUT",
-			"path":"/path40"
-		},
-		{
-			"id":"S3 endpoint /path41 GET",
-			"method":"GET",
-			"path":"/path41"
-		},
-		{
-			"id":"S3 endpoint /path42 DELETE",
-			"method":"DELETE",
-			"path":"/path42"
-		},
-		{
-			"id":"S3 endpoint /path43 GET",
-			"method":"GET",
-			"path":"/path43"
-		},
-		{
-			"id":"S3 endpoint /path44 DELETE",
-			"method":"DELETE",
-			"path":"/path44"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S3 endpoint /path0 GET",
+			"to":"S4774 serviceCall /path12 DELETE"
+		},
+		{
+			"from":"S3 endpoint /path0 GET",
+			"to":"S1976 serviceCall /path19 PUT"
+		},
+		{
+			"from":"S3 endpoint /path1 PUT",
+			"to":"S6479 serviceCall /path5 POST"
+		},
+		{
+			"from":"S3 endpoint /path2 PUT",
+			"to":"S5082 serviceCall /path9 PUT"
+		},
+		{
+			"from":"S3 endpoint /path0 GET",
+			"to":"S6306 serviceCall /path7 GET"
+		},
+		{
+			"from":"S3 endpoint /path1 PUT",
+			"to":"S626 serviceCall /path8 POST"
+		},
+		{
+			"from":"S3 endpoint /path0 GET",
+			"to":"S3231 serviceCall /path2 GET"
+		},
+		{
+			"from":"S3 endpoint /path2 PUT",
+			"to":"S422 serviceCall /path8 POST"
+		},
+		{
+			"from":"S3 endpoint /path0 GET",
+			"to":"S3584 serviceCall /path162 PUT"
+		}
+	],
 	"name":"S3",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S4774 serviceCall /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1976 serviceCall /path19 PUT",
+			"method":"PUT",
+			"path":"/path19",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6479 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5082 serviceCall /path9 PUT",
+			"method":"PUT",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6306 serviceCall /path7 GET",
+			"method":"GET",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S626 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3231 serviceCall /path2 GET",
+			"method":"GET",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S422 serviceCall /path8 POST",
+			"method":"POST",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3584 serviceCall /path162 PUT",
+			"method":"PUT",
+			"path":"/path162",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

@@ -1,0 +1,81 @@
+{
+  "endpoint": [
+    {
+      "id": "S9757 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S9757 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    },
+    {
+      "id": "S9757 endpoint /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2"
+    },
+    {
+      "id": "S9757 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S9757 endpoint /path4 PUT",
+      "method": "PUT",
+      "path": "/path4"
+    },
+    {
+      "id": "S9757 endpoint /path5 DELETE",
+      "method": "DELETE",
+      "path": "/path5"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9757 endpoint /path0 GET",
+      "to": "S3115 serviceCall /path122 GET"
+    },
+    {
+      "from": "S9757 endpoint /path1 GET",
+      "to": "S496 serviceCall /path98 PUT"
+    },
+    {
+      "from": "S9757 endpoint /path0 GET",
+      "to": "S2906 serviceCall /path5 GET"
+    }
+  ],
+  "name": "S9757",
+  "serviceCall": [
+    {
+      "id": "S7042 serviceCall /path17 PUT",
+      "method": "PUT",
+      "path": "/path17",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3115 serviceCall /path122 GET",
+      "method": "GET",
+      "path": "/path122",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S496 serviceCall /path98 PUT",
+      "method": "PUT",
+      "path": "/path98",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S2906 serviceCall /path5 GET",
+      "method": "GET",
+      "path": "/path5",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

@@ -1,0 +1,68 @@
+{
+  "endpoint": [
+    {
+      "id": "S7238 endpoint /path0 DELETE",
+      "method": "DELETE",
+      "path": "/path0"
+    },
+    {
+      "id": "S7238 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    },
+    {
+      "id": "S7238 endpoint /path2 GET",
+      "method": "GET",
+      "path": "/path2"
+    },
+    {
+      "id": "S7238 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S7238 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S7238 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    },
+    {
+      "id": "S7238 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7238 endpoint /path0 DELETE",
+      "to": "S1970 serviceCall /path3 GET"
+    },
+    {
+      "from": "S7238 endpoint /path1 GET",
+      "to": "S3658 serviceCall /path169 DELETE"
+    }
+  ],
+  "name": "S7238",
+  "serviceCall": [
+    {
+      "id": "S1970 serviceCall /path3 GET",
+      "method": "GET",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S3658 serviceCall /path169 DELETE",
+      "method": "DELETE",
+      "path": "/path169",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

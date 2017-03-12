@@ -1,0 +1,45 @@
+{
+  "endpoint": [
+    {
+      "id": "S6334 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S6334 endpoint /path0 GET",
+      "to": "S8985 serviceCall /path7 PUT"
+    },
+    {
+      "from": "S6334 endpoint /path0 GET",
+      "to": "S667 serviceCall /path23 PUT"
+    }
+  ],
+  "name": "S6334",
+  "serviceCall": [
+    {
+      "id": "S9335 serviceCall /path16 GET",
+      "method": "GET",
+      "path": "/path16",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S8985 serviceCall /path7 PUT",
+      "method": "PUT",
+      "path": "/path7",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S667 serviceCall /path23 PUT",
+      "method": "PUT",
+      "path": "/path23",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

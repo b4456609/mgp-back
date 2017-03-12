@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S9118 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S9118 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S9118 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9118 endpoint /path0 GET",
+			"to":"S5660 serviceCall /path1 POST"
+		}
+	],
+	"name":"S9118",
+	"serviceCall":[
+		{
+			"id":"S5660 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

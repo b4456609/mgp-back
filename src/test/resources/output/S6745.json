@@ -1,0 +1,52 @@
+{
+  "endpoint": [
+    {
+      "id": "S6745 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S6745 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    },
+    {
+      "id": "S6745 endpoint /path2 POST",
+      "method": "POST",
+      "path": "/path2"
+    },
+    {
+      "id": "S6745 endpoint /path3 GET",
+      "method": "GET",
+      "path": "/path3"
+    },
+    {
+      "id": "S6745 endpoint /path4 PUT",
+      "method": "PUT",
+      "path": "/path4"
+    },
+    {
+      "id": "S6745 endpoint /path5 PUT",
+      "method": "PUT",
+      "path": "/path5"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S6745 endpoint /path1 POST",
+      "to": "S121 serviceCall /path17 PUT"
+    }
+  ],
+  "name": "S6745",
+  "serviceCall": [
+    {
+      "id": "S121 serviceCall /path17 PUT",
+      "method": "PUT",
+      "path": "/path17",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

@@ -1,0 +1,138 @@
+{
+  "endpoint": [
+    {
+      "id": "S7920 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S7920 endpoint /path1 POST",
+      "method": "POST",
+      "path": "/path1"
+    },
+    {
+      "id": "S7920 endpoint /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2"
+    },
+    {
+      "id": "S7920 endpoint /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3"
+    },
+    {
+      "id": "S7920 endpoint /path4 GET",
+      "method": "GET",
+      "path": "/path4"
+    },
+    {
+      "id": "S7920 endpoint /path5 POST",
+      "method": "POST",
+      "path": "/path5"
+    },
+    {
+      "id": "S7920 endpoint /path6 GET",
+      "method": "GET",
+      "path": "/path6"
+    },
+    {
+      "id": "S7920 endpoint /path7 POST",
+      "method": "POST",
+      "path": "/path7"
+    },
+    {
+      "id": "S7920 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    },
+    {
+      "id": "S7920 endpoint /path9 POST",
+      "method": "POST",
+      "path": "/path9"
+    },
+    {
+      "id": "S7920 endpoint /path10 DELETE",
+      "method": "DELETE",
+      "path": "/path10"
+    },
+    {
+      "id": "S7920 endpoint /path11 POST",
+      "method": "POST",
+      "path": "/path11"
+    },
+    {
+      "id": "S7920 endpoint /path12 PUT",
+      "method": "PUT",
+      "path": "/path12"
+    },
+    {
+      "id": "S7920 endpoint /path13 DELETE",
+      "method": "DELETE",
+      "path": "/path13"
+    },
+    {
+      "id": "S7920 endpoint /path14 GET",
+      "method": "GET",
+      "path": "/path14"
+    },
+    {
+      "id": "S7920 endpoint /path15 GET",
+      "method": "GET",
+      "path": "/path15"
+    },
+    {
+      "id": "S7920 endpoint /path16 PUT",
+      "method": "PUT",
+      "path": "/path16"
+    },
+    {
+      "id": "S7920 endpoint /path17 DELETE",
+      "method": "DELETE",
+      "path": "/path17"
+    },
+    {
+      "id": "S7920 endpoint /path18 DELETE",
+      "method": "DELETE",
+      "path": "/path18"
+    },
+    {
+      "id": "S7920 endpoint /path19 POST",
+      "method": "POST",
+      "path": "/path19"
+    },
+    {
+      "id": "S7920 endpoint /path20 GET",
+      "method": "GET",
+      "path": "/path20"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S7920 endpoint /path0 GET",
+      "to": "S3479 serviceCall /path5 PUT"
+    },
+    {
+      "from": "S7920 endpoint /path2 DELETE",
+      "to": "S672 serviceCall /path154 PUT"
+    }
+  ],
+  "name": "S7920",
+  "serviceCall": [
+    {
+      "id": "S3479 serviceCall /path5 PUT",
+      "method": "PUT",
+      "path": "/path5",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S672 serviceCall /path154 PUT",
+      "method": "PUT",
+      "path": "/path154",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

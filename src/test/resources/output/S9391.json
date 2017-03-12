@@ -1,0 +1,52 @@
+{
+	"endpoint":[
+		{
+			"id":"S9391 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9391 endpoint /path0 PUT",
+			"to":"S1986 serviceCall /path129 GET"
+		},
+		{
+			"from":"S9391 endpoint /path0 PUT",
+			"to":"S7106 serviceCall /path10 GET"
+		}
+	],
+	"name":"S9391",
+	"serviceCall":[
+		{
+			"id":"S1986 serviceCall /path129 GET",
+			"method":"GET",
+			"path":"/path129",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7106 serviceCall /path10 GET",
+			"method":"GET",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1464 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7546 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

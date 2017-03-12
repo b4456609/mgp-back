@@ -1,0 +1,32 @@
+{
+	"endpoint":[
+		{
+			"id":"S8491 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S8491 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8491 endpoint /path0 POST",
+			"to":"S5289 serviceCall /path5 POST"
+		}
+	],
+	"name":"S8491",
+	"serviceCall":[
+		{
+			"id":"S5289 serviceCall /path5 POST",
+			"method":"POST",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

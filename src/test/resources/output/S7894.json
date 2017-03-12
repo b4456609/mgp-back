@@ -1,0 +1,107 @@
+{
+	"endpoint":[
+		{
+			"id":"S7894 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S7894 endpoint /path1 PUT",
+			"method":"PUT",
+			"path":"/path1"
+		},
+		{
+			"id":"S7894 endpoint /path2 GET",
+			"method":"GET",
+			"path":"/path2"
+		},
+		{
+			"id":"S7894 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S7894 endpoint /path4 GET",
+			"method":"GET",
+			"path":"/path4"
+		},
+		{
+			"id":"S7894 endpoint /path5 DELETE",
+			"method":"DELETE",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S7894 endpoint /path0 POST",
+			"to":"S2123 serviceCall /path105 DELETE"
+		},
+		{
+			"from":"S7894 endpoint /path2 GET",
+			"to":"S2220 serviceCall /path15 GET"
+		},
+		{
+			"from":"S7894 endpoint /path0 POST",
+			"to":"S8318 serviceCall /path9 DELETE"
+		},
+		{
+			"from":"S7894 endpoint /path0 POST",
+			"to":"S6799 serviceCall /path152 POST"
+		},
+		{
+			"from":"S7894 endpoint /path0 POST",
+			"to":"S6580 serviceCall /path23 DELETE"
+		},
+		{
+			"from":"S7894 endpoint /path0 POST",
+			"to":"S9106 serviceCall /path13 PUT"
+		}
+	],
+	"name":"S7894",
+	"serviceCall":[
+		{
+			"id":"S2123 serviceCall /path105 DELETE",
+			"method":"DELETE",
+			"path":"/path105",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2220 serviceCall /path15 GET",
+			"method":"GET",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S8318 serviceCall /path9 DELETE",
+			"method":"DELETE",
+			"path":"/path9",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S6799 serviceCall /path152 POST",
+			"method":"POST",
+			"path":"/path152",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6580 serviceCall /path23 DELETE",
+			"method":"DELETE",
+			"path":"/path23",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9106 serviceCall /path13 PUT",
+			"method":"PUT",
+			"path":"/path13",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

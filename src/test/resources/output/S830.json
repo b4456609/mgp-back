@@ -6,76 +6,44 @@
 			"path":"/path0"
 		},
 		{
-			"id":"S830 endpoint /path1 DELETE",
-			"method":"DELETE",
+          "id": "S830 endpoint /path1 PUT",
+          "method": "PUT",
 			"path":"/path1"
 		},
 		{
-			"id":"S830 endpoint /path2 GET",
-			"method":"GET",
+          "id": "S830 endpoint /path2 PUT",
+          "method": "PUT",
 			"path":"/path2"
-		}
-	],
-	"endpointDep":[
-		{
-			"from":"S830 endpoint /path0 PUT",
-			"to":"S3316 serviceCall /path187 POST"
 		},
 		{
-			"from":"S830 endpoint /path1 DELETE",
-			"to":"S3538 serviceCall /path7 GET"
-		},
-		{
-			"from":"S830 endpoint /path0 PUT",
-			"to":"S3861 serviceCall /path0 DELETE"
-		},
-		{
-			"from":"S830 endpoint /path0 PUT",
-			"to":"S4699 serviceCall /path5 POST"
-		},
-		{
-			"from":"S830 endpoint /path0 PUT",
-			"to":"S4573 serviceCall /path22 POST"
-		}
-	],
-	"name":"S830",
-	"serviceCall":[
-		{
-			"id":"S3316 serviceCall /path187 POST",
+          "id": "S830 endpoint /path3 POST",
 			"method":"POST",
-			"path":"/path187",
-			"provider":"endpoint",
-			"unTest":false
+          "path": "/path3"
 		},
 		{
-			"id":"S3538 serviceCall /path7 GET",
-			"method":"GET",
-			"path":"/path7",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3861 serviceCall /path0 DELETE",
+          "id": "S830 endpoint /path4 DELETE",
 			"method":"DELETE",
-			"path":"/path0",
-			"provider":"endpoint",
-			"unTest":false
+          "path": "/path4"
 		},
 		{
-			"id":"S4699 serviceCall /path5 POST",
-			"method":"POST",
-			"path":"/path5",
-			"provider":"endpoint",
-			"unTest":true
+          "id": "S830 endpoint /path5 PUT",
+          "method": "PUT",
+          "path": "/path5"
 		},
 		{
-			"id":"S4573 serviceCall /path22 POST",
-			"method":"POST",
-			"path":"/path22",
-			"provider":"endpoint",
-			"unTest":false
+          "id": "S830 endpoint /path6 GET",
+          "method": "GET",
+          "path": "/path6"
+        },
+      {
+        "id": "S830 endpoint /path7 GET",
+        "method": "GET",
+        "path": "/path7"
 		}
 	],
+  "endpointDep": [],
+  "name": "S830",
+  "serviceCall": [],
 	"swagger":"",
 	"timestamp":0
 }

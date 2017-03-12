@@ -14,48 +14,80 @@
 	"endpointDep":[
 		{
 			"from":"S4174 endpoint /path0 PUT",
-			"to":"S3827 serviceCall /path13 GET"
+			"to":"S7763 serviceCall /path21 PUT"
+		},
+		{
+			"from":"S4174 endpoint /path1 POST",
+			"to":"S6819 serviceCall /path21 PUT"
 		},
 		{
 			"from":"S4174 endpoint /path0 PUT",
-			"to":"S867 serviceCall /path10 DELETE"
+			"to":"S6674 serviceCall /path3 POST"
+		},
+		{
+			"from":"S4174 endpoint /path1 POST",
+			"to":"S3432 serviceCall /path46 GET"
 		},
 		{
 			"from":"S4174 endpoint /path0 PUT",
-			"to":"S1065 serviceCall /path5 GET"
-		},
-		{
-			"from":"S4174 endpoint /path0 PUT",
-			"to":"S414 serviceCall /path14 GET"
+			"to":"S2087 serviceCall /path20 PUT"
 		}
 	],
 	"name":"S4174",
 	"serviceCall":[
 		{
-			"id":"S3827 serviceCall /path13 GET",
-			"method":"GET",
-			"path":"/path13",
+			"id":"S3794 serviceCall /path21 PUT",
+			"method":"PUT",
+			"path":"/path21",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S867 serviceCall /path10 DELETE",
-			"method":"DELETE",
-			"path":"/path10",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1065 serviceCall /path5 GET",
-			"method":"GET",
-			"path":"/path5",
+			"id":"S7763 serviceCall /path21 PUT",
+			"method":"PUT",
+			"path":"/path21",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S414 serviceCall /path14 GET",
+			"id":"S8611 serviceCall /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6819 serviceCall /path21 PUT",
+			"method":"PUT",
+			"path":"/path21",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S6674 serviceCall /path3 POST",
+			"method":"POST",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3432 serviceCall /path46 GET",
 			"method":"GET",
-			"path":"/path14",
+			"path":"/path46",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2087 serviceCall /path20 PUT",
+			"method":"PUT",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S5125 serviceCall /path18 POST",
+			"method":"POST",
+			"path":"/path18",
 			"provider":"endpoint",
 			"unTest":false
 		}

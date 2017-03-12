@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S1214 endpoint /path0 DELETE",
-			"method":"DELETE",
+			"id":"S1214 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
@@ -11,144 +11,93 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S1214 endpoint /path2 POST",
-			"method":"POST",
+			"id":"S1214 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S1214 endpoint /path3 GET",
-			"method":"GET",
+			"id":"S1214 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S1214 endpoint /path4 GET",
-			"method":"GET",
+			"id":"S1214 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S1214 endpoint /path5 POST",
-			"method":"POST",
+			"id":"S1214 endpoint /path5 PUT",
+			"method":"PUT",
 			"path":"/path5"
 		},
 		{
-			"id":"S1214 endpoint /path6 GET",
-			"method":"GET",
+			"id":"S1214 endpoint /path6 PUT",
+			"method":"PUT",
 			"path":"/path6"
+		},
+		{
+			"id":"S1214 endpoint /path7 POST",
+			"method":"POST",
+			"path":"/path7"
+		},
+		{
+			"id":"S1214 endpoint /path8 POST",
+			"method":"POST",
+			"path":"/path8"
+		},
+		{
+			"id":"S1214 endpoint /path9 PUT",
+			"method":"PUT",
+			"path":"/path9"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S1214 endpoint /path2 POST",
-			"to":"S4236 serviceCall /path2 GET"
+			"from":"S1214 endpoint /path0 GET",
+			"to":"S107 serviceCall /path9 GET"
 		},
 		{
-			"from":"S1214 endpoint /path0 DELETE",
-			"to":"S249 serviceCall /path22 POST"
+			"from":"S1214 endpoint /path0 GET",
+			"to":"S1593 serviceCall /path2 DELETE"
 		},
 		{
-			"from":"S1214 endpoint /path2 POST",
-			"to":"S3788 serviceCall /path27 DELETE"
+			"from":"S1214 endpoint /path0 GET",
+			"to":"S3883 serviceCall /path19 GET"
 		},
 		{
-			"from":"S1214 endpoint /path1 POST",
-			"to":"S4613 serviceCall /path2 PUT"
-		},
-		{
-			"from":"S1214 endpoint /path0 DELETE",
-			"to":"S3475 serviceCall /path20 GET"
-		},
-		{
-			"from":"S1214 endpoint /path1 POST",
-			"to":"S1927 serviceCall /path9 POST"
-		},
-		{
-			"from":"S1214 endpoint /path0 DELETE",
-			"to":"S793 serviceCall /path9 GET"
-		},
-		{
-			"from":"S1214 endpoint /path1 POST",
-			"to":"S3453 serviceCall /path11 PUT"
-		},
-		{
-			"from":"S1214 endpoint /path0 DELETE",
-			"to":"S3502 serviceCall /path109 GET"
-		},
-		{
-			"from":"S1214 endpoint /path3 GET",
-			"to":"S1059 serviceCall /path1 POST"
+			"from":"S1214 endpoint /path3 PUT",
+			"to":"S7153 serviceCall /path1 POST"
 		}
 	],
 	"name":"S1214",
 	"serviceCall":[
 		{
-			"id":"S4236 serviceCall /path2 GET",
+			"id":"S107 serviceCall /path9 GET",
 			"method":"GET",
-			"path":"/path2",
+			"path":"/path9",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S249 serviceCall /path22 POST",
-			"method":"POST",
-			"path":"/path22",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3788 serviceCall /path27 DELETE",
+			"id":"S1593 serviceCall /path2 DELETE",
 			"method":"DELETE",
-			"path":"/path27",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S4613 serviceCall /path2 PUT",
-			"method":"PUT",
 			"path":"/path2",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		},
 		{
-			"id":"S3475 serviceCall /path20 GET",
+			"id":"S3883 serviceCall /path19 GET",
 			"method":"GET",
-			"path":"/path20",
+			"path":"/path19",
 			"provider":"endpoint",
 			"unTest":true
 		},
 		{
-			"id":"S1927 serviceCall /path9 POST",
-			"method":"POST",
-			"path":"/path9",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S793 serviceCall /path9 GET",
-			"method":"GET",
-			"path":"/path9",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S3453 serviceCall /path11 PUT",
-			"method":"PUT",
-			"path":"/path11",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S3502 serviceCall /path109 GET",
-			"method":"GET",
-			"path":"/path109",
-			"provider":"endpoint",
-			"unTest":true
-		},
-		{
-			"id":"S1059 serviceCall /path1 POST",
+			"id":"S7153 serviceCall /path1 POST",
 			"method":"POST",
 			"path":"/path1",
 			"provider":"endpoint",
-			"unTest":false
+			"unTest":true
 		}
 	],
 	"swagger":"",

@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S2926 endpoint /path0 GET",
-			"method":"GET",
+			"id":"S2926 endpoint /path0 POST",
+			"method":"POST",
 			"path":"/path0"
 		},
 		{
@@ -11,58 +11,61 @@
 			"path":"/path1"
 		},
 		{
-			"id":"S2926 endpoint /path2 DELETE",
-			"method":"DELETE",
+			"id":"S2926 endpoint /path2 PUT",
+			"method":"PUT",
 			"path":"/path2"
+		},
+		{
+			"id":"S2926 endpoint /path3 DELETE",
+			"method":"DELETE",
+			"path":"/path3"
+		},
+		{
+			"id":"S2926 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S2926 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		},
+		{
+			"id":"S2926 endpoint /path6 DELETE",
+			"method":"DELETE",
+			"path":"/path6"
+		},
+		{
+			"id":"S2926 endpoint /path7 GET",
+			"method":"GET",
+			"path":"/path7"
 		}
 	],
 	"endpointDep":[
 		{
-			"from":"S2926 endpoint /path0 GET",
-			"to":"S2635 serviceCall /path137 GET"
-		},
-		{
-			"from":"S2926 endpoint /path0 GET",
-			"to":"S1257 serviceCall /path166 GET"
-		},
-		{
 			"from":"S2926 endpoint /path1 POST",
-			"to":"S1914 serviceCall /path2 DELETE"
+			"to":"S8405 serviceCall /path30 POST"
 		},
 		{
-			"from":"S2926 endpoint /path1 POST",
-			"to":"S4691 serviceCall /path8 PUT"
+			"from":"S2926 endpoint /path3 DELETE",
+			"to":"S3785 serviceCall /path22 DELETE"
 		}
 	],
 	"name":"S2926",
 	"serviceCall":[
 		{
-			"id":"S2635 serviceCall /path137 GET",
-			"method":"GET",
-			"path":"/path137",
+			"id":"S8405 serviceCall /path30 POST",
+			"method":"POST",
+			"path":"/path30",
 			"provider":"endpoint",
 			"unTest":false
 		},
 		{
-			"id":"S1257 serviceCall /path166 GET",
-			"method":"GET",
-			"path":"/path166",
-			"provider":"endpoint",
-			"unTest":false
-		},
-		{
-			"id":"S1914 serviceCall /path2 DELETE",
+			"id":"S3785 serviceCall /path22 DELETE",
 			"method":"DELETE",
-			"path":"/path2",
+			"path":"/path22",
 			"provider":"endpoint",
 			"unTest":true
-		},
-		{
-			"id":"S4691 serviceCall /path8 PUT",
-			"method":"PUT",
-			"path":"/path8",
-			"provider":"endpoint",
-			"unTest":false
 		}
 	],
 	"swagger":"",

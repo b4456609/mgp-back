@@ -1,0 +1,108 @@
+{
+	"endpoint":[
+		{
+			"id":"S8725 endpoint /path0 PUT",
+			"method":"PUT",
+			"path":"/path0"
+		},
+		{
+			"id":"S8725 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S8725 endpoint /path0 PUT",
+			"to":"S1369 serviceCall /path20 GET"
+		},
+		{
+			"from":"S8725 endpoint /path0 PUT",
+			"to":"S2986 serviceCall /path3 PUT"
+		},
+		{
+			"from":"S8725 endpoint /path1 POST",
+			"to":"S2377 serviceCall /path22 PUT"
+		},
+		{
+			"from":"S8725 endpoint /path0 PUT",
+			"to":"S2110 serviceCall /path12 POST"
+		},
+		{
+			"from":"S8725 endpoint /path1 POST",
+			"to":"S7510 serviceCall /path4 PUT"
+		},
+		{
+			"from":"S8725 endpoint /path1 POST",
+			"to":"S2369 serviceCall /path76 DELETE"
+		}
+	],
+	"name":"S8725",
+	"serviceCall":[
+		{
+			"id":"S1369 serviceCall /path20 GET",
+			"method":"GET",
+			"path":"/path20",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S4521 serviceCall /path8 PUT",
+			"method":"PUT",
+			"path":"/path8",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S808 serviceCall /path204 GET",
+			"method":"GET",
+			"path":"/path204",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2986 serviceCall /path3 PUT",
+			"method":"PUT",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2377 serviceCall /path22 PUT",
+			"method":"PUT",
+			"path":"/path22",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2110 serviceCall /path12 POST",
+			"method":"POST",
+			"path":"/path12",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S9028 serviceCall /path73 POST",
+			"method":"POST",
+			"path":"/path73",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S7510 serviceCall /path4 PUT",
+			"method":"PUT",
+			"path":"/path4",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2369 serviceCall /path76 DELETE",
+			"method":"DELETE",
+			"path":"/path76",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

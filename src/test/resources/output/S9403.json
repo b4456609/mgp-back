@@ -1,0 +1,100 @@
+{
+  "endpoint": [
+    {
+      "id": "S9403 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S9403 endpoint /path1 GET",
+      "method": "GET",
+      "path": "/path1"
+    },
+    {
+      "id": "S9403 endpoint /path2 DELETE",
+      "method": "DELETE",
+      "path": "/path2"
+    },
+    {
+      "id": "S9403 endpoint /path3 POST",
+      "method": "POST",
+      "path": "/path3"
+    },
+    {
+      "id": "S9403 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S9403 endpoint /path5 GET",
+      "method": "GET",
+      "path": "/path5"
+    },
+    {
+      "id": "S9403 endpoint /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6"
+    },
+    {
+      "id": "S9403 endpoint /path7 GET",
+      "method": "GET",
+      "path": "/path7"
+    },
+    {
+      "id": "S9403 endpoint /path8 PUT",
+      "method": "PUT",
+      "path": "/path8"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S9403 endpoint /path0 GET",
+      "to": "S8754 serviceCall /path16 POST"
+    },
+    {
+      "from": "S9403 endpoint /path3 POST",
+      "to": "S9757 serviceCall /path1 GET"
+    },
+    {
+      "from": "S9403 endpoint /path1 GET",
+      "to": "S8771 serviceCall /path100 GET"
+    },
+    {
+      "from": "S9403 endpoint /path6 DELETE",
+      "to": "S7089 serviceCall /path9 POST"
+    }
+  ],
+  "name": "S9403",
+  "serviceCall": [
+    {
+      "id": "S8754 serviceCall /path16 POST",
+      "method": "POST",
+      "path": "/path16",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S9757 serviceCall /path1 GET",
+      "method": "GET",
+      "path": "/path1",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S8771 serviceCall /path100 GET",
+      "method": "GET",
+      "path": "/path100",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7089 serviceCall /path9 POST",
+      "method": "POST",
+      "path": "/path9",
+      "provider": "endpoint",
+      "unTest": false
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

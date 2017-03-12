@@ -1,0 +1,118 @@
+{
+	"endpoint":[
+		{
+			"id":"S5896 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S5896 endpoint /path1 DELETE",
+			"method":"DELETE",
+			"path":"/path1"
+		},
+		{
+			"id":"S5896 endpoint /path2 DELETE",
+			"method":"DELETE",
+			"path":"/path2"
+		},
+		{
+			"id":"S5896 endpoint /path3 GET",
+			"method":"GET",
+			"path":"/path3"
+		},
+		{
+			"id":"S5896 endpoint /path4 PUT",
+			"method":"PUT",
+			"path":"/path4"
+		},
+		{
+			"id":"S5896 endpoint /path5 PUT",
+			"method":"PUT",
+			"path":"/path5"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5896 endpoint /path0 GET",
+			"to":"S4315 serviceCall /path52 DELETE"
+		},
+		{
+			"from":"S5896 endpoint /path1 DELETE",
+			"to":"S1111 serviceCall /path86 PUT"
+		},
+		{
+			"from":"S5896 endpoint /path0 GET",
+			"to":"S9188 serviceCall /path10 PUT"
+		},
+		{
+			"from":"S5896 endpoint /path0 GET",
+			"to":"S2406 serviceCall /path121 POST"
+		},
+		{
+			"from":"S5896 endpoint /path0 GET",
+			"to":"S5329 serviceCall /path192 GET"
+		},
+		{
+			"from":"S5896 endpoint /path2 DELETE",
+			"to":"S340 serviceCall /path11 GET"
+		},
+		{
+			"from":"S5896 endpoint /path2 DELETE",
+			"to":"S3761 serviceCall /path5 GET"
+		}
+	],
+	"name":"S5896",
+	"serviceCall":[
+		{
+			"id":"S4315 serviceCall /path52 DELETE",
+			"method":"DELETE",
+			"path":"/path52",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1111 serviceCall /path86 PUT",
+			"method":"PUT",
+			"path":"/path86",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S9188 serviceCall /path10 PUT",
+			"method":"PUT",
+			"path":"/path10",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S2406 serviceCall /path121 POST",
+			"method":"POST",
+			"path":"/path121",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S5329 serviceCall /path192 GET",
+			"method":"GET",
+			"path":"/path192",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S340 serviceCall /path11 GET",
+			"method":"GET",
+			"path":"/path11",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S3761 serviceCall /path5 GET",
+			"method":"GET",
+			"path":"/path5",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

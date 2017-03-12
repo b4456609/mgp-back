@@ -1,0 +1,34 @@
+{
+	"endpoint":[
+		{
+			"id":"S9086 endpoint /path0 DELETE",
+			"method":"DELETE",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9086 endpoint /path0 DELETE",
+			"to":"S1264 serviceCall /path0 GET"
+		}
+	],
+	"name":"S9086",
+	"serviceCall":[
+		{
+			"id":"S9041 serviceCall /path37 POST",
+			"method":"POST",
+			"path":"/path37",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S1264 serviceCall /path0 GET",
+			"method":"GET",
+			"path":"/path0",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

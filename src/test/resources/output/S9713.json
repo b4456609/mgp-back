@@ -1,0 +1,38 @@
+{
+	"endpoint":[
+		{
+			"id":"S9713 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S9713 endpoint /path0 POST",
+			"to":"S9168 serviceCall /path3 GET"
+		},
+		{
+			"from":"S9713 endpoint /path0 POST",
+			"to":"S1510 serviceCall /path14 PUT"
+		}
+	],
+	"name":"S9713",
+	"serviceCall":[
+		{
+			"id":"S9168 serviceCall /path3 GET",
+			"method":"GET",
+			"path":"/path3",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S1510 serviceCall /path14 PUT",
+			"method":"PUT",
+			"path":"/path14",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

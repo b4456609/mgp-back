@@ -1,28 +1,28 @@
 {
 	"endpoint":[
 		{
-			"id":"S4843 endpoint /path0 PUT",
-			"method":"PUT",
+			"id":"S4843 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
-			"id":"S4843 endpoint /path1 POST",
-			"method":"POST",
+			"id":"S4843 endpoint /path1 PUT",
+			"method":"PUT",
 			"path":"/path1"
 		},
 		{
-			"id":"S4843 endpoint /path2 PUT",
-			"method":"PUT",
+			"id":"S4843 endpoint /path2 GET",
+			"method":"GET",
 			"path":"/path2"
 		},
 		{
-			"id":"S4843 endpoint /path3 DELETE",
-			"method":"DELETE",
+			"id":"S4843 endpoint /path3 PUT",
+			"method":"PUT",
 			"path":"/path3"
 		},
 		{
-			"id":"S4843 endpoint /path4 POST",
-			"method":"POST",
+			"id":"S4843 endpoint /path4 GET",
+			"method":"GET",
 			"path":"/path4"
 		},
 		{
@@ -31,19 +31,118 @@
 			"path":"/path5"
 		},
 		{
-			"id":"S4843 endpoint /path6 PUT",
-			"method":"PUT",
+			"id":"S4843 endpoint /path6 GET",
+			"method":"GET",
 			"path":"/path6"
 		},
 		{
-			"id":"S4843 endpoint /path7 PUT",
-			"method":"PUT",
+			"id":"S4843 endpoint /path7 POST",
+			"method":"POST",
 			"path":"/path7"
+		},
+		{
+			"id":"S4843 endpoint /path8 GET",
+			"method":"GET",
+			"path":"/path8"
+		},
+		{
+			"id":"S4843 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S4843 endpoint /path10 POST",
+			"method":"POST",
+			"path":"/path10"
+		},
+		{
+			"id":"S4843 endpoint /path11 DELETE",
+			"method":"DELETE",
+			"path":"/path11"
+		},
+		{
+			"id":"S4843 endpoint /path12 DELETE",
+			"method":"DELETE",
+			"path":"/path12"
+		},
+		{
+			"id":"S4843 endpoint /path13 PUT",
+			"method":"PUT",
+			"path":"/path13"
+		},
+		{
+			"id":"S4843 endpoint /path14 GET",
+			"method":"GET",
+			"path":"/path14"
+		},
+		{
+			"id":"S4843 endpoint /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15"
+		},
+		{
+			"id":"S4843 endpoint /path16 GET",
+			"method":"GET",
+			"path":"/path16"
+		},
+		{
+			"id":"S4843 endpoint /path17 POST",
+			"method":"POST",
+			"path":"/path17"
+		},
+		{
+			"id":"S4843 endpoint /path18 DELETE",
+			"method":"DELETE",
+			"path":"/path18"
+		},
+		{
+			"id":"S4843 endpoint /path19 POST",
+			"method":"POST",
+			"path":"/path19"
+		},
+		{
+			"id":"S4843 endpoint /path20 GET",
+			"method":"GET",
+			"path":"/path20"
+		},
+		{
+			"id":"S4843 endpoint /path21 POST",
+			"method":"POST",
+			"path":"/path21"
+		},
+		{
+			"id":"S4843 endpoint /path22 DELETE",
+			"method":"DELETE",
+			"path":"/path22"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S4843 endpoint /path2 GET",
+			"to":"S9846 serviceCall /path7 DELETE"
+		},
+		{
+			"from":"S4843 endpoint /path1 PUT",
+			"to":"S2452 serviceCall /path35 DELETE"
+		}
+	],
 	"name":"S4843",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S9846 serviceCall /path7 DELETE",
+			"method":"DELETE",
+			"path":"/path7",
+			"provider":"endpoint",
+			"unTest":false
+		},
+		{
+			"id":"S2452 serviceCall /path35 DELETE",
+			"method":"DELETE",
+			"path":"/path35",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

@@ -1,0 +1,37 @@
+{
+	"endpoint":[
+		{
+			"id":"S5884 endpoint /path0 POST",
+			"method":"POST",
+			"path":"/path0"
+		},
+		{
+			"id":"S5884 endpoint /path1 GET",
+			"method":"GET",
+			"path":"/path1"
+		},
+		{
+			"id":"S5884 endpoint /path2 POST",
+			"method":"POST",
+			"path":"/path2"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S5884 endpoint /path1 GET",
+			"to":"S277 serviceCall /path15 DELETE"
+		}
+	],
+	"name":"S5884",
+	"serviceCall":[
+		{
+			"id":"S277 serviceCall /path15 DELETE",
+			"method":"DELETE",
+			"path":"/path15",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

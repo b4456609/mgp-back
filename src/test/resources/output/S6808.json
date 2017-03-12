@@ -1,0 +1,43 @@
+{
+	"endpoint":[
+		{
+			"id":"S6808 endpoint /path0 GET",
+			"method":"GET",
+			"path":"/path0"
+		},
+		{
+			"id":"S6808 endpoint /path1 POST",
+			"method":"POST",
+			"path":"/path1"
+		}
+	],
+	"endpointDep":[
+		{
+			"from":"S6808 endpoint /path0 GET",
+			"to":"S9092 serviceCall /path1 POST"
+		},
+		{
+			"from":"S6808 endpoint /path0 GET",
+			"to":"S3602 serviceCall /path17 POST"
+		}
+	],
+	"name":"S6808",
+	"serviceCall":[
+		{
+			"id":"S9092 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		},
+		{
+			"id":"S3602 serviceCall /path17 POST",
+			"method":"POST",
+			"path":"/path17",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
+	"swagger":"",
+	"timestamp":0
+}

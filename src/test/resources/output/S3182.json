@@ -1,24 +1,16 @@
 {
-	"endpoint":[
-		{
-			"id":"S3182 endpoint /path0 GET",
-			"method":"GET",
-			"path":"/path0"
-		},
-		{
-			"id":"S3182 endpoint /path1 GET",
-			"method":"GET",
-			"path":"/path1"
-		},
-		{
-			"id":"S3182 endpoint /path2 GET",
-			"method":"GET",
-			"path":"/path2"
-		}
-	],
+	"endpoint":[],
 	"endpointDep":[],
 	"name":"S3182",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S8578 serviceCall /path1 POST",
+			"method":"POST",
+			"path":"/path1",
+			"provider":"endpoint",
+			"unTest":true
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }

@@ -1,0 +1,110 @@
+{
+  "endpoint": [
+    {
+      "id": "S6804 endpoint /path0 GET",
+      "method": "GET",
+      "path": "/path0"
+    },
+    {
+      "id": "S6804 endpoint /path1 PUT",
+      "method": "PUT",
+      "path": "/path1"
+    },
+    {
+      "id": "S6804 endpoint /path2 GET",
+      "method": "GET",
+      "path": "/path2"
+    },
+    {
+      "id": "S6804 endpoint /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3"
+    },
+    {
+      "id": "S6804 endpoint /path4 DELETE",
+      "method": "DELETE",
+      "path": "/path4"
+    },
+    {
+      "id": "S6804 endpoint /path5 POST",
+      "method": "POST",
+      "path": "/path5"
+    },
+    {
+      "id": "S6804 endpoint /path6 DELETE",
+      "method": "DELETE",
+      "path": "/path6"
+    },
+    {
+      "id": "S6804 endpoint /path7 POST",
+      "method": "POST",
+      "path": "/path7"
+    },
+    {
+      "id": "S6804 endpoint /path8 DELETE",
+      "method": "DELETE",
+      "path": "/path8"
+    },
+    {
+      "id": "S6804 endpoint /path9 GET",
+      "method": "GET",
+      "path": "/path9"
+    },
+    {
+      "id": "S6804 endpoint /path10 DELETE",
+      "method": "DELETE",
+      "path": "/path10"
+    }
+  ],
+  "endpointDep": [
+    {
+      "from": "S6804 endpoint /path0 GET",
+      "to": "S9422 serviceCall /path8 PUT"
+    },
+    {
+      "from": "S6804 endpoint /path0 GET",
+      "to": "S7892 serviceCall /path3 DELETE"
+    },
+    {
+      "from": "S6804 endpoint /path3 DELETE",
+      "to": "S3893 serviceCall /path17 DELETE"
+    },
+    {
+      "from": "S6804 endpoint /path0 GET",
+      "to": "S1343 serviceCall /path0 GET"
+    }
+  ],
+  "name": "S6804",
+  "serviceCall": [
+    {
+      "id": "S9422 serviceCall /path8 PUT",
+      "method": "PUT",
+      "path": "/path8",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S7892 serviceCall /path3 DELETE",
+      "method": "DELETE",
+      "path": "/path3",
+      "provider": "endpoint",
+      "unTest": true
+    },
+    {
+      "id": "S3893 serviceCall /path17 DELETE",
+      "method": "DELETE",
+      "path": "/path17",
+      "provider": "endpoint",
+      "unTest": false
+    },
+    {
+      "id": "S1343 serviceCall /path0 GET",
+      "method": "GET",
+      "path": "/path0",
+      "provider": "endpoint",
+      "unTest": true
+    }
+  ],
+  "swagger": "",
+  "timestamp": 0
+}

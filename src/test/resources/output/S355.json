@@ -1,8 +1,8 @@
 {
 	"endpoint":[
 		{
-			"id":"S355 endpoint /path0 PUT",
-			"method":"PUT",
+			"id":"S355 endpoint /path0 GET",
+			"method":"GET",
 			"path":"/path0"
 		},
 		{
@@ -16,18 +16,18 @@
 			"path":"/path2"
 		},
 		{
-			"id":"S355 endpoint /path3 PUT",
-			"method":"PUT",
+			"id":"S355 endpoint /path3 POST",
+			"method":"POST",
 			"path":"/path3"
 		},
 		{
-			"id":"S355 endpoint /path4 PUT",
-			"method":"PUT",
+			"id":"S355 endpoint /path4 DELETE",
+			"method":"DELETE",
 			"path":"/path4"
 		},
 		{
-			"id":"S355 endpoint /path5 DELETE",
-			"method":"DELETE",
+			"id":"S355 endpoint /path5 POST",
+			"method":"POST",
 			"path":"/path5"
 		},
 		{
@@ -36,14 +36,47 @@
 			"path":"/path6"
 		},
 		{
-			"id":"S355 endpoint /path7 DELETE",
-			"method":"DELETE",
+			"id":"S355 endpoint /path7 PUT",
+			"method":"PUT",
 			"path":"/path7"
+		},
+		{
+			"id":"S355 endpoint /path8 PUT",
+			"method":"PUT",
+			"path":"/path8"
+		},
+		{
+			"id":"S355 endpoint /path9 GET",
+			"method":"GET",
+			"path":"/path9"
+		},
+		{
+			"id":"S355 endpoint /path10 GET",
+			"method":"GET",
+			"path":"/path10"
+		},
+		{
+			"id":"S355 endpoint /path11 PUT",
+			"method":"PUT",
+			"path":"/path11"
 		}
 	],
-	"endpointDep":[],
+	"endpointDep":[
+		{
+			"from":"S355 endpoint /path0 GET",
+			"to":"S2331 serviceCall /path2 POST"
+		}
+	],
 	"name":"S355",
-	"serviceCall":[],
+	"serviceCall":[
+		{
+			"id":"S2331 serviceCall /path2 POST",
+			"method":"POST",
+			"path":"/path2",
+			"provider":"endpoint",
+			"unTest":false
+		}
+	],
 	"swagger":"",
 	"timestamp":0
 }
