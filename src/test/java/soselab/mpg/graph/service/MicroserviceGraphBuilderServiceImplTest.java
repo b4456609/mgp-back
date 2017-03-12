@@ -76,9 +76,11 @@ public class MicroserviceGraphBuilderServiceImplTest {
                 LOGGER.info("start {}th, num {}", i, num);
                 long start = System.currentTimeMillis();
                 serviceBuildHandler.build();
+                long middle = System.currentTimeMillis();
                 graphController.getGraphData();
                 long end = System.currentTimeMillis();
-                LOGGER.info("{}th time: {}ms", i, end - start);
+                LOGGER.info("{}th middle time: {}ms", i, middle - start);
+                LOGGER.info("{}th total time: {}ms", i, end - start);
             }
 
         }
