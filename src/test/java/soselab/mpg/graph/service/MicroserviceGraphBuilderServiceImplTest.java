@@ -12,6 +12,9 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import soselab.mpg.graph.controller.GraphController;
 import soselab.mpg.graph.controller.UploadFile;
+import soselab.mpg.graph.repository.CallRelationshipRepository;
+import soselab.mpg.graph.repository.EndpointNodeRepository;
+import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.graph.service.handler.ServiceBuildHandler;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.service.MPDService;
@@ -39,6 +42,13 @@ public class MicroserviceGraphBuilderServiceImplTest {
     GraphController graphController;
     private int[] numData = {5,10,20,30,40,50,100,200,300,400,500,1000,2000,3000,4000,5000};
 
+    @Autowired
+    private ServiceNodeRepository serviceNodeRepository;
+    @Autowired
+    private EndpointNodeRepository endpointNodeRepository;
+    @Autowired
+    private CallRelationshipRepository callRelationshipRepository;
+
     @Test
     public void build() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -55,6 +65,9 @@ public class MicroserviceGraphBuilderServiceImplTest {
 
 
         for (int j = 0; j < 20; j++){
+            serviceNodeRepository.deleteAll();
+            endpointNodeRepository.deleteAll();
+            callRelationshipRepository.deleteAll();
             LOGGER.info("start {}th", j);
             for (int i = 0; i <numData.length; i++){
                 int num = numData[i];
