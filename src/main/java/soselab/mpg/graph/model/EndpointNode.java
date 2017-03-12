@@ -2,10 +2,6 @@ package soselab.mpg.graph.model;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
-import org.neo4j.ogm.annotation.Relationship;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @NodeEntity(label = "Endpoint")
 public class EndpointNode {
@@ -15,9 +11,6 @@ public class EndpointNode {
     private String endpointId;
     private String path;
     private String httpMethod;
-
-    @Relationship(type = "CALL", direction = Relationship.OUTGOING)
-    private Set<CallRelationship> callRelationships = new HashSet<>();
 
     public EndpointNode() {
     }
@@ -58,14 +51,6 @@ public class EndpointNode {
 
     public void setEndpointId(String endpointId) {
         this.endpointId = endpointId;
-    }
-
-    public Set<CallRelationship> getCallRelationships() {
-        return callRelationships;
-    }
-
-    public void setCallRelationships(Set<CallRelationship> callRelationships) {
-        this.callRelationships = callRelationships;
     }
 
     @Override

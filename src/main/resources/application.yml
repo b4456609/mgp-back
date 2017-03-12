@@ -6,7 +6,7 @@ spring:
       database: mpg
       host: ${MONGO_DB:localhost}
     neo4j:
-      uri: ${NEO4J_DB:http://localhost:7474}
+      uri: ${NEO4J_DB:bolt://localhost:7687}
       username: neo4j
 
 server:
