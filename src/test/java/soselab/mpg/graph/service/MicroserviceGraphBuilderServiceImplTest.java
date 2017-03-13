@@ -40,7 +40,7 @@ public class MicroserviceGraphBuilderServiceImplTest {
     MicroserviceProjectDescriptionReader microserviceProjectDescriptionReader;
     @Autowired
     GraphController graphController;
-    private int[] numData = {5,10,20,30,40,50,100,200,300,400,500,1000,2000,3000,4000,5000};
+    private int[] numData = {5, 10, 20, 30, 40, 50, 100, 200, 300, 400, 500, 1000, 2000, 3000, 4000, 5000, 10000};
 
     @Autowired
     private ServiceNodeRepository serviceNodeRepository;
@@ -64,12 +64,12 @@ public class MicroserviceGraphBuilderServiceImplTest {
         System.out.println(microserviceProjectDescriptions.size());
 
 
-        for (int j = 0; j < 20; j++){
+        for (int j = 0; j < 20; j++) {
             serviceNodeRepository.deleteAll();
             endpointNodeRepository.deleteAll();
             callRelationshipRepository.deleteAll();
             LOGGER.info("start {}th", j);
-            for (int i = 0; i <numData.length; i++){
+            for (int i = 0; i < numData.length; i++) {
                 int num = numData[i];
                 given(mpdService.getMicroserviceProjectDescriptions())
                         .willReturn(microserviceProjectDescriptions.subList(0, num));
