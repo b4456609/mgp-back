@@ -19,7 +19,7 @@ public class GraphVisualizationFromGraphFactory {
     private ConcurrentHashMap<String, Set<Integer>> idPathIndexsMap;
     private HashMap<String, Set<String>> unTestServiceCallDict = new HashMap<>();
 
-    public GraphDataDTO create(Iterable<EndpointNode> endpointNodes, Iterable<ServiceNode> serviceNodes,
+    public GraphDataDTO create(List<EndpointQuery> endpointNodes, List<ServiceQuery> serviceNodes,
                                List<ServiceWithEndpointPairItem> allServiceWithEndpoint,
                                List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPairPair,
                                List<PathGroup> pathNodeIdGroups, Iterable<ScenarioNode> scenarioNodes,
@@ -146,7 +146,7 @@ public class GraphVisualizationFromGraphFactory {
                 }).collect(Collectors.toList());
     }
 
-    private List<NodesItem> getServiceNodeItems(Iterable<ServiceNode> serviceNodes, List<PathGroup> pathNodeIdGroups) {
+    private List<NodesItem> getServiceNodeItems(List<ServiceQuery> serviceNodes, List<PathGroup> pathNodeIdGroups) {
         return StreamSupport.stream(serviceNodes.spliterator(), false)
                 .map(serviceNode -> {
                     String className = getClassString(pathNodeIdGroups, serviceNode.getName());
@@ -158,7 +158,7 @@ public class GraphVisualizationFromGraphFactory {
                 }).collect(Collectors.toList());
     }
 
-    private List<NodesItem> getEndpointNodeItems(Iterable<EndpointNode> endpointNodes, List<PathGroup> pathNodeIdGroups) {
+    private List<NodesItem> getEndpointNodeItems(List<EndpointQuery> endpointNodes, List<PathGroup> pathNodeIdGroups) {
         return StreamSupport.stream(endpointNodes.spliterator(), false)
                 .map(endpointNode -> {
                     String className = getClassString(pathNodeIdGroups, endpointNode.getEndpointId());

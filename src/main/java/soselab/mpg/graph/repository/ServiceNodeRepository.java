@@ -6,6 +6,7 @@ import soselab.mpg.graph.controller.dto.ServiceCallInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceInformationDTO;
 import soselab.mpg.graph.controller.dto.ServiceWithEndpointPairItem;
 import soselab.mpg.graph.model.ServiceNode;
+import soselab.mpg.graph.model.ServiceQuery;
 
 import java.util.List;
 
@@ -23,4 +24,7 @@ public interface ServiceNodeRepository extends GraphRepository<ServiceNode> {
     @Query("MATCH (s)<-[:OWN]-(consumer:Service), (s:Endpoint)-[:CALL]->(e:Endpoint), (e)<-[:OWN]-(provider:Service) " +
             "RETURN consumer.name as consumer, provider.name as provider")
     List<ServiceCallInformationDTO> getConsumerProvider();
+
+    @Query("MATCH (s:Service) RETURN s.name as name")
+    List<ServiceQuery> queryAll();
 }

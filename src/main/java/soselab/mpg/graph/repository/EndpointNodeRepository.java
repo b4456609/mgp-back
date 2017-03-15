@@ -4,6 +4,7 @@ import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.GraphRepository;
 import soselab.mpg.graph.controller.dto.ProviderEndpointWithConsumerPairItem;
 import soselab.mpg.graph.model.EndpointNode;
+import soselab.mpg.graph.model.EndpointQuery;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface EndpointNodeRepository extends GraphRepository<EndpointNode> {
     @Query("MATCH p=(s:Endpoint)-[r:CALL*]->(e:Endpoint) RETURN extract(n IN nodes(p)|n.endpointId)")
     List<List<String>> getPathEndpoints();
 
+    @Query("MATCH (s:Endpoint) RETURN s.endpointId as endpointId, s.path as path, s.httpMethod as httpMethod")
+    List<EndpointQuery> queryAll();
 }

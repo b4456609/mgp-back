@@ -53,10 +53,10 @@ public class GraphServiceImpl implements GraphService {
         long start = System.currentTimeMillis();
 
         //endpoint node
-        Iterable<EndpointNode> endpointNodes = endpointNodeRepository.findAll();
+        List<EndpointQuery> endpointNodes = endpointNodeRepository.queryAll();
 
         //service node
-        Iterable<ServiceNode> serviceNodes = serviceNodeRepository.findAll();
+        List<ServiceQuery> serviceNodes = serviceNodeRepository.queryAll();
 
         //Service and Endpoint relationship
         List<ServiceWithEndpointPairItem> allServiceWithEndpoint = serviceNodeRepository
