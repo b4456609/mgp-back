@@ -242,14 +242,14 @@ public class UATDTO {
                  * status : passed
                  */
 
-                private int duration;
+                private long duration;
                 private String status;
 
-                public int getDuration() {
+                public long getDuration() {
                     return duration;
                 }
 
-                public void setDuration(int duration) {
+                public void setDuration(long duration) {
                     this.duration = duration;
                 }
 
