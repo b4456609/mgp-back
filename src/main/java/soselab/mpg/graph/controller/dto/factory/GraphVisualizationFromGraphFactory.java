@@ -3,8 +3,10 @@ package soselab.mpg.graph.controller.dto.factory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import org.springframework.web.util.UriTemplate;
 import soselab.mpg.graph.controller.dto.*;
 import soselab.mpg.graph.model.*;
+import soselab.mpg.mpd.model.IDExtractor;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -196,7 +198,7 @@ public class GraphVisualizationFromGraphFactory {
 
         if (errorMarkConsumerAndProvider != null &&
                 errorMarkConsumerAndProvider.get(service) != null &&
-                errorMarkConsumerAndProvider.get(service).contains(endpoint)) {
+                isMatchUrl(errorMarkConsumerAndProvider.get(service), endpoint)) {
             className.append("error ");
         }
         return className.toString().trim();
@@ -254,6 +256,14 @@ public class GraphVisualizationFromGraphFactory {
             return String.format("cyclic-enhance%d%s ", index, postfix);
         }
         return "";
+    }
+
+    public static boolean isMatchUrl(Set<String> endpoints, String target) {
+        UriTemplate uriTemplate = new UriTemplate(IDExtractor.getPath(target));
+        for (String endpoint : endpoints) {
+            if (uriTemplate.matches(IDExtractor.getPath(endpoint))) return true;
+        }
+        return false;
     }
 
 }
