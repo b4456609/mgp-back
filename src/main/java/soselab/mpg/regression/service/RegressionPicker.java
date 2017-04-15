@@ -1,9 +1,11 @@
 package soselab.mpg.regression.service;
 
 import org.springframework.stereotype.Service;
+import soselab.mpg.mpd.model.IDExtractor;
 import soselab.mpg.regression.model.ConsumerProviderPair;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,21 +16,31 @@ public class RegressionPicker {
         return targetEndpoints.stream()
                 .flatMap(path -> {
                     List<ConsumerProviderPair> consumerProviderPairs = new ArrayList<>();
+                    //get index of target service
+                    int targetIndex = getTargetIndex(target, path);
+                    //generate provider and consumer pair
                     for (int i = 1; i < path.size(); i++) {
-                        String consumerEndpoint = path.get(i - 1);
-                        String[] consumerendpointSplit = consumerEndpoint.split(" ");
-                        String consumerServiceName = consumerendpointSplit[0];
+                        String consumerServiceName = IDExtractor.getServiceName(path.get(i - 1));
+                        String providerServiceName = IDExtractor.getServiceName(path.get(i));
 
-                        String providerEndpoint = path.get(i);
-                        String[] provicerEndpointSplit = providerEndpoint.split(" ");
-                        String providerServiceName = provicerEndpointSplit[0];
-
-                        ConsumerProviderPair consumerProviderPair = new ConsumerProviderPair(providerServiceName, consumerServiceName);
+                        ConsumerProviderPair consumerProviderPair = new ConsumerProviderPair(providerServiceName, consumerServiceName, targetIndex - i);
                         consumerProviderPairs.add(consumerProviderPair);
                     }
                     return consumerProviderPairs.stream();
                 })
+                .sorted(Comparator.comparingInt(ConsumerProviderPair::getOrder))
                 .collect(Collectors.toList());
+    }
+
+    private int getTargetIndex(String target, List<String> path) {
+        int targetIndex = -1;
+        for (int i = path.size() - 1; i >= 0; i--) {
+            if(IDExtractor.getServiceName(path.get(i)).equals(target)){
+                targetIndex = i;
+                break;
+            }
+        }
+        return targetIndex;
     }
 
     public List<String> getScenarioAnnotations(List<List<String>> paths, String target) {
@@ -44,8 +56,8 @@ public class RegressionPicker {
                 .map(path -> {
                     int lastIndex = -1;
                     for (int i = 0; i < path.size(); i++) {
-                        String endpint = path.get(i);
-                        if (endpint.contains(target)) {
+                        String serviceName = IDExtractor.getServiceName(path.get(i));
+                        if (serviceName.contains(target)) {
                             lastIndex = i;
                         }
                     }

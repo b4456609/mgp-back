@@ -1,13 +1,15 @@
 package soselab.mpg.regression.model;
 
 
-public class ConsumerProviderPair {
+public class ConsumerProviderPair implements PriorityOrder{
     private String provider;
     private String consumer;
+    private int order;
 
-    public ConsumerProviderPair(String provider, String consumer) {
+    public ConsumerProviderPair(String provider, String consumer, int order) {
         this.provider = provider;
         this.consumer = consumer;
+        this.order = order;
     }
 
     public String getProvider() {
@@ -24,5 +26,10 @@ public class ConsumerProviderPair {
                 "provider='" + provider + '\'' +
                 ", consumer='" + consumer + '\'' +
                 '}';
+    }
+
+    @Override
+    public int getOrder() {
+        return order;
     }
 }

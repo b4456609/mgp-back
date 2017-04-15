@@ -7,9 +7,9 @@ public class PactTestCaseDTO {
     private String provider;
     private String host;
     private String port;
-    private List<ConsummerDetail> hasPactWith;
+    private List<ConsumerDetail> hasPactWith;
 
-    public PactTestCaseDTO(String provider, List<ConsummerDetail> hasPactWith) {
+    public PactTestCaseDTO(String provider, List<ConsumerDetail> hasPactWith) {
         this.provider = provider;
         this.host = provider.toUpperCase() + "_HOST";
         this.port = provider.toUpperCase() + "_PORT";
@@ -40,11 +40,11 @@ public class PactTestCaseDTO {
         this.port = port;
     }
 
-    public List<ConsummerDetail> getHasPactWith() {
+    public List<ConsumerDetail> getHasPactWith() {
         return hasPactWith;
     }
 
-    public void setHasPactWith(List<ConsummerDetail> hasPactWith) {
+    public void setHasPactWith(List<ConsumerDetail> hasPactWith) {
         this.hasPactWith = hasPactWith;
     }
 }

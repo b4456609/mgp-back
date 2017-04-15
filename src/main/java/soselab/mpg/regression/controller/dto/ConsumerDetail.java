@@ -1,10 +1,10 @@
 package soselab.mpg.regression.controller.dto;
 
-public class ConsummerDetail {
+public class ConsumerDetail {
     private String consumer;
     private String pactFile;
 
-    public ConsummerDetail(String consumer, String pactFile) {
+    public ConsumerDetail(String consumer, String pactFile) {
         this.consumer = consumer;
         this.pactFile = pactFile;
     }
@@ -27,7 +27,7 @@ public class ConsummerDetail {
 
     @Override
     public String toString() {
-        return "ConsummerDetail{" +
+        return "ConsumerDetail{" +
                 "consumer='" + consumer + '\'' +
                 ", pactFile='" + pactFile + '\'' +
                 '}';

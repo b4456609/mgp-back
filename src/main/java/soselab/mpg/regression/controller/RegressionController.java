@@ -3,22 +3,17 @@ package soselab.mpg.regression.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import soselab.mpg.bdd.service.BDDService;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.pact.service.PactService;
-import soselab.mpg.regression.controller.dto.ConsummerDetail;
+import soselab.mpg.regression.controller.dto.ConsumerDetail;
 import soselab.mpg.regression.controller.dto.PactTestCaseDTO;
 import soselab.mpg.regression.model.ConsumerProviderPair;
 import soselab.mpg.regression.service.RegressionPicker;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @RestController
@@ -40,7 +35,8 @@ public class RegressionController {
     }
 
     @GetMapping("/serviceTest/{serviceName}")
-    public List<PactTestCaseDTO> getRegressionServiceTest(@PathVariable("serviceName") String serviceName) {
+    public List<List<PactTestCaseDTO>> getRegressionServiceTest(@PathVariable("serviceName") String serviceName,
+                                                                @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
         LOGGER.info(serviceName);
         List<PathGroup> pathNodeIdGroups = graphService.getPathNodeIdGroups();
         List<List<String>> paths = pathNodeIdGroups.stream()
@@ -54,12 +50,26 @@ public class RegressionController {
 
         List<PactTestCaseDTO> pactTestCaseDTOS = new ArrayList<>();
         for (String s : urls.keySet()) {
-            List<ConsummerDetail> consummerDetails = urls.get(s).stream()
-                    .map(link -> new ConsummerDetail(link.split("/")[7], link))
+            List<ConsumerDetail> consumerDetails = urls.get(s).stream()
+                    .map(link -> new ConsumerDetail(link.split("/")[7], link))
                     .collect(Collectors.toList());
-            pactTestCaseDTOS.add(new PactTestCaseDTO(s, consummerDetails));
+            pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
         }
-        return pactTestCaseDTOS;
+        List<List<PactTestCaseDTO>> result = new ArrayList<>();
+
+        for (int i = 0; i < pactTestCaseDTOS.size(); i++) {
+            if (i + 5 < pactTestCaseDTOS.size()) {
+                List<PactTestCaseDTO> temp = pactTestCaseDTOS.subList(i, i + 5);
+                result.add(temp);
+                i += 5;
+            }
+            else {
+                List<PactTestCaseDTO> temp = pactTestCaseDTOS.subList(i, pactTestCaseDTOS.size());
+                result.add(temp);
+                break;
+            }
+        }
+        return result;
     }
 
     @GetMapping("/uat/{serviceName}")
