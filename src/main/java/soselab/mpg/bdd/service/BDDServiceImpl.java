@@ -18,10 +18,7 @@ import soselab.mpg.graph.controller.dto.FeatureItem;
 import soselab.mpg.graph.controller.dto.ScenarioInformationDTO;
 import soselab.mpg.graph.controller.dto.ScenarioItem;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -170,6 +167,16 @@ public class BDDServiceImpl implements BDDService {
         return all.stream()
                 .map(feature -> new FeatureDocumentDTO(feature.getName(), feature.getContent()))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getTag(List<String> scenarioAnnotations) {
+        List<Scenario> all = scenarioRepository.findAll();
+        Set<String> allTags = all.stream()
+                .flatMap(scenario -> scenario.getTags().stream())
+                .collect(Collectors.toSet());
+        allTags.retainAll(scenarioAnnotations);
+        return new ArrayList<>(allTags);
     }
 
 }

@@ -2,11 +2,11 @@ package soselab.mpg.regression.service;
 
 import org.springframework.stereotype.Service;
 import soselab.mpg.mpd.model.IDExtractor;
+import soselab.mpg.mpd.service.EndpointAnnotationBuilder;
+import soselab.mpg.regression.model.AnnotationWithOrder;
 import soselab.mpg.regression.model.ConsumerProviderPair;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -23,7 +23,8 @@ public class RegressionPicker {
                         String consumerServiceName = IDExtractor.getServiceName(path.get(i - 1));
                         String providerServiceName = IDExtractor.getServiceName(path.get(i));
 
-                        ConsumerProviderPair consumerProviderPair = new ConsumerProviderPair(providerServiceName, consumerServiceName, targetIndex - i);
+                        ConsumerProviderPair consumerProviderPair = new ConsumerProviderPair(providerServiceName,
+                                consumerServiceName, targetIndex - i);
                         consumerProviderPairs.add(consumerProviderPair);
                     }
                     return consumerProviderPairs.stream();
@@ -35,7 +36,7 @@ public class RegressionPicker {
     private int getTargetIndex(String target, List<String> path) {
         int targetIndex = -1;
         for (int i = path.size() - 1; i >= 0; i--) {
-            if(IDExtractor.getServiceName(path.get(i)).equals(target)){
+            if (IDExtractor.getServiceName(path.get(i)).equals(target)) {
                 targetIndex = i;
                 break;
             }
@@ -45,8 +46,20 @@ public class RegressionPicker {
 
     public List<String> getScenarioAnnotations(List<List<String>> paths, String target) {
         List<List<String>> targetEndpoints = getTargetEndpoints(paths, target);
-        return targetEndpoints.stream()
-                .flatMap(path -> path.stream().map(endpoint -> endpoint.split(" ")[0])).distinct()
+        Map<String, AnnotationWithOrder> endpointAndAnnotation = new HashMap<>();
+        targetEndpoints.forEach(path -> {
+            int targetIndex = getTargetIndex(target, path);
+            for (int i = 0; i < path.size(); i++) {
+                AnnotationWithOrder annotationWithOrder = endpointAndAnnotation.get(path.get(i));
+                if (annotationWithOrder == null || annotationWithOrder.getOrder() > targetIndex - i) {
+                    endpointAndAnnotation.put(path.get(i),
+                            new AnnotationWithOrder(targetIndex - i, EndpointAnnotationBuilder.build(path.get(i))));
+                }
+            }
+        });
+        return endpointAndAnnotation.values().stream()
+                .sorted(Comparator.comparingInt(AnnotationWithOrder::getOrder))
+                .map(i -> i.getId())
                 .collect(Collectors.toList());
     }
 

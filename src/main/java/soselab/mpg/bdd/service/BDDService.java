@@ -22,4 +22,6 @@ public interface BDDService {
     List<String> getAllTagsRelateToService(String serviceName);
 
     List<FeatureDocumentDTO> getFeatures();
+
+    List<String> getTag(List<String> scenarioAnnotations);
 }

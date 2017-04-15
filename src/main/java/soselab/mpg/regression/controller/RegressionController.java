@@ -38,10 +38,7 @@ public class RegressionController {
     public List<List<PactTestCaseDTO>> getRegressionServiceTest(@PathVariable("serviceName") String serviceName,
                                                                 @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
         LOGGER.info(serviceName);
-        List<PathGroup> pathNodeIdGroups = graphService.getPathNodeIdGroups();
-        List<List<String>> paths = pathNodeIdGroups.stream()
-                .flatMap(pathGroup -> pathGroup.getPaths().stream())
-                .collect(Collectors.toList());
+        List<List<String>> paths = getAllPath();
         LOGGER.info("path node {}", paths);
         List<ConsumerProviderPair> serviceTestPair = regressionPicker.getRegressionServiceTestPair(paths, serviceName);
         LOGGER.info("consumber provider pair {}", serviceTestPair);
@@ -55,16 +52,21 @@ public class RegressionController {
                     .collect(Collectors.toList());
             pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
         }
-        List<List<PactTestCaseDTO>> result = new ArrayList<>();
+        List<List<PactTestCaseDTO>> result = getLists(pactTestCaseDTOS, num);
+        return result;
+    }
+
+    private <T> List<List<T>> getLists(List<T> pactTestCaseDTOS, int num) {
+        List<List<T>> result = new ArrayList<>();
 
         for (int i = 0; i < pactTestCaseDTOS.size(); i++) {
-            if (i + 5 < pactTestCaseDTOS.size()) {
-                List<PactTestCaseDTO> temp = pactTestCaseDTOS.subList(i, i + 5);
+            if (i + num < pactTestCaseDTOS.size()) {
+                List<T> temp = pactTestCaseDTOS.subList(i, i + num);
                 result.add(temp);
-                i += 5;
+                i += num;
             }
             else {
-                List<PactTestCaseDTO> temp = pactTestCaseDTOS.subList(i, pactTestCaseDTOS.size());
+                List<T> temp = pactTestCaseDTOS.subList(i, pactTestCaseDTOS.size());
                 result.add(temp);
                 break;
             }
@@ -72,8 +74,19 @@ public class RegressionController {
         return result;
     }
 
+    private List<List<String>> getAllPath() {
+        List<PathGroup> pathNodeIdGroups = graphService.getPathNodeIdGroups();
+        return pathNodeIdGroups.stream()
+                .flatMap(pathGroup -> pathGroup.getPaths().stream())
+                .collect(Collectors.toList());
+    }
+
     @GetMapping("/uat/{serviceName}")
-    public List<String> getScenarioAnnotations(@PathVariable("serviceName") String serviceName) {
-        return bddService.getAllTagsRelateToService(serviceName);
+    public List<List<String>> getScenarioAnnotations(@PathVariable("serviceName") String serviceName,
+                                                     @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
+        List<List<String>> paths = getAllPath();
+        List<String> scenarioAnnotations = regressionPicker.getScenarioAnnotations(paths, serviceName);
+        List<String> tag = bddService.getTag(scenarioAnnotations);
+        return getLists(tag, num);
     }
 }
