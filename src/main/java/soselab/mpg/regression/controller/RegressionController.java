@@ -86,7 +86,7 @@ public class RegressionController {
                                                      @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
         List<List<String>> paths = getAllPath();
         List<String> scenarioAnnotations = regressionPicker.getScenarioAnnotations(paths, serviceName);
-        List<String> tag = bddService.getTag(scenarioAnnotations);
+        List<String> tag = bddService.getTag(scenarioAnnotations, serviceName);
         return getLists(tag, num);
     }
 }

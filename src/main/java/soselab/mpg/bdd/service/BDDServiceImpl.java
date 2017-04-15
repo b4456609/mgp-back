@@ -170,13 +170,18 @@ public class BDDServiceImpl implements BDDService {
     }
 
     @Override
-    public List<String> getTag(List<String> scenarioAnnotations) {
+    public List<String> getTag(List<String> scenarioAnnotations, String serviceName) {
         List<Scenario> all = scenarioRepository.findAll();
         Set<String> allTags = all.stream()
                 .flatMap(scenario -> scenario.getTags().stream())
                 .collect(Collectors.toSet());
         allTags.retainAll(scenarioAnnotations);
-        return new ArrayList<>(allTags);
+
+        //TODO fix annotation order
+        List<String> allTagsRelateToService = getAllTagsRelateToService(serviceName);
+        allTagsRelateToService.addAll(allTags);
+
+        return allTagsRelateToService;
     }
 
 }
