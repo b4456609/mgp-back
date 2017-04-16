@@ -52,14 +52,15 @@ public class RegressionController {
                     .collect(Collectors.toList());
             pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
         }
-        List<List<PactTestCaseDTO>> result = getLists(pactTestCaseDTOS, num);
+        List<List<PactTestCaseDTO>> result = getRunLists(pactTestCaseDTOS, num);
         return result;
     }
 
-    private <T> List<List<T>> getLists(List<T> pactTestCaseDTOS, int num) {
+    private <T> List<List<T>> getRunLists(List<T> pactTestCaseDTOS, int num) {
         List<List<T>> result = new ArrayList<>();
 
         for (int i = 0; i < pactTestCaseDTOS.size(); i++) {
+            //get num item insert to list
             if (i + num < pactTestCaseDTOS.size()) {
                 List<T> temp = pactTestCaseDTOS.subList(i, i + num);
                 result.add(temp);
@@ -87,6 +88,6 @@ public class RegressionController {
         List<List<String>> paths = getAllPath();
         List<String> scenarioAnnotations = regressionPicker.getScenarioAnnotations(paths, serviceName);
         List<String> tag = bddService.getTag(scenarioAnnotations, serviceName);
-        return getLists(tag, num);
+        return getRunLists(tag, num);
     }
 }
