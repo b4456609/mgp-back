@@ -42,16 +42,18 @@ public class RegressionController {
         LOGGER.info("path node {}", paths);
         List<ConsumerProviderPair> serviceTestPair = regressionPicker.getRegressionServiceTestPair(paths, serviceName);
         LOGGER.info("consumber provider pair {}", serviceTestPair);
-        Map<String, List<String>> urls = pactService.getPactUrlByConsumerAndProvider(serviceTestPair);
+        List<Map<String, List<String>>> urls = pactService.getPactUrlByConsumerAndProvider(serviceTestPair);
         LOGGER.info("urls", urls);
 
         List<PactTestCaseDTO> pactTestCaseDTOS = new ArrayList<>();
-        for (String s : urls.keySet()) {
-            List<ConsumerDetail> consumerDetails = urls.get(s).stream()
-                    .map(link -> new ConsumerDetail(link.split("/")[7], link))
-                    .collect(Collectors.toList());
-            pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
-        }
+        urls.forEach(url -> {
+            for (String s : url.keySet()) {
+                List<ConsumerDetail> consumerDetails = url.get(s).stream()
+                        .map(link -> new ConsumerDetail(link.split("/")[7], link))
+                        .collect(Collectors.toList());
+                pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
+            }
+        });
         List<List<PactTestCaseDTO>> result = getRunLists(pactTestCaseDTOS, num);
         return result;
     }

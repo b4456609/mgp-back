@@ -18,7 +18,7 @@ import java.util.Random;
 import java.util.stream.Collectors;
 
 public class MCAGenerator {
-    public static final int[] ENDPOINT_COUNT_DATA = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    /*public static final int[] ENDPOINT_COUNT_DATA = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
             1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3,
             3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
             4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6,
@@ -31,13 +31,16 @@ public class MCAGenerator {
             25, 25, 26, 26, 27, 27, 27, 28, 28, 29, 29, 29, 29, 29, 29, 30, 30, 30, 30, 30, 30, 31, 32, 32, 32, 33,
             33, 34, 34, 34, 34, 34, 35, 35, 35, 35, 37, 38, 38, 38, 39, 40, 41, 43, 44, 46, 46, 46, 47, 47, 47, 47,
             50, 51, 51, 52, 53, 53, 55, 56, 57, 58, 63, 63, 68, 79, 90, 98, 110, 111, 111, 114, 116, 124, 127, 134,
-            157, 166, 213, 217, 228, 264, 267, 277};
+            157, 166, 213, 217, 228, 264, 267, 277};*/
+    public static final int[] ENDPOINT_COUNT_DATA = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3,
+            3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4};
 
     public static final Random RANDOM = new Random();
     public static final String[] httpMethods = {"POST", "GET", "DELETE", "PUT"};
-    public static final int SERVICE_NUMBER = 5000;
+    public static final int SERVICE_NUMBER = 20;
 //    public static final int ENDPOINT_MAX_NUMBER = 5;
-    public static final int SERVICE_CALL_MAX_NUMBER = 11;
+    public static final int SERVICE_CALL_MAX_NUMBER = 5;
 //    public static final int SERVICE_DEPENDENCY_MAX_NUMBER = 2;
 
     public static void main(String[] args) {
@@ -45,7 +48,7 @@ public class MCAGenerator {
 
         //generate service
         for (int i = 0; i < SERVICE_NUMBER; i++) {
-            String serviceName = "S" + i;
+            String serviceName = String.format("S%02d", i+1);
             List<Endpoint> serviceEndpoints = randomEndpoints(serviceName);
             Service service = new Service(serviceName, serviceEndpoints);
             services.add(service);
@@ -58,6 +61,8 @@ public class MCAGenerator {
                     System.out.println(serviceCalls.size());
                     List<EndpointDep> endpointDeps = randomPickServiceDep(service.getServiceEndpoints(), serviceCalls);
 //                    System.out.println(serviceCalls);
+                    //generate service test dsl
+                    endpointDeps.forEach(endpointDep -> PactGenerator.build(endpointDep.getTo().split(" ")[0], endpointDep.getFrom().split(" ")[0]));
                     return new MDP(0, serviceCalls, service.getName(), "",
                             service.getServiceEndpoints(), endpointDeps);
                 })
@@ -79,8 +84,9 @@ public class MCAGenerator {
         return serviceCalls.stream()
                 .flatMap(serviceCall -> {
                     String id = serviceCall.getId();
-                    return serviceEndpoints.stream()
-                            .filter(i -> RANDOM.nextBoolean())
+                    ArrayList<Endpoint> endpoints = new ArrayList<>(serviceEndpoints);
+                    Collections.shuffle(endpoints);
+                    return endpoints.stream()
                             .limit(1)
                             .map(i -> new EndpointDep(i.getId(), id));
 
@@ -104,7 +110,7 @@ public class MCAGenerator {
     }
 
     public static int getServiceCallNum(){
-        return (int) Math.floor(Math.min(RANDOM.nextGaussian() * 6, 11));
+        return (int) Math.floor(Math.min(RANDOM.nextGaussian() * 2, 2));
     }
 
     public static List<Endpoint> randomEndpoints(String serviceName) {
@@ -115,7 +121,7 @@ public class MCAGenerator {
         // divide into 19 partition
         int partition = dataNum / 19;
         // each partition has 15 endpoint
-        int num = RANDOM.nextInt(15) + partition * 19;
+        int num = RANDOM.nextInt(5)+1;
 
         for (int i = 0; i < num; i++) {
             String path = "/path" + i;

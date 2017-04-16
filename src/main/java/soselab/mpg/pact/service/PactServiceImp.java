@@ -14,9 +14,7 @@ import soselab.mpg.pact.repository.PactRepository;
 import soselab.mpg.regression.model.ConsumerProviderPair;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -91,29 +89,41 @@ public class PactServiceImp implements PactService {
     }
 
     @Override
-    public Map<String, List<String>> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair) {
+    public List<Map<String, List<String>>> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair) {
+        if (serviceTestPair.isEmpty())
+            return Collections.emptyList();
+
         List<PactConfig> all = pactConfigRepository.findAll();
         if (all.isEmpty())
-            return Collections.emptyMap();
+            return Collections.emptyList();
         String pactUrl = all.get(0).getUrl() + "pacts/latest";
         LOGGER.info("pact url: {}", pactUrl);
         List<String> pactFileLinks = pactClient.getPactFileLinks(pactUrl);
-        Map<String, List<String>> collect = pactFileLinks.stream()
-                .filter(link -> {
-                    String[] split = link.split("/");
-                    String provider = split[5];
-                    String consumer = split[7];
-                    return serviceTestPair.stream()
-                            .anyMatch(pair -> {
-                                return pair.getProvider().equals(provider) && pair.getConsumer().equals(consumer);
-                            });
-                })
-                .collect(Collectors.groupingBy(link -> {
-                    String[] split = link.split("/");
-                    String provider = split[5];
-                    return provider;
-                }));
-        return collect;
 
+        // get the priority
+        int minPriority = serviceTestPair.get(0).getOrder();
+        int maxPriority = serviceTestPair.get(serviceTestPair.size() - 1).getOrder();
+        List<Map<String, List<String>>> result = new ArrayList<>();
+        for (int i = minPriority; i <= maxPriority; i++) {
+            final int index = i;
+            Map<String, List<String>> collect = pactFileLinks.stream()
+                    .filter(link -> {
+                        String[] split = link.split("/");
+                        String provider = split[5];
+                        String consumer = split[7];
+                        return serviceTestPair.stream()
+                                .filter(pair -> pair.getOrder() == index)
+                                .anyMatch(pair -> {
+                                    return pair.getProvider().equals(provider) && pair.getConsumer().equals(consumer);
+                                });
+                    })
+                    .collect(Collectors.groupingBy(link -> {
+                        String[] split = link.split("/");
+                        String provider = split[5];
+                        return provider;
+                    }));
+            result.add(collect);
+        }
+        return result;
     }
 }

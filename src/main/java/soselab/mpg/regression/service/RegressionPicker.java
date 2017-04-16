@@ -1,8 +1,11 @@
 package soselab.mpg.regression.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import soselab.mpg.mpd.model.IDExtractor;
 import soselab.mpg.mpd.service.EndpointAnnotationBuilder;
+import soselab.mpg.regression.controller.RegressionController;
 import soselab.mpg.regression.model.AnnotationWithOrder;
 import soselab.mpg.regression.model.ConsumerProviderPair;
 
@@ -11,26 +14,38 @@ import java.util.stream.Collectors;
 
 @Service
 public class RegressionPicker {
+    private static final Logger LOGGER = LoggerFactory.getLogger(RegressionPicker.class);
+
     public List<ConsumerProviderPair> getRegressionServiceTestPair(List<List<String>> paths, String target) {
         List<List<String>> targetEndpoints = getTargetEndpoints(paths, target);
-        return targetEndpoints.stream()
-                .flatMap(path -> {
-                    List<ConsumerProviderPair> consumerProviderPairs = new ArrayList<>();
-                    //get index of target service
-                    int targetIndex = getTargetIndex(target, path);
-                    //generate provider and consumer pair
-                    for (int i = 1; i < path.size(); i++) {
-                        String consumerServiceName = IDExtractor.getServiceName(path.get(i - 1));
-                        String providerServiceName = IDExtractor.getServiceName(path.get(i));
+        HashMap<String, Integer> serviceAndPriority = new HashMap<>();
+        targetEndpoints.forEach(path -> {
+            //get index of target service
+            int targetIndex = getTargetIndex(target, path);
 
-                        ConsumerProviderPair consumerProviderPair = new ConsumerProviderPair(providerServiceName,
-                                consumerServiceName, targetIndex - i);
-                        consumerProviderPairs.add(consumerProviderPair);
-                    }
-                    return consumerProviderPairs.stream();
-                })
-                .sorted(Comparator.comparingInt(ConsumerProviderPair::getOrder))
-                .collect(Collectors.toList());
+            //generate provider and consumer pair
+            for (int i = 1; i < path.size(); i++) {
+                String consumerServiceName = IDExtractor.getServiceName(path.get(i - 1));
+                String providerServiceName = IDExtractor.getServiceName(path.get(i));
+
+                final int priority = targetIndex - i;
+                // if order are smaller replace it in hashmap
+                serviceAndPriority.compute(consumerServiceName + "!" + providerServiceName,
+                        (k, v) -> v == null ? priority : Math.min(priority, v));
+
+            }
+        });
+
+        List<ConsumerProviderPair> result = new ArrayList<>();
+        serviceAndPriority.forEach((k, v) -> {
+            String[] split = k.split("!");
+            String consumer = split[0];
+            String provider = split[1];
+            result.add(new ConsumerProviderPair(provider, consumer, v));
+        });
+        Collections.sort(result, Comparator.comparingInt(ConsumerProviderPair::getOrder));
+        LOGGER.info("service Test regression result: {}", result);
+        return result;
     }
 
     private int getTargetIndex(String target, List<String> path) {

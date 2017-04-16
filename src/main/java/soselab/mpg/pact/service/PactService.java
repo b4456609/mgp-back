@@ -15,5 +15,5 @@ public interface PactService {
 
     List<ServiceCallRelationInformation> getPacts();
 
-    Map<String, List<String>> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair);
+    List<Map<String, List<String>>> getPactUrlByConsumerAndProvider(List<ConsumerProviderPair> serviceTestPair);
 }

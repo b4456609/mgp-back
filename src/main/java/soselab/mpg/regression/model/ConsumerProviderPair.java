@@ -25,6 +25,7 @@ public class ConsumerProviderPair implements PriorityOrder{
         return "ConsumerProviderPair{" +
                 "provider='" + provider + '\'' +
                 ", consumer='" + consumer + '\'' +
+                ", order=" + order +
                 '}';
     }
 
