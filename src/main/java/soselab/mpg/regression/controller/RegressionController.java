@@ -5,91 +5,43 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import soselab.mpg.bdd.service.BDDService;
-import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.pact.service.PactService;
-import soselab.mpg.regression.controller.dto.ConsumerDetail;
 import soselab.mpg.regression.controller.dto.PactTestCaseDTO;
-import soselab.mpg.regression.model.ConsumerProviderPair;
-import soselab.mpg.regression.service.RegressionPicker;
+import soselab.mpg.regression.service.ServiceTestStrategy;
+import soselab.mpg.regression.service.UATStrategy;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/regression")
 public class RegressionController {
     private static final Logger LOGGER = LoggerFactory.getLogger(RegressionController.class);
-    private final RegressionPicker regressionPicker;
     private final GraphService graphService;
     private final PactService pactService;
     private final BDDService bddService;
+    private final ServiceTestStrategy serviceTestStrategy;
+    private final UATStrategy uatStrategy;
 
 
     @Autowired
-    public RegressionController(RegressionPicker regressionPicker, GraphService graphService, PactService pactService, BDDService bddService) {
-        this.regressionPicker = regressionPicker;
+    public RegressionController(GraphService graphService, PactService pactService, BDDService bddService, ServiceTestStrategy serviceTestStrategy, UATStrategy uatStrategy) {
+        this.serviceTestStrategy = serviceTestStrategy;
         this.graphService = graphService;
         this.pactService = pactService;
         this.bddService = bddService;
+        this.uatStrategy = uatStrategy;
     }
 
     @GetMapping("/serviceTest/{serviceName}")
     public List<List<PactTestCaseDTO>> getRegressionServiceTest(@PathVariable("serviceName") String serviceName,
                                                                 @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
-        LOGGER.info(serviceName);
-        List<List<String>> paths = getAllPath();
-        LOGGER.info("path node {}", paths);
-        List<ConsumerProviderPair> serviceTestPair = regressionPicker.getRegressionServiceTestPair(paths, serviceName);
-        LOGGER.info("consumber provider pair {}", serviceTestPair);
-        List<Map<String, List<String>>> urls = pactService.getPactUrlByConsumerAndProvider(serviceTestPair);
-        LOGGER.info("urls", urls);
-
-        List<PactTestCaseDTO> pactTestCaseDTOS = new ArrayList<>();
-        urls.forEach(url -> {
-            for (String s : url.keySet()) {
-                List<ConsumerDetail> consumerDetails = url.get(s).stream()
-                        .map(link -> new ConsumerDetail(link.split("/")[7], link))
-                        .collect(Collectors.toList());
-                pactTestCaseDTOS.add(new PactTestCaseDTO(s, consumerDetails));
-            }
-        });
-        List<List<PactTestCaseDTO>> result = getRunLists(pactTestCaseDTOS, num);
-        return result;
-    }
-
-    private <T> List<List<T>> getRunLists(List<T> pactTestCaseDTOS, int num) {
-        List<List<T>> result = new ArrayList<>();
-
-        for (int i = 0; i < pactTestCaseDTOS.size(); i++) {
-            //get num item insert to list
-            if (i + num < pactTestCaseDTOS.size()) {
-                List<T> temp = pactTestCaseDTOS.subList(i, i + num);
-                result.add(temp);
-                i += num;
-            }
-            else {
-                List<T> temp = pactTestCaseDTOS.subList(i, pactTestCaseDTOS.size());
-                result.add(temp);
-                break;
-            }
-        }
-        return result;
-    }
-
-    private List<List<String>> getAllPath() {
-        List<PathGroup> pathNodeIdGroups = graphService.getPathNodeIdGroups();
-        return pathNodeIdGroups.stream()
-                .flatMap(pathGroup -> pathGroup.getPaths().stream())
-                .collect(Collectors.toList());
+        return serviceTestStrategy.pickTestCase(serviceName, num);
     }
 
     @GetMapping("/uat/{serviceName}")
     public List<List<String>> getScenarioAnnotations(@PathVariable("serviceName") String serviceName,
                                                      @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
-        List<List<String>> paths = getAllPath();
-        List<String> scenarioAnnotations = regressionPicker.getScenarioAnnotations(paths, serviceName);
-        List<String> tag = bddService.getTag(scenarioAnnotations, serviceName);
-        return getRunLists(tag, num);
+        return uatStrategy.pickTestCase(serviceName, num);
     }
 }
