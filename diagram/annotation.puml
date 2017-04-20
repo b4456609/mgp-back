@@ -1,0 +1,15 @@
+@startuml
+start
+:Generate a MPD\nfrom a Microservice Project;
+:Upload to MGP;
+:View Annotations from website;
+-> An annotation used \nby endpoint;
+if() then(yes)
+:Write BDD scenario's annotation;
+:BDD git project is parsed by MGP;
+:Generate Dependency Graph;
+else (no)
+stop
+endif
+stop
+@enduml
