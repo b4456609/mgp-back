@@ -1,6 +1,5 @@
 package soselab.mpg.testreader.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -12,7 +11,6 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import soselab.mpg.testreader.service.TestReaderService;
@@ -63,13 +61,10 @@ public class TestReaderController {
                 String content = new String(uploadingFile.getBytes());
                 filenameAndContent.put(originalFilename, content);
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
             LOGGER.info("file and content map{}", filenameAndContent);
             testReaderService.saveServiceTest(filenameAndContent);
         } catch (IOException e) {
+            e.printStackTrace();
             throw new ProccessFailException();
         }
     }
