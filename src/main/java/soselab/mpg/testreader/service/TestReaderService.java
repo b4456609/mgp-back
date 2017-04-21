@@ -9,8 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.service.GraphService;
+import soselab.mpg.testreader.controller.UATDTOAndRunNumber;
+import soselab.mpg.testreader.controller.dto.FileNameExtractor;
 import soselab.mpg.testreader.controller.dto.ReportDTO;
-import soselab.mpg.testreader.controller.dto.UATDTO;
 import soselab.mpg.testreader.controller.exception.NotFoundException;
 import soselab.mpg.testreader.model.*;
 import soselab.mpg.testreader.repository.TestReportRepository;
@@ -37,8 +38,10 @@ public class TestReaderService {
         List<DetailReport> providerReports = new ArrayList<>();
         for (String filename : filenameAndContent.keySet()) {
             if (filename.endsWith(".json")) {
-                String serviceName = filename.substring(0, filename.lastIndexOf("."));
-                String jsonReport = filenameAndContent.get(serviceName.concat(".json"));
+                String serviceName = FileNameExtractor.getServiceName(filename);
+                String jsonReport = filenameAndContent.get(FileNameExtractor.getFileNameWithoutType(filename)
+                        .concat(".json"));
+                int runNumber = FileNameExtractor.getRunNumber(filename);
                 ServiceTestDetail serviceTestDetail = mapper.readValue(jsonReport, ServiceTestDetail.class);
 
                 //set fail test consumer and provider to map
@@ -66,7 +69,7 @@ public class TestReaderService {
                         }).count();
 
                 ProviderReport providerReport = new ProviderReport(serviceName, serviceTestDetail,
-                        filenameAndContent.get(serviceName.concat(".md")), failCount);
+                        filenameAndContent.get(serviceName.concat(".md")), failCount, runNumber);
                 providerReports.add(providerReport);
             }
         }
@@ -102,41 +105,46 @@ public class TestReaderService {
         return reportDTOS;
     }
 
-    public void saveUATTest(byte[] content, List<UATDTO> uatdtos) throws JsonProcessingException {
-        List<DetailReport> scenarioReports = uatdtos.stream()
-                .flatMap(uatdto -> {
-                    return uatdto.getElements().stream()
-                            .flatMap(elementsBean -> {
-                                LOGGER.info("element type: {}", elementsBean.getType());
-                                if (elementsBean.getType().equals("scenario")) {
-                                    String scenarioName = elementsBean.getName();
-                                    long failedCount = elementsBean.getSteps().stream()
-                                            .filter(stepsBean ->
-                                                    stepsBean.getResult().getStatus().equals("failed")
-                                            ).count();
-                                    return Stream.of(new ScenarioReport(scenarioName, failedCount));
-                                }
-                                return Stream.empty();
-                            });
-                }).collect(Collectors.toList());
-
-        Set<String> failedScenario = scenarioReports.stream()
-                .filter(report -> report.getFailCount() > 0)
-                .map(report -> report.getName())
-                .collect(Collectors.toSet());
-        LOGGER.info("failed scenario {}", failedScenario);
-        GraphDataDTO visualizationData = graphService.getVisualizationData(null, failedScenario);
-        String json = mapper.writeValueAsString(visualizationData);
-
-        TestReport testReport = new TestReport("uat", scenarioReports, json,
-                Collections.singletonList(new String(content)));
-        testReportRepository.save(testReport);
-    }
-
     public String getServiceTestRawContentByTimestamp(long time) {
         TestReport testReport = testReportRepository.findOneByCreatedDate(time);
         if (testReport == null)
             throw new NotFoundException();
         return testReport.getRawReports().get(0);
+    }
+
+    public void saveUATTest(List<UATDTOAndRunNumber> uatdtoAndRunNumbers) throws JsonProcessingException {
+        List<DetailReport> scenarioReports = uatdtoAndRunNumbers.stream()
+                .flatMap(item -> item.getUatdtos().stream()
+                        .flatMap(uatdto -> uatdto.getElements().stream()
+                                .flatMap(elementsBean -> {
+                                    if (elementsBean.getType().equals("scenario")) {
+                                        String scenarioName = elementsBean.getName();
+                                        long failedCount = elementsBean.getSteps().stream()
+                                                .filter(stepsBean ->
+                                                        stepsBean.getResult().getStatus().equals("failed")
+                                                ).count();
+                                        return Stream.of(new ScenarioReport(scenarioName, failedCount, item.getRunNumber()));
+                                    }
+                                    return Stream.empty();
+                                }))
+                ).collect(Collectors.toList());
+        Set<String> failedScenario = scenarioReports.stream()
+                .filter(report -> report.getFailCount() > 0)
+                .map(DetailReport::getName)
+                .collect(Collectors.toSet());
+        LOGGER.info("failed scenario {}", failedScenario);
+
+        GraphDataDTO visualizationData = graphService.getVisualizationData(null, failedScenario);
+        String json = mapper.writeValueAsString(visualizationData);
+
+        List<String> contents = uatdtoAndRunNumbers.stream()
+                .map(UATDTOAndRunNumber::getContent)
+                .map(String::new)
+                .collect(Collectors.toList());
+
+        TestReport testReport = new TestReport("uat", scenarioReports, json,
+                contents);
+        testReportRepository.save(testReport);
+
     }
 }

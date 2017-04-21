@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import soselab.mpg.testreader.controller.dto.FileNameExtractor;
 import soselab.mpg.testreader.controller.dto.ReportDTO;
 import soselab.mpg.testreader.controller.dto.UATDTO;
 import soselab.mpg.testreader.controller.exception.FileTypeNotCorrectException;
@@ -24,6 +25,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/api/test")
@@ -38,12 +41,25 @@ public class TestReaderController {
     }
 
     @PostMapping("/uat")
-    public void uploadUatTest(@RequestParam("file") MultipartFile uploadingFile) {
+    public void uploadUatTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
         try {
-            byte[] content = uploadingFile.getBytes();
-            List<UATDTO> uatdtos = objectMapper.readValue(content, new TypeReference<List<UATDTO>>() {
-            });
-            testReaderService.saveUATTest(content, uatdtos);
+            List<UATDTOAndRunNumber> uatdtoAndRunNumbers = Stream.of(uploadingFiles)
+                    .flatMap(file -> {
+                        try {
+                            byte[] content = file.getBytes();
+                            List<UATDTO> uatdtos = objectMapper.readValue(content, new TypeReference<List<UATDTO>>() {
+                            });
+                            return Stream.of(new UATDTOAndRunNumber(
+                                    FileNameExtractor.getRunNumber(file.getOriginalFilename()),
+                                    uatdtos, content));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        return Stream.empty();
+                    })
+                    .collect(Collectors.toList());
+
+            testReaderService.saveUATTest(uatdtoAndRunNumbers);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -8,12 +8,15 @@ public class ProviderReport implements DetailReport {
     private ServiceTestDetail serviceTestDetail;
     private String markdown;
     private long failCount;
+    private int runNumber;
 
-    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown, long failCount) {
+    public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown, long failCount,
+                          int runNumber) {
         this.serviceName = serviceName;
         this.serviceTestDetail = serviceTestDetail;
         this.markdown = markdown;
         this.failCount = failCount;
+        this.runNumber = runNumber;
     }
 
     @Override
@@ -33,6 +36,11 @@ public class ProviderReport implements DetailReport {
     @Override
     public String getReport() {
         return this.getMarkdown();
+    }
+
+    @Override
+    public int getRunNumber() {
+        return runNumber;
     }
 
     public String getServiceName() {

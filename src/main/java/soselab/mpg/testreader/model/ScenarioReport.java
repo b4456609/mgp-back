@@ -6,13 +6,15 @@ package soselab.mpg.testreader.model;
 public class ScenarioReport implements DetailReport {
     private String scenarioName;
     private long failCount;
+    private int runNumber;
 
     public ScenarioReport() {
     }
 
-    public ScenarioReport(String scenarioName, long failCount) {
+    public ScenarioReport(String scenarioName, long failCount, int runNumber) {
         this.scenarioName = scenarioName;
         this.failCount = failCount;
+        this.runNumber = runNumber;
     }
 
     public String getScenarioName() {
@@ -40,6 +42,11 @@ public class ScenarioReport implements DetailReport {
     @Override
     public String getReport() {
         return "";
+    }
+
+    @Override
+    public int getRunNumber() {
+        return runNumber;
     }
 
     @Override

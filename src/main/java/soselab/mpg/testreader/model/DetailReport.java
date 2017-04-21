@@ -6,4 +6,6 @@ public interface DetailReport {
     long getFailCount();
 
     String getReport();
+
+    int getRunNumber();
 }
