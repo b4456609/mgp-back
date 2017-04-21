@@ -1,4 +1,4 @@
-package soselab.mpg.testreader.controller;
+package soselab.mpg.testreader.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

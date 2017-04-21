@@ -22,7 +22,7 @@ public class UATDTO {
                 .enable(JsonParser.Feature.IGNORE_UNDEFINED)
                 .enable(JsonGenerator.Feature.IGNORE_UNKNOWN)
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        List<UATDTO> uatdto = objectMapper.readValue(bytes, new TypeReference<List<UATDTO>>() {
+        List<soselab.mpg.testreader.controller.dto.UATDTO> uatdto = objectMapper.readValue(bytes, new TypeReference<List<soselab.mpg.testreader.controller.dto.UATDTO>>() {
         });
         System.out.println(uatdto);
     }

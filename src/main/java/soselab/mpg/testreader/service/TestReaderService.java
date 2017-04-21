@@ -9,9 +9,9 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import soselab.mpg.graph.controller.dto.GraphDataDTO;
 import soselab.mpg.graph.service.GraphService;
-import soselab.mpg.testreader.controller.NotFoundException;
-import soselab.mpg.testreader.controller.ReportDTO;
-import soselab.mpg.testreader.controller.UATDTO;
+import soselab.mpg.testreader.controller.dto.ReportDTO;
+import soselab.mpg.testreader.controller.dto.UATDTO;
+import soselab.mpg.testreader.controller.exception.NotFoundException;
 import soselab.mpg.testreader.model.*;
 import soselab.mpg.testreader.repository.TestReportRepository;
 

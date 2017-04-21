@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner;
-import soselab.mpg.testreader.controller.UATDTO;
+import soselab.mpg.testreader.controller.dto.UATDTO;
 import soselab.mpg.testreader.model.TestReport;
 import soselab.mpg.testreader.repository.TestReportRepository;
 

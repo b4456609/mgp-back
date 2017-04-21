@@ -13,6 +13,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import soselab.mpg.testreader.controller.dto.ReportDTO;
+import soselab.mpg.testreader.controller.dto.UATDTO;
+import soselab.mpg.testreader.controller.exception.FileTypeNotCorrectException;
+import soselab.mpg.testreader.controller.exception.ProccessFailException;
 import soselab.mpg.testreader.service.TestReaderService;
 
 import java.io.IOException;

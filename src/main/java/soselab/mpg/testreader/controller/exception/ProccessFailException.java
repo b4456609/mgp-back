@@ -1,4 +1,4 @@
-package soselab.mpg.testreader.controller;
+package soselab.mpg.testreader.controller.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
