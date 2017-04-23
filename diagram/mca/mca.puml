@@ -1,0 +1,17 @@
+@startuml
+rectangle "A Microservice Project" as mp
+
+rectangle "MCA" {
+	rectangle "Project Reader" as a
+	rectangle "Code Analyzer"as b
+	rectangle "MPD Writer" as c
+	rectangle "Test Code Generator" as d
+
+	a -right-> b
+	a -down-> c
+	b -down-> d
+}
+
+a .up.> mp
+
+@enduml

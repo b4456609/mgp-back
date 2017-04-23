@@ -1,0 +1,11 @@
+@startuml
+start
+:Get Service Endpoint\nInformation;
+:Get Service Call\nInformation;
+repeat
+    :Get a Service Call;
+    :Find the Service Endpoint\nwhich use the Service Call;
+    :Build Relationship;
+repeat while (Are all service calls\nbuild relationship?)
+stop
+@enduml

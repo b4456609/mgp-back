@@ -1,0 +1,26 @@
+@startuml
+rectangle "A Microservice Project" as mp
+rectangle "Jenkins Pipeline" as jp
+rectangle "BDD project" as bp
+rectangle "Pact Broker" as pb
+actor user
+
+rectangle {
+	rectangle "MCA" as mca
+	rectangle "MGP"as mgp
+	rectangle "UAT Parser" as uatp
+	rectangle "Code Generator" as d
+
+	mca -> mgp
+	mgp -> uatp
+	mgp -> d
+}
+
+mca .> mp
+jp .> mca
+jp .> mgp
+uatp .> bp
+mgp .> pb
+user .> mgp
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml
+left to right direction
+actor user
+rectangle "Code\nGenerator" as cg
+rectangle "UAT\nAnalyzer" as ua
+rectangle "Pact Broker" as pb
+
+rectangle "MGP" {
+	rectangle "React App" as react
+	rectangle "Controller" as con
+	rectangle "Regression\nPicker" as rp
+	rectangle "Graph\nService" as gs
+	rectangle "MPD\nReader" as mr
+	rectangle "Code Generator\nFacade" as cgf
+	rectangle "UAT\nFacade" as uf
+	rectangle "Pact Broker\nFacade" as pbf
+	rectangle "Test Reader" as tr
+    database Neo4j as neo
+    database MongoDB as mon
+
+    react -> con
+    con -d-> rp
+    con -d-> gs
+    con -d-> mr
+    con -d-> cgf
+    con -d-> uf
+    con -d-> pbf
+    con -d-> tr
+
+    rp -d-> neo
+    gs -d-> neo
+    mr -d-> neo
+    uf -d-> neo
+
+    mr -d-> mon
+    cgf -d-> mon
+    uf -d-> mon
+    pbf -d-> mon
+    tr -d-> mon
+}
+
+user .> react
+cgf .> cg
+uf .> ua
+pbf .> pb
+
+neo -[hidden]> cg
+neo -[hidden]> ua
+neo -[hidden]> pb
+@enduml
