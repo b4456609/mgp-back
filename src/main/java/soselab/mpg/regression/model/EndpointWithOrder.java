@@ -3,11 +3,11 @@ package soselab.mpg.regression.model;
 /**
  * Created by bernie on 2017/4/15.
  */
-public class AnnotationWithOrder implements PriorityOrder {
+public class EndpointWithOrder implements PriorityOrder {
     private int order;
     private String id;
 
-    public AnnotationWithOrder(int order, String id) {
+    public EndpointWithOrder(int order, String id) {
         this.order = order;
         this.id = id;
     }
@@ -19,6 +19,6 @@ public class AnnotationWithOrder implements PriorityOrder {
 
     @Override
     public int getOrder() {
-        return 0;
+        return order;
     }
 }
