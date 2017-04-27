@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ScenarioNodeRepository extends GraphRepository<ScenarioNode> {
     @Query("MATCH (s:Scenario)-[r:USE]->(e:Endpoint) " +
-            "WHERE e.name IN {0} " +
+            "WHERE e.endpointId IN {0} " +
             "RETURN s.name")
     List<String> getScenarioByEndpoints(List<String> endpoints);
 }
