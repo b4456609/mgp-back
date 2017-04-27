@@ -96,7 +96,7 @@ public class TestReaderService {
             List<ReportDTO.ReportBean> report = testReport.getTestReports().stream()
                     .map(providerReport -> {
                         return new ReportDTO.ReportBean(providerReport.getName(),
-                                providerReport.getFailCount(), providerReport.getReport());
+                                providerReport.getFailCount(), providerReport.getReport(), providerReport.getRunNumber());
                     })
                     .collect(Collectors.toList());
             return new ReportDTO(testReport.getCreatedDate().longValue(), testReport.getType(),

@@ -10,6 +10,9 @@ public class ProviderReport implements DetailReport {
     private long failCount;
     private int runNumber;
 
+    public ProviderReport() {
+    }
+
     public ProviderReport(String serviceName, ServiceTestDetail serviceTestDetail, String markdown, long failCount,
                           int runNumber) {
         this.serviceName = serviceName;

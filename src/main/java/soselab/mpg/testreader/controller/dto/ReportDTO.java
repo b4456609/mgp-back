@@ -78,14 +78,33 @@ public class ReportDTO {
         private String name;
         private long error;
         private String report;
+        private int runNumber;
 
         public ReportBean() {
         }
 
-        public ReportBean(String name, long error, String report) {
+        public ReportBean(String name, long error, String report, int runNumber) {
             this.name = name;
             this.error = error;
             this.report = report;
+        }
+
+        @Override
+        public String toString() {
+            return "ReportBean{" +
+                    "name='" + name + '\'' +
+                    ", error=" + error +
+                    ", report='" + report + '\'' +
+                    ", runNumber=" + runNumber +
+                    '}';
+        }
+
+        public int getRunNumber() {
+            return runNumber;
+        }
+
+        public void setRunNumber(int runNumber) {
+            this.runNumber = runNumber;
         }
 
         public String getName() {
@@ -112,13 +131,5 @@ public class ReportDTO {
             this.report = report;
         }
 
-        @Override
-        public String toString() {
-            return "ReportBean{" +
-                    ", name='" + name + '\'' +
-                    ", error=" + error +
-                    ", report='" + report + '\'' +
-                    '}';
-        }
     }
 }
