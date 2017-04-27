@@ -96,9 +96,10 @@ public class TestReaderController {
     }
 
     @GetMapping(path = "/raw/serviceTest/{timestamp}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getServiceTest(@PathVariable("timestamp") String timestamp) {
+    public String getServiceTest(@PathVariable("timestamp") String timestamp, @RequestParam(value = "index",
+            required = false, defaultValue = "0") int index) {
         long time = Long.valueOf(timestamp);
-        String serviceTestRawContentByTimestamp = testReaderService.getServiceTestRawContentByTimestamp(time);
+        String serviceTestRawContentByTimestamp = testReaderService.getServiceTestRawContentByTimestamp(time, index);
         LOGGER.debug(serviceTestRawContentByTimestamp);
         return serviceTestRawContentByTimestamp;
     }

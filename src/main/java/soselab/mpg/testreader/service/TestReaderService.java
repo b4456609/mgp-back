@@ -105,11 +105,11 @@ public class TestReaderService {
         return reportDTOS;
     }
 
-    public String getServiceTestRawContentByTimestamp(long time) {
+    public String getServiceTestRawContentByTimestamp(long time, int index) {
         TestReport testReport = testReportRepository.findOneByCreatedDate(time);
-        if (testReport == null)
+        if (testReport == null || index <= testReport.getRawReports().size())
             throw new NotFoundException();
-        return testReport.getRawReports().get(0);
+        return testReport.getRawReports().get(index);
     }
 
     public void saveUATTest(List<UATDTOAndRunNumber> uatdtoAndRunNumbers) throws JsonProcessingException {
