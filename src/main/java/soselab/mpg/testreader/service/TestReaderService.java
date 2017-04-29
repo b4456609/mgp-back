@@ -69,7 +69,7 @@ public class TestReaderService {
                         }).count();
 
                 ProviderReport providerReport = new ProviderReport(serviceName, serviceTestDetail,
-                        filenameAndContent.get(serviceName.concat(".md")), failCount, runNumber);
+                        filenameAndContent.get(filename.replace("json", "md")), failCount, runNumber);
                 providerReports.add(providerReport);
             }
         }
