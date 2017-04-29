@@ -107,7 +107,7 @@ public class TestReaderService {
 
     public String getServiceTestRawContentByTimestamp(long time, int index) {
         TestReport testReport = testReportRepository.findOneByCreatedDate(time);
-        if (testReport == null || index <= testReport.getRawReports().size())
+        if (testReport == null || index >= testReport.getRawReports().size())
             throw new NotFoundException();
         return testReport.getRawReports().get(index);
     }
