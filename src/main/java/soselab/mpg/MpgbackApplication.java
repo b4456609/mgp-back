@@ -16,11 +16,17 @@ import soselab.mpg.graph.repository.ServiceNodeRepository;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
 import soselab.mpg.pact.repository.PactConfigRepository;
 import soselab.mpg.testreader.repository.TestReportRepository;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableMongoRepositories(basePackageClasses = {MicroserviceProjectDescriptionRepository.class, PactConfigRepository.class, ScenarioRepository.class, TestReportRepository.class})
 @EnableNeo4jRepositories(basePackageClasses = ServiceNodeRepository.class)
 @SpringBootApplication
 @EnableMongoAuditing
+@EnableSwagger2
 public class MpgbackApplication {
 
     public static void main(String[] args) {
@@ -44,5 +50,15 @@ public class MpgbackApplication {
         FilterRegistrationBean bean = new FilterRegistrationBean(new CorsFilter(source));
         bean.setOrder(0);
         return bean;
+    }
+
+
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("soselab.mpg"))
+                .paths(PathSelectors.any())
+                .build();
     }
 }
