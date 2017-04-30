@@ -53,13 +53,13 @@ public class MPDServiceImp implements MPDService {
         LOGGER.info("all service names {}", serviceNames.toString());
 
         return serviceNames.stream().map(serviceName -> microserviceProjectDescriptionRepository
-                .findFirstByNameOrderByTimestampAsc(serviceName.getServiceName()))
+                .findFirstByNameOrderByTimestampDesc(serviceName.getServiceName()))
                 .collect(Collectors.toList());
     }
 
     @Override
     public String getServiceSwagger(String serviceName) {
-        return microserviceProjectDescriptionRepository.findFirstByNameOrderByTimestampAsc(serviceName).getSwagger();
+        return microserviceProjectDescriptionRepository.findFirstByNameOrderByTimestampDesc(serviceName).getSwagger();
     }
 
 }

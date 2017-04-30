@@ -7,10 +7,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class ServiceName {
     @Id
-    String id;
+    private String id;
 
     @Indexed(unique = true)
-    String serviceName;
+    private String serviceName;
+
+    public ServiceName() {
+    }
 
     public ServiceName(String serviceName) {
         this.serviceName = serviceName;
