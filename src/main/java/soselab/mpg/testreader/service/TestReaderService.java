@@ -42,6 +42,7 @@ public class TestReaderService {
                 String jsonReport = filenameAndContent.get(FileNameExtractor.getFileNameWithoutType(filename)
                         .concat(".json"));
                 int runNumber = FileNameExtractor.getRunNumber(filename);
+                LOGGER.debug("runNumber: {}", runNumber);
                 ServiceTestDetail serviceTestDetail = mapper.readValue(jsonReport, ServiceTestDetail.class);
 
                 //set fail test consumer and provider to map
@@ -95,6 +96,7 @@ public class TestReaderService {
         Page<ReportDTO> reportDTOS = all.map(testReport -> {
             List<ReportDTO.ReportBean> report = testReport.getTestReports().stream()
                     .map(providerReport -> {
+                        LOGGER.debug("{}", providerReport.getRunNumber());
                         return new ReportDTO.ReportBean(providerReport.getName(),
                                 providerReport.getFailCount(), providerReport.getReport(), providerReport.getRunNumber());
                     })

@@ -49,6 +49,10 @@ public class ScenarioReport implements DetailReport {
         return runNumber;
     }
 
+    public void setRunNumber(int runNumber) {
+        this.runNumber = runNumber;
+    }
+
     @Override
     public String toString() {
         return "ScenarioReport{" +
