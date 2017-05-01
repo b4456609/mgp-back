@@ -91,11 +91,12 @@ public abstract class AbstractRegressionPicker<T> {
     private void generateRunLists() {
         this.runResult = new ArrayList<>();
 
-        for (int i = 0; i < this.result.size(); i += regressionNum) {
+        for (int i = 0; i < this.result.size(); ) {
             //get num item insert to list
             if (i + regressionNum < this.result.size()) {
                 List<T> temp = this.result.subList(i, i + regressionNum);
                 this.runResult.add(temp);
+                i += regressionNum;
             } else {
                 List<T> temp = this.result.subList(i, this.result.size());
                 this.runResult.add(temp);
