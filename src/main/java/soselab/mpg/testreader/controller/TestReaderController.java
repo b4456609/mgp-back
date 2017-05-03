@@ -95,11 +95,11 @@ public class TestReaderController {
         return testReaderService.getReports(pageable);
     }
 
-    @GetMapping(path = "/raw/serviceTest/{timestamp}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public String getServiceTest(@PathVariable("timestamp") String timestamp, @RequestParam(value = "index",
-            required = false, defaultValue = "0") int index) {
+    @GetMapping(path = "/raw/serviceTest/{timestamp}/index/{index}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public String getServiceTestReport(@PathVariable("timestamp") String timestamp, @PathVariable("index") String index) {
+        LOGGER.info("index {}", index);
         long time = Long.valueOf(timestamp);
-        String serviceTestRawContentByTimestamp = testReaderService.getServiceTestRawContentByTimestamp(time, index);
+        String serviceTestRawContentByTimestamp = testReaderService.getServiceTestRawContentByTimestamp(time, Integer.valueOf(index));
         LOGGER.debug(serviceTestRawContentByTimestamp);
         return serviceTestRawContentByTimestamp;
     }
