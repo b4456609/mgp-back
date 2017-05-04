@@ -1,6 +1,7 @@
 @startuml
+scale 2
 rectangle "A Microservice Project" as mp
-
+file MPD
 rectangle "MCA" {
 	rectangle "Project Reader" as a
 	rectangle "Code Analyzer"as b
@@ -13,5 +14,6 @@ rectangle "MCA" {
 }
 
 a .up.> mp
+c .> MPD
 
 @enduml

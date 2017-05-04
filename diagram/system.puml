@@ -1,25 +1,25 @@
 @startuml
-scale 1.5
+scale 1.8
 rectangle "A Microservice Project" as mp
 rectangle "Jenkins Pipeline" as jp
 rectangle "BDD project" as bp
 rectangle "Pact Broker" as pb
-actor user
+actor User as user
 
-rectangle {
+rectangle "MGP" {
 	rectangle "MCA" as mca
-	rectangle "MGP"as mgp
-	rectangle "UAT Parser" as uatp
-	rectangle "Code Generator" as d
+	rectangle "MGP\nService"as mgp
+	rectangle "UAT\nAnalyzer\nService" as uatp
+	rectangle "Service Call\nCode Generator\nService" as d
 
-	rectangle "MPD" as mpd
+	file "MPD" as mpd
 
 	mca -r-> mpd
 	mgp -> uatp
 	mgp -> d
 }
 
-mpd.>jp
+jp.>mpd
 mca .> mp
 jp .> mca
 jp .> mgp

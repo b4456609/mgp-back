@@ -1,30 +1,30 @@
 @startuml
 left to right direction
-actor user
+actor User as user
 rectangle "Jenkins Pipeline" as jp
-rectangle "Code\nGenerator" as cg
-rectangle "UAT\nAnalyzer" as ua
 rectangle "Pact Broker" as pb
 
 rectangle "MGP" {
-	rectangle "React App" as react
-    database Neo4j as neo
-    database MongoDB as mon
+rectangle "Service Call\nCode Generator\nService" as cg
+    rectangle "UAT\nAnalyzer\nService" as ua
+	rectangle "MGP React App" as react
 
 
-    rectangle "Spring Boot" {
+    rectangle "MGP Service" as mgp {
         rectangle "Controller" as con
         rectangle "Regression\nPicker" as rp
         rectangle "Graph\nService" as gs
         rectangle "MPD\nReader" as mr
-        rectangle "Code Generator\nFacade" as cgf
+        rectangle "Service Call\nCode Generator\nFacade" as cgf
         rectangle "UAT\nFacade" as uf
         rectangle "Pact Broker\nFacade" as pbf
         rectangle "Test Reader" as tr
-
+        database Neo4j as neo
+        database MongoDB as mon
     }
 
-    react -> con
+    react .> con
+
     con -d-> rp
     con -d-> gs
     con -d-> mr
@@ -45,7 +45,7 @@ rectangle "MGP" {
     tr -d-> mon
 }
 
-jp .> con
+jp .d.> con
 jp .[hidden].> react
 user .> con
 user .> react

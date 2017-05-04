@@ -1,33 +1,40 @@
 @startuml
-left to right direction
+'scale 1.5
 Actor User as u
 rectangle Jenkins as j
+rectangle "BDD Project" as bdd
 
 rectangle "Pact Broker System" {
     rectangle "Pact Broker" as pb
     database "Postgresql " as pg
     pb -> pg
 }
+rectangle "Microservice Project" as mp {
+    artifact MCA as mca
+}
+file MPD as mpd
 rectangle "System"{
     rectangle Haproxy as ha
-    rectangle "React App" as ra
-    rectangle "Code Generation" as cg
-    rectangle "BDD Parser" as bp
-    rectangle "Cucumber Report" as cr
-    rectangle "API Backend" as ab
+    rectangle "MGP React App" as ra
+    rectangle "Service Call\nCode Generator\nService" as cg
+    rectangle "UAT\nAnalyzer\nService" as bp
+    rectangle "Cucumber Report\nService" as cr
+    rectangle "MGP Service" as ab
     database "Neo4j" as n
     database "MongoDB" as m
-    ha -d-> ra
-    ha -d-> cr
+    ha -> ra
+    ha -l-> cr
     ha -d-> ab
     ab -d-> n
     ab -d-> m
     ab -d-> cg
     ab -d-> bp
 }
-
+bp .> bdd
 u .> ha
 j .> ha
 ab .> pb
-
+j .> mp
+mca -> mpd
+j .> mpd
 @enduml
