@@ -1,4 +1,5 @@
 @startuml
+scale 1.5
 rectangle "A Microservice Project" as mp
 rectangle "Jenkins Pipeline" as jp
 rectangle "BDD project" as bp
@@ -11,11 +12,14 @@ rectangle {
 	rectangle "UAT Parser" as uatp
 	rectangle "Code Generator" as d
 
-	mca -> mgp
+	rectangle "MPD" as mpd
+
+	mca -r-> mpd
 	mgp -> uatp
 	mgp -> d
 }
 
+mpd.>jp
 mca .> mp
 jp .> mca
 jp .> mgp

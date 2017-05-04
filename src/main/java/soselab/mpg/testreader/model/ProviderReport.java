@@ -46,6 +46,10 @@ public class ProviderReport implements DetailReport {
         return runNumber;
     }
 
+    public void setRunNumber(int runNumber) {
+        this.runNumber = runNumber;
+    }
+
     public String getServiceName() {
         return serviceName;
     }

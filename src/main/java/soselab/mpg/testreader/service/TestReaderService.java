@@ -42,6 +42,7 @@ public class TestReaderService {
                 String jsonReport = filenameAndContent.get(FileNameExtractor.getFileNameWithoutType(filename)
                         .concat(".json"));
                 int runNumber = FileNameExtractor.getRunNumber(filename);
+                LOGGER.debug("runNumber: {}", runNumber);
                 ServiceTestDetail serviceTestDetail = mapper.readValue(jsonReport, ServiceTestDetail.class);
 
                 //set fail test consumer and provider to map
@@ -69,7 +70,7 @@ public class TestReaderService {
                         }).count();
 
                 ProviderReport providerReport = new ProviderReport(serviceName, serviceTestDetail,
-                        filenameAndContent.get(serviceName.concat(".md")), failCount, runNumber);
+                        filenameAndContent.get(filename.replace("json", "md")), failCount, runNumber);
                 providerReports.add(providerReport);
             }
         }
@@ -95,6 +96,7 @@ public class TestReaderService {
         Page<ReportDTO> reportDTOS = all.map(testReport -> {
             List<ReportDTO.ReportBean> report = testReport.getTestReports().stream()
                     .map(providerReport -> {
+                        LOGGER.debug("{}", providerReport.getRunNumber());
                         return new ReportDTO.ReportBean(providerReport.getName(),
                                 providerReport.getFailCount(), providerReport.getReport(), providerReport.getRunNumber());
                     })
@@ -105,11 +107,11 @@ public class TestReaderService {
         return reportDTOS;
     }
 
-    public String getServiceTestRawContentByTimestamp(long time) {
+    public String getServiceTestRawContentByTimestamp(long time, int index) {
         TestReport testReport = testReportRepository.findOneByCreatedDate(time);
-        if (testReport == null)
+        if (testReport == null || index >= testReport.getRawReports().size())
             throw new NotFoundException();
-        return testReport.getRawReports().get(0);
+        return testReport.getRawReports().get(index);
     }
 
     public void saveUATTest(List<UATDTOAndRunNumber> uatdtoAndRunNumbers) throws JsonProcessingException {

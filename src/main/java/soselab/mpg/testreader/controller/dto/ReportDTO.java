@@ -87,6 +87,7 @@ public class ReportDTO {
             this.name = name;
             this.error = error;
             this.report = report;
+            this.runNumber = runNumber;
         }
 
         @Override

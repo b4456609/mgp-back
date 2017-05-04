@@ -1,5 +1,7 @@
 package soselab.mpg.regression.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import soselab.mpg.graph.model.PathGroup;
 import soselab.mpg.graph.service.GraphService;
 import soselab.mpg.mpd.model.IDExtractor;
@@ -9,6 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public abstract class AbstractRegressionPicker<T> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractRegressionPicker.class);
     private final GraphService graphService;
     private String target;
     private int regressionNum;
@@ -89,9 +92,10 @@ public abstract class AbstractRegressionPicker<T> {
     }
 
     private void generateRunLists() {
+        LOGGER.debug("all regression test: {}", result);
         this.runResult = new ArrayList<>();
 
-        for (int i = 0; i < this.result.size(); i++) {
+        for (int i = 0; i < this.result.size(); ) {
             //get num item insert to list
             if (i + regressionNum < this.result.size()) {
                 List<T> temp = this.result.subList(i, i + regressionNum);

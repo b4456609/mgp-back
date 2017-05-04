@@ -1,5 +1,7 @@
 package soselab.mpg.regression.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
@@ -12,6 +14,8 @@ import java.util.stream.Collectors;
 @Component
 public class UATStrategy extends AbstractRegressionPicker<String> {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(UATStrategy.class);
+
     private final ScenarioNodeRepository scenarioNodeRepository;
 
     @Autowired
@@ -22,6 +26,10 @@ public class UATStrategy extends AbstractRegressionPicker<String> {
 
     @Override
     protected List<String> getTestCaseResult(List<List<String>> targetPath, String target) {
+        LOGGER.debug("{}", targetPath);
+        if (targetPath.isEmpty()) return Collections.emptyList();
+
+
         Map<String, EndpointWithOrder> endpointAndAnnotation = new HashMap<>();
         targetPath.forEach(path -> {
             int targetIndex = getTargetIndex(target, path);
@@ -33,6 +41,7 @@ public class UATStrategy extends AbstractRegressionPicker<String> {
                 }
             }
         });
+        LOGGER.debug("{}", endpointAndAnnotation);
 
         List<EndpointWithOrder> sortedEndpointList = endpointAndAnnotation.values().stream()
                 .sorted(Comparator.comparingInt(EndpointWithOrder::getOrder))
