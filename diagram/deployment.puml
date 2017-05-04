@@ -1,0 +1,33 @@
+@startuml
+left to right direction
+Actor User as u
+rectangle Jenkins as j
+
+rectangle "Pact Broker System" {
+    rectangle "Pact Broker" as pb
+    database "Postgresql " as pg
+    pb -> pg
+}
+rectangle "System"{
+    rectangle Haproxy as ha
+    rectangle "React App" as ra
+    rectangle "Code Generation" as cg
+    rectangle "BDD Parser" as bp
+    rectangle "Cucumber Report" as cr
+    rectangle "API Backend" as ab
+    database "Neo4j" as n
+    database "MongoDB" as m
+    ha -d-> ra
+    ha -d-> cr
+    ha -d-> ab
+    ab -d-> n
+    ab -d-> m
+    ab -d-> cg
+    ab -d-> bp
+}
+
+u .> ha
+j .> ha
+ab .> pb
+
+@enduml
