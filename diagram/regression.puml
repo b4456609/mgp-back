@@ -1,14 +1,16 @@
 @startuml
+scale 1.5
 start
-:Get All Invocation Chains;
+:Get Invocation Chain Group;
 :Find the paths contain\nthe updated service;
 :Filter out the Service is after\nthe target service two level;
-fork
+->Run service test?;
+if() then (yes)
     :Pair the consumer and\n provider Services;
     :Pick the pact file;
-fork again
+else (no)
     :Generate the Cucumber\n test annoation;
-end fork
+endif
 :Return Data;
 stop
 @enduml

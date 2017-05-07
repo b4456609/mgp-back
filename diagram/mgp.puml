@@ -6,7 +6,7 @@ rectangle "Pact Broker" as pb
 
 rectangle "MGP" {
 rectangle "Service Call\nCode Generator\nService" as cg
-    rectangle "UAT\nAnalyzer\nService" as ua
+    rectangle "BDD Parser\nService" as ua
 	rectangle "MGP React App" as react
 
 
@@ -16,7 +16,7 @@ rectangle "Service Call\nCode Generator\nService" as cg
         rectangle "Graph\nService" as gs
         rectangle "MPD\nReader" as mr
         rectangle "Service Call\nCode Generator\nFacade" as cgf
-        rectangle "UAT\nFacade" as uf
+        rectangle "BDD Parser\nFacade" as uf
         rectangle "Pact Broker\nFacade" as pbf
         rectangle "Test Reader" as tr
         database Neo4j as neo

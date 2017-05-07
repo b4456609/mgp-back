@@ -13,11 +13,11 @@ rectangle "Microservice Project" as mp {
     artifact MCA as mca
 }
 file MPD as mpd
-rectangle "System"{
+rectangle "MGP"{
     rectangle Haproxy as ha
     rectangle "MGP React App" as ra
     rectangle "Service Call\nCode Generator\nService" as cg
-    rectangle "UAT\nAnalyzer\nService" as bp
+    rectangle "BDD\nParser\nService" as bp
     rectangle "Cucumber Report\nService" as cr
     rectangle "MGP Service" as ab
     database "Neo4j" as n
