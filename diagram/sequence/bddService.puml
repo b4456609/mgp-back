@@ -1,0 +1,33 @@
+@startuml
+actor User as user
+participant "MGP React App" as mgpr
+participant "MGP Service" as mgps
+participant "BDD Parser\nService" as bps
+
+user -> mgpr: View\nDependency\nGraph
+activate mgpr
+mgpr -> mgps: Check Graph\nData Update
+activate mgps
+mgps -> bps: Check BDD Project\nUpdate
+activate bps
+bps --> mgps: Return Commit\nInformation
+deactivate bps
+mgps -> bps: \nUpdate UAT Project
+activate bps
+bps --> mgps: Return Result
+deactivate bps
+mgps -> bps: \nGet UAT Information
+activate bps
+bps --> mgps: Return Result
+deactivate bps
+mgps -> mgps: \nBuild Service\nDependency Graph
+mgps --> mgpr: Return Result
+deactivate mgps
+mgpr -> mgps: Get Dependency\nGraph Data
+activate mgps
+mgpr <-- mgps: Return Data
+deactivate mgps
+mgpr --> user: Dispaly
+deactivate mgpr
+
+@enduml

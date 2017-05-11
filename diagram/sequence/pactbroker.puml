@@ -1,0 +1,27 @@
+@startuml
+actor User
+participant "MGP React App" as A
+participant "MGP Service" as B
+participant "Pact Broker" as C
+
+User -> A: View Dependency\nGraph
+activate A
+
+A -> B: Request Service Call\nInformation
+activate B
+
+B -> C: Get Latest Pact DSL
+activate C
+B <-- C: Return Data
+deactivate C
+
+B --> A: Return Data
+deactivate B
+
+A --> User: Display
+deactivate A
+
+
+
+
+@enduml

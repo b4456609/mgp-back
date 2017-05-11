@@ -1,0 +1,27 @@
+@startuml
+actor User
+participant "MGP React App" as A
+participant "MGP Service" as B
+participant "Service Call Code\nGenerator Service" as C
+
+User -> A: View Dependency\nGraph
+activate A
+
+A -> B: Request Endpoint\nInformation
+activate B
+
+B -> C: Get Endpoint Call\nExample Code
+activate C
+B <-- C: Return Data
+deactivate C
+
+B --> A: Return Data
+deactivate B
+
+A --> User: Display
+deactivate A
+
+
+
+
+@enduml
