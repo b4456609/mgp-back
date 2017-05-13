@@ -1,0 +1,56 @@
+@startuml
+left to right direction
+skinparam rectangle {
+    roundCorner<<Class>> 25
+}
+skinparam rectangle {
+    roundCorner<<Interface>> 25
+}
+skinparam rectangle {
+    roundCorner<<Method>> 25
+}
+rectangle "Service Endpoint" as se {
+    rectangle "RestClass 2" <<Class>> {
+        rectangle "Serivce Endpoint 2" <<Method>> as se1
+        rectangle "Serivce Endpoint 3" <<Method>> as se2
+    }
+    rectangle "RestClass 1" <<Class>> {
+        rectangle "Serivce Endpoint 1" <<Method>> as se3
+    }
+}
+
+rectangle "Interface 1" <<Interface>> {
+    rectangle "Method 1" <<Method>> as m1
+}
+rectangle "Class 1" <<Class>> {
+    rectangle "Method 1" <<Method>> as c2m1
+}
+rectangle "Class 2" <<Class>> {
+    rectangle "Method 1" <<Method>> as c3m1
+}
+rectangle "Class 3" <<Class>> {
+    rectangle "Method 1" <<Method>> as c4m1
+}
+rectangle "Class 4" <<Class>> {
+    rectangle "Method 1" <<Method>> as c5m1
+}
+
+rectangle "Service Call" {
+    rectangle "Client2" <<Interface>> {
+	    rectangle "Service Call 2" <<Method>> as sc1
+    }
+    rectangle "Client1" <<Interface>> {
+	    rectangle "Service Call 1" <<Method>> as sc2
+    }
+}
+se3 -> c5m1
+se1 -> c2m1
+se2 -> m1s
+c2m1 -> c3m1
+c2m1 -> c5m1
+m1 -> c4m1
+c5m1 -d-> sc2
+c4m1 -d-> sc1
+c3m1 -d-> sc2
+c3m1 -d-> sc1
+@enduml
