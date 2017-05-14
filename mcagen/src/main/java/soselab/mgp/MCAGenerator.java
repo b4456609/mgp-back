@@ -11,10 +11,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class MCAGenerator {
@@ -39,16 +36,19 @@ public class MCAGenerator {
     public static final Random RANDOM = new Random();
     public static final String[] httpMethods = {"POST", "GET", "DELETE", "PUT"};
     public static final int SERVICE_NUMBER = 20;
-//    public static final int ENDPOINT_MAX_NUMBER = 5;
+    //    public static final int ENDPOINT_MAX_NUMBER = 5;
     public static final int SERVICE_CALL_MAX_NUMBER = 5;
 //    public static final int SERVICE_DEPENDENCY_MAX_NUMBER = 2;
+
+    public static final int MAX_SCENARIO_NUM = 5;
+    public static final int SCENARIO_NUMBER = 10;
 
     public static void main(String[] args) {
         List<Service> services = new ArrayList<>();
 
         //generate service
         for (int i = 0; i < SERVICE_NUMBER; i++) {
-            String serviceName = String.format("S%02d", i+1);
+            String serviceName = String.format("S%03d", i + 1);
             List<Endpoint> serviceEndpoints = randomEndpoints(serviceName);
             Service service = new Service(serviceName, serviceEndpoints);
             services.add(service);
@@ -67,6 +67,7 @@ public class MCAGenerator {
                             service.getServiceEndpoints(), endpointDeps);
                 })
                 .collect(Collectors.toList());
+
         collect.forEach(i -> {
             try {
                 Path path = Paths.get("build/output/" + i.getName() + ".json");
@@ -77,6 +78,35 @@ public class MCAGenerator {
                 e.printStackTrace();
             }
         });
+
+        Map<String, Set<String>> stringSetMap = genScenario(collect);
+        ScenarioWriter.write(stringSetMap);
+
+        System.out.println("=============================================================service");
+        int asInt = collect.stream().mapToInt(i -> i.getServiceCall().size()).reduce((all, age) -> all + age).getAsInt();
+        System.out.println("service Call num:"  + asInt);
+        System.out.println("=============================================================scenario");
+        System.out.println(stringSetMap.size());
+        stringSetMap.forEach(((s, strings) -> {
+            System.out.println(s + ", "+ strings.size()+ ", "+ strings);
+        }));
+        System.out.println(stringSetMap);
+    }
+
+    public static Map<String, Set<String>> genScenario(List<MDP> mpd) {
+        Map<String, Set<String>> result = new HashMap<>();
+        for (int i = 0; i < SCENARIO_NUMBER; i++) {
+            String scenarioName = String.format("Scenario%02d", i + 1);
+            int serviceCallNum = RANDOM.nextInt(MAX_SCENARIO_NUM) + 1;
+            Set<String> anntations = new HashSet<>();
+            Collections.shuffle(mpd);
+            Set<String > endpoints = mpd.stream().limit(serviceCallNum)
+                    .map(j -> j.getEndpoint().get(RANDOM.nextInt(j.getEndpoint().size())).getId())
+                    .map(st -> "@" + st.replace(" ", "_"))
+                    .collect(Collectors.toSet());
+            result.put(scenarioName, endpoints);
+        }
+        return result;
     }
 
     public static List<EndpointDep> randomPickServiceDep(List<Endpoint> serviceEndpoints,
@@ -109,7 +139,7 @@ public class MCAGenerator {
                 .collect(Collectors.toList());
     }
 
-    public static int getServiceCallNum(){
+    public static int getServiceCallNum() {
         return (int) Math.floor(Math.min(RANDOM.nextGaussian() * 2, 2));
     }
 
@@ -121,7 +151,7 @@ public class MCAGenerator {
         // divide into 19 partition
         int partition = dataNum / 19;
         // each partition has 15 endpoint
-        int num = RANDOM.nextInt(5)+1;
+        int num = RANDOM.nextInt(5) + 1;
 
         for (int i = 0; i < num; i++) {
             String path = "/path" + i;
