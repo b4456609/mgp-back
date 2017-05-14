@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import soselab.mpg.graph.repository.ScenarioNodeRepository;
 import soselab.mpg.graph.service.GraphService;
+import soselab.mpg.mpd.service.MPDService;
 import soselab.mpg.regression.model.EndpointWithOrder;
 
 import java.util.*;
@@ -17,17 +18,21 @@ public class UATStrategy extends AbstractRegressionPicker<String> {
     private static final Logger LOGGER = LoggerFactory.getLogger(UATStrategy.class);
 
     private final ScenarioNodeRepository scenarioNodeRepository;
+    private final MPDService mpdService;
 
     @Autowired
-    public UATStrategy(GraphService graphService, ScenarioNodeRepository scenarioNodeRepository) {
+    public UATStrategy(GraphService graphService, ScenarioNodeRepository scenarioNodeRepository, MPDService mpdService) {
         super(graphService);
         this.scenarioNodeRepository = scenarioNodeRepository;
+        this.mpdService = mpdService;
     }
 
     @Override
     protected List<String> getTestCaseResult(List<List<String>> targetPath, String target) {
+        List<String> serviceEndpoints = mpdService.getServiceEndpoints(target);
+        List<String> scenarioByTargetEndpoints = scenarioNodeRepository.getScenarioByEndpoints(serviceEndpoints);
         LOGGER.debug("{}", targetPath);
-        if (targetPath.isEmpty()) return Collections.emptyList();
+        if (targetPath.isEmpty()) return scenarioByTargetEndpoints;
 
 
         Map<String, EndpointWithOrder> endpointAndAnnotation = new HashMap<>();
@@ -47,8 +52,9 @@ public class UATStrategy extends AbstractRegressionPicker<String> {
                 .sorted(Comparator.comparingInt(EndpointWithOrder::getOrder))
                 .collect(Collectors.toList());
 
-        List<String> result = new ArrayList<>();
-        HashSet<String> sets = new HashSet<>();
+        //add this service endpoint
+        List<String> result = new ArrayList<>(scenarioByTargetEndpoints);
+        HashSet<String> sets = new HashSet<>(scenarioByTargetEndpoints);
 
         int maxOrder = sortedEndpointList.get(sortedEndpointList.size() - 1).getOrder();
         for (int i = -1; i <= maxOrder; i++) {

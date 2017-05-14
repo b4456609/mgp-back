@@ -14,4 +14,6 @@ public interface MPDService {
 
     String getServiceSwagger(String serviceName);
 
+    List<String> getServiceEndpoints(String serviceName);
+
 }

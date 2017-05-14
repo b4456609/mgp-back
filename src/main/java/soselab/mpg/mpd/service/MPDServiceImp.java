@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
+import soselab.mpg.mpd.model.Endpoint;
 import soselab.mpg.mpd.model.MicroserviceProjectDescription;
 import soselab.mpg.mpd.model.ServiceName;
 import soselab.mpg.mpd.repository.MicroserviceProjectDescriptionRepository;
@@ -60,6 +61,13 @@ public class MPDServiceImp implements MPDService {
     @Override
     public String getServiceSwagger(String serviceName) {
         return microserviceProjectDescriptionRepository.findFirstByNameOrderByTimestampDesc(serviceName).getSwagger();
+    }
+
+    @Override
+    public List<String> getServiceEndpoints(String serviceName) {
+        return microserviceProjectDescriptionRepository.findFirstByNameOrderByTimestampDesc(serviceName).getEndpoint()
+                .stream()
+                .map(Endpoint::getId).collect(Collectors.toList());
     }
 
 }
