@@ -1,0 +1,17 @@
+@startuml
+actor User
+participant "MGP Test Agent" as msta
+User -> msta: Run service test
+activate msta
+msta -> MGPS: Get Service Regression\nTest Cases
+activate MGPS
+msta <- MGPS: Return test cases
+deactivate MGPS
+msta -> msta: Run test
+msta -> MGPS: Upload test report
+activate MGPS
+msta <- MGPS: Return result
+deactivate MGPS
+User <- msta: Result
+deactivate msta
+@enduml
