@@ -1,5 +1,5 @@
 @startuml
-'scale 2
+scale 2
 'left to right direction
 actor User as user
 rectangle "Jenkins Pipeline" as jp
@@ -9,7 +9,8 @@ rectangle "MGP" {
 rectangle "Service Call\nCode Generator\nService" as cg
     rectangle "BDD Parser\nService" as ua
 	rectangle "MGP React App" as react
-
+	rectangle "Cucumber Report Service" as crs
+	rectangle "Test Agent" as ta
 
     rectangle "MGP Service" as mgp {
         rectangle "Controller" as con
@@ -25,6 +26,8 @@ rectangle "Service Call\nCode Generator\nService" as cg
     }
 
     react .> con
+    crs .> con
+    ta .> con
 
     con -d-> rp
     con -d-> gs
@@ -54,9 +57,11 @@ rectangle "Service Call\nCode Generator\nService" as cg
     mr -[hidden]d-> neo
 }
 
+react .l.> crs
+jp .d.> ta
 jp .d.> con
 jp .[hidden].> react
-user .> con
+user .> ta
 user .> react
 cgf .> cg
 uf .> ua
