@@ -24,6 +24,7 @@ rectangle "MGP" as t {
 	crs -d-> mgp
 	ta -> mgp
 }
+
 jp.>ta
 jp.>mpd
 mca .l.> mp
@@ -31,8 +32,8 @@ jp .> mca
 jp .> mgp
 uatp .> bp
 mgp .> pb
-user .> mgp
 user .> mgpa
+user .[hidden].> crs
 user .> crs
 
 uatp .d.> pb
