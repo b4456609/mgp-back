@@ -1,0 +1,84 @@
+@startuml
+'skinparam monochrome true
+queue  Requirement as r
+queue  Design as d
+queue  Implement as i
+queue  "Unit Test" as ut
+queue  "Service Test" as st
+queue  "UAT" as uat
+
+agent "Consumer Driven Contract" as cdc
+agent "Behavior Driven Development" as bdd
+
+skinparam queue{
+  BackgroundColor white
+}
+skinparam agent{
+  BackgroundColor white
+}
+
+skinparam rectangle{
+  BackgroundColor #F6D8FF
+}
+
+skinparam storage{
+  BackgroundColor #A68BB2
+}
+
+
+rectangle "Reflection-based\nRelation Building Method" as rbrbm
+rectangle "Annotation-Based\nRelationship Building Method" as abrbm
+artifact "Dependency Graph" as dg
+rectangle "Neo4j-based\nInvocation Chain\nDiscovery Method" as nbicd
+rectangle "Neo4j-based\nCyclic Analysis Method" as nbca
+rectangle "Regression Test Case\nSelection based on\nService Dependency Graph" as rtcs
+
+storage  "Cyclic Dependency" as cp
+storage  "Service Call Coverage" as sc
+storage  "Traceability between\nScenarios and Services" as tb
+storage  "Pick Regression Test Cases" as pt
+storage  "Mitigation for Misinterpretation\nof BDD scenarios" as mf
+
+bdd -d-> mf
+nbca -d-> cp
+rbrbm -d-> sc
+rbrbm -d-> mf
+abrbm -d-> tb
+rtcs-d->pt
+
+
+rtcs -[hidden]d-> sc
+sc -[hidden]d-> mf
+sc -[hidden]d-> pt
+nbca -[hidden]d-> tb
+
+
+r-r-> d
+d-r-> i
+i-r-> ut
+ut-r->st
+st-r->uat
+
+
+d -d- cdc
+i -d- cdc
+st -d- cdc
+uat -d- bdd
+r -d- bdd
+d-d- bdd
+
+bdd -d-> abrbm
+ut -d- rbrbm
+
+abrbm -d-> dg
+rbrbm -d-> dg
+
+dg-d->nbicd
+nbicd-d->nbca
+
+nbicd->rtcs
+st-d-rtcs
+uat-d-rtcs
+bdd-d->rtcs
+cdc-d->rtcs
+@enduml

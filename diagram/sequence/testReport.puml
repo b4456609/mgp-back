@@ -1,6 +1,6 @@
 @startuml
 actor User
-participant "MGP Test Agent" as msta
+participant "Regression Test Agent" as msta
 User -> msta: Run service test
 activate msta
 msta -> MGPS: Get Service Regression\nTest Cases

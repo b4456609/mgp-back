@@ -13,10 +13,10 @@ rectangle "Microservice Project" as mp {
     artifact MCA as mca
 }
 rectangle "BDD Project" as bddp {
-    rectangle "Test Agent" as bta
+    rectangle "Regression\nTest Agent" as bta
 }
 rectangle "Service Test Project" as stp {
-    rectangle "Test Agent" as sta
+    rectangle "Regression\nTest Agent" as sta
 }
 file MPD as mpd
 rectangle "MGP"{
@@ -24,7 +24,7 @@ rectangle "MGP"{
     rectangle "MGP React App" as ra
     rectangle "Service Call\nCode Generator\nService" as cg
     rectangle "BDD\nParser\nService" as bp
-    rectangle "Cucumber Report\nService" as cr
+    rectangle "Cucumber\nReport\nService" as cr
     rectangle "MGP Service" as ab
     database "Neo4j" as n
     database "MongoDB" as m
@@ -36,6 +36,7 @@ rectangle "MGP"{
     ab -> cg
     ab -d-> bp
 }
+j .> pb
 j .> sta
 j .> bta
 ha <. sta
@@ -48,6 +49,6 @@ j .> mp
 mca -> mpd
 j .> mpd
 
-stp -[hidden]-> pb
-bddp -[hidden]-> pb
+stp -[hidden]d-> bddp
+'bddp -[hidden]-> pb
 @enduml
