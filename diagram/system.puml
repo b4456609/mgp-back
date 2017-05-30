@@ -1,5 +1,6 @@
 @startuml
-scale 1.8
+'scale 1.8
+left to right direction
 rectangle "A Microservice Project" as mp
 rectangle "Jenkins Pipeline" as jp
 rectangle "BDD project" as bp
@@ -33,9 +34,7 @@ jp .> mgp
 uatp .> bp
 mgp .> pb
 user .> mgpa
-user .[hidden].> crs
 user .> crs
-
-uatp .d.> pb
+uatp .[hidden]d.> pb
 
 @enduml
