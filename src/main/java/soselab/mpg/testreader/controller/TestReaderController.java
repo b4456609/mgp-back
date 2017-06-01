@@ -21,10 +21,7 @@ import soselab.mpg.testreader.controller.exception.ProccessFailException;
 import soselab.mpg.testreader.service.TestReaderService;
 
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,6 +39,7 @@ public class TestReaderController {
 
     @PostMapping("/uat")
     public void uploadUatTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
+        LOGGER.info("{}", Arrays.toString(uploadingFiles));
         try {
             List<UATDTOAndRunNumber> uatdtoAndRunNumbers = Stream.of(uploadingFiles)
                     .flatMap(file -> {
@@ -57,8 +55,9 @@ public class TestReaderController {
                         }
                         return Stream.empty();
                     })
+                    .sorted(Comparator.comparingInt(UATDTOAndRunNumber::getRunNumber))
                     .collect(Collectors.toList());
-
+            LOGGER.info("{}", uatdtoAndRunNumbers);
             testReaderService.saveUATTest(uatdtoAndRunNumbers);
         } catch (IOException e) {
             e.printStackTrace();
