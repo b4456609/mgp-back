@@ -39,12 +39,12 @@ storage  "Traceability between\nScenarios and Services" as tb
 storage  "Pick Regression Test Cases" as pt
 storage  "Mitigation for Misinterpretation\nof BDD scenarios" as mf
 
-bdd -d-> mf
-nbca -d-> cp
-rbrbm -d-> sc
-rbrbm -d-> mf
-abrbm -d-> tb
-rtcs-d->pt
+bdd -d-|> mf
+nbca -d-|> cp
+rbrbm -d-|> sc
+rbrbm -d-|> mf
+abrbm -d-|> tb
+rtcs-d-|>pt
 
 
 rtcs -[hidden]d-> sc
@@ -60,15 +60,15 @@ ut-r->st
 st-r->uat
 
 
-d -d- cdc
-i -d- cdc
-st -d- cdc
-uat -d- bdd
-r -d- bdd
-d-d- bdd
+d .d. cdc
+i .d. cdc
+st .d. cdc
+uat .d. bdd
+r .d. bdd
+d .d. bdd
 
 bdd -d-> abrbm
-ut -d- rbrbm
+ut .d. rbrbm
 
 abrbm -d-> dg
 rbrbm -d-> dg
@@ -77,8 +77,15 @@ dg-d->nbicd
 nbicd-d->nbca
 
 nbicd->rtcs
-st-d-rtcs
-uat-d-rtcs
+st .d. rtcs
+uat .d. rtcs
 bdd-d->rtcs
 cdc-d->rtcs
+
+legend
+| Line Type | Description |
+| <size:20><U+2192></size>| Required to |
+| <size:20><U+21fe></size>| Solve Problem |
+|  <size:20><U+254c></size>| Participate |
+end legend
 @enduml
