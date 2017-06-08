@@ -2,6 +2,8 @@ package soselab.mpg.testreader.controller;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +40,9 @@ public class TestReaderController {
     }
 
     @PostMapping("/uat")
-    public void uploadUatTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
+    @ApiOperation(value = "Upload UAT test report")
+    public void uploadUatTest(@ApiParam(value = "Multiple cucumber report json files", required = true)
+                              @RequestParam("files") MultipartFile[] uploadingFiles) {
         LOGGER.info("{}", Arrays.toString(uploadingFiles));
         try {
             List<UATDTOAndRunNumber> uatdtoAndRunNumbers = Stream.of(uploadingFiles)
@@ -65,7 +69,9 @@ public class TestReaderController {
     }
 
     @PostMapping("/serviceTest")
-    public void uploadTest(@RequestParam("files") MultipartFile[] uploadingFiles) {
+    @ApiOperation(value = "Upload service test report")
+    public void uploadTest(@ApiParam(value = "Multiple pact report json and markdown files", required = true)
+                           @RequestParam("files") MultipartFile[] uploadingFiles) {
         LOGGER.info("recevice files{}", Arrays.toString(uploadingFiles));
         //validation
         if (uploadingFiles.length == 0) {
@@ -89,12 +95,14 @@ public class TestReaderController {
     }
 
     @GetMapping("/report")
+    @ApiOperation(value = "Get Uat and Service Test report")
     public Page<ReportDTO> getReports(@PageableDefault(value = 5, sort = {"createdDate"}, direction = Sort.Direction.DESC)
                                               Pageable pageable) {
         return testReaderService.getReports(pageable);
     }
 
     @GetMapping(path = "/raw/serviceTest/{timestamp}/index/{index}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(value = "Get cucumber report")
     public String getServiceTestReport(@PathVariable("timestamp") String timestamp, @PathVariable("index") String index) {
         LOGGER.info("index {}", index);
         long time = Long.valueOf(timestamp);

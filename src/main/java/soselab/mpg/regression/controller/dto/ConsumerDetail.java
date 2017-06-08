@@ -1,7 +1,13 @@
 package soselab.mpg.regression.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class ConsumerDetail {
+
+    @ApiModelProperty(value = "Consumer name")
     private String consumer;
+
+    @ApiModelProperty(value = "Pact file url from pact broker")
     private String pactFile;
 
     public ConsumerDetail(String consumer, String pactFile) {

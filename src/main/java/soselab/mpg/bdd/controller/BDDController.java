@@ -1,5 +1,6 @@
 package soselab.mpg.bdd.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class BDDController {
         this.bddService = bddService;
     }
 
+    @ApiOperation(value = "Get BDD Data")
     @GetMapping
     public List<FeatureDocumentDTO> getAllBDDFeature() {
         return bddService.getFeatures();

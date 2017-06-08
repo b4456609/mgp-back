@@ -1,5 +1,6 @@
 package soselab.mpg.app.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,7 @@ public class UpdateController {
         this.pactService = pactService;
     }
 
+    @ApiOperation(value = "Update Pact and BDD data")
     @PostMapping
     public void updateAllData() throws InterruptedException {
         try {

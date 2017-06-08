@@ -1,8 +1,11 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class ScenarioEndpointPairItem {
     private String source;
     private String target;
+    @ApiModelProperty("Class name in html")
     private String className;
 
     public ScenarioEndpointPairItem(String source, String target, String className) {

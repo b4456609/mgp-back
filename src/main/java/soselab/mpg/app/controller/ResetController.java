@@ -1,5 +1,6 @@
 package soselab.mpg.app.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -56,6 +57,7 @@ public class ResetController {
         this.testReportRepository = testReportRepository;
     }
 
+    @ApiOperation(value = "Delete All Data")
     @DeleteMapping
     public void reset() {
         this.bddGitSettingRepository.deleteAll();

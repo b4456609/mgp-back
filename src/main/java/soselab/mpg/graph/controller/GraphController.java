@@ -1,5 +1,6 @@
 package soselab.mpg.graph.controller;
 
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,17 +36,20 @@ public class GraphController {
         this.microserviceGraphBuilderService = microserviceGraphBuilderService;
     }
 
+    @ApiOperation(value = "Get D3.js Data")
     @GetMapping("/visual")
     public GraphDataDTO getGraphData() {
         // get visual data for d3
         return graphService.getVisualizationData(null, null);
     }
 
+    @ApiOperation(value = "Get Service information")
     @GetMapping("/service")
     public List<ServiceInformationDTO> getServiceInformation() {
         return graphService.getServiceInfo();
     }
 
+    @ApiOperation(value = "Get Service Call information")
     @GetMapping("/serviceCall")
     public List<ServiceCallInformationDTO> getServiceCallInformation() {
 
@@ -71,11 +75,13 @@ public class GraphController {
         return serviceCallInformationDTOS;
     }
 
+    @ApiOperation(value = "Get Endpoint Information")
     @GetMapping("/endpoint")
     public List<EndpointInformationDTO> getEndpointInformation() {
         return graphService.getEndpointInformations();
     }
 
+    @ApiOperation(value = "Get Scenario Information")
     @GetMapping("/scenario")
     public ScenarioInformationDTO getScenarioInforamtionDTO() {
         return bddService.getScenarioInfomation();

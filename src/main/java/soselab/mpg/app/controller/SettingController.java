@@ -1,5 +1,7 @@
 package soselab.mpg.app.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,13 +26,16 @@ public class SettingController {
         this.microserviceGraphBuilderService = microserviceGraphBuilderService;
     }
 
+    @ApiOperation(value = "Update Setting")
     @PostMapping
-    public void updateSetting(@RequestBody SettingDTO settingDTO) {
+    public void updateSetting(@ApiParam(value = "setting object", required = true)
+                              @RequestBody SettingDTO settingDTO) {
         LOGGER.debug("update setting {}", settingDTO);
         pactService.updatePactUrl(settingDTO.getPactHostUrl());
         bddService.updateGitUrl(settingDTO.getBddGitUrl());
     }
 
+    @ApiOperation(value = "Get Setting")
     @GetMapping
     public SettingDTO getSetting() {
         String gitUrl = bddService.getGitUrl();

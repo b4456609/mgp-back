@@ -1,5 +1,7 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by JacksonGenerator on 2017/1/12.
  */
@@ -7,7 +9,9 @@ package soselab.mpg.graph.controller.dto;
 public class NodesItem {
     private String id;
     private String label;
+    @ApiModelProperty("Class name in html")
     private String className;
+    @ApiModelProperty("Node, Scenario or Endpoint")
     private Integer group;
 
     public NodesItem() {

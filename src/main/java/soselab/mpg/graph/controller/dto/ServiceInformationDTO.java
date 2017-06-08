@@ -1,11 +1,17 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.neo4j.annotation.QueryResult;
 
 @QueryResult
 public class ServiceInformationDTO {
+    @ApiModelProperty("service id")
     private String id;
+
+    @ApiModelProperty("Endpoint Count")
     private int endpointCount;
+
+    @ApiModelProperty("Service Call count")
     private int serviceCallCount;
 
     public ServiceInformationDTO() {

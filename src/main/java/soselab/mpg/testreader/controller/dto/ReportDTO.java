@@ -1,6 +1,7 @@
 package soselab.mpg.testreader.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.util.List;
 
@@ -17,7 +18,9 @@ public class ReportDTO {
      */
 
     private long timestamp;
+    @ApiModelProperty(value = "UAT or Service Test")
     private String type;
+    @ApiModelProperty(value = "D3.js Data")
     private String visual;
     private List<ReportBean> report;
 
@@ -75,9 +78,13 @@ public class ReportDTO {
 
     @JsonIgnoreProperties(ignoreUnknown = true)
     public static class ReportBean {
+        @ApiModelProperty(value = "Name of the test case")
         private String name;
+        @ApiModelProperty(value = "Error number of the test")
         private long error;
+        @ApiModelProperty(value = "Raw report")
         private String report;
+        @ApiModelProperty(value = "Run iteration number")
         private int runNumber;
 
         public ReportBean() {

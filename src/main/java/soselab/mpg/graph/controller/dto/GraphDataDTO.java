@@ -1,12 +1,22 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.List;
 
-
+@ApiModel(description = "D3.js Data")
 public class GraphDataDTO {
+    @ApiModelProperty(value = "Relationship between Service and Endpoint")
     private List<ServiceWithEndpointPairItem> serviceWithEndpointPair;
+
+    @ApiModelProperty(value = "D3.js Node including service, endpoint, scenario")
     private List<NodesItem> nodes;
+
+    @ApiModelProperty(value = "Service Call Relation")
     private List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair;
+
+    @ApiModelProperty(value = "Scenario Relation")
     private List<ScenarioEndpointPairItem> scenarioEndpointPair;
 
     public GraphDataDTO(List<ServiceWithEndpointPairItem> serviceWithEndpointPair, List<NodesItem> nodes, List<ProviderEndpointWithConsumerPairItem> providerEndpointWithConsumerPair, List<ScenarioEndpointPairItem> scenarioEndpointPair) {

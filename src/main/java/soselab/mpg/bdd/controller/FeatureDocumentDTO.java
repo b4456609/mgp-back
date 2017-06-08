@@ -1,8 +1,12 @@
 package soselab.mpg.bdd.controller;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class FeatureDocumentDTO {
+    @ApiModelProperty(value = "Feature name")
     private String name;
+    @ApiModelProperty(value = "Feature content")
     private String content;
 
     public FeatureDocumentDTO(String name, String content) {

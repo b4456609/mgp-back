@@ -1,5 +1,7 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by Fan on 2017/2/2.
  */
@@ -7,6 +9,7 @@ public class ScenarioItem {
     private String id;
     private String name;
     private String content;
+    @ApiModelProperty(value = "Feature file id")
     private String featureId;
 
     public ScenarioItem(String id, String name, String content, String featureId) {

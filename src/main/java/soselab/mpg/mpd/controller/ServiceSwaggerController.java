@@ -1,5 +1,7 @@
 package soselab.mpg.mpd.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,9 @@ public class ServiceSwaggerController {
     }
 
     @GetMapping(path = "/{serviceName}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public String swagger(@PathVariable("serviceName") String serviceName) {
+    @ApiOperation(value = "Get microservice's swagger")
+    public String swagger(@ApiParam(value = "Service Name", required = true)
+                          @PathVariable("serviceName") String serviceName) {
         return mpdService.getServiceSwagger(serviceName);
     }
 }

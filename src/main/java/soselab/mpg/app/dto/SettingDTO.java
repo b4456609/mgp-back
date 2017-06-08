@@ -1,10 +1,14 @@
 package soselab.mpg.app.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * Created by Fan on 2017/2/2.
  */
 public class SettingDTO {
+    @ApiModelProperty(value = "Pact url")
     private String pactHostUrl;
+    @ApiModelProperty(value = "Bdd git project url in https format")
     private String bddGitUrl;
 
     public SettingDTO() {

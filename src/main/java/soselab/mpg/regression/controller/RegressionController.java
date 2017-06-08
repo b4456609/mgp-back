@@ -1,5 +1,7 @@
 package soselab.mpg.regression.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,13 +27,19 @@ public class RegressionController {
     }
 
     @GetMapping("/serviceTest/{serviceName}")
-    public List<List<PactTestCaseDTO>> getRegressionServiceTest(@PathVariable("serviceName") String serviceName,
+    @ApiOperation(value = "Get Service Test Regression Test Cases")
+    public List<List<PactTestCaseDTO>> getRegressionServiceTest(@ApiParam(value = "Service Name", required = true)
+                                                                @PathVariable("serviceName") String serviceName,
+                                                                @ApiParam(value = "Number of Test Cases per Iteration", defaultValue = "5")
                                                                 @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
         return serviceTestStrategy.pickTestCase(serviceName, num);
     }
 
     @GetMapping("/uat/{serviceName}")
-    public List<List<String>> getScenarioAnnotations(@PathVariable("serviceName") String serviceName,
+    @ApiOperation(value = "Get UAT Regression Regression Test Cases")
+    public List<List<String>> getScenarioAnnotations(@ApiParam(value = "Service Name", required = true)
+                                                     @PathVariable("serviceName") String serviceName,
+                                                     @ApiParam(value = "Number of Test Cases per Iteration", defaultValue = "5")
                                                      @RequestParam(required = false, defaultValue = "5", value = "num") int num) {
         return uatStrategy.pickTestCase(serviceName, num);
     }

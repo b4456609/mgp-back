@@ -1,12 +1,18 @@
 package soselab.mpg.regression.controller.dto;
 
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.util.List;
 
 public class PactTestCaseDTO {
+    @ApiModelProperty(value = "Provider name", example = "user")
     private String provider;
+    @ApiModelProperty(value = "Provider host environment variable name", example = "USER_HOST")
     private String host;
+    @ApiModelProperty(value = "Provider port environment variable name", example = "USER_PORT")
     private String port;
+    @ApiModelProperty(value = "Consumer Information")
     private List<ConsumerDetail> hasPactWith;
 
     public PactTestCaseDTO(String provider, List<ConsumerDetail> hasPactWith) {

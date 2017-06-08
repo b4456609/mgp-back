@@ -1,11 +1,15 @@
 package soselab.mpg.graph.controller.dto;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.neo4j.annotation.QueryResult;
 
 @QueryResult
 public class ServiceCallInformationDTO {
+    @ApiModelProperty("Consumer id")
     private String consumer;
+    @ApiModelProperty("provider id")
     private String provider;
+    @ApiModelProperty("Pact DSL json content")
     private String pact;
 
     public ServiceCallInformationDTO() {
