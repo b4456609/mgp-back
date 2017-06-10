@@ -1,6 +1,7 @@
 @startuml
-'scale 1.8
-left to right direction
+'scale 2
+'skinparam backgroundcolor transparent
+'left to right direction
 rectangle "A Microservice Project" as mp
 rectangle "Jenkins Pipeline" as jp
 rectangle "BDD project" as bp
@@ -18,23 +19,23 @@ rectangle "MGP" as t {
 
 	file "MPD" as mpd
 
-	mca -r-> mpd
+	mca -> mpd
 	mgp -d-> uatp
 	mgp -d-> d
 	mgpa -d-> mgp
 	crs -d-> mgp
-	ta -> mgp
+	ta -d-> mgp
 }
 
 jp.>ta
 jp.>mpd
-mca .l.> mp
-jp .> mca
-jp .> mgp
+mca .u.> mp
+jp .d.> mca
+jp .d.> mgp
 uatp .> bp
-mgp .> pb
-user .> mgpa
-user .> crs
+mgp .d.> pb
+user .d.> mgpa
+user .d.> crs
 uatp .[hidden]d.> pb
-
+uatp .[hidden]d.> bp
 @enduml
