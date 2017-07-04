@@ -1,17 +1,17 @@
 @startuml
 'scale 1.5
 start
-:Get Invocation Chain Group;
+:Get invocation chain group;
 :Find the paths contain\nthe updated service;
 :Filter out the service is after\nthe target service two level;
 :Calculate test priority scrore;
 ->Run service test?;
 if() then (yes)
-    :Pair the consumer and\n provider Services;
+    :Pair the consumer and\n provider services;
     :Pick the pact file;
 else (no)
     :Generate the Cucumber\n test annoation;
 endif
-:Return Data;
+:Return data;
 stop
 @enduml
