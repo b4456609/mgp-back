@@ -1,14 +1,14 @@
 @startuml
 start
-:Get Invocation Chain Group;
-:Check All Invocation Chain Path;
+:Get invocation chain group;
+:Check all invocation chain path;
 -> A path has two endpoint\nowned by the same service;
 if() then(yes)
-:Check the Path has the same\nEndpoint exist more than once;
+:Check the path has the same\nendpoint exist more than once;
 if() then(yes)
-:Mark the group is\nStrong Cyclicity;
+:Mark the group is\nstrong cyclic dependency;
 else(no)
-:Mark the group is\nWeek Cyclicity;
+:Mark the group is\nweek cyclic dependency;
 endif
 else(no)
 endif
