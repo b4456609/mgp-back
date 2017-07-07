@@ -1,5 +1,5 @@
 @startuml
-'skinparam monochrome true
+' skinparam monochrome true
 queue  Requirement as r
 queue  Design as d
 queue  Implement as i
@@ -22,12 +22,12 @@ skinparam rectangle{
 }
 
 skinparam storage{
-  BackgroundColor #A68BB2
+  BackgroundColor #BE9FCC
 }
 
 
-rectangle "Reflection-based\nRelation Building Method" as rbrbm
-rectangle "Annotation-Based\nRelationship Building Method" as abrbm
+rectangle "Reflection-based Service\nLinkage Building Method" as rbrbm
+rectangle "Annotation-Based\nTraceability Building Method" as abrbm
 artifact "Dependency Graph" as dg
 rectangle "Neo4j-based\nInvocation Chain\nDiscovery Method" as nbicd
 rectangle "Neo4j-based\nCyclic Analysis Method" as nbca

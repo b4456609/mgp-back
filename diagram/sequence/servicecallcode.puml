@@ -4,18 +4,18 @@ participant "MGP React App" as A
 participant "MGP Service" as B
 participant "Service Call Code\nGenerator Service" as C
 
-User -> A: View Dependency\nGraph
+User -> A: View dependency\ngraph
 activate A
 
-A -> B: Request Endpoint\nInformation
+A -> B: Request endpoint\ninformation
 activate B
 
-B -> C: Get Endpoint Call\nExample Code
+B -> C: Get endpoint call\nexample code
 activate C
-B <-- C: Return Data
+B <-- C: Return data
 deactivate C
 
-B --> A: Return Data
+B --> A: Return data
 deactivate B
 
 A --> User: Display

@@ -1,5 +1,4 @@
 @startuml
-title Cucumber Report
 actor User
 participant "MGP React App" as A
 participant "MGP Service" as B
@@ -8,27 +7,27 @@ participant "Cucumber Report\nService" as C
 User -> A: View Report
 activate A
 
-A -> B: Request Report Data
+A -> B: Request report data
 activate B
 
 
-B --> A: Return Data
+B --> A: Return data
 deactivate B
 
 A --> User: Display
 deactivate A
 
 
-User -> C: View Cucumber Report
+User -> C: View cucumber report
 activate C
 
-C -> B: Request The \nCucumber Report
+C -> B: Request the \ncucumber report
 activate B
 
 
-B --> C: \tReturn Report
+B --> C: \tReturn report
 deactivate B
-C --> User: Return Page
+C --> User: Return page
 deactivate C
 
 

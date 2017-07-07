@@ -3,7 +3,7 @@ actor User
 participant "Regression Test Agent" as msta
 User -> msta: Run service test
 activate msta
-msta -> MGPS: Get Service Regression\nTest Cases
+msta -> MGPS: Get service regression\ntest cases
 activate MGPS
 msta <- MGPS: Return test cases
 deactivate MGPS

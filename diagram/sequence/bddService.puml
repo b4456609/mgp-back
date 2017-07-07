@@ -4,24 +4,24 @@ participant "MGP React App" as mgpr
 participant "MGP Service" as mgps
 participant "BDD Parser\nService" as bps
 
-user -> mgpr: View\nDependency\nGraph
+user -> mgpr: View\ndependency\ngraph
 activate mgpr
-mgpr -> mgps: Check Graph\nData Update
+mgpr -> mgps: Check graph\ndata update
 activate mgps
-mgps -> bps: \nUpdate UAT Project
+mgps -> bps: \nUpdate UAT project
 activate bps
-bps --> mgps: Return Result
+bps --> mgps: Return result
 deactivate bps
-mgps -> bps: \nGet UAT Information
+mgps -> bps: \nGet UAT information
 activate bps
-bps --> mgps: Return Result
+bps --> mgps: Return result
 deactivate bps
-mgps -> mgps: \nBuild Service\nDependency Graph
-mgps --> mgpr: Return Result
+mgps -> mgps: \nBuild service\ndependency graph
+mgps --> mgpr: Return result
 deactivate mgps
-mgpr -> mgps: Get Dependency\nGraph Data
+mgpr -> mgps: Get dependency\ngraph data
 activate mgps
-mgpr <-- mgps: Return Data
+mgpr <-- mgps: Return data
 deactivate mgps
 mgpr --> user: Dispaly
 deactivate mgpr
