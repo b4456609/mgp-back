@@ -1,26 +1,26 @@
 @startuml
 |Developement|
 start
-:Developer Update Project;
-:Jenkins Pipeline Start;
+:Developer update project;
+:Jenkins pipeline start;
 |Unit Test|
-:Execute Unit test;
+:Execute unit test;
 :Upload MPD\nfile to MGP;
--> Unit Test Result?;
+-> Unit test result?;
 if () then (fail)
     stop
 else (pass)
-    :Upload Pact DSL\nfile to Pact Broker;
+    :Upload pact DSL\nfile to Pact Broker;
     |Service Test|
-    :Execute Service Test;
-    :Upload \nService Test \nResult to MGP;
-    -> Service Test Result?;
+    :Execute service test;
+    :Upload \nservice test \nresult to MGP;
+    -> Service test result?;
     if () then (fail)
         stop
     else(pass)
         |UAT|
         :Execute UAT;
-        :Upload UAT Result to MGP;
+        :Upload UAT result to MGP;
     endif
     stop
 endif
