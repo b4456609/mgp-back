@@ -1,5 +1,5 @@
 @startuml
-'scale 1.5
+'scale 2
 start
 :Get invocation chain group;
 :Find the paths contain\nthe updated service;
@@ -7,10 +7,10 @@ start
 :Calculate test priority scrore;
 ->Run service test?;
 if() then (yes)
-    :Pair the consumer and\n provider services;
+    :Pair the consumer and\nprovider services;
     :Pick the pact file;
 else (no)
-    :Generate the Cucumber\n test annoation;
+    :Generate the Cucumber\nscenario;
 endif
 :Return data;
 stop

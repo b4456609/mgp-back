@@ -1,9 +1,10 @@
 @startuml
+scale 2
 start
 :Generate a MPD\nfrom a microservice project;
 :Upload to MGP;
 :View annotations from website;
--> An annotation used \nby endpoint;
+-> An endpoint is used \nby the scenario;
 if() then(yes)
 :Write BDD scenario's annotation;
 :BDD git project is parsed by BPS;
