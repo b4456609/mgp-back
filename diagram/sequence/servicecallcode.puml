@@ -7,7 +7,7 @@ participant "Service Call Code\nGenerator Service" as C
 User -> A: View dependency\ngraph
 activate A
 
-A -> B: Request endpoint\ninformation
+A -> B: Request for endpoint\ninformation
 activate B
 
 B -> C: Get endpoint call\nexample code
@@ -20,8 +20,4 @@ deactivate B
 
 A --> User: Display
 deactivate A
-
-
-
-
 @enduml
