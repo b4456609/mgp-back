@@ -7,7 +7,7 @@ participant "Pact Broker" as C
 User -> A: View Dependency\nGraph
 activate A
 
-A -> B: Request Service Call\nInformation
+A -> B: Request for Service\nCall Information
 activate B
 
 B -> C: Get Latest Pact DSL
@@ -20,8 +20,4 @@ deactivate B
 
 A --> User: Display
 deactivate A
-
-
-
-
 @enduml
