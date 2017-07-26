@@ -2,12 +2,11 @@
 'scale 2
 start
 :Get invocation chain group;
-:Find the paths contain\nthe updated service;
-:Filter out the service is after\nthe target service two level;
-:Calculate test priority scrore;
+:Find the paths that contain\nthe updated service;
+:Filter out the service which is after\nthe target service two level;
+:Calculate test priority scrores;
 ->Run service test?;
 if() then (yes)
-    :Pair the consumer and\nprovider services;
     :Pick the pact file;
 else (no)
     :Generate the Cucumber\nscenario;
