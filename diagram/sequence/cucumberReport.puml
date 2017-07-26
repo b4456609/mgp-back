@@ -7,7 +7,7 @@ participant "Cucumber Report\nService" as C
 User -> A: View Report
 activate A
 
-A -> B: Request report data
+A -> B: Request for report data
 activate B
 
 
@@ -21,7 +21,7 @@ deactivate A
 User -> C: View cucumber report
 activate C
 
-C -> B: Request the \ncucumber report
+C -> B: Request for the \ncucumber report
 activate B
 
 
@@ -29,6 +29,4 @@ B --> C: \tReturn report
 deactivate B
 C --> User: Return page
 deactivate C
-
-
 @enduml
